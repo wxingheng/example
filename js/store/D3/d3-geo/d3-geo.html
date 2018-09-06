@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>d3 geo</title>
+    <script src="../assets/d3.js" charset="utf-8"></script>
+    <script src="../assets/topojson.js" charset="utf-8"></script>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+    <script type="text/javascript" src="../assets/moment/moment.min.js"></script>
+    <script type="text/javascript" src="../assets/moment/locale/zh-cn.js"></script>
+
+    <!-- <script type="text/javascript" src="js/d3.js"></script> -->
+    <style>
+        html,
+        body,
+        svg.main {
+            width: 1920px;
+            height: 1080px;
+        }
+    </style>
+</head>
+
+
+<body>
+    <svg class="main">
+        <defs>
+            <!--飞机-->
+            <g transform="scale(0.14) translate(-106, -50)" id="planeModel" style="opacity: 0;">
+                <path xmlns="http://www.w3.org/2000/svg" stroke="red" stroke-width="0" stroke-miterlimit="10" d="M200.38,81.417c0,0-7.042,11.625-11.292,24.75   s-7.125,51.375-7.125,51.375l-54.213,39.3c0,0-13.543,8.502-16.3,15.598c-0.958,2.468-1.491,5.852-1.612,7.852   c-0.222,3.681,0,13.749,0,13.75c0.125,2.125,1.5,3.875,6,2.375s69.5-23.125,69.5-23.125l2.75,54.25c0,0-16.723,12.949-21.875,17.75   c-1.232,1.148-3.054,2.765-4.063,4.875c-1.045,2.187-1.161,5.537-1.188,7.25c-0.038,2.437-0.131,8.147,0.188,9.063   c0.5,1.438,1.063,1.918,3.135,1.918c2.625,0,12.928-5.73,12.928-5.73l18.75-9.25l4.333,12.25l-4.333-12.25l4.333,12.25h0.168   l4.333-12.25l18.75,9.25c0,0,10.303,5.73,12.928,5.73c2.072,0,2.635-0.48,3.135-1.918c0.318-0.916,0.226-6.625,0.188-9.063   c-0.027-1.713-0.143-5.063-1.188-7.25c-1.008-2.11-2.83-3.727-4.063-4.875c-5.152-4.801-21.875-17.75-21.875-17.75l2.75-54.25   c0,0,65,21.625,69.5,23.125s5.875-0.25,6-2.375c0-0.001,0.222-10.069,0-13.75c-0.121-2-0.653-5.384-1.612-7.852   c-2.756-7.096-16.3-15.598-16.3-15.598l-54.213-39.3c0,0-2.875-38.25-7.125-51.375S200.38,81.417,200.38,81.417V61"
+                />
+            </g>
+            <!--/.飞机-->
+        </defs>
+    </svg>
+</body>
+
+<script>
+    var svg = d3.select("svg");
+    var groups_out = svg.append("g")
+        .attr('class', 'map');
+
+    var zoom, zoomed, transformMap, goes = [];
+
+    var w = document.documentElement.offsetWidth || document.body.offsetWidth;
+    var h = document.documentElement.offsetHeight || document.body.offsetHeight;
+
+    //定义本省和周边省份
+    var homecity = '3201';
+    var homeProvince = '32';
+    var neighbors = ['31', '33', '34', '37'];
+
+    var geoMap = {};
+    var cityGeoMap = {};
+
+    var CHN_ADM0 = ['11', '12', '13', '14', '15', '21', '22', '23',
+        '31', '32', '33', '34', '35', '36', '37', '41', '42', '43', '44', '45', '46',
+        '50', '51', '52', '53', '54', '61', '62', '63', '64', '65', '71', '81', '82'
+    ];
+
+    // 第一步 定义地图的投影
+    var projection = d3.geoMercator()
+        .center([118.8062, 31.9208])
+        .scale(9100)
+        .translate([900, 780]);
+
+
+    //第二步 定义地理路径生成器
+    var path = d3.geoPath()
+        .projection(projection);
+
+
+    //第三步 处理地理数据
+    var getJsonCount = 0;
+    CHN_ADM0.forEach(function (v, k) {
+        d3.json("geodata/" + v + ".s.json", function (error, toporoot) {
+            goes.push(toporoot);
+            getJsonCount++;
+            if (getJsonCount == CHN_ADM0.length) {
+                initDone();
+            }
+        })
+    });
+
+    var facilityMap = {};
+
+    var initDone = function () {
+
+        goes.forEach(function (v, k) {
+            console.log(123);
+            geoMap[v.properties.name] = {
+                "province": v.properties,
+                "cities": {},
+                "transform": v.transform
+            };
+            v.provinceBorders = topojson.merge(v, v.objects.cities.geometries); //合并省份下城市的地理数据
+
+            v.objects.cities.geometries.forEach(function (a, e) {
+                geoMap[v.properties.name]['cities'][a.properties.name] = a.properties;
+                cityGeoMap[a.properties.id] = a.properties;
+            });
+
+            // 绘制城市的边界
+            //只有本省市与临近省市才绘制边界
+            if (v.properties.id == homeProvince || neighbors.includes(v.properties.id)) {
+                var cityBorders = topojson.feature(v, v.objects.cities);
+                var groups = groups_out.append("g");
+                groups.selectAll("path")
+                    .data(cityBorders.features)
+                    .enter()
+                    .append("path")
+                    .style("fill", function (d, i) {
+                        return v.properties.id == homeProvince ? "#202d5c" : "#152147";
+                    })
+                    .attr("stroke", function (d, i) {
+                        //return "#0f2a56";
+                        return v.properties.id == homeProvince ? "#245079" : "#1c446b";
+                    })
+                    .attr("d", path);
+
+                groups.append("path")
+                    .datum(v.provinceBorders)
+                    .style("fill", "transparent")
+                    .attr('id', ('p' + v.properties.id))
+                    .attr("stroke", "transparent")
+                    .attr("d", path);
+
+            } else {
+                //否则只绘制省份的边界
+                groups_out.append("path")
+                    .datum(v.provinceBorders)
+                    .style("fill", "#0e163a") //rgb(14,22,58)
+                    .attr('id', ('p' + v.properties.id))
+                    .attr("stroke", "#0f2a56")
+                    .attr("stroke-width", "2")
+                    .attr("d", path);
+            }
+
+        })
+
+        //获取机构字典
+        $.ajax({
+            //   url: "/service/dashboard/dicts/facility",
+            url: "/mock/dicts/facility.json",
+            type: 'get',
+            beforeSend: function (request) {
+                request.setRequestHeader("dashboard-device-id", "testdeviceid");
+            },
+            async: false,
+            success: function (data, status) {
+                if (status == 'success') {
+
+
+                    facility = data;
+                    data.map(function (v, k) {
+
+                        //地图血站名称重叠的特殊偏移处理
+                        if (v.id == '90017') {
+                            //江苏省血液中心
+                            v.y -= 0.08;
+                        }
+                        facilityMap[v.id] = v;
+                    })
+                }
+            },
+            error: function () {
+
+            }
+        });
+
+        //调剂记录
+        $.ajax({
+            url: "/mock/records/dispatch.json",
+            //url: "demoJsonData/recordDispatch.js",
+            dataType: 'json',
+            type: 'get',
+            beforeSend: function (request) {
+                request.setRequestHeader("dashboard-device-id", "testdeviceid");
+            },
+            data: {
+                startTime: moment().subtract(60, 'days').format('YYYY-MM-DD') + ' 23:59:59',
+                endTime: moment().format('YYYY-MM-DD') + ' 00:00:00'
+            },
+            async: false,
+            success: function (data, status) {
+                if (status == 'success') {
+                    // renderData(data);
+                }
+            },
+            error: function () {
+
+            }
+        });
+    }
+</script>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>laign-center</title>
+    <style>
+        .content {
+            width: 400px;
+            background: #ccc;
+            line-height: 100px;
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content">Lorem ipsam.</div>
+    <script>
+        function timeout(ms){
+            return new Promise((resolve) => {
+                setTimeout(resolve, ms)
+            })
+        }
+        async function asyncPrint(value, ms){
+            await timeout(ms);
+            console.log(value);
+        }
+        asyncPrint('-----', 2000)
+    </script>
+</body>
+
+</html>

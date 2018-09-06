@@ -1,0 +1,83 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>密码强度</title>
+    <style type="text/css">
+        #passStrength {
+            height: 6px;
+            width: 120px;
+            border: 1px solid #ccc;
+            padding: 2px;
+        }
+
+        .strengthLv1 {
+            background: red;
+            height: 6px;
+            width: 40px;
+        }
+
+        .strengthLv2 {
+            background: orange;
+            height: 6px;
+            width: 80px;
+        }
+
+        .strengthLv3 {
+            background: green;
+            height: 6px;
+            width: 120px;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="password" name="pass" id="pass" maxlength="16" />
+    <div class="pass-wrap">
+        <em>密码强度：</em>
+        <div id="passStrength"></div>
+    </div>
+
+    <script>
+        function PasswordStrength(passwordID, strengthID) {
+            this.init(strengthID);
+            var _this = this;
+            document.getElementById(passwordID).onkeyup = function () {
+                _this.checkStrength(this.value);
+            }
+        };
+        PasswordStrength.prototype.init = function (strengthID) {
+            var id = document.getElementById(strengthID);
+            var div = document.createElement('div');
+            var strong = document.createElement('strong');
+            this.oStrength = id.appendChild(div);
+            this.oStrengthTxt = id.parentNode.appendChild(strong);
+        };
+        PasswordStrength.prototype.checkStrength = function (val) {
+            var aLvTxt = ['', '低', '中', '高'];
+            var lv = 0;
+            if (val.match(/[a-z]/g)) {
+                lv++;
+            }
+            if (val.match(/[0-9]/g)) {
+                lv++;
+            }
+            if (val.match(/(.[^a-z0-9])/g)) {
+                lv++;
+            }
+            if (val.length < 6) {
+                lv = 0;
+            }
+            if (lv > 3) {
+                lv = 3;
+            }
+            this.oStrength.className = 'strengthLv' + lv;
+            this.oStrengthTxt.innerHTML = aLvTxt[lv];
+        };
+
+        new PasswordStrength('pass', 'passStrength');
+    </script>
+
+</body>
+
+</html>

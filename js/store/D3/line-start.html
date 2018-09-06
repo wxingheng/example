@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .domain {
+            fill: transparent
+        }
+    </style>
+</head>
+
+<body>
+    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+
+    <div class="container">
+
+        <div class="jumbotron">
+            <svg id="visualisation" width="700" height="500"></svg>
+        </div>
+
+    </div>
+
+    <script>
+        var colorArr = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'];
+
+        function random(min, max) {
+            if (isNaN(min) || isNaN(max)) {
+                return null;
+            }
+            if (min > max) {
+                min ^= max;
+                max ^= min;
+                min ^= max;
+            }
+            return (Math.random() * (max - min) | 0) + min;
+        }
+
+        function method1() {
+            var color = "#";
+            for (var i = 0; i < 6; i++) {
+                color += colorArr[random(0, 16)];
+            }
+            return color;
+        }
+
+        /*---------------------------- 方法二 ------------------------*/
+        function method2() {
+            var color = "#";
+            for (var i = 0; i < 6; i++) {
+                color += (Math.random() * 16 | 0).toString(16);
+            }
+            return color;
+        }
+
+        /*---------------------------- 方法三 -------------------------*/
+        function method3() {
+            return "#" + (function (color) {
+                return new Array(7 - color.length).join("0") + color;
+            })((Math.random() * 0x1000000 | 0).toString(16));
+        }
+
+
+        /*----------------------------- 测试 ---------------------------*/
+
+
+        var xLabels = [
+            '1.2.1',
+            '1.2.2',
+            '1.2.3',
+            '1.2.6',
+            '1.7.1',
+        ];
+
+        var yLabels = [
+            "安全测试",
+            "客户端性能",
+            "兼容适配",
+            "端网测试",
+            "服务器性能",
+        ]
+
+
+
+        var datas = [
+            [{
+                    count: 0,
+                    color: method3(), // 后面根据数组改变颜色
+                    value: 100 // 目前value 没有用上
+                },
+                {
+                    count: 0,
+                    color: method3(), // 后面根据数组改变颜色
+                    value: 100 // 目前value 没有用上
+                },
+                {
+                    count: 0,
+                    color: method3(), // 后面根据数组改变颜色
+                    value: 100 // 目前value 没有用上
+                },
+                {
+                    count: 0,
+                    color: method3(), // 后面根据数组改变颜色
+                    value: 100 // 目前value 没有用上
+                },
+                {
+                    count: 0,
+                    color: method3(), // 后面根据数组改变颜色
+                    value: 100 // 目前value 没有用上
+                },
+            ],
+            [{
+                    count: 1,
+                    color: method3(), // 后面根据数组改变颜色
+                    value: 100 // 目前value 没有用上
+                },
+                {
+                    count: 1,
+                    color: method3(), // 后面根据数组改变颜色
+                    value: 100 // 目前value 没有用上
+                },
+                {
+                    count: 1,
+                    color: method3(), // 后面根据数组改变颜色
+                    value: 100 // 目前value 没有用上
+                },
+                {
+                    count: 1,
+                    color: method3(), // 后面根据数组改变颜色
+                    value: 100 // 目前value 没有用上
+                },
+                {
+                    count: 1,
+                    color: method3(), // 后面根据数组改变颜色
+                    value: 100 // 目前value 没有用上
+                },
+            ],
+            [{
+                    count: 2,
+                    color: method3(), // 后面根据数组改变颜色
+                    value: 100 // 目前value 没有用上
+                },
+                {
+                    count: 2,
+                    color: method3(), // 后面根据数组改变颜色
+                    value: 100 // 目前value 没有用上
+                },
+                {
+                    count: 2,
+                    color: method3(), // 后面根据数组改变颜色
+                    value: 100 // 目前value 没有用上
+                },
+                {
+                    count: 2,
+                    color: method3(), // 后面根据数组改变颜色
+                    value: 100 // 目前value 没有用上
+                },
+                {
+                    count: 2,
+                    color: method3(), // 后面根据数组改变颜色
+                    value: 100 // 目前value 没有用上
+                },
+            ],
+            [{
+                    count: 3,
+                    color: method3(), // 后面根据数组改变颜色
+                    value: 100 // 目前value 没有用上
+                },
+                {
+                    count: 3,
+                    color: method3(), // 后面根据数组改变颜色
+                    value: 100 // 目前value 没有用上
+                },
+                {
+                    count: 3,
+                    color: method3(), // 后面根据数组改变颜色
+                    value: 100 // 目前value 没有用上
+                },
+                {
+                    count: 3,
+                    color: method3(), // 后面根据数组改变颜色
+                    value: 100 // 目前value 没有用上
+                },
+                {
+                    count: 3,
+                    color: method3(), // 后面根据数组改变颜色
+                    value: 100 // 目前value 没有用上
+                },
+            ],
+            [{
+                    count: 4,
+                    color: method3(), // 后面根据数组改变颜色
+                    value: 100 // 目前value 没有用上
+                },
+                {
+                    count: 4,
+                    color: method3(), // 后面根据数组改变颜色
+                    value: 100 // 目前value 没有用上
+                },
+                {
+                    count: 4,
+                    color: method3(), // 后面根据数组改变颜色
+                    value: 100 // 目前value 没有用上
+                },
+                {
+                    count: 4,
+                    color: method3(), // 后面根据数组改变颜色
+                    value: 100 // 目前value 没有用上
+                },
+                {
+                    count: 4,
+                    color: method3(), // 后面根据数组改变颜色
+                    value: 100 // 目前value 没有用上
+                },
+            ],
+        ]
+
+
+        var vis = d3.select("#visualisation"),
+            WIDTH = 700,
+            HEIGHT = 500,
+            MARGINS = {
+                top: 40,
+                right: 20,
+                bottom: 20,
+                left: 150
+            };
+
+
+        var xScale = d3.scale.linear().range([MARGINS.left, WIDTH - MARGINS.right]).domain([0, yLabels.length - 1]);
+
+        var yScale = d3.scale.linear().range([HEIGHT - MARGINS.top, MARGINS.bottom]).domain([0, xLabels.length - 1]);
+
+        var xAxis = d3.svg.axis()
+            .scale(xScale)
+            .ticks(xLabels.length);
+
+        var xBar = vis.append("svg:g")
+            .attr("transform", "translate(0," + (HEIGHT - MARGINS.bottom) + ")")
+            .call(xAxis);
+
+        xBar.selectAll("text")
+            .text(function (d, i) {
+                // return data[i]['xLabel'];
+                return xLabels[i];
+            });
+
+        var yAxis = d3.svg.axis()
+            .scale(yScale)
+            // .innerTickSize([-50])
+            .orient("left")
+            .outerTickSize([0])
+            .innerTickSize([-(WIDTH - MARGINS.left - MARGINS.right) - 100])
+            .ticks(yLabels.length);
+
+        var yBar = vis.append("svg:g")
+            .attr("transform", "translate(" + (MARGINS.left) + ",0)")
+            .call(yAxis);
+
+        yBar.selectAll("text")
+            .text(function (d, i) {
+                return yLabels[i];
+            })
+            .attr("y", 0)
+            .attr("x", "-2em")
+            .attr("dy", ".35em")
+
+        datas.forEach((ele) => {
+            var group = vis.append("g")
+
+            var lineGen = d3.svg.line()
+                .x(function (d, i) {
+                    return xScale(i);
+                })
+                .y(function (d) {
+                    return yScale(ele[0]['count']);
+                });
+
+
+            group.append('svg:path')
+                .attr('d', lineGen(ele))
+                .attr('stroke', '#F1F1F1')
+                .attr('stroke-width', 2)
+                .attr('fill', '#F1F1F1');
+
+            //添加系列的小圆点
+            group.selectAll("circle")
+                .data(ele)
+                .enter()
+                .append("circle")
+                .attr("cx", function (d, i) {
+                    return xScale(i);
+                })
+                .attr("cy", function (d) {
+                    return yScale(ele[0]['count']);
+                })
+                .attr("r", 8)
+                .attr("fill", function (d) {
+                    return d.color;
+                });
+        })
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body style="background: #000">
+    <svg>
+        <g id="nameGaugeContainer"></g>
+    </svg>
+    <script src="../d3.js"></script>
+    <script src="./gauge.js"></script>
+    <script>
+        function CreateGauge() {
+            var gauges = [];
+
+            function createGauge(name, label, min, max) {
+                var config = {
+                    size: 165, //图形大小
+                    label: label,
+                    min: undefined != min ? min : 0,
+                    max: undefined != max ? max : 100,
+                    minorTicks: 5
+                };
+
+                var range = config.max - config.min;
+                config.greenZones = [{
+                    from: 0,
+                    to: 25
+                }];
+                config.yellowZones = [{
+                    from: 25,
+                    to: 70
+                }];
+                config.redZones = [{
+                    from: 70,
+                    to: 100
+                }];
+                gauges[name] = new Gauge(name + "GaugeContainer", config);
+                gauges[name].render();
+            }
+
+            function createGauges() {
+                //name   label
+                createGauge("name", "");
+
+            }
+
+            this.updateGauges = function (val) {
+                for (var key in gauges) {
+                    var value = getRandomValue(gauges[key])
+                    gauges[key].redraw(val);
+                }
+            };
+
+            function getRandomValue(gauge) {
+                var overflow = 0; //10;
+                return gauge.config.min - overflow + (gauge.config.max - gauge.config.min + overflow * 2) * Math.random();
+            }
+
+            this.initialize = function () {
+                //创建
+                createGauges();
+                //更新
+            };
+            this.initialize();
+
+        }
+        if (typeof Gauge != "undefined") {
+            humidityChart = new CreateGauge()
+        }
+        setInterval(function () {
+            console.log(222);
+                humidityChart.updateGauges(parseInt(Math.random()*100));
+        }, 2000);
+    </script>
+</body>
+
+</html>

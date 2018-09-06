@@ -1,0 +1,4 @@
+#Fri Aug 31 10:15:46 GMT+08:00 2018
+base.0=E\:\\study\\GITHUB\\example\\app\\cordova\\hello\\platforms\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
+renamed.0=classes.dex
+file.0=E\:\\study\\GITHUB\\example\\app\\cordova\\hello\\platforms\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0\\classes.dex

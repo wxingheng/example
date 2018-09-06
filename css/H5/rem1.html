@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>REM</title>
+    <style>
+        .box{
+            width: 160px;
+            height: 160px;
+            background-color: red;
+        }
+        /* 
+            1rem = 16pxp;
+
+            160/16 = 10rem;
+         */
+    </style>
+</head>
+<body>
+    <div class="box">
+         <p>hello rem</p>
+    </div>
+    <script>
+            let htmlWidth = document.documentElement.clientWidth || document.body.clientWidth;
+            let htmlDom = document.getElementsByTagName('html')[0]
+            htmlDom.style.fontSize = htmlWidth/10 + 'px';
+        </script>
+</body>
+</html>

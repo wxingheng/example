@@ -1,0 +1,123 @@
+<template>
+  <div class="layout">
+    <section class="container reg_start_frame">
+        <div class="form-group row title">
+            <h4 class="col-xs-12 text-center">本市血液管理机构联系方式</h4>
+        </div>
+        <div class="form-group row description">
+           <table>
+                      <thead>
+                        <tr style="font-size: 18px;">
+                          <th width="40%">单位名称</th>
+                          <th width="20%">电话</th>
+                          <th width="40%">地址</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <!-- <tr v-for="(item, i) in list" :key="i"> -->
+                          <!-- <td>{{item.name}}</td> -->
+                          <!-- <td>{{item.volume}} {{item.unit}}</td> -->
+                          <!-- <td><icon type="cancel" @click.native="deleteBlood(i)"></icon></td> -->
+                        <!-- </tr> -->
+                        <tr><td>上海市血液管理办公室</td><td>62191426</td><td>虹桥路1191路2号楼</td></tr>
+            <tr><td>黄浦区血液管理办公室</td><td>63213480</td><td>制造局路181号</td></tr>
+            <tr><td>徐汇区血液管理办公室</td><td>54012500</td><td>永川路50号</td></tr>
+            <tr><td>长宁区血液管理办公室</td><td>52064611</td><td>云雾山路39号1楼118室</td></tr>
+            <tr><td>静安区血液事务管理中心</td><td>62535896</td><td>胶州路433号705室</td></tr>
+            <tr><td>普陀区血液管理办公室</td><td>62168728</td><td>兰溪路164号</td></tr>
+            <tr><td>虹口区血液管理办公室</td><td>63248448</td><td>东江湾路444号虹口足球场22号</td></tr>
+            <tr><td>杨浦区血液管理事务中心</td><td>65455802</td><td>平凉路339号2楼</td></tr>
+            <tr><td>杨浦区血液管理事务中心</td><td>65455802</td><td>平凉路339号2楼</td></tr>
+            <tr><td>宝山区血液管理中心</td><td>66650059</td><td>牡丹江路186弄1号</td></tr>
+            <tr><td>闵行区血液管理事务中心</td><td>64922028</td><td>莘东路520号</td></tr>
+            <tr><td>嘉定区血液管理办公室</td><td>59529299</td><td>金沙路255号</td></tr>
+            <tr><td>浦东新区血液管理办公室</td><td>50179571</td><td>东建路531号</td></tr>
+            <tr><td>奉贤区血液管理办公室</td><td>67116255</td><td>南桥镇立新南路52号</td></tr>
+            <tr><td>松江区血液管理办公室</td><td>67735403</td><td>文诚路801号</td></tr>
+            <tr><td>金山区血液管理事务中心</td><td>57953013</td><td>金山区石化蒙源路99号10楼1011-1室</td></tr>
+            <tr><td>青浦区献血办公室</td><td>69735033</td><td>镇华科路550弄3号楼</td></tr>
+            <tr><td>崇明区血站</td><td>59612109</td><td>城内东门路306号</td></tr>
+                      </tbody>
+            </table>
+            <!-- <div class="col-xs-12 text-left">
+                <p>1、六十周岁以上的公民需要医疗临床用血的，凭本人《居民身份证》由医疗机构直接供血。</p>
+                <p>2、在本市的外国公民、华侨、香港特别行政区居民、澳门地区居民和台湾地区居民需要医疗临床用血的，凭本人的有效身份证件由医疗机构直接供血。</p>
+                <p>3、有工作单位的本市公民需要用血的，至单位缴纳养老金所在地的区血液管理机构办理用血手续，交纳（免交）用血互助金。</p>
+                <p>4、无工作单位的本市公民需要用血的，至户籍所在地的区血液管理机构办理用血手续，交纳（免交）用血互助金。</p>
+                <p>5、外省市来沪就医的公民需要用血的，至医疗机构所在的区血液管理机构办理用血手续，交纳（免交）用血互助金、</p>
+                <p>6、驻沪部队军人、全日制高校的在校师生等需要用血的，至上海市血液管理办公室办理用血手续。</p>
+                <p>7、急救病人需要医疗临床用血的，医疗机构应当先提供所需血液，病人及其家庭成员或其所在单位按照《上海市献血条例》的规定补办用血手续。</p>
+            </div> -->
+        </div>
+        <div class="footer">
+                    <x-button @click.native="go()" type="primary">确定</x-button>
+        </div>
+    </section>
+  </div>
+</template>
+
+<script>
+export default {
+  name: "Notify",
+  data() {
+    return {
+      list: [
+        {}
+      ]
+    };
+  },
+  computed: {},
+  methods: {
+    go: function(path, caseType) {
+      this.$router.goBack()
+
+    }
+  },
+  created() {}
+};
+</script>
+
+<style scoped>
+.layout {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  margin: 0px auto;
+  background-image: url("../assets/illustrate_bg.jpg");
+  font-size: 12px;
+}
+.reg_start_frame {
+    /* height: calc(100% - 45.6px) !important; */
+    padding-top: 45.19px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #fff;
+    height: 100%;
+    overflow-y: scroll;
+    padding-bottom: 20px;
+}
+.container {
+    padding-right: .9375rem;
+    padding-left: .9375rem;
+    margin-right: auto;
+    margin-left: auto;
+}
+.footer{
+  margin-top:20px;
+}
+h4{
+  text-align: center;
+  font-size: 26px;
+  font-weight: normal;
+  margin-bottom: 15px;
+}
+td{
+  vertical-align: baseline;
+}
+tbody tr td{
+  border-bottom: 1.5px solid #fff;
+}
+table{
+  border-collapse:collapse;
+}
+
+</style>
