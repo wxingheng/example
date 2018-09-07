@@ -4,12 +4,12 @@
     <preference name="DisallowOverscroll" value="true" />
     <hook src="hooks/hookers.js" type="before_prepare" />
     <hook src="hooks/beforedep.js" type="before_deploy" />
-    <name>Cordova - Framework7 - Vue - Webpack Template</name>
+    <name>山西单采浆站联网状态监控</name>
     <description>
-        Brand new cordova project!
+        山西单采浆站联网状态监控
     </description>
-    <author email="dev@cordova.apache.org" href="http://cordova.io">
-        Apache Cordova Team
+    <author email="wxingheng@outlook.com" href="https://wxingheng.github.io">
+        wuxh
     </author>
     <content src="index.html" />
     <plugin name="cordova-plugin-whitelist" spec="1" />
@@ -20,14 +20,30 @@
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
+    <icon src="res/icon/android/icon.png" />
+    <splash src="res/icon/android/screen.png" />
     <platform name="android">
         <allow-intent href="market:*" />
+        <platform name="android">
+            <preference name="Fullscreen" value="true" />
+            <allow-intent href="market:*" />
+            <preference name="FadeSplashScreenDuration" value="800" />
+            <preference name="ShowSplashScreenSpinner" value="false" />
+            <preference name="AutoHideSplashScreen" value="false" />
+            <preference name="SplashScreenDelay" value="6000" />
+            <preference name="FadeSplashScreen" value="false" />
+            <preference name="SplashShowOnlyFirstTime" value="false" />
+            <preference name="SplashScreen" value="screen" />
+            <preference name="ShowSplashScreen" value="true" />
+        </platform>
     </platform>
     <platform name="ios">
-        <splash src="res/screen/ios/Default@2x~universal~anyany.png" />
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
     </platform>
     <allow-navigation href="*" />
+    <plugin name="cordova-plugin-splashscreen" spec="^5.0.2" />
     <engine name="android" spec="^7.0.0" />
+    <engine name="browser" spec="^5.0.4" />
+    <engine name="ios" spec="^4.5.5" />
 </widget>
