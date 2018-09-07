@@ -7,7 +7,9 @@ const createError = (code, msg) => {
 }
 
 const request = axios.create({
-  baseURL: 'https://sbc.stpass.com/synergy-api/'
+  // baseURL: 'https://sbc.stpass.com/synergy-api/'
+  baseURL: 'https://sbc.stpass.com/api/'
+
 })
 
 const requestBao = axios.create({

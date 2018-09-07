@@ -217,9 +217,9 @@ import isIdentity from "../utils/validate.js";
 import model from "../model/client-model";
 
 // 本地组件
-// import uploader from "../components/uploader.vue";
+import uploader from "../components/uploader.vue";
 // 使用自己远程的组件库
-import uploader from "vux-uploads";
+// import uploader from "vux-uploads";
 
 Array.prototype.findIndex =
   Array.prototype.findIndex ||
@@ -347,7 +347,7 @@ export default {
       fillable: true,
       varmax: 5,
       uploadUrl:
-        "https://sbc.stpass.com/synergy-api/service/wechatevidence/upload",
+        "https://sbc.stpass.com/api/service/wechatevidence/upload",
       disease: [],
       bloodSubTypes: []
     };
