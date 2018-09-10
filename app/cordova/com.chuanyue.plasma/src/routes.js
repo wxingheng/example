@@ -31,4 +31,34 @@ export default [
     path: '/vuex/',
     component: require('./assets/vue/pages/vuex.vue')
   },
+
+  {
+    path: '/blood-station/',
+    component: require('./assets/vue/pages/blood-station.vue')
+  },
+  {
+    path: '/hospital-station/',
+    component: require('./assets/vue/pages/hospital-station.vue')
+  },
+  {
+    path: '/plasma-station/',
+    component: require('./assets/vue/pages/plasma-station.vue')
+  },
+  {
+    path: '/blood-search/',
+    component: require('./assets/vue/pages/blood-search.vue')
+  },
+  {
+    path: '/hospital-search/',
+    component: require('./assets/vue/pages/hospital-search.vue')
+  },
+  {
+    path: '/plasma-search/',
+    component: require('./assets/vue/pages/plasma-search.vue')
+  },
+  {
+    path: '/plasma-search-2/',
+    component: require('./assets/vue/pages/plasma-search-2.vue')
+  },
+  // plasma-station.vue
 ]

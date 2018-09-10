@@ -4,79 +4,64 @@
             <!-- <f7-nav-left>
                 <f7-link class="panel-open" open-panel="left" icon="fa fa-bars"></f7-link>
             </f7-nav-left> -->
-            <div class="title">山西单采浆站联网状态监控</div>
+            <div class="title">山西浆站监管平台</div>
             <!-- <f7-nav-right>
                 <f7-link class="searchbar-enable" data-searchbar=".searchbar-components" icon="fa fa-search"></f7-link>
             </f7-nav-right>
             <f7-searchbar class="searchbar-components" search-container=".components-list" search-in="a" expandable></f7-searchbar> -->
         </f7-navbar>
-        <!-- <f7-block-title>Introduction</f7-block-title> -->
-        <!-- <f7-block inner>
-            <p>山西单采浆站浆站联网状态的监测详情</p>
-        </f7-block> -->
-        <div class="block-title">联网状态</div>
-            <div class="block block-strong">
-            <div class="chip">
-                <div class="chip-media succ">
-                <i class="icon f7-icons ios-only">check</i>
-                <i class="icon material-icons md-only">check</i>
-                </div>
-                <div class="chip-label">联网</div>
-            </div>
-            <div class="chip">
-                <div class="chip-media warn">
-                <i class="icon f7-icons ios-only">close</i>
-                <i class="icon material-icons md-only">close</i>
-                </div>
-                <div class="chip-label">离线</div>
-            </div>
-            <div class="chip">
-                <div class="chip-media err">
-                <i class="icon f7-icons ios-only">help</i>
-                <i class="icon material-icons md-only">help</i>
-                </div>
-                <div class="chip-label">异常</div>
-            </div>
-            </div>
-        <!-- <f7-block-title class="searchbar-found">Links</f7-block-title> -->
-        <!-- <f7-list class="components-list searchbar-found">
-            <f7-list-item link="/about/" title="About" panel-close>
+    
+        <div style="height: 160px;" data-pagination='{"el": ".swiper-pagination"}' data-space-between="50" class="swiper-container swiper-init demo-swiper">
+        <div class="swiper-pagination"></div>
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="./../../images/swiper.jpg" alt=""></div>
+            <div class="swiper-slide"><img src="./../../images/swiper.jpg" alt=""></div>
+            <div class="swiper-slide"><img src="./../../images/swiper.jpg" alt=""></div>
+        </div>
+        </div>
+        <f7-list class="components-list searchbar-found">
+            <f7-list-item link="/blood-station/" title="血站联网状态查询" panel-close>
                 <f7-icon slot="media" ios="f7:info" md="material:info"></f7-icon>
             </f7-list-item>
-            <f7-list-item link="/form/" title="Form" panel-close>
-                <f7-icon slot="media" icon="fa fa-vcard-o fa-fw"></f7-icon>
+           <f7-list-item link="/hospital-station/" title="医院联网状态查询" panel-close>
+                <f7-icon slot="media" ios="f7:info" md="material:info"></f7-icon>
             </f7-list-item>
-            <f7-list-item link="/dynamic-route/blog/11/post/23/" title="Dynamic Route" panel-close>
-                <f7-icon slot="media" icon="fa fa-rss fa-fw"></f7-icon>
+            <f7-list-item link="/plasma-station/" title="浆站联网状态查询" panel-close>
+                <f7-icon slot="media" ios="f7:info" md="material:info"></f7-icon>
             </f7-list-item>
-            <f7-list-item link="/chat/" title="Chat" panel-close>
-                <f7-icon slot="media" icon="fa fa-user fa-fw"></f7-icon>
+            <f7-list-item link="/blood-search/" title="血站库存监控" panel-close>
+                <f7-icon slot="media" ios="f7:info" md="material:info"></f7-icon>
             </f7-list-item>
-            <f7-list-item link="/vuex/" title="Vuex" panel-close>
-                <f7-icon slot="media" icon="fa fa-battery fa-fw"></f7-icon>
+            <f7-list-item link="/hospital-search/" title="医院库存监控" panel-close>
+                <f7-icon slot="media" ios="f7:info" md="material:info"></f7-icon>
             </f7-list-item>
-        </f7-list> -->
+            <f7-list-item link="/plasma-search/" title="献浆员历史采浆情况" panel-close>
+                <f7-icon slot="media" ios="f7:info" md="material:info"></f7-icon>
+            </f7-list-item>
+            <f7-list-item link="/plasma-search-2/" title="供血浆证发证统计查询" panel-close>
+                <f7-icon slot="media" ios="f7:info" md="material:info"></f7-icon>
+            </f7-list-item>
+        </f7-list>
         <div class="list">
-            <ul>
+            <!-- <ul>
                 <li v-for="item in result" v-bind:key="item.id">
                     <div class="item-content">
-                        <!-- <div class="item-media"><i class="icon icon-f7"></i></div> -->
                         <div class="item-inner">
                         <div class="item-title">{{item.title}}</div>
                         <div class="item-after"> <span class="status" v-bind:class="[item.status]">{{item.status === 'warn'? '离线': item.status === 'succ'? '联网': '异常'}}</span></div>
                         </div>
                     </div>
                 </li>
-            </ul>
+            </ul> -->
             </div>
         <!-- <f7-list class="searchbar-not-found">
             <f7-list-item title="Nothing found"></f7-list-item>
         </f7-list> -->
         <!-- <f7-block-title class="searchbar-hide-on-search">Themes</f7-block-title> -->
         <f7-list class="searchbar-hide-on-search">
-            <!-- <f7-list-item title="iOS 风格" external link="./index.html?theme=ios"></f7-list-item>
-            <f7-list-item title="Material (android) 风格" external link="./index.html?theme=md"></f7-list-item>
-            <f7-list-item title="主题颜色" link="/color-themes/"></f7-list-item> -->
+            <!-- <f7-list-item title="iOS 风格" external link="./index.html?theme=ios"></f7-list-item> -->
+            <!-- <f7-list-item title="Material (android) 风格" external link="./index.html?theme=md"></f7-list-item> -->
+            <!-- <f7-list-item title="主题颜色" link="/color-themes/"></f7-list-item> -->
             <!-- <f7-list-item title="Github" external link="https://github.com/kevinqqnj"></f7-list-item> -->
         </f7-list>
     </f7-page>

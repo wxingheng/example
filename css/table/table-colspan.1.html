@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            border: 0;
+            padding: 0;
+        }
+
+        .table {
+            display: table;
+            background: #f00;
+            width: 500px;
+            margin-left: 200px;
+        }
+
+        .t_row {
+            display: table-caption;
+            border: 1px solid #f00;
+            height: 100px;
+            background: #00f;
+        }
+
+        .t_cell {
+            display: table-cell;
+            border: 1px solid #f00;
+            height: 100px;
+            background: #0f0
+        }
+    </style>
+</head>
+
+<body>
+    <div class="table">
+        <div class="t_cell">两列</div>
+        <div class="t_cell">两列</div>
+        <div class="t_row">一列</div>
+    </div>
+    <div class="table">
+        <div class="t_row">一列</div>
+        <div class="t_cell">三列</div>
+        <div class="t_cell">三列</div>
+        <div class="t_cell">三列</div>
+    </div>
+    <div class="table">
+        <div class="t_row">一列</div>
+        <div class="t_cell">四列</div>
+        <div class="t_cell">四列</div>
+        <div class="t_cell">四列</div>
+        <div class="t_cell">四列</div>
+    </div>
+</body>
+
+</html>
