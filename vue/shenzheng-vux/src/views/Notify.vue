@@ -31,7 +31,7 @@ export default {
   computed: {},
   methods: {
     go: function(path, caseType) {
-      this.$router.goBack()
+      this.$router.goBack();
     }
   },
   created() {}
@@ -46,26 +46,28 @@ export default {
   margin: 0px auto;
   background-image: url("../assets/illustrate_bg.jpg");
   color: #fff;
+  background-position: center 0;
+  background-size: cover;
 }
 .reg_start_frame {
-    /* height: calc(100% - 45.6px) !important; */
-    padding-top: 45.19px;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    /* color: #fff; */
-    height: 100%;
-    overflow-y: scroll;
-    padding-bottom: 20px;
+  /* height: calc(100% - 45.6px) !important; */
+  padding-top: 45.19px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  /* color: #fff; */
+  height: 100%;
+  overflow-y: scroll;
+  padding-bottom: 20px;
 }
 .container {
-    padding-right: .9375rem;
-    padding-left: .9375rem;
-    margin-right: auto;
-    margin-left: auto;
+  padding-right: 0.9375rem;
+  padding-left: 0.9375rem;
+  margin-right: auto;
+  margin-left: auto;
 }
-.footer{
-  margin-top:20px;
+.footer {
+  margin-top: 20px;
 }
-h4{
+h4 {
   text-align: center;
   font-size: 26px;
   font-weight: normal;

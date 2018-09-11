@@ -66,8 +66,8 @@ module.exports = {
     // Paths
     assetsRoot: path.resolve(__dirname, '../dist'),
     assetsSubDirectory: 'static',
-    // assetsPublicPath: '/',
-    assetsPublicPath: cdnConfig.host,
+    assetsPublicPath: '/',
+    // assetsPublicPath: cdnConfig.host,
 
     /**
      * Source Maps
