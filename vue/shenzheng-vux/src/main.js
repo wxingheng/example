@@ -26,7 +26,7 @@ import {
   Checker,
   CheckerItem,
   Flexbox,
-  FlexboxItem 
+  FlexboxItem
 } from 'vux'
 
 import HeaderHistory from './components/HeaderHistory.vue'

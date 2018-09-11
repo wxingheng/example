@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.chuanyue.plasma" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <hook src="hooks/hookers.js" type="before_prepare" />
+    <hook src="hooks/beforedep.js" type="before_deploy" />
+    <name>山西单采浆站联网状态监控</name>
+    <description>
+        山西单采浆站联网状态监控
+    </description>
+    <author email="wxingheng@outlook.com" href="https://wxingheng.github.io">
+        wuxh
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <icon src="res/icon/android/icon.png" />
+    <splash src="res/icon/android/screen.png" />
+    <allow-navigation href="*" />
+    <preference name="android-minSdkVersion" value="16" />
+    <preference name="DisallowOverscroll" value="true" />
+</widget>

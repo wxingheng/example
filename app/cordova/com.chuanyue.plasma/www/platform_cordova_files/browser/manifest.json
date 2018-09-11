@@ -1,0 +1,17 @@
+{
+  "background_color": "#FFF",
+  "display": "standalone",
+  "name": "山西单采浆站联网状态监控",
+  "short_name": "山西单采浆站联网状态监控",
+  "version": "com.chuanyue.plasma",
+  "description": "山西单采浆站联网状态监控",
+  "author": "wuxh",
+  "icons": [
+    {
+      "src": "res/icon/android/icon.png",
+      "type": "image/png",
+      "sizes": "undefinedxundefined"
+    }
+  ],
+  "start_url": "index.html"
+}
