@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en" class="ch">
+<head>
+    <meta charset="UTF-8">
+    <title>血液云平台</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="assets/css/vendor.bundle.min.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/720p.css">
+</head>
+<body>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
+<div class="layout">
+    <div class="outline">
+        <div class="appTitle">跨省调剂联网监控</div>
+    </div>
+    <svg class="main">
+        <defs>
+            <!--飞机-->
+            <g transform="scale(0.14) translate(-106, -50)" id="planeModel" style="opacity: 0;">
+                <path xmlns="http://www.w3.org/2000/svg" stroke="red" stroke-width="0" stroke-miterlimit="10"
+                      d="M200.38,81.417c0,0-7.042,11.625-11.292,24.75   s-7.125,51.375-7.125,51.375l-54.213,39.3c0,0-13.543,8.502-16.3,15.598c-0.958,2.468-1.491,5.852-1.612,7.852   c-0.222,3.681,0,13.749,0,13.75c0.125,2.125,1.5,3.875,6,2.375s69.5-23.125,69.5-23.125l2.75,54.25c0,0-16.723,12.949-21.875,17.75   c-1.232,1.148-3.054,2.765-4.063,4.875c-1.045,2.187-1.161,5.537-1.188,7.25c-0.038,2.437-0.131,8.147,0.188,9.063   c0.5,1.438,1.063,1.918,3.135,1.918c2.625,0,12.928-5.73,12.928-5.73l18.75-9.25l4.333,12.25l-4.333-12.25l4.333,12.25h0.168   l4.333-12.25l18.75,9.25c0,0,10.303,5.73,12.928,5.73c2.072,0,2.635-0.48,3.135-1.918c0.318-0.916,0.226-6.625,0.188-9.063   c-0.027-1.713-0.143-5.063-1.188-7.25c-1.008-2.11-2.83-3.727-4.063-4.875c-5.152-4.801-21.875-17.75-21.875-17.75l2.75-54.25   c0,0,65,21.625,69.5,23.125s5.875-0.25,6-2.375c0-0.001,0.222-10.069,0-13.75c-0.121-2-0.653-5.384-1.612-7.852   c-2.756-7.096-16.3-15.598-16.3-15.598l-54.213-39.3c0,0-2.875-38.25-7.125-51.375S200.38,81.417,200.38,81.417V61"/>
+            </g>
+            <!--/.飞机-->
+        </defs>
+    </svg>
+    <div class="top-summary">
+        <h3>联网机构共 <strong class="ctdFac"></strong> 家，覆盖全国 <strong class="ctdPro"></strong> 个省份 <strong class="ctdCity"></strong> 城市</h3>
+        <h3>血液调剂累计 <strong class="ctdRecord"></strong> 次，调剂公里数 <strong class="ctdKilo"></strong> 公里</h3>
+    </div>
+    <div class="bottom-left-panel">
+        <div class="panel-wrapper message">
+            <div class="panel-header">
+                <span class="title"><img src="assets/images/country/title1.png"> 实时动态 <img src="assets/images/country/title-line.png"></span>
+            </div>
+            <div class="panel-body">
+                <ul id="news" style="width: 100%;">
+                    <!--<li><span class="color-direct">[定向]</span> 镇江丹阳向常州市发起调剂申请  <span class="text-right">11:58</span></li>-->
+                    <!--<li><span class="color-active">[主动]</span> 苏州市发布调剂信息  <span class="text-right">11:50</span></li>-->
+                    <!--<li><span class="color-direct">[定向]</span> 泰州市向南通发起调剂申请  <span class="text-right">11:20</span></li>-->
+                    <!--<li><span class="color-direct">[定向]</span> 常州市向苏州发起调剂申请  <span class="text-right">11:20</span></li>-->
+                    <!--<li><span class="color-active">[主动]</span> 无锡市发布调剂信息  <span class="text-right">10:05</span></li>-->
+                    <!--<li><span class="color-direct">[定向]</span> 南京市向丹阳发起调剂申请  <span class="text-right">11:20</span></li>-->
+                </ul>
+            </div>
+        </div>
+        <div class="panel-wrapper statistic">
+            <div class="panel-header">
+                <span class="title"><img src="assets/images/country/title2.png"> 分类统计 <img src="assets/images/country/title-line.png"></span>
+            </div>
+            <div class="panel-body">
+                <div class="pie-area">
+                    <div class="pie-chart pie-chart-1" id="pie-chart-1"></div>
+                    <div class="pie-chart pie-chart-3" id="pie-chart-3"></div>
+                    <div class="pie-chart pie-chart-4" id="pie-chart-4"></div>
+                </div>
+                <div class="legend-area">
+                    <div class="pie-legend pie-legend-1">省内 <span class="color-pie1">跨省</span></div>
+                    <div class="pie-legend pie-legend-3">需求方 <span class="color-pie3">供应方</span></div>
+                    <div class="pie-legend pie-legend-4">常规 <span class="color-pie4">紧急</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bottom-right-panel">
+        <div class="panel-wrapper trend">
+            <div class="panel-header">
+                <span class="title"><img src="assets/images/country/title3.png"> 全网调剂趋势 <img src="assets/images/country/title-line.png"></span>
+            </div>
+            <div class="panel-body">
+                <div class="line-area">
+                    <div class="line-chart" id="line-chart-1"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--<div class="option">-->
+    <!--<select name="" id="changeView">-->
+    <!--<option value="province">当前省份</option>-->
+    <!--<option value="neibourhood">临近省份</option>-->
+    <!--<option value="country">全国</option>-->
+    <!--</select>-->
+    <!--<select name="" id="changeProvince">-->
+    <!--<option value="">&#45;&#45;请选择&#45;&#45;</option>-->
+    <!--<option value="32">江苏</option>-->
+    <!--<option value="14">山西</option>-->
+    <!--<option value="33">浙江</option>-->
+    <!--</select>-->
+    <!--<a href="./zoomtransition.html">zoomtransition</a>-->
+    <!--</div>-->
+</div>
+<script src="assets/js/d3.js"></script>
+<script src="assets/js/topojson.js"></script>
+<script src="assets/js/d3-sankey/d3-sankey.js"></script>
+<script type="text/javascript" src="assets/js/moment/moment.min.js"></script>
+<script type="text/javascript" src="assets/js/moment/locale/zh-cn.js"></script>
+<!-- <script type="text/javascript" src="assets/js/vendor.bundle.min.js"></script> -->
+<script type="text/javascript" src="assets/js/snap.svg.js"></script>
+<script type="text/javascript" src="assets/js/util.js"></script>
+<script type="text/javascript" src="dis-blood.js"></script>
+</body>
+</html>

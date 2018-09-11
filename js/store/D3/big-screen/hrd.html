@@ -1,0 +1,101 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta id="viewport" name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=1">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta name="description" content="城市献血者分布与屏蔽监控">
+    <meta name="author" content="广东穿越医疗科技">
+    <title>城市献血者分布与屏蔽监控</title>
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="assets/css/map.min.css?20180615" rel="stylesheet">
+    <script type="text/javascript" src="assets/js/mobile-adapter.min.js"></script>
+</head>
+<body class="body_banlist">
+<script>loadedEffect.show();</script>
+<div class="container-fluid map_example">
+    <!--left-->
+    <div id="mapleft">
+        <div class="charts-wrap">
+            <div class="page-title">献血者分布与屏蔽监控</div>
+            <div id="map1" class="map"></div>
+            <div class="caption">
+                <div class="lengend"><img src="assets/images/banlist/lengend.png"/></div>
+                <div class="scroll-outWrap" id="statisticsTemplateDiv">
+                    <script type="text/template" id="statisticsTemplate">
+                        <ul class="marquee-content-items">
+                            <marquee direction="up" scrolldelay="200" height="100%">
+                                <li><span class="icon_action">截止当前<%=endTime%>止</span>48小时内</li>
+                                <li> 献血者累计<%=data.donors%>人次；屏蔽<%=data.shield%>人次；</li>
+                            </marquee>
+                        </ul>
+                    </script>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!--right-->
+    <div id="maplog">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <b>实时监控记录</b><span id="recordCount" class="badge badge-purple"></span>
+            </div>
+            <div class="panel-body">
+                <div class="log-scroll" id="logWarp">
+                </div>
+                <script type="text/template" id="logTemplate">
+                    <%if(datas.length>0){%>
+                    <ul class="log_list">
+                        <%for(var i=0;i<datas.length ;i++){ var d=datas[i];%>
+                        <li class="news-item">
+                            <p class="log-title">
+                                <span><%=d.cityName%>-<%=d.eventType%></span>
+                                <span class="text-<%=d.label%>"><%if(d.label=='warning'){%>警告<%}else if(d.label=='success' || d.label=='regular'){%><%}else{%>异常<%}%></span>
+                                <span><%=d.cutTime%></span>
+                            </p>
+
+                            <div class="log-info"><%=d.desc%></div>
+                        </li>
+                        <%}%>
+                    </ul>
+                    <%}else{%>
+                    <p class="no-logData">暂无更新</p>
+                    <%}%>
+                </script>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="footer hidden">
+    <div class="item"><span><i class="glyphicon glyphicon-arrow-left"></i>本地报销与异地报销监控</span></div>
+    <div class="item item_selected"><span>献血者分布与屏蔽监控</span></div>
+    <div class="item"><span>血液库存与调剂监控<i class="glyphicon glyphicon-arrow-right"></i></span></div>
+</div>
+<script>
+    loadedEffect.load(10);
+</script>
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/touch.min.js"></script>
+<script src="assets/js/marquee.js"></script>
+<script src="assets/js/util.js?20180615"></script>
+<script>
+    loadedEffect.load(25);
+</script>
+<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="assets/js/jquery.bootstrap.newsbox.min.js"></script>
+<script>
+    loadedEffect.load(35);
+</script>
+<script type="text/javascript" src="assets/js/echarts/echarts.min.js"></script>
+<script type="text/javascript" src="assets/js/echarts/maps/js/jiangsu.js"></script>
+<script>
+    loadedEffect.load(50);
+</script>
+<script type="text/javascript" src="assets/js/underscore-1.4.0.js"></script>
+<script type="text/javascript" src="hrd.js?20180615"></script>
+</body>
+</html>

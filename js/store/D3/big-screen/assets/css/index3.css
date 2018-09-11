@@ -1,0 +1,184 @@
+body {
+  padding: 0;
+  margin: 0; }
+
+.ss-item {
+  padding: 10px; }
+
+.ss-footer {
+  border: 2px solid #0f0; }
+
+.ss-box-top {
+  height: 160px; }
+  .ss-box-top .ss-box {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%); }
+
+.ss-color-greeen {
+  color: #61ffbe; }
+
+.ss-color-red {
+  color: #eb547c; }
+
+.ss-bd-bt {
+  position: relative; }
+
+.ss-bd-bt:after {
+  position: absolute;
+  display: table;
+  content: " ";
+  width: calc(100% - 32px);
+  height: 2px;
+  background: #27282d;
+  margin: 0 auto;
+  bottom: 0;
+  clear: both;
+  left: 0;
+  right: 0; }
+
+.ss-box-pie {
+  height: 240px;
+  margin-left: 0; }
+  .ss-box-pie .ss-item {
+    height: 240px; }
+
+.ss-box-line {
+  height: 140px; }
+
+.ss-box-map {
+  margin-top: 15px;
+  height: 380px; }
+
+.ss-box-news {
+  height: 500px; }
+  .ss-box-news .ss-panel-news {
+    margin: 0;
+    background-color: transparent; }
+  .ss-box-news .news-title {
+    margin-left: -30px; }
+
+.ss-bd-rt {
+  position: relative; }
+
+.ss-bd-rt:after {
+  position: absolute;
+  right: 0;
+  width: 2px;
+  background: #27282d;
+  content: " ";
+  display: block;
+  height: calc(100% - 30px);
+  top: 15px; }
+
+.ss-pie-title {
+  font-size: 16px;
+  line-height: 29px;
+  position: relative;
+  padding-left: 35px;
+  height: 29px; }
+
+.ss-pie-title:before {
+  content: '';
+  display: block;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  left: 0; }
+
+.ss-icon-meter:before {
+  background: url("../images/icon_graph.png") -40px 0 no-repeat; }
+
+.ss-icon-level:before {
+  background: url("../images/icon_graph.png") -115px 0 no-repeat; }
+
+.ss-icon-quantity:before {
+  background: url("../images/icon_graph.png") 0px 0 no-repeat; }
+
+.ss-icon-news:before {
+  background: url("../images/icon_graph.png") -80px 0 no-repeat; }
+
+.ss-box-lines {
+  margin-left: 0; }
+  .ss-box-lines .ss-line-title {
+    height: auto; }
+    .ss-box-lines .ss-line-title .line-title {
+      margin: 25px 0;
+      padding: 0; }
+      .ss-box-lines .ss-line-title .line-title li {
+        font-size: 16px;
+        float: left;
+        list-style: none;
+        padding: 0 5px; }
+      .ss-box-lines .ss-line-title .line-title li:nth-child(1) {
+        color: #07d0fb; }
+      .ss-box-lines .ss-line-title .line-title li:nth-child(2) {
+        color: #298af8; }
+      .ss-box-lines .ss-line-title .line-title li:nth-child(3) {
+        color: #1d51f1; }
+      .ss-box-lines .ss-line-title .line-title li:nth-child(4) {
+        color: #32d12d; }
+      .ss-box-lines .ss-line-title .line-title li:nth-child(5) {
+        color: #58fbc6; }
+      .ss-box-lines .ss-line-title .line-title li:nth-child(6) {
+        color: #7d45ff; }
+      .ss-box-lines .ss-line-title .line-title li:nth-child(7) {
+        color: #9927d4; }
+      .ss-box-lines .ss-line-title .line-title li:nth-child(8) {
+        color: #C8D6E4; }
+
+.ss-pie-item {
+  width: 100%;
+  height: calc(100% - 29px); }
+
+.ss-container-map {
+  height: 400px;
+  position: relative; }
+  .ss-container-map .title {
+    position: absolute;
+    left: 1em;
+    top: 1em;
+    font-size: 16px;
+    color: #fff; }
+
+.ss-box-left {
+  padding-left: 29px; }
+
+.ss-clear-before:before {
+  width: 0; }
+
+.log-scroll > ul {
+  padding: 0;
+  margin: 0; }
+  .log-scroll > ul li {
+    list-style: none;
+    font-size: 16px;
+    border-bottom: 2px solid #27282d;
+    margin-right: 10px;
+    padding-top: 12px;
+    padding-bottom: 12px; }
+.log-scroll .log-title {
+  padding: 0;
+  margin: 0; }
+  .log-scroll .log-title .ss-title-nromal {
+    color: #2483f7; }
+  .log-scroll .log-title .ss-title-moderate {
+    color: #ffa200; }
+  .log-scroll .log-title .ss-title-warn {
+    color: #eb547c; }
+  .log-scroll .log-title .ss-title-time {
+    font-size: 14px;
+    color: #5e6e84; }
+.log-scroll .log-info {
+  font-size: 18px;
+  color: #5e6e84; }
+  .log-scroll .log-info .ss-title-nromal {
+    color: #2483f7; }
+  .log-scroll .log-info .ss-title-moderate {
+    color: #ffa200; }
+  .log-scroll .log-info .ss-title-warn {
+    color: #eb547c; }
+
+/*# sourceMappingURL=index3.css.map */

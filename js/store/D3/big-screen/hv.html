@@ -1,0 +1,139 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta name="description" content="全省已经累计监控预警">
+    <meta name="author" content="广东穿越医疗科技">
+    <meta http-equiv="cache-control" content="no-cache">
+    <title>全省已经累计监控预警</title>
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="assets/css/map.min.css?20180615" rel="stylesheet">
+    <link href="assets/css/index3.css" rel="stylesheet">
+</head>
+<body class="body_dispatch">
+<script type="text/javascript">
+    //       /*根据不同的客户端(这里指移动端和pc端)引入样式*/
+    var includeLinkStyle = function (url) {
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = url;
+        document.getElementsByTagName('head')[0].appendChild(link);
+    };
+    var browserRedirect = function () {
+        /* 判断是pc端还是移动端  网上有很多，我只用其中一种演示*/
+        var sUserAgent = navigator.userAgent.toLowerCase();
+        var bIsIpad = sUserAgent.match(/ipad/i) == "ipad";
+        var bIsIphoneOs = sUserAgent.match(/iphone os/i) == "iphone os";
+        var bIsMidp = sUserAgent.match(/midp/i) == "midp";
+        var bIsUc7 = sUserAgent.match(/rv:1.2.3.4/i) == "rv:1.2.3.4";
+        var bIsUc = sUserAgent.match(/ucweb/i) == "ucweb";
+        var bIsAndroid = sUserAgent.match(/android/i) == "android";
+        var bIsCE = sUserAgent.match(/windows ce/i) == "windows ce";
+        var bIsWM = sUserAgent.match(/windows mobile/i) == "windows mobile";
+        /* 根据不同的客户端引入样以及加载页面 */
+        if (bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM) {
+            includeLinkStyle("assets/css/index3.mobile.css");
+        } else {
+            includeLinkStyle("assets/css/index3.pc.css");
+        }
+    };
+    browserRedirect();
+</script>
+<div class="container-fluid ss-body">
+    <div class="row">
+        <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9 ss-bd-rt">
+            <div class="row ss-box-top text-center ss-item ss-bd-bt">
+                <div class="ss-box">
+                    <h2 class="ss-title">全省已经累计监控预警事件 <span class="ss-color-greeen" id="systemRunTotal">0</span> 起</h2>
+                    <h3>近一个月共监控预警事件 <span class="ss-color-greeen" id="systemRunMonthTotal">0</span> 起，其中严重事件 <span
+                            class="ss-color-red" id="systemRunMonthTotalSER">0</span> 起</h3>
+                </div>
+            </div>
+            <div class="row ss-bd-bt ss-box-pie">
+                <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 ss-item">
+                    <div class="ss-pie-title ss-icon-meter"><span>预警指数</span></div>
+                    <div class="ss-pie-item" id="warningIndexChart1"></div>
+                </div>
+                <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 ss-item">
+                    <div class="ss-pie-title ss-clear-before"><span></span></div>
+                    <div class="ss-pie-item" id="warningIndexChart2"></div>
+                </div>
+                <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 ss-item">
+                    <div class="ss-pie-title ss-icon-level"><span>事件级别统计</span></div>
+                    <div class="ss-pie-item" id="warningLevelChart"></div>
+                </div>
+                <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 ss-item">
+                    <div class="ss-pie-title ss-icon-quantity"><span>事件类型统计</span></div>
+                    <div class="ss-pie-item" id="warningQuantityChart"></div>
+                </div>
+            </div>
+            <div class="row ss-box-lines">
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 ss-left">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ss-item ss-box-line"
+                             id="transfusionReactionChart1"></div>
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ss-item ss-box-line"
+                             id="transfusionReactionChart2"></div>
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ss-item ss-box-line"
+                             id="transfusionReactionChart3"></div>
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ss-item ss-box-line"
+                             id="transfusionReactionChart4"></div>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 ss-right">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ss-item ss-box-line ss-line-title">
+                            <ul class="line-title clearfix" id="lineTitle"></ul>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ss-item ss-box-line"
+                             id="transfusionReactionChart5"></div>
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ss-item ss-box-line"
+                             id="transfusionReactionChart6"></div>
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ss-item ss-box-line"
+                             id="transfusionReactionChart7"></div>
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ss-item ss-box-line"
+                             id="transfusionReactionChart8"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 ss-box-left">
+            <div class="row ss-bd-bt ss-container-map">
+                <div class="title"><i class="ss-icon"></i>势态分析</div>
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ss-item ss-box-map" id="mapChart"></div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ss-item ss-box-news">
+                    <div class="panel ss-panel-news">
+                        <div class="panel-heading">
+                            <div class="ss-pie-title news-title ss-icon-news"><span>信息列表</span></div>
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 log-scroll">
+                                    <ul class="ss-log-list" id="logWarp"></ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/touch.min.js"></script>
+<script src="assets/js/marquee.js"></script>
+<script src="assets/js/util.js?20180615"></script>
+<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="assets/js/jquery.bootstrap.newsbox.min.js"></script>
+<script type="text/javascript" src="assets/js/echarts-3.js"></script>
+<script type="text/javascript" src="assets/js/echarts/maps/js/jiangsu.js"></script>
+<script type="text/javascript" src="assets/js/underscore-1.4.0.js"></script>
+<script type="text/javascript" src="hv.js?20180615"></script>
+</body>
+</html>

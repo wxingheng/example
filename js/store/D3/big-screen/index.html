@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html class="pa">
+<head>
+    <meta charset="UTF-8">
+    <title>血液云平台</title>
+    <link href="assets/css/bootstrap.min.css" type="text/css" rel="stylesheet" />
+</head>
+<style>
+    html, body { margin: 0; padding: 0; border: 0; width: 1920px; height: 1080px; overflow: hidden;}
+    body { background: #1b2330; }
+</style>
+<body>
+<iframe id="indexView" width="100%" height="100%" scrolling="no" src="dis-blood.html" frameborder="0"></iframe>
+</body>
+<script src="assets/js/jquery-1.11.3.min.js"></script>
+<script>
+    var curViewIndex = 0;
+    //切换view的数组
+    var views = ["dis-blood.html", "dis.html", "reim.html", "hrd.html", "hv.html"];
+    var curView = views[curViewIndex];
+    var param = location.search;
+    var autoSlideTimer = null;
+    var sliderInterval = 15;
+
+    var keyCodeMapper = {
+        btnOK: 13,
+        btnBack: 27,
+        btnUp: 38,
+        btnDown: 40,
+        btnRight: 39,
+        btnLeft: 37,
+        btnInfo: 32
+    };
+
+    //切换下一视图
+    var nextView = function () {
+        if(curViewIndex >= views.length-1){
+            curViewIndex = 0;
+        }else{
+            curViewIndex ++;
+        }
+        curView = views[curViewIndex];
+        document.getElementById("indexView").src = curView+param;
+    };
+
+    //切换上一视图
+    var preView = function () {
+        if(curViewIndex === 0){
+            curViewIndex = views.length-1;
+        }else{
+            curViewIndex--;
+        }
+        curView = views[curViewIndex];
+        document.getElementById("indexView").src = curView+param;
+    };
+
+    $(function() {
+        document.getElementById("indexView").src = curView+param;
+    });
+
+    $(document).keydown(function(event){
+        event = event || window.event;
+        event.preventDefault();
+        if(event.keyCode === keyCodeMapper.btnOK){
+            //暂停和开始轮播
+            if (autoSlideTimer !== null) {
+                clearInterval(autoSlideTimer);
+                autoSlideTimer = null;
+            } else {
+                autoSlideTimer = setInterval(function () {
+                    nextView();
+                }, sliderInterval * 1000);
+            }
+            var evtOk = document.createEvent('Event');
+            evtOk.initEvent('btnOk',true,true);
+            document.getElementById("indexView").contentWindow.dispatchEvent(evtOk);
+        }
+        else if(event.keyCode === keyCodeMapper.btnBack){
+            // 刷新页面
+            window.location.reload();
+        } else if(event.keyCode === keyCodeMapper.btnUp){
+            // 事件传递
+            var evtUp = document.createEvent('Event');
+            evtUp.initEvent('btnUp', true, true);
+            document.getElementById("indexView").contentWindow.dispatchEvent(evtUp);
+        }else if(event.keyCode === keyCodeMapper.btnDown){
+            // 事件传递
+            var evtDown = document.createEvent('Event');
+            evtDown.initEvent('btnDown', true, true);
+            document.getElementById("indexView").contentWindow.dispatchEvent(evtDown);
+        }else if(event.keyCode === keyCodeMapper.btnRight){
+            // 下一屏
+            nextView();
+        }else if(event.keyCode === keyCodeMapper.btnLeft){
+            // 上一屏
+            preView();
+        }else if(event.keyCode === keyCodeMapper.btnInfo){
+            // nothing
+        }
+    });
+</script>
+</html>
