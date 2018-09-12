@@ -21,3 +21,9 @@ localhost:127.0.0.1:8089/d3-geo
 ![line-start][line-start]
 
 [line-start]: ./screen/line-start.png 
+
+### d3-bar.html
+
+![line-start][d3-bar]
+
+[d3-bar]: ./screen/d3-bar.gif 

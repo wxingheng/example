@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <style>
+        .axis path,
+        .axis line {
+            fill: none;
+            stroke: black;
+            shape-rendering: crispEdges;
+        }
+
+        .axis text {
+            font-family: sans-serif;
+            font-size: 11px;
+        }
+
+        .main {
+            border: 2px solid #0f0;
+        }
+    </style>
+</head>
+
+<body>
+    <p>
+        <button class="update">Update</button>
+        <button class="add">Add</button>
+        <button class="remove">Remove</button>
+    </p>
+    <script>
+        // 添加SVG画布
+        var dataset = [50, 43, 120, 87, 99, 167, 142];
+        var width = 600; // SVG的宽度
+        var height = 400; // SVG的长度
+        var svg = d3.select("body")
+            .append('svg') // body中添加SVG
+            .attr('class', 'main')
+            .attr('width', width)
+            .attr('height', height);
+        var padding = {
+            top: 20,
+            right: 20,
+            bottom: 20,
+            left: 30
+        };
+
+        // 定义数据与比例尺
+        var xAxisWidth = width - padding.left - padding.right; //x轴宽度
+        var yAxisWidth = height - padding.top - padding.bottom; //y轴宽度
+        var xScale = d3.scale.ordinal() //x轴比例尺（序数比例尺）
+            .domain(d3.range(dataset.length))
+            .rangeRoundBands([0, xAxisWidth], 0.2);
+        var yScale = d3.scale.linear() //y轴比例尺（线性比例尺）
+            .domain([0, d3.max(dataset)])
+            .range([0, yAxisWidth]);
+
+        // 添加矩形和文字元素
+        var rect = svg.selectAll("rect")
+            .data(dataset)
+            .enter() //获取enter部分
+            .append("rect") //添加rect元素，使其与绑定数组的长度一致
+            .attr("fill", randomColor())
+            .attr("x", function (d, i) { //设置X坐标
+                // return padding.left + i * rectStep;
+                return padding.left + xScale(i);
+
+            })
+            .attr("y", function (d, i) { //设置Y坐标
+                // return height - padding.bottom - d;
+                return height - padding.bottom - yScale(d);
+            })
+            .attr("width", xScale.rangeBand()) //设置矩形宽度
+            .attr("height", function (d) {
+                return yScale(d);
+            })
+        var text = svg.selectAll(text)
+            .data(dataset)
+            .enter()
+            .append("text")
+            .attr("fill", "#0f0")
+            .attr("font-size", "14px")
+            .attr("text-anchor", "middle")
+            .attr('class', 'bar-label')
+            .attr("x", function (d, i) { //与矩形的X坐标一样
+                return padding.left + xScale(i);
+            })
+            .attr("y", function (d) {
+                return height - padding.bottom - yScale(d);
+            })
+            .attr('dx', xScale.rangeBand() / 2) //x轴相对平移距离
+            .attr('dy', "1em") //em单位表示的是当前文字所占一行的高度
+            .text(function (d) { //要显示的文字内容
+                return d;
+            });
+
+        // 定义坐标轴
+        var xAxis = d3.svg.axis()
+            .scale(xScale)
+            .orient("bottom");
+        yScale.range([yAxisWidth, 0]);
+        var yAxis = d3.svg.axis()
+            .scale(yScale)
+            .orient("left");
+
+        // 添加坐标轴
+        svg.append("g")
+            .attr("class", "axis x")
+            .attr("transform", "translate(" + padding.left + "," + (height - padding.bottom) + ")")
+            .call(xAxis);
+
+        svg.append("g")
+            .attr("class", "axis y")
+            .attr("transform", "translate(" + padding.left + "," + (height - padding.bottom - yAxisWidth) + ")")
+            .call(yAxis);
+
+
+        // ----------------------------------数据更新-----------------------------------------
+
+
+        // 新增数据
+        d3.select('button.add').on('click', addUpdate)
+
+        function addUpdate() {
+            // 首先我们需要在数据中插入一个值，并更新一下数轴的值域。
+            dataset.push(100);
+            xScale.domain(d3.range(dataset.length)).rangeRoundBands([0, xAxisWidth], 0.2);
+            yScale.domain([0, d3.max(dataset)]).range([0, yAxisWidth]);
+
+            // 先插入一个值***
+            svg.selectAll('rect')
+                .data(dataset)
+                .enter()
+                .append("rect")
+                .attr("fill", randomColor())
+                .attr("x", xScale(dataset.length - 1)) //这行代码设定了新条形的水平位置，让它恰好位于SVG 区域的最右边。
+                .attr("y", function (d, i) { //设置Y坐标
+                    // return height - padding.bottom - d;
+                    return height - padding.bottom - yScale(d);
+                })
+                .attr("width", xScale.rangeBand()) //设置矩形宽度
+                .attr("height", function (d) {
+                    return yScale(d);
+                })
+            // 先插入一个text***
+            svg.selectAll('text.bar-label')
+                .data(dataset)
+                .enter()
+                .append("text")
+                .attr("fill", "#0f0")
+                .attr("font-size", "14px")
+                .attr('class', 'bar-label')
+                .attr("text-anchor", "middle")
+                .attr("x", function (d, i) { //与矩形的X坐标一样
+                    return padding.left + xScale(i);
+                })
+                .attr("y", function (d) {
+                    return height - padding.bottom - yScale(d);
+                })
+                .attr('dx', xScale.rangeBand() / 2) //x轴相对平移距离
+                .attr('dy', "1em") //em单位表示的是当前文字所占一行的高度
+                .text(function (d) { //要显示的文字内容
+                    return d;
+                });
+
+            // 更新数据***
+            svg.selectAll('rect')
+                .data(dataset)
+                .transition()
+                .duration(500)
+                .attr("x", function (d, i) { //设置X坐标
+                    // return padding.left + i * rectStep;
+                    return padding.left + xScale(i);
+
+                })
+                .attr("y", function (d, i) { //设置Y坐标
+                    // return height - padding.bottom - d;
+                    return height - padding.bottom - yScale(d);
+                })
+                .attr("width", xScale.rangeBand()) //设置矩形宽度
+                .attr("height", function (d) {
+                    return yScale(d);
+                })
+            // 更新text
+            svg.selectAll('text.bar-label')
+                .data(dataset)
+                .transition()
+                .duration(500)
+                .attr("fill", "#0f0")
+                .attr("font-size", "14px")
+                .attr("text-anchor", "middle")
+                .attr('class', 'bar-label')
+                .attr("x", function (d, i) { //与矩形的X坐标一样
+                    return padding.left + xScale(i);
+                })
+                .attr("y", function (d) {
+                    return height - padding.bottom - yScale(d);
+                })
+                .attr('dx', xScale.rangeBand() / 2) //x轴相对平移距离
+                .attr('dy', "1em") //em单位表示的是当前文字所占一行的高度
+                .text(function (d) { //要显示的文字内容
+                    return d;
+                });
+
+
+            // 更新X轴  Y轴
+            xAxis.scale(xScale);
+            svg.select("g.x.axis")
+                .call(xAxis);
+
+            // 更新Y轴之前需要将 yScale 比例尺反转
+            yScale.range([yAxisWidth, 0]);
+            yAxis.scale(yScale);
+            svg.select("g.y.axis")
+                .call(yAxis);
+        }
+
+
+
+
+
+
+
+        // 删除数据
+        d3.select('button.remove').on('click', removeUpdate)
+
+        function removeUpdate() {
+            // 从数据集中删除一个值
+            dataset.shift();
+            // 后取得退出元素集，然后把它们过渡到右边，最后，删除它们
+            svg.selectAll('rect').data(dataset).exit()
+                .transition()
+                .duration(500)
+                .attr('x', width)
+                .remove();
+            svg.selectAll('text.bar-label').data(dataset).exit()
+                .transition()
+                .duration(500)
+                .attr('x', width)
+                .remove();
+            // remove() 是一特殊的过渡方法，它会在过渡完成后从DOM 中永远地删除元素
+            // 更新bar以及轴线
+            xScale.domain(d3.range(dataset.length)).rangeRoundBands([0, xAxisWidth], 0.2);
+            yScale.domain([0, d3.max(dataset)]).range([0, yAxisWidth]);
+            // 更新数据***
+            svg.selectAll('rect')
+                .data(dataset).transition()
+                .duration(500)
+                .attr("x", function (d, i) { //设置X坐标
+                    // return padding.left + i * rectStep;
+                    return padding.left + xScale(i);
+
+                })
+                .attr("y", function (d, i) { //设置Y坐标
+                    // return height - padding.bottom - d;
+                    return height - padding.bottom - yScale(d);
+                })
+                .attr("width", xScale.rangeBand()) //设置矩形宽度
+                .attr("height", function (d) {
+                    return yScale(d);
+                })
+            // 更新text
+            svg.selectAll('text.bar-label')
+                .data(dataset)
+                .transition()
+                .duration(500)
+                .attr("fill", "#0f0")
+                .attr("font-size", "14px")
+                .attr("text-anchor", "middle")
+                .attr('class', 'bar-label')
+                .attr("x", function (d, i) { //与矩形的X坐标一样
+                    return padding.left + xScale(i);
+                })
+                .attr("y", function (d) {
+                    return height - padding.bottom - yScale(d);
+                })
+                .attr('dx', xScale.rangeBand() / 2) //x轴相对平移距离
+                .attr('dy', "1em") //em单位表示的是当前文字所占一行的高度
+                .text(function (d) { //要显示的文字内容
+                    return d;
+                });
+
+
+            // 更新X轴  Y轴
+            xAxis.scale(xScale);
+            svg.select("g.x.axis")
+                .call(xAxis);
+
+            // 更新Y轴之前需要将 yScale 比例尺反转
+            yScale.range([yAxisWidth, 0]);
+            yAxis.scale(yScale);
+            svg.select("g.y.axis")
+                .call(yAxis);
+        }
+
+
+
+
+
+
+
+
+
+        // 更新数据
+        d3.select('button.update').on('click', function () {
+            var data = mockData();
+            if (data.length >= dataset.length) {
+                dataset = data;
+                addUpdate();
+            }else{
+                dataset = data;
+                removeUpdate();
+            }
+
+        })
+        // ----------------------------------数据更新-----------------------------------------
+
+
+
+
+        // 随机数据
+        function mockData() {
+            var count = Math.floor(Math.random() * 10) + 5;
+            var data = [];
+            for (var i = 0; i < count; i++) {
+                data.push(Math.floor(Math.random() * 100) + 5)
+            }
+            return data
+        }
+        // 随机颜色
+        function randomColor(){
+            return '#'+Math.floor(Math.random()*0xffffff).toString(16);
+        }
+    </script>
+</body>
+
+</html>
