@@ -11,5 +11,5 @@ if ('serviceWorker' in navigator) {
 }
 
 window.onload = function() {
-    document.body.append('PWA!111')
+    document.body.append('PWA!222')
 }
