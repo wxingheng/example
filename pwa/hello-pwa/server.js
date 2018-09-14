@@ -7,4 +7,4 @@ const staticPath = './';
 
 app.use(Static(path.resolve(__dirname, staticPath)));
 
-app.listen(8080);
+app.listen(8089);

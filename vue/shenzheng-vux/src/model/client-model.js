@@ -8,12 +8,14 @@ const createError = (code, msg) => {
 
 const request = axios.create({
   // baseURL: 'https://sbc.stpass.com/synergy-api/'
-  baseURL: 'https://sbc.stpass.com/api/'
+  // baseURL: 'https://sbc.stpass.com/api/'
+  baseURL: `${location.origin}/api/`
 
 })
 
 const requestBao = axios.create({
-  baseURL: 'https://sbc.stpass.com/bao/'
+  // baseURL: 'https://sbc.stpass.com/bao/'
+  baseURL: `${location.origin}/bao/`
 })
 
 const handleRequest = (request) => {

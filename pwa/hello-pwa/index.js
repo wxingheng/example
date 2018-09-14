@@ -3,6 +3,10 @@
 if ('serviceWorker' in navigator) {
     // 当你register一个文件之后，install会被调用
     navigator.serviceWorker.register('/sw.js').then(reg => {
+        setInterval(function() {
+            console.log('setInterval');
+            reg.update();
+        }, 4000);
         console.log('service worker registed!');
     })
     .catch(err => {
@@ -11,5 +15,5 @@ if ('serviceWorker' in navigator) {
 }
 
 window.onload = function() {
-    document.body.append('PWA!222')
+    document.body.append('PWA!333')
 }

@@ -13,7 +13,7 @@
             <uploader-item v-for="(image, i) in images" :render-src="image.src" :key="image.id" @click.native="preview(image, i)"></uploader-item>
           </ul>
           <div v-show="!readonly && images.length < max" class="weui-uploader__input-box" @click="add">
-            <input v-if="!handleClick" ref="file" class="weui-uploader__input"  multiple="multiple" type="file" accept="image/*" :capture="showCapture" @change="change">
+            <input v-if="!handleClick" ref="file" class="weui-uploader__input"  type="file" accept="image/*" :capture="showCapture" @change="change">
           </div>
         </div>
         <div >

@@ -1,0 +1,1788 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var arr = [{
+                title: "【初音未来】【0912】【主干开发版本】【功能&专项】【其他】弹窗出现在非主界面",
+                severity: 3,
+                frequency: "可重现",
+                isReproduced: true,
+                status: "new",
+                module: "其他",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【0912】【9月26不删档版本】【协力】【先游】协力好友邀请bug，打歌时出现卡界面且界面上的歌姬会随着当时歌曲跳舞或者唱歌摇摆",
+                severity: 3,
+                frequency: "随机重现",
+                isReproduced: false,
+                status: "new",
+                module: "协力模式",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【0911】【9月26不删档版本】【活动】幸运摇摇乐完成了一个条件，但是奖励没领取。活动结束后邮件中把三个奖励都发了",
+                severity: 4,
+                frequency: "可重现",
+                isReproduced: true,
+                status: "resolved",
+                module: "活动",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【0911】【9月26不删档版本】【功能】【嘉年华挑战】满活力通关难度，RATE率至少98.5%的任务目标，一直完成不了",
+                severity: 4,
+                frequency: "可重现",
+                isReproduced: true,
+                status: "verified",
+                module: "活动",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【0911】【9月26不删档版本】【功能】【嘉年华挑战】点击左侧歌曲可以把右侧的任务顺序打乱",
+                severity: 3,
+                frequency: "可重现",
+                isReproduced: true,
+                status: "resolved",
+                module: "活动",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【0911】【9月26不删档版本】【功能】【活动】嘉年华新歌挑战，考核任务字数太长，完成任务时会出现文字遮挡",
+                severity: 2,
+                frequency: "可重现",
+                isReproduced: true,
+                status: "resolved",
+                module: "活动",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【0911】【9月26不删档版本】【活动】24集结演艺特训过点时还在打歌，完成后回到活动界面，点击我的应援，卡死（偶现）",
+                severity: 3,
+                frequency: "随机重现",
+                isReproduced: false,
+                status: "resolved",
+                module: "活动",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【0911】【9月26不删档版本】【功能】【活动】集结号限时扭蛋，UP歌姬为巡音流歌，文字位置不对",
+                severity: 2,
+                frequency: "可重现",
+                isReproduced: true,
+                status: "resolved",
+                module: "活动",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【0911】【9月26不删档版本】【功能】【登录】QQ登录游戏，点击切换账号，选择微信登录时，发生闪退",
+                severity: 3,
+                frequency: "不可重现",
+                isReproduced: false,
+                status: "resolved",
+                module: "登录",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【0911】【9月26不删档版本】【功能】【活动】【应援打歌】应援大礼包有概率无法领取",
+                severity: 4,
+                frequency: "可重现",
+                isReproduced: true,
+                status: "resolved",
+                module: "活动",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【0911】【9月26不删档版本】【功能】【活动】【演艺特训】“怀念你”这一组的歌曲，任务描述与实际完成的条件不符",
+                severity: 3,
+                frequency: "可重现",
+                isReproduced: true,
+                status: "verified",
+                module: "活动",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【0911】【9月26不删档版本】【功能】【应援打歌】目标是满活力通关的歌曲，满活力通关时显示未达成",
+                severity: 4,
+                frequency: "可重现",
+                isReproduced: true,
+                status: "resolved",
+                module: "活动",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【0911】【9月26不删档版本】【功能】【应援打歌】特训或者应援界面，点击右上角问好，再点返回，提示框依旧存在",
+                severity: 2,
+                frequency: "可重现",
+                isReproduced: true,
+                status: "verified",
+                module: "活动",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【0911】【9月26不删档版本】【功能】【应援打歌】求援界面，角色名太长被遮挡",
+                severity: 1,
+                frequency: "可重现",
+                isReproduced: true,
+                status: "verified",
+                module: "活动",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【0910】【9月26不删档版本】【功能】【演艺特训】演艺特训活动，当歌姬的形象设置不是公式服，切换歌姬，不能开局",
+                severity: 4,
+                frequency: "可重现",
+                isReproduced: true,
+                status: "verified",
+                module: "活动",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【0910】【9月26不删档版本】【功能】【应援打歌】应援打歌准备演出界面没有选择多倍奖励按钮",
+                severity: 1,
+                frequency: "可重现",
+                isReproduced: true,
+                status: "verified",
+                module: "活动",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【0910】【9月26不删档版本】【功能】【应援打歌】应援打歌多倍热情结算奖励错误",
+                severity: 4,
+                frequency: "可重现",
+                isReproduced: true,
+                status: "verified",
+                module: "活动",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【0910】【9月26不删档版本】【功能】【应援打歌】好友应援打歌多倍热情扣除不对应（显示扣10点，实际只扣5点）",
+                severity: 4,
+                frequency: "可重现",
+                isReproduced: true,
+                status: "verified",
+                module: "活动",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【0910】【9月26不删档版本】【功能】【学园祭】学园祭活动协力打歌完后，结算界面显示异常，人物等级也显示异常",
+                severity: 3,
+                frequency: "随机重现",
+                isReproduced: false,
+                status: "resolved",
+                module: "协力模式",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【0910】【9月26不删档版本】【功能】【学园祭】学园祭活动剧情全部解锁后，没有获得初音的“轻音部主唱”卡片",
+                severity: 4,
+                frequency: "可重现",
+                isReproduced: true,
+                status: "verified",
+                module: "活动",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【0910】【9月26不删档版本】【功能】【扭蛋】扭蛋获得校园祭活动头像时，提示错误",
+                severity: 3,
+                frequency: "可重现",
+                isReproduced: true,
+                status: "in_progress",
+                module: "扭蛋",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【0910】【9月26不删档版本】【功能】【秋日校园祭】将校园祭活动界面带到主界面",
+                severity: 3,
+                frequency: "可重现",
+                isReproduced: true,
+                status: "resolved",
+                module: "活动",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【0909】【9月26不删档版本】【功能】【背包】使用旋律结晶跳转，只到主界面且资源栏消失",
+                severity: 3,
+                frequency: "可重现",
+                isReproduced: true,
+                status: "resolved",
+                module: "背包",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【0909】【9月26不删档版本】【功能】【跳转界面】多个界面跳转，返回主界面出现异常，详情看视频",
+                severity: 4,
+                frequency: "可重现",
+                isReproduced: true,
+                status: "resolved",
+                module: "其他",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【0909】【9月26不删档版本】【显示】点击左上角个人信息界面，初音初次模型加载渲染问题",
+                severity: 3,
+                frequency: "可重现",
+                isReproduced: true,
+                status: "resolved",
+                module: "其他",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【0909】【9月26不删档版本】【功能】【个人演唱会】演唱会门票的来源跳转会把演唱会界面拉到任务和其他界面去",
+                severity: 4,
+                frequency: "可重现",
+                isReproduced: true,
+                status: "resolved",
+                module: "个人演唱会",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【0907】【9月26不删档版本】【平台能力】异账号登录，手q帐号显示微信图标",
+                severity: 3,
+                frequency: "可重现",
+                isReproduced: true,
+                status: "resolved",
+                module: "平台能力",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【0907】【9月26不删档版本】【平台能力】异账号登录，微信图标消失",
+                severity: 3,
+                frequency: "可重现",
+                isReproduced: true,
+                status: "resolved",
+                module: "平台能力",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【0907】【9月26不删档版本】【平台能力】异账号登录会出现手Q和微信的数据交换的问题：微信登录，显示QQ号的数据",
+                severity: 5,
+                frequency: "可重现",
+                isReproduced: true,
+                status: "resolved",
+                module: "平台能力",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【0902】【主干版本】嘉年华挑战歌曲“”白如雪“”异常（挑战新歌中的歌曲有EX难度的都会有问题）",
+                severity: 4,
+                frequency: "可重现",
+                isReproduced: true,
+                status: "resolved",
+                module: "活动",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【0906】【主干开发版本】【功能&专项】【好友】好友界面红点提示问题",
+                severity: 3,
+                frequency: "可重现",
+                isReproduced: true,
+                status: "new",
+                module: "好友",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【0903】【9月26不删档版本】【功能】【应援活动】可领取礼包没有动效，可领取状态不明显",
+                severity: 3,
+                frequency: "可重现",
+                isReproduced: true,
+                status: "resolved",
+                module: "其他",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【0913】【9月26不删档版本】【演唱会】演唱会前往按钮，歌姬UI消失",
+                severity: 3,
+                frequency: "可重现",
+                isReproduced: true,
+                status: "new",
+                module: "个人演唱会",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【0913】【9月26不删档版本】【功能】【形象卡】卡片分解，选中当前歌姬的卡片，返回到主界面，再次进入卡片分解，选中依然存在",
+                severity: 2,
+                frequency: "可重现",
+                isReproduced: true,
+                status: "new",
+                module: "形象卡",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【0913】【9月26不删档版本】【功能】【主界面】登录之后的弹窗，层级不对",
+                severity: 3,
+                frequency: "可重现",
+                isReproduced: true,
+                status: "new",
+                module: "主界面",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【0911】【9月26不删档版本】【显示】调时间自然过24点，集结号限时扭蛋错误，点击提示：已过截止日期。重登之后正常（偶现）",
+                severity: 3,
+                frequency: "随机重现",
+                isReproduced: false,
+                status: "new",
+                module: "活动",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【0911】【9月26不删档版本】【功能】【应援打歌】应援打歌（3D打歌） ，千年独奏歌和抹消归零无麦克风",
+                severity: 2,
+                frequency: "可重现",
+                isReproduced: true,
+                status: "resolved",
+                module: "活动",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【0911】【9月26不删档版本】【功能】【应援打歌】每次应援结束或者挑战完返回该活动主界面，总是出现主界面的看板娘气泡",
+                severity: 3,
+                frequency: "可重现",
+                isReproduced: true,
+                status: "resolved",
+                module: "活动",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【0910】【9月26不删档版本】【功能】【演艺特训】登录游戏，出现提示点击去参与，参加一个活动后，回到主界面，主界面显示错误",
+                severity: 3,
+                frequency: "可重现",
+                isReproduced: true,
+                status: "new",
+                module: "活动",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【0910】【9月26不删档版本】【显示】礼包奖励内容显示，多出一个奖励（必现）",
+                severity: 2,
+                frequency: "可重现",
+                isReproduced: true,
+                status: "resolved",
+                module: "活动",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【0910】【9月26不删档版本】【显示】秋日学园祭扭蛋开启后，又开启了集结特训扭蛋，但是没有看到集结特训扭蛋的页签（必现）",
+                severity: 3,
+                frequency: "随机重现",
+                isReproduced: false,
+                status: "in_progress",
+                module: "活动",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【0910】【9月26不删档版本】【功能】【秋日校园祭】打歌消耗15热情，是6倍；协力结算界面，显示消耗15热情，积分乘15",
+                severity: 3,
+                frequency: "可重现",
+                isReproduced: true,
+                status: "resolved",
+                module: "活动",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【0910】【9月26不删档版本】【活动】秋日学园祭，观看剧情动画卡主",
+                severity: 4,
+                frequency: "随机重现",
+                isReproduced: false,
+                status: "in_progress",
+                module: "活动",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【0910】【9月26不删档版本】【功能】【扭蛋】扭蛋的链接，没有做适配",
+                severity: 2,
+                frequency: "可重现",
+                isReproduced: true,
+                status: "new",
+                module: "扭蛋",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【0910】【9月26不删档版本】【功能】【扭蛋】限时扭蛋，“限时”后面缺少内容",
+                severity: 4,
+                frequency: "可重现",
+                isReproduced: true,
+                status: "verified",
+                module: "扭蛋",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【0910】【9月26不删档版本】【功能】【扭蛋】旋律扭蛋，时间显示不全",
+                severity: 2,
+                frequency: "可重现",
+                isReproduced: true,
+                status: "verified",
+                module: "扭蛋",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【0909】【9月26不删档版本】【功能】【世界巡演】支线任务换装，点击搭配提示，再点击其他地方关不了该界面",
+                severity: 1,
+                frequency: "可重现",
+                isReproduced: true,
+                status: "new",
+                module: "世界巡演",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【0909】【9月26不删档版本】【功能】【福利】安卓手Q，登录后左侧“福利”消失",
+                severity: 4,
+                frequency: "可重现",
+                isReproduced: true,
+                status: "resolved",
+                module: "福利",
+                phone: 1
+            },
+            {
+                title: "【初音未来】【0909】【9月26不删档版本】【功能】【任务】今日首次从手机桌面登录游戏，任务里面的“游戏中心登录”完成。并且打歌有“游戏启动",
+                severity: 4,
+                frequency: "可重现",
+                isReproduced: true,
+                status: "resolved",
+                module: "任务",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【0909】【9月26不删档版本】【功能】【协力模式】角色名八字，只有在结算时角色名才会被遮挡",
+                severity: 3,
+                frequency: "可重现",
+                isReproduced: true,
+                status: "new",
+                module: "协力模式",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【0909】【9月26不删档版本】【功能】【形象卡】睡衣系列的服饰类型都被白色长框覆盖，无显示文字",
+                severity: 3,
+                frequency: "可重现",
+                isReproduced: true,
+                status: "resolved",
+                module: "形象卡",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【0909】【主干开发版本】【功能&专项】【剧情】旅游剧情 购物商圈 人物显示为连",
+                severity: 3,
+                frequency: "可重现",
+                isReproduced: true,
+                status: "new",
+                module: "其他",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【0908】【9月26不删档版本】【平台能力】【微信】召回好友可发送多次，发送次数太多有点骚扰别人的意味（建议）",
+                severity: 1,
+                frequency: "可重现",
+                isReproduced: true,
+                status: "resolved",
+                module: "平台能力",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【0908】【9月26不删档版本】【功能】【好友】好友召回功能，A召回B，B上线后，A还是有召回按钮，但是点击没反应，建议增加提示语",
+                severity: 1,
+                frequency: "可重现",
+                isReproduced: true,
+                status: "resolved",
+                module: "好友",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【0907】【9月26不删档版本】【平台能力】异平台登录会出现手Q和微信的数据交换的问题：QQ登录游戏，显示微信游戏中心启动特权",
+                severity: 5,
+                frequency: "可重现",
+                isReproduced: true,
+                status: "resolved",
+                module: "平台能力",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【0908】【9月26不删档】【功能&专项】【版本模块】刚登录游戏时点击人物，会出现多个谈话窗",
+                severity: 3,
+                frequency: "可重现",
+                isReproduced: true,
+                status: "verified",
+                module: "其他",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【0908】【9月26不删档版本】【功能】【主界面】从互动界面返回主界面时，气泡位置不对，且不消失（偶现）",
+                severity: 2,
+                frequency: "随机重现",
+                isReproduced: false,
+                status: "in_progress",
+                module: "主界面",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【0907】【9月26不删档版本】【平台能力】【iOS】超级会员点击特权，特权页面内容显示为空",
+                severity: 3,
+                frequency: "可重现",
+                isReproduced: true,
+                status: "new",
+                module: "平台能力",
+                phone: 2
+            },
+            {
+                title: "【初音未来】【0906】【9月26不删档版本】【功能】【AR】在靠近立体障碍物的时候，AR功能，歌姬闪一下就没了",
+                severity: 3,
+                frequency: "可重现",
+                isReproduced: true,
+                status: "new",
+                module: "AR",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【0906】【9月26不删档版本】【功能】【AR】iPhone X 11.2.1 掉线然后重登录 点了AR 没有扫码的步骤直接卡这了 （偶现）",
+                severity: 3,
+                frequency: "随机重现",
+                isReproduced: false,
+                status: "in_progress",
+                module: "AR",
+                phone: 2
+            },
+            {
+                title: "【初音未来】【0906】【9月26不删档版本】【功能】【登录】登录的时候有没有发现帐号授权了之后要等一会儿才能刷到服务器",
+                severity: 3,
+                frequency: "随机重现",
+                isReproduced: false,
+                status: "new",
+                module: "登录",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【0905】【9月26不删档版本】【功能】【送礼】给看板娘miku送礼时，提示错误码-6611（偶现）",
+                severity: 4,
+                frequency: "随机重现",
+                isReproduced: false,
+                status: "in_progress",
+                module: "亲密度",
+                phone: 0
+            },
+            {
+                title: "【世界巡演】 支线完成之后，在面板上没有打上星星",
+                severity: 4,
+                frequency: "可重现",
+                isReproduced: true,
+                status: "resolved",
+                module: "关卡",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【主干开发版本】【亲密度】 亲密度出游的模型出现瞬移，见视频",
+                severity: 3,
+                frequency: "可重现",
+                isReproduced: true,
+                status: "suspended",
+                module: "亲密度",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【0822】【TDR3版本】【SR安全】【其他】客户端需要处理域名劫持问题，可以接入Httpdns",
+                severity: 3,
+                frequency: "可重现",
+                isReproduced: true,
+                status: "resolved",
+                module: "其他",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【0822】【TDR3版本】【容灾】【登录】服务器满容量时，客户端提示描述文本优化",
+                severity: 3,
+                frequency: "可重现",
+                isReproduced: true,
+                status: "resolved",
+                module: "登录",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【0816】【TDR3版本】【功能】【其他】游戏启动时黑屏时间稍长",
+                severity: 1,
+                frequency: "可重现",
+                isReproduced: true,
+                status: "new",
+                module: "其他",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【0815】【TDR3版本】【功能】【协力模式】协力模式结算时，名字达到8个字会被遮挡",
+                severity: 2,
+                frequency: "可重现",
+                isReproduced: true,
+                status: "new",
+                module: "协力模式",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【0815】【TDR3版本】【功能】【协力】协力模式，名字长的歌曲，歌名建议增加滚动条",
+                severity: 1,
+                frequency: "可重现",
+                isReproduced: true,
+                status: "new",
+                module: "协力模式",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【0814】【TDR3版本】【功能】【亲密度】主界面-未来号-电梯，看板形象歌姬的疲劳有概率缺失",
+                severity: 3,
+                frequency: "随机重现",
+                isReproduced: false,
+                status: "resolved",
+                module: "亲密度",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【0813】【TDR3版本】【功能】【扭蛋】扭蛋奖品预览里，形象卡名字和长按该形象卡后展示的名字不一致",
+                severity: 3,
+                frequency: "可重现",
+                isReproduced: true,
+                status: "suspended",
+                module: "其他",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【0813】【TDR3版本】【功能】【个人演唱会】有的歌曲名后面有Live而有的歌曲名后面没有Live,建议统一",
+                severity: 1,
+                frequency: "可重现",
+                isReproduced: true,
+                status: "in_progress",
+                module: "个人演唱会",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【0813】【TDR3版本】【功能】【头像框】已拥有不同头像框时，协力邀请时还是显示默认的头像框，建议头像框可变化",
+                severity: 1,
+                frequency: "可重现",
+                isReproduced: true,
+                status: "new",
+                module: "协力模式",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【0810】【TDR3版本】【功能】【练习模式】练习模式，培养歌姬，返回，没有回到练习模式，而是回到歌姬形象、主界面",
+                severity: 3,
+                frequency: "可重现",
+                isReproduced: true,
+                status: "suspended",
+                module: "练习模式",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【0810】【TDR3版本】【功能】【歌姬系统】羁绊中全能闪耀属性提升动画只显示增加一种属性",
+                severity: 3,
+                frequency: "可重现",
+                isReproduced: true,
+                status: "in_progress",
+                module: "歌姬系统",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【0807】【TDR3版本】【功能】【歌姬系统】初音模型未加载出来",
+                severity: 3,
+                frequency: "随机重现",
+                isReproduced: false,
+                status: "new",
+                module: "歌姬系统",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【0806】【TDR3版本】【功能】【协力模式】协力的歌曲和练习的歌曲没有同步",
+                severity: 3,
+                frequency: "可重现",
+                isReproduced: true,
+                status: "in_progress",
+                module: "协力模式",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【0801】【TDR3版本】【功能】【练习模式】3D模式打歌，歌曲《lost one的号哭》没有配置麦克风",
+                severity: 3,
+                frequency: "可重现",
+                isReproduced: true,
+                status: "in_progress",
+                module: "练习模式",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【0801】【TDR3版本】【功能】【练习模式】3D打歌时，歌姬kaito拿麦克风位置不对，建议优化（建议）",
+                severity: 1,
+                frequency: "可重现",
+                isReproduced: true,
+                status: "suspended",
+                module: "练习模式",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【0801】【TDR3版本】【功能】【协力模式】创建队伍界面，形象卡背景特效为黑",
+                severity: 3,
+                frequency: "可重现",
+                isReproduced: true,
+                status: "resolved",
+                module: "协力模式",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【0727】【TDR3版本】【功能】【练习模式】3D模式打歌，歌曲《初音未来的消失》没有配置麦克风",
+                severity: 3,
+                frequency: "可重现",
+                isReproduced: true,
+                status: "in_progress",
+                module: "练习模式",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【0725】【TDR3版本】【功能】【其他】点击领取邮件跳转至登录界面",
+                severity: 3,
+                frequency: "可重现",
+                isReproduced: true,
+                status: "suspended",
+                module: "其他",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【0724】【TDR3版本】【专项】【性能】主界面跳转飞艇、持续打歌过程、演出界面加载最强阵容、扭蛋抽奖、个人信息返回主界面等场景卡",
+                severity: 4,
+                frequency: "可重现",
+                isReproduced: true,
+                status: "reopened",
+                module: "其他",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【0724】【TDR3版本】【功能】【主界面】主界面气泡有时候会出现在右边，建议优化",
+                severity: 1,
+                frequency: "随机重现",
+                isReproduced: false,
+                status: "new",
+                module: "主界面",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【0724】【TDR3版本】【功能】【练习模式】《罗密欧与辛德瑞拉》3D打歌时，打歌界面没有麦克风歌姬却一直是拿着麦克风的动作",
+                severity: 3,
+                frequency: "可重现",
+                isReproduced: true,
+                status: "in_progress",
+                module: "练习模式",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【外网测试环境】【信鸽推送】 玩家在使用qq的时候，一下子弹出十几条召回通知",
+                severity: 4,
+                frequency: "随机重现",
+                isReproduced: false,
+                status: "resolved",
+                module: "其他",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【0710】【PR2版本】【功能】【形象卡】巡音V4公式服裙装部分与大腿有严重穿模",
+                severity: 3,
+                frequency: "可重现",
+                isReproduced: true,
+                status: "in_progress",
+                module: "形象卡",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【0709】【PR2版本】【功能】【协力】协力模式难度选择，左、右按钮可以像巡演那样",
+                severity: 2,
+                frequency: "可重现",
+                isReproduced: true,
+                status: "new",
+                module: "协力模式",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【20180704】【外网测试环境】【协力模块】 协力外网反馈界面层级问题",
+                severity: 4,
+                frequency: "随机重现",
+                isReproduced: false,
+                status: "resolved",
+                module: "协力模式",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【0704】【外网反馈】【功能】【协力模式】在协力游戏里 如果有人退出游戏会在屏幕正中间提示 影响当局游戏的操作",
+                severity: 3,
+                frequency: "可重现",
+                isReproduced: true,
+                status: "new",
+                module: "协力模式",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【0704】【外网反馈】【功能】【个人演唱会】委托任务描述有误，应该是巡音流歌，原文中是镜音流歌",
+                severity: 2,
+                frequency: "可重现",
+                isReproduced: true,
+                status: "new",
+                module: "个人演唱会",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【0704】【PR2版本】【功能】【其它】切后台一会就要断线重连，建议优化【外网建议】",
+                severity: 1,
+                frequency: "可重现",
+                isReproduced: true,
+                status: "in_progress",
+                module: "其他",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【0702】【PR2版本】【功能】【个人演唱会】歌曲名太长被遮挡",
+                severity: 2,
+                frequency: "可重现",
+                isReproduced: true,
+                status: "new",
+                module: "个人演唱会",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【20180702】【外网测试环境】【协力模块】 协力的时候，单人匹配面板会出现在主界面和选歌界面",
+                severity: 4,
+                frequency: "随机重现",
+                isReproduced: false,
+                status: "verified",
+                module: "协力模式",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【0702】【PR2版本】【功能】【背包】背包相同物品没有叠放到一起",
+                severity: 2,
+                frequency: "可重现",
+                isReproduced: true,
+                status: "resolved",
+                module: "背包",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【20180628】【外网测试环境】【个人演唱会】 个人演唱会完成后没有给观众人数",
+                severity: 4,
+                frequency: "随机重现",
+                isReproduced: false,
+                status: "new",
+                module: "个人演唱会",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【0628】【PR2版本】【功能】【亲密】画图游戏的extreme难度的时候，kaito没有声音，只在给评价的时候有声音，而且动作跟时间倒数计时不",
+                severity: 3,
+                frequency: "可重现",
+                isReproduced: true,
+                status: "in_progress",
+                module: "亲密度",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【0628】【PR2版本】【功能】【世界巡演】优化世界巡演中的地球仪上国家对应的位置（外网反馈）",
+                severity: 1,
+                frequency: "可重现",
+                isReproduced: true,
+                status: "new",
+                module: "世界巡演",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【0628】【PR2版本】【功能】【主界面】主界面点击板娘大部分无声音，只有小部分有声音",
+                severity: 1,
+                frequency: "可重现",
+                isReproduced: true,
+                status: "suspended",
+                module: "主界面",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【20180628】【外网测试环境】【协力模块】 协力有时候匹配成功后进入游戏无法开始，这个单前后端都提了",
+                severity: 4,
+                frequency: "随机重现",
+                isReproduced: false,
+                status: "resolved",
+                module: "协力模式",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【0628】【PR2版本】【功能】【主界面】 重连后，主界面背景时间有概率消失",
+                severity: 3,
+                frequency: "随机重现",
+                isReproduced: false,
+                status: "resolved",
+                module: "主界面",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【0627】【PR2版本】【功能】【协力】协力消极态度惩罚时间结束后，该弹窗一直在，建议优化【建议】",
+                severity: 1,
+                frequency: "可重现",
+                isReproduced: true,
+                status: "new",
+                module: "协力模式",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【0627】【PR2版本】【功能】【协力】单人协力建议增加匹配时间【建议】",
+                severity: 1,
+                frequency: "可重现",
+                isReproduced: true,
+                status: "new",
+                module: "协力模式",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【0626】【PR2版本】【功能】【成就图鉴】图鉴中miku的模型预览的时候衣服有袖子，真正的模型又没袖子了",
+                severity: 3,
+                frequency: "可重现",
+                isReproduced: true,
+                status: "in_progress",
+                module: "成就图鉴",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【20150626】【外网测试环境】 从飞艇中进入的剧情会出现飞艇中的场景",
+                severity: 3,
+                frequency: "可重现",
+                isReproduced: true,
+                status: "new",
+                module: "飞艇",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【20180626】【外网环境】【协力模块】 协力在匹配成功后突然退出再次匹配进入之前的队伍时会出现两个一样的自己",
+                severity: 4,
+                frequency: "随机重现",
+                isReproduced: false,
+                status: "resolved",
+                module: "协力模式",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【0625】【PR2版本】【功能】【设置】判定设置时，右下角出现打转的方块",
+                severity: 2,
+                frequency: "可重现",
+                isReproduced: true,
+                status: "new",
+                module: "其他",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【0622】【PR2版本】【功能】【登录】OPPO A77使用微信新号登录的时候，从微信界面跳转回来的时候会有短暂画面残缺",
+                severity: 3,
+                frequency: "随机重现",
+                isReproduced: false,
+                status: "in_progress",
+                module: "登录",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【20180622】【外网测试环境】【协力模块】 协力打歌过程中，突然出现了选歌界面",
+                severity: 4,
+                frequency: "随机重现",
+                isReproduced: false,
+                status: "resolved",
+                module: "协力模式",
+                phone: 0
+            },
+            {
+                title: "【亲密度模块】 随机重现 -- 亲密度提交道具的任务在打招呼之后出现，提交道具就界面不响应返回的操作（不能热更）",
+                severity: 4,
+                frequency: "随机重现",
+                isReproduced: false,
+                status: "resolved",
+                module: "关卡",
+                phone: 0
+            },
+            {
+                title: "【基础模块】 bugly上的崩溃修复",
+                severity: 5,
+                frequency: "不可重现",
+                isReproduced: false,
+                status: "resolved",
+                module: "其他",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【20180621】【外网测试环境】【主界面模块】 主界面天空盒子的背景图显示不正确",
+                severity: 3,
+                frequency: "随机重现",
+                isReproduced: false,
+                status: "resolved",
+                module: "其他",
+                phone: 0
+            },
+            {
+                title: "【歌姬系统】【0621】【PR2外网包】【训练模块】训练歌姬，选择好教材并点击开始训练以后，再次点击按钮，会提示教材不足",
+                severity: 3,
+                frequency: "可重现",
+                isReproduced: true,
+                status: "suspended",
+                module: "歌姬系统",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【0620】【6月19日PR2版本】【功能】【其他】（华为mate9Pro）点开一个内容（内容不限定）后画面卡住",
+                severity: 2,
+                frequency: "随机重现",
+                isReproduced: false,
+                status: "new",
+                module: "关卡",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【20480619】【外网测试环境】【登录模块】 一打开游戏就是白屏 听得到Tencentgame的声音 然后就一直白屏",
+                severity: 4,
+                frequency: "可重现",
+                isReproduced: true,
+                status: "resolved",
+                module: "登录",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【0618】【PR2版本】【功能】【主界面】新账号登陆游戏一直打到世界巡演第一关，都没创角色起名的引导，退出游戏重登后才有",
+                severity: 3,
+                frequency: "可重现",
+                isReproduced: true,
+                status: "resolved",
+                module: "其他",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【0611】【PR2版本】【功能】【充值系统】充值的时候（1元额度）第一次充值提示充值失败，然后第二次充值成功（到账10钻石+赠送98钻石",
+                severity: 4,
+                frequency: "可重现",
+                isReproduced: true,
+                status: "suspended",
+                module: "充值",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【PR2】【协力模块】 协力过程中断网掉线会被惩罚",
+                severity: 4,
+                frequency: "可重现",
+                isReproduced: true,
+                status: "suspended",
+                module: "协力模式",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【0602】【PR2版本】【功能】【福利】充值成功未到账（重启游戏也一样），累加购买钻石数没增加",
+                severity: 4,
+                frequency: "可重现",
+                isReproduced: true,
+                status: "suspended",
+                module: "充值",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【0602】【PR2版本】【功能】【活动】系统公告有页签跟公告内容还没配置正式内容",
+                severity: 2,
+                frequency: "可重现",
+                isReproduced: true,
+                status: "suspended",
+                module: "活动",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【0601】【PR2版本】【功能】【歌曲练习】MV鉴赏过程中拍照分享，点击分享到微信没有跳转",
+                severity: 4,
+                frequency: "可重现",
+                isReproduced: true,
+                status: "suspended",
+                module: "练习模式",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【0601】【PR2版本】【功能】【歌曲练习】QQ登录MV鉴赏时拍照分享显示是分享到微信",
+                severity: 4,
+                frequency: "可重现",
+                isReproduced: true,
+                status: "suspended",
+                module: "练习模式",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【0601】【PR2版本】【功能】【个人演唱会】个人演唱会筹办后只有等到演唱会结束才能看排行榜，演唱会期间不能看排行榜，建议优化",
+                severity: 1,
+                frequency: "可重现",
+                isReproduced: true,
+                status: "suspended",
+                module: "个人演唱会",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【0601】【PR2版本】【功能】【世界巡演】在演出准备里点击卡牌形象去培养，提升卡片，点击返回是到形象卡片，不是回到演出准备的界",
+                severity: 3,
+                frequency: "可重现",
+                isReproduced: true,
+                status: "suspended",
+                module: "世界公演",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【0531】【PR2版本】【功能】【协力表演】点击下日香气进行参与活动时，会先加载到主界面，再进入到协力表演界面",
+                severity: 3,
+                frequency: "可重现",
+                isReproduced: true,
+                status: "suspended",
+                module: "协力模式",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【0531】【PR2版本】【功能】【练习模式】MV鉴赏过程中暂停拍照--点击返回后自动取消暂停",
+                severity: 1,
+                frequency: "可重现",
+                isReproduced: true,
+                status: "suspended",
+                module: "练习模式",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【0530】【PR2版本】【功能】【形象卡】形象搭配中存在许多模型穿插问题",
+                severity: 4,
+                frequency: "可重现",
+                isReproduced: true,
+                status: "suspended",
+                module: "形象卡",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【0530】【PR2版本】【功能】【亲密度】向歌姬赠送礼物后歌姬的文字气泡出现在演出场景",
+                severity: 3,
+                frequency: "可重现",
+                isReproduced: true,
+                status: "resolved",
+                module: "亲密度",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【0530】【PR2版本】【功能】【主界面】游戏大多场景加载慢，导致起初看起来像是界面异常，建议优化",
+                severity: 4,
+                frequency: "可重现",
+                isReproduced: true,
+                status: "suspended",
+                module: "其他",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【0529】【PR2版本】【功能】【亲密度】亲密度进阶任务跳转到练习界面出现UI异常（偶现）",
+                severity: 3,
+                frequency: "其他",
+                isReproduced: false,
+                status: "resolved",
+                module: "练习模式",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【0529】【PR2版本】【功能】【演出编队】在预设组合里点击歌姬形象，在长按形象卡点击去培养，跳转形象卡片界面后点返回没有回到预",
+                severity: 1,
+                frequency: "可重现",
+                isReproduced: true,
+                status: "suspended",
+                module: "歌姬系统",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【协力模块】协力过程中断网了不应该瘦到惩罚机制的限制",
+                severity: 4,
+                frequency: "可重现",
+                isReproduced: true,
+                status: "suspended",
+                module: "协力模式",
+                phone: 0
+            },
+            {
+                title: "【创角模块】 创角场景整个帧率比较低",
+                severity: 4,
+                frequency: "可重现",
+                isReproduced: true,
+                status: "resolved",
+                module: "关卡",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【内网】【功能】【时装】【偶现】优雅图标不显示",
+                severity: 2,
+                frequency: "随机重现",
+                isReproduced: false,
+                status: "resolved",
+                module: "形象卡",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【20180130】【外网测试环境】【协力】【三测版本】【偶现】协力中正常操作，组队界面出现了两个自己",
+                severity: 5,
+                frequency: "不可重现",
+                isReproduced: false,
+                status: "suspended",
+                module: "协力模式",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【20180130】【外网测试环境】【核心玩法打歌】【三测版本】【是】魅蓝net5进入游戏出现杂音，噪音，进行游戏无游戏键位",
+                severity: 5,
+                frequency: "可重现",
+                isReproduced: true,
+                status: "resolved",
+                module: "核心玩法",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【外网】【功能】【协力】【偶现】表演倒计时背景与ID号背景重叠",
+                severity: 3,
+                frequency: "其他",
+                isReproduced: false,
+                status: "resolved",
+                module: "协力模式",
+                phone: 0
+            },
+            {
+                title: " 【初音未来】【层级】设置界面点击，主界面初音位置触发初音语音动作，必现！",
+                severity: 3,
+                frequency: "可重现",
+                isReproduced: true,
+                status: "resolved",
+                module: "歌姬系统",
+                phone: 0
+            },
+            {
+                title: "【初音未来】【层级】邮件界面点击，主界面初音位置触发初音语音动作，必现！",
+                severity: 3,
+                frequency: "可重现",
+                isReproduced: true,
+                status: "resolved",
+                module: "其他",
+                phone: 0
+            },
+            {
+                title: "【测试服】【剧情世界观】1星通关中国—苏州，解锁蔬菜汁（蔬菜汁是上海站的歌曲）！",
+                severity: 3,
+                frequency: "随机重现",
+                isReproduced: false,
+                status: "resolved",
+                module: "世界巡演",
+                phone: 0
+            },
+            {
+                title: "【测试服】【设置】省电模式选完回来还是未选中（必现）",
+                severity: 3,
+                frequency: "",
+                isReproduced: true,
+                status: "resolved",
+                module: "设置",
+                phone: 0
+            },
+            {
+                title: "【测试服】【登录】miku-0.4.1.23516-TXY-IL2CPP包安装后进入登录选平台和选服界面人物与背景相融（必现）",
+                severity: 3,
+                frequency: "",
+                isReproduced: true,
+                status: "verified",
+                module: "登录",
+                phone: 0
+            },
+            {
+                title: "【测试服】【活动】前往“春日奇妙语”活动时界面屏闪（必现 ）",
+                severity: 3,
+                frequency: "",
+                isReproduced: true,
+                status: "suspended",
+                module: "活动",
+                phone: 0
+            },
+            {
+                title: "【测试服】初音声音偏尖锐，语速偏快，建议修改的柔和一点！",
+                severity: 2,
+                frequency: "",
+                isReproduced: true,
+                status: "suspended",
+                module: "歌姬系统",
+                phone: 0
+            },
+            {
+                title: "【测试服】【功能】点商城偶尔会点不到，反而点到初音裙子（偶现）",
+                severity: 3,
+                frequency: "",
+                isReproduced: true,
+                status: "resolved",
+                module: "模型",
+                phone: 0
+            },
+            {
+                title: "【测试服】【好友】添加好友时会出现好友列表中该玩家，但是消息列表中也有该玩家",
+                severity: 3,
+                frequency: "",
+                isReproduced: true,
+                status: "resolved",
+                module: "好友",
+                phone: 0
+            },
+            {
+                title: "【测试服】【登录】断线后放弃重连。返回至登录界面“touch to start”被隐藏，见图！",
+                severity: 3,
+                frequency: "",
+                isReproduced: true,
+                status: "resolved",
+                module: "其他",
+                phone: 0
+            },
+            {
+                title: "【测试服】【关卡】第一章副本界面，进行剧情副本1-5时会出现1-5关卡的图标遮挡1-2的关卡显示，建议优化 （必现）",
+                severity: 2,
+                frequency: "",
+                isReproduced: true,
+                status: "resolved",
+                module: "关卡",
+                phone: 0
+            },
+            {
+                title: "【测试服】【活动】祝福活动次数用尽以后提示“应援次数用尽”",
+                severity: 3,
+                frequency: "",
+                isReproduced: true,
+                status: "resolved",
+                module: "其他",
+                phone: 0
+            },
+            {
+                title: "【测试服】【安装】小米4无法安装游戏",
+                severity: 3,
+                frequency: "",
+                isReproduced: true,
+                status: "suspended",
+                module: "其他",
+                phone: 0
+            },
+            {
+                title: "【测试服】【问题所属模块】杀进程重登后提示“连接网络错误”（偶现）",
+                severity: 4,
+                frequency: "",
+                isReproduced: true,
+                status: "suspended",
+                module: "其他",
+                phone: 0
+            },
+            {
+                title: "【测试服】【帮助】点击“开发者说”黑屏（偶现）",
+                severity: 4,
+                frequency: "",
+                isReproduced: true,
+                status: "suspended",
+                module: "技术缺陷",
+                phone: 0
+            },
+            {
+                title: "【测试服】【个人信息】建议已解锁的头像框顺序优先显示在未解锁头像框前",
+                severity: 3,
+                frequency: "",
+                isReproduced: true,
+                status: "resolved",
+                module: "个人信息",
+                phone: 0
+            },
+            {
+                title: "【测试服】【协力】歌的图标显示不正确（必现）",
+                severity: 4,
+                frequency: "",
+                isReproduced: true,
+                status: "verified",
+                module: "协力模式",
+                phone: 0
+            },
+            {
+                title: "【测试服】【新手引导】新手引导连续点跳过指引，演奏环境点跳过，卡死界面",
+                severity: 4,
+                frequency: "",
+                isReproduced: true,
+                status: "resolved",
+                module: "新手引导",
+                phone: 0
+            },
+            {
+                title: "【测试服】【巡演】世界巡演结算金币分开，待修复",
+                severity: 3,
+                frequency: "",
+                isReproduced: true,
+                status: "resolved",
+                module: "世界公演",
+                phone: 0
+            },
+            {
+                title: "【测试服】【巡演】东京关切换不了2D3D，如果点暂退界面切换2D，出现异常",
+                severity: 4,
+                frequency: "",
+                isReproduced: true,
+                status: "suspended",
+                module: "世界公演",
+                phone: 0
+            },
+            {
+                title: "【测试服】【QQ会员】“礼包”界面不显示",
+                severity: 3,
+                frequency: "",
+                isReproduced: true,
+                status: "suspended",
+                module: "其他",
+                phone: 0
+            },
+            {
+                title: "【测试服】【功能】主界面-礼包-返回游戏，偶现闪退回手机主界面",
+                severity: 4,
+                frequency: "",
+                isReproduced: true,
+                status: "suspended",
+                module: "其他",
+                phone: 0
+            },
+            {
+                title: "【腾讯云】【首充】首充完成后自动弹出首冲奖励面板会和新手引导重叠（必现）",
+                severity: 2,
+                frequency: "",
+                isReproduced: true,
+                status: "suspended",
+                module: "充值",
+                phone: 0
+            },
+            {
+                title: "【主干】【月卡】购买月卡界面显示的当前月卡剩余天数是错误的",
+                severity: 3,
+                frequency: "",
+                isReproduced: true,
+                status: "resolved",
+                module: "芯片",
+                phone: 0
+            },
+            {
+                title: "【外服】【音效】玩家反馈，打游戏时会有杂音噪音之类的，例如note音效键，甚至还有类似魅族手机，一开游戏全噪音",
+                severity: 4,
+                frequency: "",
+                isReproduced: true,
+                status: "suspended",
+                module: "芯片",
+                phone: 0
+            },
+            {
+                title: "【外网】【世界巡演】演出准备-卡人物ui（偶现）",
+                severity: 4,
+                frequency: "",
+                isReproduced: true,
+                status: "resolved",
+                module: "世界公演",
+                phone: 0
+            },
+            {
+                title: "【测试服】【性能测试】游戏内切换不同的页面页面加载很慢，给用户卡顿感很强",
+                severity: 4,
+                frequency: "",
+                isReproduced: true,
+                status: "resolved",
+                module: "其他",
+                phone: 0
+            },
+            {
+                title: "【测试服】【性能测试】低端手机，PSS占用过高，资源没做区分导致",
+                severity: 4,
+                frequency: "",
+                isReproduced: true,
+                status: "suspended",
+                module: "其他",
+                phone: 0
+            },
+            {
+                title: "【测试服】【性能测试】低端手机，打歌场景FPS略低，仅有22帧左右",
+                severity: 4,
+                frequency: "",
+                isReproduced: true,
+                status: "resolved",
+                module: "其他",
+                phone: 0
+            },
+            {
+                title: "【外服】初音唱歌口型没有变化",
+                severity: 3,
+                frequency: "",
+                isReproduced: true,
+                status: "suspended",
+                module: "核心玩法",
+                phone: 0
+            },
+            {
+                title: "【外网】【昵称】有玩家昵称疑似叫初音未来，见截图",
+                severity: 4,
+                frequency: "",
+                isReproduced: true,
+                status: "suspended",
+                module: "个人信息",
+                phone: 0
+            },
+            {
+                title: "【穿模】蔬菜汁这首歌各种穿模，见截图",
+                severity: 3,
+                frequency: "",
+                isReproduced: true,
+                status: "suspended",
+                module: "模型",
+                phone: 0
+            },
+            {
+                title: "【处理bugly上的crush问题】见标题",
+                severity: 4,
+                frequency: "",
+                isReproduced: true,
+                status: "suspended",
+                module: "芯片",
+                phone: 0
+            },
+            {
+                title: "【兼容性】ios8.1.3模型衣服透明",
+                severity: 5,
+                frequency: "",
+                isReproduced: true,
+                status: "suspended",
+                module: "芯片",
+                phone: 2
+            },
+            {
+                title: "【单局】【模型】仍有部分较为严重的穿模和模型缺失问题",
+                severity: 5,
+                frequency: "",
+                isReproduced: true,
+                status: "suspended",
+                module: "模型",
+                phone: 0
+            },
+            {
+                title: "【服装系统】频繁切换服装部件标签时，初音模型无法做出正确对应标签反应",
+                severity: 3,
+                frequency: "",
+                isReproduced: true,
+                status: "resolved",
+                module: "形象卡",
+                phone: 0
+            },
+            {
+                title: "【技能系统】带上技能打歌，所有玩法结算时都没有技能分数加成",
+                severity: 4,
+                frequency: "",
+                isReproduced: true,
+                status: "verified",
+                module: "技能",
+                phone: 0
+            }
+        ]
+        var data = [{
+                usernum: 542034,
+                starttime: 1530774005,
+                name: '支付'
+            },
+            {
+                usernum: 342034,
+                starttime: 1230774005,
+                name: '游戏'
+            },
+            {
+                usernum: 642034,
+                starttime: 30774005,
+                name: '第一'
+            },
+            {
+                usernum: 642034,
+                starttime: 30774005,
+                name: 1
+            },
+            {
+                usernum: 642034,
+                starttime: 30774005,
+                name: 2
+            },
+            {
+                usernum: 342034,
+                starttime: 10774005,
+                name: '游戏'
+            },
+            {
+                usernum: 142034,
+                starttime: 230774005,
+                name: '欢乐'
+            }
+        ]
+
+        /**
+         * 合并表格跨行
+         * @param arr
+         * @param keys:Array<String>
+         * @returns {any}
+         */
+        var tableMapperRow = function (arr, ...keys) {
+            function arrToMapper(arr, ...keys) {
+                function mainKeys(keys, n) {
+                    var str = '';
+                    if (n === 0) {
+                        str = keys[0];
+                    } else {
+                        str = keys[0];
+                        for (var i = 1; i <= n; i++) {
+                            str += `-${keys[i]}`;
+                        }
+                    }
+                    return str;
+                }
+
+                var temp = {};
+                var num = [];
+                keys.forEach(d => {
+                    num.push(0);
+                });
+                arr.forEach(d => {
+                    var keysList = [d[keys[0]], d[keys[1]], d[keys[2]], d[keys[3]]];
+                    for (var k in d) {
+                        if (keys.indexOf(k) !== -1) {
+                            keys.forEach((e, i) => {
+                                var z = mainKeys(keysList, i);
+                                if (temp.hasOwnProperty(z)) {
+                                    temp[z] = temp[z] + 1;
+                                } else {
+                                    temp[z] = 1;
+                                }
+                            });
+                        }
+                    }
+                });
+                for (var k in temp) {
+                    temp[k] = temp[k] / keys.length;
+                }
+                console.log(temp);
+                arr.forEach((d, j) => {
+                    keys.forEach((p, l) => {
+                        d[l] = 1;
+                    });
+                    for (var k in temp) {
+                        keys.forEach((e, i) => {
+                            var o = '';
+                            for (var g = 0; g <= i; g++) {
+                                if (g === 0) {
+                                    o = `${d[keys[g]]}`;
+                                } else {
+                                    o += `-${d[keys[g]]}`;
+                                }
+                            }
+                            if (k == o) {
+                                if (j == num[i]) {
+                                    num[i] += temp[k];
+                                    d[i] = temp[k];
+                                } else {
+                                    d[i] = 0;
+                                }
+                            }
+                        });
+                    }
+                });
+            }
+
+            keys.forEach((d, n) => {
+                for (var i = 0; i < arr.length - 1; i++) {
+                    for (var j = 0; j < arr.length - 1 - i; j++) {
+                        var t = n;
+                        var sort = true;
+                        if (t > 0) {
+                            for (var k = 0; k < t; k++) {
+                                if (
+                                    !(
+                                        arr[j][keys[k]] === arr[j + 1][keys[k]] &&
+                                        arr[j][keys[t]] > arr[j + 1][keys[t]]
+                                    )
+                                ) {
+                                    sort = false;
+                                }
+                            }
+                        } else {
+                            sort = arr[j][keys[0]] > arr[j + 1][keys[0]];
+                        }
+                        if (sort) {
+                            var temp = arr[j];
+                            arr[j] = arr[j + 1];
+                            arr[j + 1] = temp;
+                        }
+                    }
+                }
+            });
+            arrToMapper(arr, ...keys);
+            return arr;
+        };
+        console.log(tableMapperRow(arr, 'frequency', 'isReproduced', 'module', 'severity', 'status', 'title'));
+        console.log(tableMapperRow(data, 'usernum', 'starttime', 'name'));
+
+
+
+
+        let ss = [
+            [{
+                "name": "540x960",
+                "y": 3
+            }, {
+                "name": "1080x1920",
+                "y": 4
+            }, {
+                "name": "1080x2160",
+                "y": 2
+            }, {
+                "name": "720x1080",
+                "y": 1
+            }],
+            [{
+                "name": "",
+                "y": 10
+            }],
+            [{
+                "name": "5.1.1",
+                "y": 2
+            }, {
+                "name": "7.0",
+                "y": 2
+            }, {
+                "name": "5.0.2",
+                "y": 2
+            }, {
+                "name": "7.1.1",
+                "y": 2
+            }, {
+                "name": "8.0.0",
+                "y": 1
+            }, {
+                "name": "4.4.4",
+                "y": 1
+            }],
+            [{
+                "name": "",
+                "y": 8
+            }, {
+                "name": "APK Crash",
+                "y": 2
+            }]
+        ]
+        var ssMax = [];
+        ss.forEach((d) => {
+            d.map(e => e.name)
+            ssMax.push(
+                // name: Math.max(... d.map(e => parseFloat(e.name || 0))),
+                Math.max(... d.map(e => e.y))
+            )
+        })
+        var result = [];
+        ssMax.forEach((d, i) => {
+            console.log(d);
+            result.push(ss[i].filter(a => a.y === d))
+                // result.push(e.filter((a) => a.y === d))
+        })
+        console.log(result);
+    </script>
+</body>
+
+</html>

@@ -82,7 +82,7 @@ export default new Router({
           }
         },
         {
-          path: '/senility/:caseType',
+          path: '/senility/:caseType?',
           name: 'senility',
           component: Senility,
           meta: {

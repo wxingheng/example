@@ -1,14 +1,12 @@
-console.log('./sw.js...');
-
+console.log('./sw.js...ss2233332s');
 
 let cacheName = 'pwa-demo-assets'; // 缓存名字
 // 所需要缓存的文件
 let filesToCache = [
-    '/index.js',
-    '/index.html',
     '/'
 ]
 self.addEventListener('install', function (e) {
+    self.skipWaiting();
     e.waitUntil(
         // 安装服务者时，对需要缓存的文件进行缓存
         caches.open(cacheName).then(cache => {
@@ -52,7 +50,7 @@ self.addEventListener('fetch', function (event) {
 
                         caches.open(cacheName)
                             .then(function (cache) {
-                                 // 匹配到缓存资源，就从缓存中返回数据
+                                
                                 cache.put(event.request, responseToCache);
                             });
 
