@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>table</title>
+    <style>
+        html,
+        body,
+        .box {
+            padding: 0;
+            margin: 0;
+            height: 100%;
+            box-sizing: border-box
+        }
+
+        .box {
+            border: 1px solid red;
+        }
+
+        .item {
+            border: 2px solid #0f0;
+        }
+
+        .div2 {
+            writing-mode: vertical-lr;
+        }
+
+        /*
+            水平垂直居中
+        */
+        .outer {
+            text-align: center;
+            border: 1px solid red;
+            line-height: 500px;
+
+        }
+
+        .inner {
+            display: inline-block;
+            line-height: initial;
+        }
+        table{
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <tbody>
+            <tr>
+                <td class="outer">
+                        <div class="inner item">table</div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>

@@ -1661,7 +1661,7 @@
                 console.log(temp);
                 arr.forEach((d, j) => {
                     keys.forEach((p, l) => {
-                        d[l] = 1;
+                        // d[l] = 1;
                     });
                     for (var k in temp) {
                         keys.forEach((e, i) => {
@@ -1676,9 +1676,9 @@
                             if (k == o) {
                                 if (j == num[i]) {
                                     num[i] += temp[k];
-                                    d[i] = temp[k];
+                                    // d[i] = temp[k];
                                 } else {
-                                    d[i] = 0;
+                                    // d[i] = 0;
                                 }
                             }
                         });

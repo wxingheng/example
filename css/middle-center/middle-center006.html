@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>absolute + lineheight</title>
+    <style>
+        html, body, .box{
+            padding: 0;
+            margin: 0;
+            height: 100%;
+            box-sizing: border-box
+        }
+        .box{
+            border: 1px solid red;
+        }
+        .item{
+            border: 2px solid #0f0;
+            /* width: 200px; */
+            /* height: 200px; */
+        }
+
+        /*
+            水平垂直居中
+        */
+        .outer{
+            text-align: center;
+            line-height:500px;
+        }
+        .inner{
+            display: inline-block;
+            vertical-align: middle;
+            /* 这里需要注意，子元素的  line-height 必须是  initial  */
+            line-height: initial;
+            text-align: left; /* 修正文字 */
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box outer">
+        <div class="item inner">
+            <p>absolute + lineheight</p>
+        </div>
+    </div>
+</body>
+</html>

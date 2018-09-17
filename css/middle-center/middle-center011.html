@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>grid</title>
+    <style>
+        html,
+        body,
+        .box {
+            padding: 0;
+            margin: 0;
+            height: 100%;
+            box-sizing: border-box
+        }
+
+        .box {
+            border: 1px solid red;
+        }
+
+        .item {
+            border: 2px solid #0f0;
+        }
+
+        .div2 {
+            writing-mode: vertical-lr;
+        }
+
+        /*
+            水平垂直居中
+        */
+        .outer {
+            display: grid;
+        }
+
+        .inner{
+            align-self: center;
+            justify-self: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box outer">
+        <div class="item inner">
+            <div>grid</div>
+        </div>
+    </div>
+</body>
+
+</html>
