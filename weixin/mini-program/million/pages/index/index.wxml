@@ -1,0 +1,95 @@
+<!--index.wxml-->
+
+
+<!--<doc-page title="一百万的距离" without-padding>-->
+    <!--<view class="container">-->
+        <!--<view class="userinfo">-->
+            <!--<button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称-->
+            <!--</button>-->
+            <!--<block wx:else>-->
+                <!--<image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>-->
+                <!--<text class="userinfo-nickname">{{userInfo.nickName}}</text>-->
+            <!--</block>-->
+        <!--</view>-->
+    <!--</view>-->
+
+    <!-- Field 基础用法 -->
+    <!--<zan-panel title="输入一下">-->
+        <zan-cell-group>
+            <zan-field
+                    title="当前存款"
+                    placeholder="请输入"
+                    value="{{ test001 }}"
+                    bind:change="handleTest001Change"
+                    inputType="number"
+                    result="元"
+                    right=true
+            >
+            </zan-field>
+        </zan-cell-group>
+        <zan-cell-group>
+            <zan-field
+                    title="月存款"
+                    placeholder="请输入"
+                    value="{{ test002 }}"
+                    bind:change="handleTest002Change"
+                    inputType="number"
+                    result="元"
+                    right=true
+            >
+            </zan-field>
+        </zan-cell-group>
+        <zan-cell-group>
+            <zan-field
+                    title="估算年收益利率"
+                    placeholder="请输入"
+                    value="{{ test003 }}"
+                    bind:change="handleTest003Change"
+                    inputType="number"
+                    result="%"
+                    right=true
+            >
+            </zan-field>
+        </zan-cell-group>
+        <!--<zan-cell-group>-->
+            <!--<zan-field-->
+                    <!--title="估算年薪涨幅"-->
+                    <!--placeholder="请输入"-->
+                    <!--value="{{ test005 }}"-->
+                    <!--bind:change="handleTest005Change"-->
+                    <!--inputType="number"-->
+                    <!--result="%"-->
+                    <!--right=true-->
+            <!--&gt;-->
+            <!--</zan-field>-->
+        <!--</zan-cell-group>-->
+        <zan-cell-group>
+            <zan-field
+                    title="小目标"
+                    placeholder="请输入"
+                    value="{{ test004 }}"
+                    bind:change="handleTest004Change"
+                    inputType="number"
+                    result="元"
+                    right=true
+            >
+            </zan-field>
+        </zan-cell-group>
+        <zan-button-group>
+            <zan-button type="primary" bind:btnclick="clearInput">开始计算</zan-button>
+        </zan-button-group>
+    <!--</zan-panel>-->
+
+
+
+    <!--<view class="">-->
+        <!--<canvas canvas-id="lineCanvas" disable-scroll="true" class="canvas" bindtouchstart="touchHandler" bindtouchmove="moveHandler" bindtouchend="touchEndHandler"></canvas>-->
+        <!--<view style="margin-top:30px;text-align:center">可以拖动图表哦</view>-->
+    <!--</view>-->
+
+
+    <zan-dialog id="zan-no-title-dialog"></zan-dialog>
+
+
+
+<!--</doc-page>-->

@@ -1,0 +1,48 @@
+<!--logs.wxml-->
+<!--<view class="container">-->
+<!--&lt;!&ndash;<block wx:for="{{logs}}" wx:for-item="log">&ndash;&gt;-->
+<!--&lt;!&ndash;<text class="log-item">{{index + 1}}. {{log}}</text>&ndash;&gt;-->
+<!--&lt;!&ndash;</block>&ndash;&gt;-->
+
+<!--</view>-->
+<!--<view class="scroll_table">-->
+<!--<view class="scroll_table_header"></view>-->
+<!---->
+<!--</view>-->
+<view class="box">
+    <view class="box-top">
+        <view class="box-total">
+            <view class="total-title">
+                一百万的距离
+            </view>
+            <view class="total-max">
+                {{viewData.result}}
+            </view>
+        </view>
+        <view class="box-detail">
+            <view class="detail-item">
+                <view>小目标</view>
+                <view class="total-max">{{viewData.target}}元</view>
+            </view>
+            <view class="detail-item">
+                <view>所得利息</view>
+                <view class="total-max">{{viewData.intReduce}}元</view>
+            </view>
+
+        </view>
+    </view>
+    <view class="box-table">
+        <view class="table-header">
+            <view class="header-item">时间</view>
+            <view class="header-item">本金（元）</view>
+            <view class="header-item">利息（元）</view>
+        </view>
+        <view class="table-body">
+            <view class="body-row" wx:for="{{viewData.detail}}" wx:for-item="item">
+                <view class="row-item">{{item.categories}}</view>
+                <view class="row-item">{{item.data}}</view>
+                <view class="row-item">{{item.int}}</view>
+            </view>
+        </view>
+    </view>
+</view>

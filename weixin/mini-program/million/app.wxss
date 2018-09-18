@@ -1,0 +1,15 @@
+/**app.wxss**/
+@import "zanUI/index.wxss";
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5rpx 0;
+  box-sizing: border-box;
+}
+.canvas {
+    width: 100%;
+    height: 200px;
+}

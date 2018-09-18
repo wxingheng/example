@@ -1,0 +1,119 @@
+/*.log-list {*/
+/*display: flex;*/
+/*flex-direction: column;*/
+/*padding: 40rpx;*/
+/*}*/
+/*.log-item {*/
+/*margin: 10rpx;*/
+/*}*/
+/*.container{*/
+/*height:300rpx;*/
+/*background: #3A8CFF;*/
+/*}*/
+
+page {
+    height: 100%;
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.box-top {
+    color: #ffffff;
+    font-size: 14px;
+    flex: 0 1 300rpx;
+    display: flex;
+    flex-direction: column;
+    background-color: #5a8de9;
+    padding: 25px 20px;
+}
+
+.box-total {
+    flex: 1 1 auto;
+
+}
+
+.total-title {
+
+}
+
+.total-max {
+    font-size: 26px;
+}
+
+.box-detail {
+    flex: 0 1 40px;
+    display: flex;
+}
+
+.detail-item {
+    flex: 1 1 auto;
+}
+
+.box-table {
+    /*    剩余空间的比例(0)   缩小比例（1）        lex-basis属性定义了在分配多余空间之前，项目占据的主轴空间（auto）   */
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.table-header {
+    flex: 0 1 80rpx;
+    display: flex;
+    line-height: 80rpx;
+    background-color: #f3f3f3;
+    font-size: 14px;
+
+}
+
+.header-item {
+    flex: 1 1 auto;
+    padding-left: 10px;
+}
+
+.header-item:nth-child(1) {
+    flex: 0 1 30%;
+}
+
+.header-item:nth-child(2) {
+    flex: 0 1 35%;
+}
+
+.header-item:nth-child(3) {
+    flex: 0 1 35%;
+}
+
+.table-body {
+    flex: 1 1 auto;
+    overflow: scroll;
+    font-size: 14px;
+    max-height: 420px;
+
+}
+
+.body-row {
+    display: flex;
+    height: 36px;
+    line-height: 38px;
+    border-bottom: 1px solid #f9f9f9;
+}
+
+.row-item {
+    flex: 1 1 auto;
+    padding-left: 10px;
+}
+
+.row-item:nth-child(1) {
+    flex: 0 1 30%;
+}
+
+.row-item:nth-child(2) {
+    flex: 0 1 35%;
+}
+
+.row-item:nth-child(3) {
+    flex: 0 1 35%;
+}
