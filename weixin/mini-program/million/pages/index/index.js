@@ -58,22 +58,55 @@ Page({
         //     value: ''
         // });
     },
+    fetch() {
+        console.log('type');
+        wx.request({
+            url: 'https://apis.baidu.com/heweather/weather/free',
+            data: {
+                city: 'beijing'
+            },
+            method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+            header: {
+                // apikey: 'a37c01591e47494fe320137dbc0fd423'
+            }, // 设置请求的 header
+            success: function (res) {
+                // success
+                console.log(res)
+            },
+            fail: function () {
+                // fail
+            },
+            complete: function () {
+                // complete
+            }
+        })
+    },
     handleTest001Change(event) {
-        this.setData({test001: event.detail.detail.value})
+        this.setData({
+            test001: event.detail.detail.value
+        })
 
     },
     handleTest002Change(event) {
-        this.setData({test002: event.detail.detail.value})
+        this.setData({
+            test002: event.detail.detail.value
+        })
 
     },
     handleTest003Change(event) {
-        this.setData({test003: event.detail.detail.value})
+        this.setData({
+            test003: event.detail.detail.value
+        })
     },
     handleTest004Change(event) {
-        this.setData({test004: event.detail.detail.value})
+        this.setData({
+            test004: event.detail.detail.value
+        })
     },
     handleTest005Change(event) {
-        this.setData({test005: event.detail.detail.value})
+        this.setData({
+            test005: event.detail.detail.value
+        })
     },
     touchHandler: function (e) {
         lineChart.scrollStart(e);
