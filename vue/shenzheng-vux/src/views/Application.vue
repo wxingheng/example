@@ -1,7 +1,7 @@
 <template>
   <div class="layout">
       <header-history :path="'#/home'"></header-history>
-      <section class="clear">
+      <section class="clear" :style="bgImage">
       <div class="default-layout">
                 <toast v-model="show" type="warn">请填写完整信息</toast>
                 <p class="title">用血者信息</p>
@@ -51,7 +51,10 @@ export default {
           msg: "Error"
         };
       },
-      type: this.$route.params.type
+      type: this.$route.params.type,
+      bgImage: {
+        backgroundImage: "url(" + require("./../assets/check_bg.jpg") + ")"
+      }
     };
   },
   computed: {
@@ -124,7 +127,6 @@ export default {
 
 <style scoped>
 section {
-  background-image: url(./../assets/check_bg.jpg);
   background-position: center 0;
   background-size: cover;
   background-repeat: no-repeat;

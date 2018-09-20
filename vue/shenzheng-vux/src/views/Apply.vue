@@ -1,5 +1,5 @@
 <template>
-  <div class="layout">
+  <div class="layout" :style="bgImage">
       <header-history :path="'#/application'"></header-history>
        <div class="default-layout">
            <p class="title">请选择用血者情况</p>
@@ -25,7 +25,10 @@ export default {
   name: "apply",
   data() {
     return {
-      userbase: { ...this.$store.state.userbase,}
+      userbase: { ...this.$store.state.userbase,},
+      bgImage: {
+        backgroundImage: "url(" + require("./../assets/illustrate_bg.jpg") + ")"
+      }
     };
   },
   computed: {
@@ -92,7 +95,6 @@ export default {
 
 <style scoped>
 .layout {
-  background-image: url(../assets/illustrate_bg.jpg);
   background-position: center 0;
   background-size: cover;
   background-repeat: no-repeat;

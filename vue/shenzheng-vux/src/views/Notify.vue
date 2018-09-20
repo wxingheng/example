@@ -1,5 +1,5 @@
 <template>
-  <div class="layout">
+  <div class="layout" :style="bgImage">
     <section class="container reg_start_frame">
         <div class="form-group row title">
             <h4 class="col-xs-12 text-center">用血手续须知</h4>
@@ -26,7 +26,11 @@
 export default {
   name: "Contact",
   data() {
-    return {};
+    return {
+    bgImage: {
+       backgroundImage: "url(" + require("./../assets/illustrate_bg.jpg") + ")"
+      }
+    };
   },
   computed: {},
   methods: {
@@ -44,7 +48,6 @@ export default {
   height: 100%;
   position: absolute;
   margin: 0px auto;
-  background-image: url("../assets/illustrate_bg.jpg");
   color: #fff;
   background-position: center 0;
   background-size: cover;

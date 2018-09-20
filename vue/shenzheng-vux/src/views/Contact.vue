@@ -1,5 +1,5 @@
 <template>
-  <div class="layout">
+  <div class="layout" :style="bgImage">
     <section class="container reg_start_frame">
         <div class="form-group row title">
             <h4 class="col-xs-12 text-center">本市血液管理机构联系方式</h4>
@@ -61,7 +61,10 @@ export default {
   name: "Notify",
   data() {
     return {
-      list: [{}]
+      list: [{}],
+      bgImage: {
+        backgroundImage: "url(" + require("./../assets/illustrate_bg.jpg") + ")"
+      }
     };
   },
   computed: {},
@@ -80,7 +83,6 @@ export default {
   height: 100%;
   position: absolute;
   margin: 0px auto;
-  background-image: url("../assets/illustrate_bg.jpg");
   font-size: 12px;
   background-position: center 0;
   background-size: cover;

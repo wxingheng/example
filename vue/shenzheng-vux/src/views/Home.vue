@@ -1,5 +1,5 @@
 <template>
-  <div class="layout">
+  <div class="layout" :style="bgImage">
        <div class="default-layout">
             <x-button @click.native="go('application', 'post')" :gradients="['#2FC41D', '#67DB29']">用血审证申请</x-button>
             <x-button @click.native="go('application', 'search')" :gradients="['#0597FF', '#19C6FF']">用血审证查询</x-button>
@@ -15,7 +15,10 @@ export default {
   name: "Home",
   data() {
     return {
-      msg: "Welcome to Your Vue.js Home"
+      msg: "Welcome to Your Vue.js Home",
+      bgImage: {
+              backgroundImage: "url(" + require("./../assets/bg.jpg") + ")"
+      }
     };
   },
   computed: {
@@ -58,7 +61,6 @@ export default {
 
 <style scoped>
 .layout {
-  background-image: url(../assets/bg.jpg);
   background-position: center 0;
   background-size: cover;
   background-repeat: no-repeat;
