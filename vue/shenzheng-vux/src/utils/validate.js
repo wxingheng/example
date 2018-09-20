@@ -36,6 +36,7 @@ export default {
     return mobile.test(tel) || phone.test(tel)
   },
   IdCard: function (UUserCard, num) {
+    const isIdentity = this.isIdentity(UUserCard);
     if (num == 1) {
 //获取出生日期
         var birth = UUserCard.substring(6, 10) + "-" + UUserCard.substring(10, 12) + "-" + UUserCard.substring(12, 14);
@@ -43,6 +44,9 @@ export default {
     }
     if (num == 2) {
 //获取性别
+      if(!isIdentity){
+        return '9'
+      }
         if (parseInt(UUserCard.substr(16, 1)) % 2 == 1) {
 //男
             return "1";
@@ -52,6 +56,9 @@ export default {
         }
     }
     if (num == 3) {
+      if(!isIdentity){
+        return 0
+      }
 //获取年龄
         var myDate = new Date();
         var month = myDate.getMonth() + 1;

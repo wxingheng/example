@@ -1,4 +1,5 @@
 import axios from 'axios'
+import config from './../config/config'
 
 const createError = (code, msg) => {
   // const err = new Error(msg)
@@ -6,16 +7,24 @@ const createError = (code, msg) => {
   return msg
 }
 
-const request = axios.create({
-  // baseURL: 'https://sbc.stpass.com/synergy-api/'
-  // baseURL: 'https://sbc.stpass.com/api/'
-  baseURL: `${location.origin}/api/`
+const request = () =>
+  axios.create({
+    baseURL: `${config.baseUrl}/api/`,
+    headers: {
+      Authorization: (() => window.weixinToken)()
+    }
+  })
 
-})
+const requestBao = () =>
+  axios.create({
+    baseURL: `${config.baseUrl}/bao/`,
+    headers: {
+      Authorization: (() => window.weixinToken)()
+    }
+  })
 
-const requestBao = axios.create({
-  // baseURL: 'https://sbc.stpass.com/bao/'
-  baseURL: `${location.origin}/bao/`
+const requestBase = axios.create({
+  baseURL: `${config.baseUrl}/`
 })
 
 const handleRequest = (request) => {
@@ -30,6 +39,8 @@ const handleRequest = (request) => {
       const resp = err.response
       if (resp.status === 401) {
         reject(createError(401, 'need auth'))
+      } else {
+        reject(err)
       }
     })
   })
@@ -37,27 +48,30 @@ const handleRequest = (request) => {
 
 export default {
   getIdentityType() {
-    return handleRequest(request.get('/service/wechatevidence/getIdentityType'))
+    return handleRequest(request().get('/service/wechatevidence/getIdentityType'))
   },
   getHospitals(query) {
-    return handleRequest(requestBao.get('/service/weixin/getTopFacility?name=' + query))
+    return handleRequest(requestBao().get('/service/weixin/getTopFacility?name=' + query))
   },
   getDisease() {
-    return handleRequest(requestBao.get('/service/weixin/getDisease?name'))
+    return handleRequest(requestBao().get('/service/weixin/getDisease?name'))
   },
   getBloodSubType() {
-    return handleRequest(request.get('/service/wechatevidence/getBloodSubType'))
+    return handleRequest(request().get('/service/wechatevidence/getBloodSubType'))
   },
   saveData(query) {
-    return handleRequest(request.post('/service/wechatevidence/save', query))
+    return handleRequest(request().post('/service/wechatevidence/save', query))
   },
-  getEmployments(query){
-    return handleRequest(requestBao.get('/service/weixin/getTopEmployment?name=' + query))
+  getEmployments(query) {
+    return handleRequest(requestBao().get('/service/weixin/getTopEmployment?name=' + query))
   },
-  getArea(){
-    return handleRequest(requestBao.get('/service/weixin/getArea'))
+  getArea() {
+    return handleRequest(requestBao().get('/service/weixin/getArea'))
   },
-  getEvidence(query){
-    return handleRequest(request.get(`/service/wechatevidence/getEvidence?id=${query.id}&name=${query.name}`))
+  getEvidence(query) {
+    return handleRequest(request().get(`/service/wechatevidence/getEvidence?id=${query.id}&name=${query.name}`))
+  },
+  getToken() {
+    return handleRequest(requestBase.get(`/ids/oauth/token?grant_type=client_credentials&client_id=weixin&client_secret=weixin`))
   }
 }

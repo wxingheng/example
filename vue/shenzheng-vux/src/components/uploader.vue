@@ -88,6 +88,12 @@ export default {
     describe: {
       type: String,
       default: ""
+    },
+    headers: {
+      type: Object,
+      default: function(){
+        return {}
+      }
     }
   },
   components: {
@@ -155,7 +161,11 @@ export default {
               if (this.$vux && this.$vux.loading) {
                 this.$vux.loading.show("正在上传");
               }
-              postList.push(axios.post(this.uploadUrl, formData));
+              postList.push(
+                axios.post(this.uploadUrl, formData, {
+                  headers: this.headers
+                })
+              );
               resultCount--;
             } else {
               this.$emit("upload-image", formData);

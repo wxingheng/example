@@ -1,3 +1,8 @@
+# 待解决的问题
+打包后的所有路径转换
+/static/    --->    static/
+将  static  目录复制到    /static/css   不然会导致图片找不到
+
 # shenzheng-vux
 
 > A Vue.js project

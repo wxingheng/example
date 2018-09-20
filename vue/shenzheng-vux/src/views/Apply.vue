@@ -3,13 +3,13 @@
       <header-history :path="'#/application'"></header-history>
        <div class="default-layout">
            <p class="title">请选择用血者情况</p>
-            <x-button @click.native="go('senility', '3')" :disabled="senility" type="primary">60周岁以上</x-button>
-            <x-button @click.native="go('senility', '4')" :disabled="noContinent" type="primary">非中国大陆居民</x-button>
-            <x-button @click.native="go('senility', '1')" :disabled="donoteBlood" type="primary">用血者本人曾参加无偿献血</x-button>
-            <x-button @click.native="go('senility', '2')" :disabled="family" type="primary">家庭成员5年内在上海市献过血</x-button>
-            <x-button @click.native="go('senility', '8')" :disabled="soldier" type="primary">驻沪部队军人</x-button>
-            <x-button @click.native="go('senility', '6')" :disabled="student" type="primary">本市全日制高校在校师生</x-button>
-            <x-button @click.native="go('senility', '5')" :disabled="noBlood" type="primary">本人及家庭成员都未献过血</x-button>
+            <x-button @click.native="go('senility', '3', senility)"  type="primary">60周岁以上</x-button>
+            <x-button @click.native="go('senility', '4', noContinent)" type="primary">非中国大陆居民</x-button>
+            <x-button @click.native="go('senility', '1', donoteBlood)" type="primary">用血者本人曾参加无偿献血</x-button>
+            <x-button @click.native="go('senility', '2', family)" type="primary">家庭成员5年内在上海市献过血</x-button>
+            <x-button @click.native="go('senility', '8', soldier)" type="primary">驻沪部队军人</x-button>
+            <x-button @click.native="go('senility', '6', student)" type="primary">本市全日制高校在校师生</x-button>
+            <x-button @click.native="go('senility', '5', noBlood)" type="primary">本人及家庭成员都未献过血</x-button>
             <x-button @click.native="go('neither')" :disabled="inconformity" type="primary">以上情况均不符合</x-button>
        </div>
   </div>
@@ -66,7 +66,15 @@ export default {
   },
   methods: {
     ...mapActions(["getIdentityType"]),
-    go: function(path, caseType) {
+    go: function(path, caseType, disabled) {
+      if(disabled === true){
+         this.$vux.toast.show({
+          type: "warn",
+          position: "middle",
+          text: "条件不符！"
+        });
+        return false;
+      }
       if(caseType){
         this.$router.push(path + "/" + caseType);
       }else{

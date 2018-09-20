@@ -34,6 +34,7 @@
                       name="file"
                       :title="'身份证件照片'"
                       :describe="'依次选择身份证姓名面，国徽面'"
+                      :headers="headers"
                     ></uploader>
                  </group>
                  <group v-show="userbase.caseType !== '5'" :title="userbase.caseType === '2' ? '家庭成员献血信息' : '献血信息'">
@@ -42,7 +43,7 @@
                     <x-input :max="30" v-show="userbase.caseType === '2'" title="证件号码" :is-type="familyValidate" required v-model="userbase.familyNumber" placeholder="请输入证件号码"></x-input>
                     <selector v-show="userbase.caseType === '2'" required v-model="userbase.relation"  title="与献血者关系" :options="[{key: 'LOCAL', value: '本地',}, {key: '1', value: '父母'}, {key: '2', value: '子女'}, {key: '3', value: '岳父母'}, {key: '4', value: '公婆'}, {key: '5', value: '配偶'}]" ></selector>
                     <selector v-show="userbase.caseType !== '2'" required v-model="userbase.placeType"  title="献血地点" :options="[{key: 'LOCAL', value: '本地',}, {key: 'NONLOCAL', value: '外地',}, {key: 'NEVER', value: '无',}]" ></selector>
-                    <x-number v-show="userbase.caseType !== '2'" title="献血次数" width="80px" :min="0" :max="1000" fillable required v-model="userbase.count" name="count" placeholder="请输入献血次数"></x-number>
+                    <x-number title="献血次数" width="80px" :min="0" :max="1000" fillable required v-model="userbase.count" name="count"  @on-change="countChange" placeholder="请输入献血次数"></x-number>
                     <datetime
                         v-model="userbase.donateTime"
                         :title="'最近献血时间'"
@@ -158,14 +159,14 @@
                           ])" :key="index">{{item.value}}</checker-item>
                         </checker>
                       </div>
-                       <x-input v-show="userbase.inauguralStatus.key === 'RETI'"
+                       <!-- <x-input v-show="userbase.inauguralStatus.key === 'RETI'"
                         :title="'退休单位名称'"
                         :max="30"
                         required
                         placeholder="请输入退休单位"
                         v-model="userbase.retireEmploymentName"
-                      ></x-input>
-                       <x-input v-show="userbase.inauguralStatus.key === 'WORK' || userbase.inauguralStatus.key === 'ETC1' || userbase.inauguralStatus.key === 'ETC2'"
+                      ></x-input> -->
+                       <x-input v-show="userbase.inauguralStatus.key === 'WORK' || userbase.inauguralStatus.key === 'RETI' || userbase.inauguralStatus.key === 'ETC1' || userbase.inauguralStatus.key === 'ETC2'"
                         :title="userbase.inauguralStatus.key === 'WORK' ? '单位名称' :( userbase.inauguralStatus.key === 'ETC1' ||  userbase.inauguralStatus.key === 'ETC2') ? '高校名称' :'退休单位名称'"
                         required
                         :max="30"
@@ -187,7 +188,7 @@
                       </div>
                      <selector required v-model="userbase.employmentArea"
                      v-show="userbase.inauguralStatus.key !== 'DOCT' && userbase.inauguralStatus.key !== 'ETC1' && userbase.inauguralStatus.key !== 'ETC2'"
-                     :title="userbase.inauguralStatus.key === 'WORK' ? '缴纳社保区' : userbase.inauguralStatus.key === 'UMEM' ? '户籍所在区': '退休单位所在区'"
+                     :title="userbase.inauguralStatus.key === 'WORK' ? '缴纳社保所在区' : userbase.inauguralStatus.key === 'UMEM' ? '户籍所在区': '退休单位所在区'"
                       :options="areas" ></selector>
                       <uploader
                       v-show="userbase.inauguralStatus.key !== 'DOCT'"
@@ -215,6 +216,7 @@
 import { mapState, mapActions } from "vuex";
 import isIdentity from "../utils/validate.js";
 import model from "../model/client-model";
+import config from "../config/config.js";
 
 // 本地组件
 import uploader from "../components/uploader.vue";
@@ -270,7 +272,7 @@ export default {
         ...this.$store.state.userbase,
         placeType: "LOCAL",
         count: 1,
-        donateTime: "2018-01-01",
+        donateTime: "2000-01-01",
         donateType: "WHOL",
         images: [], // 本人证明
         prove1: [], // 献血证明
@@ -346,11 +348,12 @@ export default {
       },
       fillable: true,
       varmax: 5,
-      uploadUrl:
-      "/api/service/wechatevidence/upload",
-        // "https://sbc.stpass.com/api/service/wechatevidence/upload",
+      uploadUrl: `${config.baseUrl}/api/service/wechatevidence/upload`,
       disease: [],
-      bloodSubTypes: []
+      bloodSubTypes: [],
+      headers: {
+        Authorization: window.weixinToken
+      }
     };
   },
   computed: {
@@ -388,7 +391,7 @@ export default {
             !this.userbase.images.length ||
             !this.userbase.placeType ||
             !this.userbase.donateType ||
-            !this.userbase.prove1.length ||
+            // !this.userbase.prove1.length ||
             !this.userbase.hospital ||
             !this.userbase.diagnosis ||
             !this.userbase.evidenceBloods.length ||
@@ -419,7 +422,7 @@ export default {
             (this.userbase.inauguralStatus.key !== "DOCT" &&
               !this.userbase.employmentArea) ||
             (this.userbase.inauguralStatus.key === "RETI" &&
-              !this.userbase.retireEmploymentName) ||
+              !this.userbase.hospital) ||
             (this.userbase.inauguralStatus.key !== "DOCT" &&
               !this.userbase.prove3.length) ||
             (this.userbase.diagnosis == "40" && !this.userbase.otherDiseaseName)
@@ -458,7 +461,7 @@ export default {
             (this.userbase.inauguralStatus.key !== "DOCT" &&
               !this.userbase.employmentArea) ||
             (this.userbase.inauguralStatus.key === "RETI" &&
-              !this.userbase.retireEmploymentName) ||
+              !this.userbase.hospital) ||
             (this.userbase.inauguralStatus.key !== "DOCT" &&
               !this.userbase.prove3.length)
           ) {
@@ -474,7 +477,7 @@ export default {
             !this.userbase.images.length ||
             !this.userbase.placeType ||
             !this.userbase.donateType ||
-            !this.userbase.prove1.length ||
+            // !this.userbase.prove1.length ||
             !this.userbase.hospital ||
             !this.userbase.diagnosis ||
             !this.userbase.evidenceBloods.length ||
@@ -509,7 +512,7 @@ export default {
             (this.userbase.inauguralStatus.key !== "DOCT" &&
               !this.userbase.employmentArea) ||
             (this.userbase.inauguralStatus.key === "RETI" &&
-              !this.userbase.retireEmploymentName) ||
+              !this.userbase.hospital) ||
             (this.userbase.inauguralStatus.key !== "DOCT" &&
               !this.userbase.prove3.length)
           ) {
@@ -618,7 +621,7 @@ export default {
             placeType: this.userbase.placeType,
             retireEmploymentName:
               this.userbase.inauguralStatus.key === "RETI"
-                ? this.userbase.retireEmploymentName
+                ?  this.userbase.hospital.name// this.userbase.retireEmploymentName
                 : null // 单位名称
           };
           if (this.userbase.inauguralStatus.key !== "DOCT") {
@@ -689,7 +692,7 @@ export default {
             // placeType: this.userbase.placeType,
             retireEmploymentName:
               this.userbase.inauguralStatus.key === "RETI"
-                ? this.userbase.retireEmploymentName
+                ?  this.userbase.hospital.name// this.userbase.retireEmploymentName
                 : null // 单位名称
           };
           if (this.userbase.inauguralStatus.key !== "DOCT") {
@@ -747,9 +750,9 @@ export default {
             name: this.userbase.name,
             otherDiseaseName: this.userbase.otherDiseaseName,
             placeType: this.userbase.placeType,
-            retireEmploymentName:
+             retireEmploymentName:
               this.userbase.inauguralStatus.key === "RETI"
-                ? this.userbase.retireEmploymentName
+                ?  this.userbase.hospital.name// this.userbase.retireEmploymentName
                 : null // 单位名称
           };
           if (this.userbase.inauguralStatus.key !== "DOCT") {
@@ -805,7 +808,7 @@ export default {
             // placeType: this.userbase.placeType,
             retireEmploymentName:
               this.userbase.inauguralStatus.key === "RETI"
-                ? this.userbase.retireEmploymentName
+                ?  this.userbase.hospital.name// this.userbase.retireEmploymentName
                 : null // 单位名称
           };
           if (this.userbase.inauguralStatus.key !== "DOCT") {
@@ -917,6 +920,10 @@ export default {
     },
     preview: function() {
       console.log(123);
+    },
+    countChange: function(){
+      console.log('countChange-->', this.userbase.count);
+      this.userbase.count = parseInt(this.userbase.count);
     }
   },
   created() {

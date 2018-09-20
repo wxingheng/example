@@ -24,14 +24,35 @@ export default {
   methods: {
     ...mapActions(["getIdentityType"]),
     go: function(path, type) {
-      this.$router.push(`${path}/${type}`)
+      this.$router.push(`${path}/${type}`);
     }
   },
   created() {
-    if (this.$store.state.identityTypeList.length <= 0) {
-      this.getIdentityType();
-    }
+    // if (this.$store.state.identityTypeList.length <= 0) {
+    model
+      .getToken()
+      .then(
+        data => {
+          window.weixinToken = data ? data.access_token : "token error1";
+          this.getIdentityType();
+        },
+        err => {
+          window.weixinToken = "token error2";
+          localStorage.setItem("token", "token error2");
+          console.log(window.weixinToken);
+
+          this.getIdentityType();
+        }
+      )
+      .catch(err => {
+        window.weixinToken = "token error3";
+        localStorage.setItem("token", "token error3");
+        console.log(window.weixinToken);
+
+        this.getIdentityType();
+      });
   }
+  // }
 };
 </script>
 
