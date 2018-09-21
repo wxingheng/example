@@ -1,6 +1,6 @@
 <template>
   <div class="layout" :style="bgImage">
-      <header-history :path="'#/application'"></header-history>
+      <header-history :path="'#/application'" :noBack="environment === 'implant'"></header-history>
        <div class="default-layout">
            <p class="title">请选择用血者情况</p>
             <x-button @click.native="go('senility', '3', senility)"  type="primary">60周岁以上</x-button>
@@ -28,7 +28,8 @@ export default {
       userbase: { ...this.$store.state.userbase,},
       bgImage: {
         backgroundImage: "url(" + require("./../assets/illustrate_bg.jpg") + ")"
-      }
+      },
+      environment: ''
     };
   },
   computed: {
@@ -68,7 +69,8 @@ export default {
     }
   },
   methods: {
-    ...mapActions(["getIdentityType"]),
+    ...mapActions(["getIdentityType", "updateUserbase"]),
+
     go: function(path, caseType, disabled) {
       console.log('this.userbase', this.userbase)
       if(!this.userbase.idNumber){
@@ -88,9 +90,9 @@ export default {
         return false;
       }
       if(caseType){
-        this.$router.push(path + "/" + caseType);
+        this.$router.push( "/" + path + "/" + caseType);
       }else{
-        this.$router.push(path);
+        this.$router.push(  "/" + path);
       }
     }
   },
@@ -98,6 +100,56 @@ export default {
     if (this.$store.state.identityTypeList.length <= 0) {
       this.getIdentityType();
     };
+    this.environment = this.$route.params.environment;
+    // 嵌入一网通
+    if (this.environment === 'implant') {
+      model
+      .getToken()
+      .then(
+        data => {
+          window.weixinToken = data ? data.access_token : "token error1";
+          this.getIdentityType();
+          return  model
+      .getOneNetUser({
+        accessToken: '',
+        portalToken: ''
+      })
+        },
+        err => {
+          window.weixinToken = "token error2";
+          this.getIdentityType();
+        }
+      )
+    .then(
+        data => {
+          if(data.code === '200' && isSuccess){
+          this.updateUserbase({
+            name: data.data.username,
+            idNumber: data.data.idCardNo,
+            phone: data.data.mobile,
+          });            
+          }
+        },
+        err => {
+          this.$vux.toast.show({
+                  type: "warn",
+                  position: "middle",
+                  text: "获取用户基本信息失败！"
+                });
+        }
+      )
+      .catch(err => {
+        window.weixinToken = "token error3";
+         this.$vux.toast.show({
+                  type: "warn",
+                  position: "middle",
+                  text: "获取用户基本信息失败！"
+            });
+      });
+    }
+
+
+
   }
 };
 </script>

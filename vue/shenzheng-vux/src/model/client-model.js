@@ -73,5 +73,8 @@ export default {
   },
   getToken() {
     return handleRequest(requestBase.get(`/ids/oauth/token?grant_type=client_credentials&client_id=weixin&client_secret=weixin`))
+  },
+  getOneNetUser(query) {
+    return handleRequest(request().post(`/service/wechatevidence/getOneNetUser`, query))
   }
 }

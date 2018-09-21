@@ -1,4 +1,5 @@
 export default {
   // baseUrl: location.origin
-  baseUrl: 'https://sbc.stpass.com'
+// const isDev = process.env.NODE_ENV === 'development'
+baseUrl: process.env.NODE_ENV === 'development' ? 'https://sbc.stpass.com': location.origin
 }

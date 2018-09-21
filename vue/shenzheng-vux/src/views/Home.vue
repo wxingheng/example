@@ -42,16 +42,12 @@ export default {
         err => {
           window.weixinToken = "token error2";
           localStorage.setItem("token", "token error2");
-          console.log(window.weixinToken);
-
           this.getIdentityType();
         }
       )
       .catch(err => {
         window.weixinToken = "token error3";
         localStorage.setItem("token", "token error3");
-        console.log(window.weixinToken);
-
         this.getIdentityType();
       });
   }

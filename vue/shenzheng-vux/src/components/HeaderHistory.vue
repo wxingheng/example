@@ -1,6 +1,6 @@
 <template>
   <header>
-        <a @click="go()" class="pull-left" style="fill: #fff;position: absolute;
+        <a v-if="!noBack" @click="go()" class="pull-left" style="fill: #fff;position: absolute;
           left: 5px;
           top: 8px;">
            <x-icon type="ios-arrow-back" size="30"></x-icon>
@@ -16,6 +16,10 @@ export default {
     path: {
       type: String,
       default: "#/home"
+    },
+    noBack: {
+      type: Boolean,
+      default: false
     }
   },
   methods: {

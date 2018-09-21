@@ -73,7 +73,7 @@ export default new Router({
           }
         },
         {
-          path: '/apply',
+          path: '/apply/:environment?',
           name: 'apply',
           component: Apply,
           meta: {

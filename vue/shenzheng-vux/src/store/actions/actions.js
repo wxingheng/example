@@ -13,6 +13,7 @@ export default {
   updateUserbase ({
     commit
   }, data) {
+    console.log('----+++++');
     commit('setUserbase', data)
   }
 }
