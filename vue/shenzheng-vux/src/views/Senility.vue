@@ -3,7 +3,7 @@
       <header-history :path="'#/apply'"></header-history>
        <div class="default-layout">
                 <group title="用血者信息">
-                    <x-input title="姓名" disabled required v-model="userbase.name" :max="10" name="username" placeholder="请输入姓名"></x-input>
+                    <x-input title="姓名" required v-model="userbase.name" :max="10" name="username" placeholder="请输入姓名"></x-input>
                     <selector required v-model="userbase.gender"  title="性别" :options="[{
               key: '1',
               value: '男'
@@ -22,9 +22,8 @@
             }
           ]" ></selector>
                     <x-number title="年龄" width="80px" :min="0" :max="120" fillable required v-model="userbase.age" name="age" placeholder="请输入年龄"></x-number>
-                    <x-input title="证件类型" disabled   :value="identityTypeView"></x-input>
-                    <!-- <selector required v-model="userbase.identityType" disabled  title="证件类型" :options="identityTypeList" ></selector> -->
-                    <x-input title="证件号码" :is-type="validate" required v-model="userbase.idNumber" name="idNumber" placeholder="请输入证件号码"></x-input>
+                    <selector required v-model="userbase.identityType" @on-change="typeChange"  title="证件类型" :options="identityTypeList" ></selector>
+                    <x-input title="证件号码" :is-type="validate" @on-change="typeChange"  required v-model="userbase.idNumber" name="idNumber" placeholder="请输入证件号码"></x-input>
                     <x-input title="手机号" :is-type="validatePhone" required v-model="userbase.phone" name="phone" placeholder="请输入手机号"></x-input>
                     <uploader
                       :preview="preview"
@@ -924,6 +923,12 @@ export default {
     countChange: function(){
       console.log('countChange-->', this.userbase.count);
       this.userbase.count = parseInt(this.userbase.count);
+    },
+    typeChange: function() {
+       if (this.userbase.identityType === "01") {
+        this.userbase.age = isIdentity.IdCard(this.userbase.idNumber, 3);
+        this.userbase.gender = isIdentity.IdCard(this.userbase.idNumber, 2);
+      }
     }
   },
   created() {

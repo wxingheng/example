@@ -70,6 +70,15 @@ export default {
   methods: {
     ...mapActions(["getIdentityType"]),
     go: function(path, caseType, disabled) {
+      console.log('this.userbase', this.userbase)
+      if(!this.userbase.idNumber){
+        this.$vux.toast.show({
+                  type: "warn",
+                  position: "middle",
+                  text: "获取用户基本信息失败！"
+                });
+                return false;
+      }
       if(disabled === true){
          this.$vux.toast.show({
           type: "warn",
