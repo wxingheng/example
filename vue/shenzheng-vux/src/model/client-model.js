@@ -1,5 +1,8 @@
 import axios from 'axios'
 import config from './../config/config'
+import {
+  Base64
+} from 'js-base64'
 
 const createError = (code, msg) => {
   // const err = new Error(msg)
@@ -11,7 +14,7 @@ const request = () =>
   axios.create({
     baseURL: `${config.baseUrl}/api/`,
     headers: {
-      Authorization: (() => window.weixinToken)()
+      Authorization: (() => 'Bearer ' + window.weixinToken)()
     }
   })
 
@@ -19,13 +22,24 @@ const requestBao = () =>
   axios.create({
     baseURL: `${config.baseUrl}/bao/`,
     headers: {
-      Authorization: (() => window.weixinToken)()
+      Authorization: (() => 'Bearer ' + window.weixinToken)()
     }
   })
 
-const requestBase = axios.create({
-  baseURL: `${config.baseUrl}/`
-})
+const requestBase = () => {
+  const makeBaseAuth = function (user, password) {
+    const tok = `${user}:${password}`
+    const hash = Base64.encode(tok)
+    return `Basic ${hash}`
+  }
+  const auth = makeBaseAuth('weixin', 'weixin')
+  return axios.create({
+    baseURL: `${config.baseUrl}/`,
+    headers: {
+      Authorization: auth
+    }
+  })
+}
 
 const handleRequest = (request) => {
   return new Promise((resolve, reject) => {
@@ -53,28 +67,30 @@ export default {
   getHospitals(query) {
     return handleRequest(requestBao().get('/service/weixin/getTopFacility?name=' + query))
   },
-  getDisease() {
+  getDisease () {
     return handleRequest(requestBao().get('/service/weixin/getDisease?name'))
   },
-  getBloodSubType() {
+  getBloodSubType () {
     return handleRequest(request().get('/service/wechatevidence/getBloodSubType'))
   },
-  saveData(query) {
+  saveData (query) {
     return handleRequest(request().post('/service/wechatevidence/save', query))
   },
-  getEmployments(query) {
+  getEmployments (query) {
     return handleRequest(requestBao().get('/service/weixin/getTopEmployment?name=' + query))
   },
-  getArea() {
+  getArea () {
     return handleRequest(requestBao().get('/service/weixin/getArea'))
   },
-  getEvidence(query) {
+  getEvidence (query) {
     return handleRequest(request().get(`/service/wechatevidence/getEvidence?id=${query.id}&name=${query.name}`))
   },
-  getToken() {
-    return handleRequest(requestBase.get(`/ids/oauth/token?grant_type=client_credentials&client_id=weixin&client_secret=weixin`))
+  getToken () {
+    // return handleRequest(requestBase.get(`/ids/oauth/token?grant_type=client_credentials&client_id=weixin&client_secret=weixin`))
+    return handleRequest(requestBase().get(`/ids/oauth/token?grant_type=client_credentials`))
+
   },
-  getOneNetUser(query) {
+  getOneNetUser (query) {
     return handleRequest(request().post(`/service/wechatevidence/getOneNetUser`, query))
   }
 }

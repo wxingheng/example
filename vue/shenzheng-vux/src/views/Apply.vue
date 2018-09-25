@@ -20,51 +20,57 @@ import model from "../model/client-model";
 import { mapState, mapActions } from "vuex";
 import isIdentity from "../utils/validate.js";
 
-
 export default {
   name: "apply",
   data() {
     return {
-      userbase: { ...this.$store.state.userbase,},
+      userbase: { ...this.$store.state.userbase },
       bgImage: {
         backgroundImage: "url(" + require("./../assets/illustrate_bg.jpg") + ")"
       },
-      environment: ''
+      environment: ""
     };
   },
   computed: {
     ...mapState(["identityTypeList"]),
-    senility: function(){
-      if (this.userbase.identityType === "01" && isIdentity.IdCard(this.userbase.idNumber, 3) < 60 ) {
-        return true
-    }
-      return false;
-    },
-    noContinent: function(){
-      if(this.userbase.identityType === "03" ||  this.userbase.identityType === "06" || this.userbase.identityType === "07"){
-        return false
+    senility: function() {
+      if (
+        this.userbase.identityType === "01" &&
+        isIdentity.IdCard(this.userbase.idNumber, 3) < 60
+      ) {
+        return true;
       }
-      return true;
-    },
-    donoteBlood: function(){
-       return false;
-    },
-    family: function(){
       return false;
     },
-    soldier: function(){
-      if(this.userbase.identityType === "04"){
+    noContinent: function() {
+      if (
+        this.userbase.identityType === "03" ||
+        this.userbase.identityType === "06" ||
+        this.userbase.identityType === "07"
+      ) {
         return false;
       }
       return true;
     },
-    student: function(){
+    donoteBlood: function() {
       return false;
     },
-    noBlood: function(){
+    family: function() {
       return false;
     },
-    inconformity: function(){
+    soldier: function() {
+      if (this.userbase.identityType === "04") {
+        return false;
+      }
+      return true;
+    },
+    student: function() {
+      return false;
+    },
+    noBlood: function() {
+      return false;
+    },
+    inconformity: function() {
       return false;
     }
   },
@@ -72,84 +78,79 @@ export default {
     ...mapActions(["getIdentityType", "updateUserbase"]),
 
     go: function(path, caseType, disabled) {
-      console.log('this.userbase', this.userbase)
-      if(!this.userbase.idNumber){
+      console.log("this.userbase", this.userbase);
+      if (!this.userbase.idNumber) {
         this.$vux.toast.show({
-                  type: "warn",
-                  position: "middle",
-                  text: "获取用户基本信息失败！"
-                });
-                return false;
+          type: "warn",
+          position: "middle",
+          text: "获取用户基本信息失败！"
+        });
+        return false;
       }
-      if(disabled === true){
-         this.$vux.toast.show({
+      if (disabled === true) {
+        this.$vux.toast.show({
           type: "warn",
           position: "middle",
           text: "条件不符！"
         });
         return false;
       }
-      if(caseType){
-        this.$router.push( "/" + path + "/" + caseType);
-      }else{
-        this.$router.push(  "/" + path);
+      if (caseType) {
+        this.$router.push("/" + path + "/" + caseType);
+      } else {
+        this.$router.push("/" + path);
       }
     }
   },
   created() {
     if (this.$store.state.identityTypeList.length <= 0) {
       this.getIdentityType();
-    };
+    }
     this.environment = this.$route.params.environment;
     // 嵌入一网通
-    if (this.environment === 'implant') {
+    if (this.environment === "implant") {
       model
-      .getToken()
-      .then(
-        data => {
-          window.weixinToken = data ? data.access_token : "token error1";
-          this.getIdentityType();
-          return  model
-      .getOneNetUser({
-        accessToken: '',
-        portalToken: ''
-      })
-        },
-        err => {
-          window.weixinToken = "token error2";
-          this.getIdentityType();
-        }
-      )
-    .then(
-        data => {
-          if(data.code === '200' && isSuccess){
-          this.updateUserbase({
-            name: data.data.username,
-            idNumber: data.data.idCardNo,
-            phone: data.data.mobile,
-          });            
-          }
-        },
-        err => {
-          this.$vux.toast.show({
-                  type: "warn",
-                  position: "middle",
-                  text: "获取用户基本信息失败！"
-                });
-        }
-      )
-      .catch(err => {
-        window.weixinToken = "token error3";
-         this.$vux.toast.show({
-                  type: "warn",
-                  position: "middle",
-                  text: "获取用户基本信息失败！"
+        .getToken()
+        .then(
+          data => {
+            window.weixinToken = data ? data.access_token : "token error1";
+            this.getIdentityType();
+            return model.getOneNetUser({
+              portalToken: location.href.substr(location.href.search('token=') + 6)
             });
-      });
+          },
+          err => {
+            window.weixinToken = "token error2";
+            this.getIdentityType();
+          }
+        )
+        .then(
+          data => {
+            if (data.code === "200" && isSuccess) {
+              this.updateUserbase({
+                name: data.data.username,
+                idNumber: data.data.idCardNo,
+                phone: data.data.mobile
+              });
+            }
+          },
+          err => {
+            this.$vux.toast.show({
+              type: "warn",
+              position: "middle",
+              text: "获取用户基本信息失败！"
+            });
+          }
+        )
+        .catch(err => {
+          window.weixinToken = "token error3";
+          this.$vux.toast.show({
+            type: "warn",
+            position: "middle",
+            text: "获取用户基本信息失败！"
+          });
+        });
     }
-
-
-
   }
 };
 </script>
@@ -165,11 +166,11 @@ export default {
 }
 .default-layout {
   padding: 10px;
-    width: 100%;
-    position: absolute;
-    height: 100%;
-    overflow-y: scroll;
-    padding-top: 64px;
+  width: 100%;
+  position: absolute;
+  height: 100%;
+  overflow-y: scroll;
+  padding-top: 64px;
 }
 .title {
   color: #fff;
