@@ -14,7 +14,7 @@ const request = () =>
   axios.create({
     baseURL: `${config.baseUrl}/api/`,
     headers: {
-      Authorization: (() => 'Bearer ' + window.weixinToken)()
+      Authorization: (() => window.weixinToken)()
     }
   })
 
@@ -22,7 +22,7 @@ const requestBao = () =>
   axios.create({
     baseURL: `${config.baseUrl}/bao/`,
     headers: {
-      Authorization: (() => 'Bearer ' + window.weixinToken)()
+      Authorization: (() => window.weixinToken)()
     }
   })
 
@@ -88,9 +88,8 @@ export default {
   getToken () {
     // return handleRequest(requestBase.get(`/ids/oauth/token?grant_type=client_credentials&client_id=weixin&client_secret=weixin`))
     return handleRequest(requestBase().get(`/ids/oauth/token?grant_type=client_credentials`))
-
   },
   getOneNetUser (query) {
-    return handleRequest(request().post(`/service/wechatevidence/getOneNetUser`, query))
+    return handleRequest(request().post(`/service/wechatevidence/getOneNetUser?portalToken=${query}`, {}))
   }
 }

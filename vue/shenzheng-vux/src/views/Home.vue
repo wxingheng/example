@@ -36,7 +36,7 @@ export default {
       .getToken()
       .then(
         data => {
-          window.weixinToken = data ? data.access_token : "token error1";
+            window.weixinToken = `Bearer ${ data ? data.access_token : "token error1"}`;
           this.getIdentityType();
         },
         err => {

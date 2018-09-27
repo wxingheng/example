@@ -79,14 +79,14 @@ export default {
 
     go: function(path, caseType, disabled) {
       console.log("this.userbase", this.userbase);
-      if (!this.userbase.idNumber) {
-        this.$vux.toast.show({
-          type: "warn",
-          position: "middle",
-          text: "获取用户基本信息失败！"
-        });
-        return false;
-      }
+      // if (!this.userbase.idNumber) {
+      //   this.$vux.toast.show({
+      //     type: "warn",
+      //     position: "middle",
+      //     text: "获取用户基本信息失败！"
+      //   });
+      //   return false;
+      // }
       if (disabled === true) {
         this.$vux.toast.show({
           type: "warn",
@@ -113,28 +113,38 @@ export default {
         .getToken()
         .then(
           data => {
-            window.weixinToken = data ? data.access_token : "token error1";
+            console.log('1111111111', data);
+            window.weixinToken = `Bearer ${ data ? data.access_token : "token error1"}`;
             this.getIdentityType();
-            return model.getOneNetUser({
-              portalToken: location.href.substr(location.href.search('token=') + 6)
-            });
+            // return model.getOneNetUser({
+            //   portalToken: location.href.substr(location.href.search('token=') + 6)
+            // });
+            return model.getOneNetUser(
+               location.href.substr(location.href.search('token=') + 6)
+            );
           },
           err => {
+            console.log('222222222', err);
+
             window.weixinToken = "token error2";
             this.getIdentityType();
           }
         )
         .then(
           data => {
-            if (data.code === "200" && isSuccess) {
+            console.log('33333333333333', data);
+
+            if (data.code === "200" && data.isSuccess) {
               this.updateUserbase({
                 name: data.data.username,
                 idNumber: data.data.idCardNo,
-                phone: data.data.mobile
+                phone: data.data.mobile,
               });
             }
           },
           err => {
+            console.log('4444444444', err);
+
             this.$vux.toast.show({
               type: "warn",
               position: "middle",
@@ -143,6 +153,8 @@ export default {
           }
         )
         .catch(err => {
+            console.log('5555555555', err);
+
           window.weixinToken = "token error3";
           this.$vux.toast.show({
             type: "warn",

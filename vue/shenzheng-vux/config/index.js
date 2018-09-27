@@ -11,7 +11,7 @@ module.exports = {
 
     // Paths
     assetsSubDirectory: 'static',
-    assetsPublicPath: './',
+    assetsPublicPath: '/',
     // 代理配置
     proxyTable: {
       // '/service': {
