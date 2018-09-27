@@ -1,8 +1,7 @@
-
 import model from './../../model/client-model'
 
 export default {
-  getIdentityType ({
+  getIdentityType({
     commit
   }) {
     return model.getIdentityType()
@@ -10,10 +9,14 @@ export default {
         commit('setIdentityType', data)
       })
   },
-  updateUserbase ({
+  updateUserbase({
     commit
   }, data) {
-    console.log('----+++++');
     commit('setUserbase', data)
+  },
+  updateIsImplant({
+    commit
+  }, data) {
+    commit('setIsImplant', data)
   }
 }

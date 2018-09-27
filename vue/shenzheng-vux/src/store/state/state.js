@@ -9,5 +9,6 @@ export default {
     gender: '9',
     age: 0,
     phone: ''
-  }
+  },
+  isImplant: false
 }

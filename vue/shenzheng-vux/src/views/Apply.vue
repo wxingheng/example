@@ -75,7 +75,7 @@ export default {
     }
   },
   methods: {
-    ...mapActions(["getIdentityType", "updateUserbase"]),
+    ...mapActions(["getIdentityType", "updateUserbase", "updateIsImplant"]),
 
     go: function(path, caseType, disabled) {
       console.log("this.userbase", this.userbase);
@@ -109,6 +109,7 @@ export default {
     this.environment = this.$route.params.environment;
     // 嵌入一网通
     if (this.environment === "implant") {
+      this.updateIsImplant(true);
       model
         .getToken()
         .then(

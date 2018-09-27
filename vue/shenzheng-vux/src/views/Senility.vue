@@ -361,6 +361,7 @@ export default {
     };
   },
   computed: {
+    ...mapState(["isImplant"]),
     identityTypeList: function() {
       if (this.$store.state.identityTypeList.length <= 0) {
         this.getIdentityType();
@@ -625,7 +626,7 @@ export default {
             placeType: this.userbase.placeType,
             retireEmploymentName:
               this.userbase.inauguralStatus.key === "RETI"
-                ?  this.userbase.hospital.name// this.userbase.retireEmploymentName
+                ? this.userbase.hospital.name // this.userbase.retireEmploymentName
                 : null // 单位名称
           };
           if (this.userbase.inauguralStatus.key !== "DOCT") {
@@ -696,7 +697,7 @@ export default {
             // placeType: this.userbase.placeType,
             retireEmploymentName:
               this.userbase.inauguralStatus.key === "RETI"
-                ?  this.userbase.hospital.name// this.userbase.retireEmploymentName
+                ? this.userbase.hospital.name // this.userbase.retireEmploymentName
                 : null // 单位名称
           };
           if (this.userbase.inauguralStatus.key !== "DOCT") {
@@ -754,9 +755,9 @@ export default {
             name: this.userbase.name,
             otherDiseaseName: this.userbase.otherDiseaseName,
             placeType: this.userbase.placeType,
-             retireEmploymentName:
+            retireEmploymentName:
               this.userbase.inauguralStatus.key === "RETI"
-                ?  this.userbase.hospital.name// this.userbase.retireEmploymentName
+                ? this.userbase.hospital.name // this.userbase.retireEmploymentName
                 : null // 单位名称
           };
           if (this.userbase.inauguralStatus.key !== "DOCT") {
@@ -812,7 +813,7 @@ export default {
             // placeType: this.userbase.placeType,
             retireEmploymentName:
               this.userbase.inauguralStatus.key === "RETI"
-                ?  this.userbase.hospital.name// this.userbase.retireEmploymentName
+                ? this.userbase.hospital.name // this.userbase.retireEmploymentName
                 : null // 单位名称
           };
           if (this.userbase.inauguralStatus.key !== "DOCT") {
@@ -824,7 +825,10 @@ export default {
           break;
         default:
       }
-
+      console.log('isImplant------------------------>', this.isImplant)
+      if (!this.isImplant) {
+        postData.oneNetData = "false";
+      }
       model
         .saveData(postData)
         .then(() => {
@@ -925,12 +929,12 @@ export default {
     preview: function() {
       console.log(123);
     },
-    countChange: function(){
-      console.log('countChange-->', this.userbase.count);
+    countChange: function() {
+      console.log("countChange-->", this.userbase.count);
       this.userbase.count = parseInt(this.userbase.count);
     },
     typeChange: function() {
-       if (this.userbase.identityType === "01") {
+      if (this.userbase.identityType === "01") {
         this.userbase.age = isIdentity.IdCard(this.userbase.idNumber, 3);
         this.userbase.gender = isIdentity.IdCard(this.userbase.idNumber, 2);
       }
