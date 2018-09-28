@@ -4,17 +4,17 @@ import Router from 'vue-router'
 // import HelloFromVux from './../components/HelloFromVux'
 // import Home from './../components/Home'
 // import Application from './../components/Application'
-import HelloWorld from './../views/HelloWorld'
-import HelloFromVux from './../views/HelloFromVux'
-import Home from './../views/Home'
-import Application from './../views/Application'
-import Apply from './../views/Apply'
-import Senility from './../views/Senility'
-import Succ from './../views/Succ'
-import Notify from './../views/Notify'
-import Contact from './../views/Contact'
-import Progress from './../views/Progress'
-import Neither from './../views/Neither'
+// import HelloWorld from './../views/HelloWorld'
+// import HelloFromVux from './../views/HelloFromVux'
+// import Home from './../views/Home'
+// import Application from './../views/Application'
+// import Apply from './../views/Apply'
+// import Senility from './../views/Senility'
+// import Succ from './../views/Succ'
+// import Notify from './../views/Notify'
+// import Contact from './../views/Contact'
+// import Progress from './../views/Progress'
+// import Neither from './../views/Neither'
 import PageTransition from './../components/PageTransition'
 
 Router.prototype.goBack = function () {
@@ -36,28 +36,29 @@ export default new Router({
           path: '/',
           redirect: '/home'
         },
-        {
-          path: '/helloWorld',
-          name: 'HelloWorld',
-          component: HelloWorld,
-          meta: {
-            title: '用血审证',
-            description: 'HelloWorld'
-          }
-        },
-        {
-          path: '/vux',
-          name: 'HelloFromVux',
-          component: HelloFromVux,
-          meta: {
-            title: '用血审证',
-            description: 'HelloFromVux'
-          }
-        },
+        // {
+        //   path: '/helloWorld',
+        //   name: 'HelloWorld',
+        //   component: HelloWorld,
+        //   meta: {
+        //     title: '用血审证',
+        //     description: 'HelloWorld'
+        //   }
+        // },
+        // {
+        //   path: '/vux',
+        //   name: 'HelloFromVux',
+        //   component: HelloFromVux,
+        //   meta: {
+        //     title: '用血审证',
+        //     description: 'HelloFromVux'
+        //   }
+        // },
         {
           path: '/home',
           name: 'home',
-          component: Home,
+          // component: Home,
+          component: resolve => require(['./../views/Home'], resolve),
           meta: {
             title: '用血审证',
             description: 'home'
@@ -66,7 +67,8 @@ export default new Router({
         {
           path: '/application/:type?',
           name: 'application',
-          component: Application,
+          // component: Application,
+          component: resolve => require(['./../views/Application'], resolve),
           meta: {
             title: '用血审证',
             description: 'application'
@@ -75,7 +77,8 @@ export default new Router({
         {
           path: '/apply/:environment?',
           name: 'apply',
-          component: Apply,
+          // component: Apply,
+          component: resolve => require(['./../views/Apply'], resolve),
           meta: {
             title: '用血审证',
             description: 'apply'
@@ -84,7 +87,8 @@ export default new Router({
         {
           path: '/senility/:caseType?',
           name: 'senility',
-          component: Senility,
+          // component: Senility,
+          component: resolve => require(['./../views/Senility'], resolve),
           meta: {
             title: '用血审证',
             description: 'senility'
@@ -93,7 +97,8 @@ export default new Router({
         {
           path: '/succ/:caseType?',
           name: 'succ',
-          component: Succ,
+          // component: Succ,
+          component: resolve => require(['./../views/Succ'], resolve),
           meta: {
             title: '用血审证',
             description: 'succ'
@@ -102,7 +107,8 @@ export default new Router({
         {
           path: '/notify',
           name: 'notify',
-          component: Notify,
+          // component: Notify,
+          component: resolve => require(['./../views/Notify'], resolve),
           meta: {
             title: '用血审证',
             description: 'notify'
@@ -111,7 +117,8 @@ export default new Router({
         {
           path: '/contact',
           name: 'contact',
-          component: Contact,
+          // component: Contact,
+          component: resolve => require(['./../views/Contact'], resolve),
           meta: {
             title: '用血审证',
             description: 'contact'
@@ -120,7 +127,8 @@ export default new Router({
         {
           path: '/progress/:data?',
           name: 'progress',
-          component: Progress,
+          // component: Progress,
+          component: resolve => require(['./../views/Progress'], resolve),
           meta: {
             title: '用血审证',
             description: 'progress'
@@ -129,7 +137,8 @@ export default new Router({
         {
           path: '/neither',
           name: 'neither',
-          component: Neither,
+          // component: Neither,
+          component: resolve => require(['./../views/Neither'], resolve),
           meta: {
             title: '用血审证',
             description: 'neither'
