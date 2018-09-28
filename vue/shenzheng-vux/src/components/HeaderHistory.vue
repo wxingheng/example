@@ -1,6 +1,6 @@
 <template>
   <header>
-        <a v-if="!noBack" @click="go()" class="pull-left" style="fill: #fff;position: absolute;
+        <a id="navback" v-if="!noBack" @click="go()" class="pull-left" style="fill: #fff;position: absolute;
           left: 5px;
           top: 8px;">
            <x-icon type="ios-arrow-back" size="30"></x-icon>
