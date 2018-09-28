@@ -10,6 +10,8 @@
     <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
     <script type="text/javascript" src="../big-screen/assets/js/moment/moment.min.js"></script>
     <script type="text/javascript" src="../big-screen/assets/js/moment/locale/zh-cn.js"></script>
+    <script src="../big-screen/assets/js/d3-sankey/d3-sankey.js"></script>
+    <script src="../big-screen/assets/js/topojson.js"></script>
 
     <style>
         svg.main {
@@ -18,6 +20,8 @@
         }
 
         body {
+            padding:0;
+            margin:0;
             overflow: hidden;
         }
     </style>
@@ -39,6 +43,8 @@
         var width = document.documentElement.offsetWidth || document.body.offsetWidth,
             height = document.documentElement.offsetHeight || document.body.offsetHeight,
             svg = d3.select("svg.main");
+        var groups_out = svg.append("g")
+            .attr('class', 'map');
         var sankeyNodeWeight = {
             "A": 1,
             "B": 2,
@@ -50,6 +56,21 @@
             "冷沉淀": 8,
             '低温沉淀物类': 8
         };
+        var goes = [];
+        var geoMap = {};
+        var cityGeoMap = {};
+        //定义本省和周边省份
+        var homecity = '3201';
+        var homeProvince = '32';
+        var neighbors = ['31', '33', '34', '37'];
+        var CHN_ADM0 = ['11', '12', '13', '14', '15', '21', '22', '23',
+            '31', '32', '33', '34', '35', '36', '37', '41', '42', '43', '44', '45', '46',
+            '50', '51', '52', '53', '54', '61', '62', '63', '64', '65', '71', '81', '82'
+        ];
+
+        // 机构名称
+        var disaFacility = [];
+        // 机构坐标
         var facilityMap = {};
         //增加地图机构点滤镜
         var gaussian = svg.append('defs')
@@ -68,34 +89,125 @@
         //第二步 定义地理路径生成器
         var path = d3.geoPath()
             .projection(projection);
+
+        //初始化sankey图
+        var formatNumber = d3.format(",.0f"),
+            format = function (d) {
+                return formatNumber(d) + " TWh";
+            },
+            color = d3.scaleOrdinal(d3.schemeCategory10);
+        /**extent    sankey图位置:  x 1600  Y 230   高度 560   宽度 30   */
+
+        var sankey = d3.sankey()
+            .nodeWidth(30)
+            .nodePadding(8)
+            .extent([
+                [1600, 230],
+                [1820, 790]
+            ])
+            .nodeId(function (d) {
+                return d.name;
+            });
+        var link = svg.append("g")
+            .attr("class", "links")
+            .selectAll("path");
+
         //向服务器请求文件并绘制地图
-        init()
-        d3.json("./geodata/china.json", function (error, root) {
+        var getJsonCount = 0;
+        CHN_ADM0.forEach(function (v, k) {
+            d3.json("geodata/" + v + ".s.json", function (error, toporoot) {
+                goes.push(toporoot);
+                getJsonCount++;
+                if (getJsonCount == CHN_ADM0.length) {
+                    console.log('goes--->>>', goes);
+                    // initDone();
+                    goes.forEach(function (v, k) {
 
-            if (error)
-                return console.error(error);
-            console.log(root.features);
+                        geoMap[v.properties.name] = {
+                            "province": v.properties,
+                            "cities": {},
+                            "transform": v.transform
+                        };
+                        v.provinceBorders = topojson.merge(v, v.objects.cities.geometries); //合并省份下城市的地理数据
 
-            svg.selectAll("path")
-                .data(root.features)
-                .enter()
-                .append("path")
-                .attr("stroke", "#000")
-                .attr("stroke-width", 1)
-                .attr("fill", function (d, i) {
-                    return randomColor();
-                })
-                .attr("d", path) //使用地理路径生成器
-                .on("mouseover", function (d, i) {
-                    d3.select(this)
-                        .attr("fill", "yellow");
-                })
-                .on("mouseout", function (d, i) {
-                    d3.select(this)
-                        .attr("fill", randomColor());
-                });
-            render()
+                        v.objects.cities.geometries.forEach(function (a, e) {
+                            geoMap[v.properties.name]['cities'][a.properties.name] = a.properties;
+                            cityGeoMap[a.properties.id] = a.properties;
+                        });
+
+                        // 绘制城市的边界
+                        //只有本省市与临近省市才绘制边界
+                        if (v.properties.id == homeProvince || neighbors.includes(v.properties.id)) {
+                            var cityBorders = topojson.feature(v, v.objects.cities);
+                            var groups = groups_out.append("g");
+                            groups.selectAll("path")
+                                .data(cityBorders.features)
+                                .enter()
+                                .append("path")
+                                .style("fill", function (d, i) {
+                                    return v.properties.id == homeProvince ? "#202d5c" :
+                                        "#152147";
+                                })
+                                .attr("stroke", function (d, i) {
+                                    //return "#0f2a56";
+                                    return v.properties.id == homeProvince ? "#245079" :
+                                        "#1c446b";
+                                })
+                                .attr("d", path);
+
+                            groups.append("path")
+                                .datum(v.provinceBorders)
+                                .style("fill", "transparent")
+                                .attr('id', ('p' + v.properties.id))
+                                .attr("stroke", "transparent")
+                                .attr("d", path);
+
+                        } else {
+                            //否则只绘制省份的边界
+                            groups_out.append("path")
+                                .datum(v.provinceBorders)
+                                .style("fill", "#0e163a") //rgb(14,22,58)
+                                .attr('id', ('p' + v.properties.id))
+                                .attr("stroke", "#0f2a56")
+                                .attr("stroke-width", "2")
+                                .attr("d", path);
+                        }
+
+                    })
+                    render()
+
+                }
+            })
         });
+        init()
+        // d3.json("./geodata/china.json", function (error, root) {
+
+        //     if (error)
+        //         return console.error(error);
+        //     console.log(root);
+
+        //     console.log(root.features);
+
+        //     svg.selectAll("path")
+        //         .data(root.features)
+        //         .enter()
+        //         .append("path")
+        //         .attr("stroke", "#000")
+        //         .attr("stroke-width", 1)
+        //         .attr("fill", function (d, i) {
+        //             return randomColor();
+        //         })
+        //         .attr("d", path) //使用地理路径生成器
+        //         .on("mouseover", function (d, i) {
+        //             d3.select(this)
+        //                 .attr("fill", "yellow");
+        //         })
+        //         .on("mouseout", function (d, i) {
+        //             d3.select(this)
+        //                 .attr("fill", randomColor());
+        //         });
+        //     render()
+        // });
 
         function render() {
             //调剂记录
@@ -115,7 +227,6 @@
                 success: function (data, status) {
                     if (status == 'success') {
                         console.log(data)
-                        // renderData(data);
                         drawDisaConnect(data);
                     }
                 },
@@ -127,8 +238,155 @@
         }
 
         function drawDisaConnect(data) {
+
+            var senkeyData = {
+                nodes: [],
+                links: []
+            };
+            var primary = secondary = [];
+
+            var dataBytype = d3.nest()
+                .key(function (d) {
+                    return d.bloodType;
+                })
+                .entries(data);
+            var dataBygroup = d3.nest()
+                .key(function (d) {
+                    return d.bloodGroup;
+                })
+                .entries(data);
+
+            for (var i = 0; i < dataBygroup.length; i++) {
+                senkeyData.nodes.push({
+                    "name": dataBygroup[i].key
+                });
+                primary.push({
+                    "name": dataBygroup[i].key
+                });
+            }
+            for (var i = 0; i < dataBytype.length; i++) {
+                senkeyData.nodes.push({
+                    "name": dataBytype[i].key
+                });
+                secondary.push({
+                    "name": dataBygroup[i].key
+                });
+            }
+            console.log('energy', senkeyData);
+            // 机构跟品种 的对应数据格式: [ ["机构", "品种", 数值], [...], ... ]
+            var facilityBloodTypeHash = {};
+            var facilityBloodTypeData = [];
+            var bloodGroupBloodTypeHash = {};
+            var bloodGroupBloodTypeData = [];
+            // 汇总格式 {"品种名称": {value: 100, count: 13, minValue: 9999999, maxValue:0, sources: []}, ... }
+            var bloodTypeSummary = {};
+
+            for (var k in data) {
+                var item = data[k];
+                // 汇总
+                if (!bloodTypeSummary.hasOwnProperty(item.bloodType)) {
+                    bloodTypeSummary[item.bloodType] = {
+                        value: 0,
+                        count: 0,
+                        minValue: 99999999,
+                        maxValue: 0,
+                        sources: []
+                    };
+                }
+                bloodTypeSummary[item.bloodType].value += item.amount; // 累计总量
+                bloodTypeSummary[item.bloodType].count++; // 计数
+                bloodTypeSummary[item.bloodType].sources.push(item.stationTo); // 数据源是哪些
+
+                // 处理 血型跟品种 的对应数据格式
+                var btId = item.bloodGroup + '' + item.bloodType;
+
+
+
+                if (bloodGroupBloodTypeHash.hasOwnProperty(btId)) {
+                    var key = bloodGroupBloodTypeHash[btId]; // 得到数组下标
+                    bloodGroupBloodTypeData[key]['value'] += item.amount;
+                } else {
+                    var len = bloodGroupBloodTypeData.push({
+                        "target": item.bloodGroup,
+                        "source": item.bloodType,
+                        "value": item.amount
+                    });
+                    bloodGroupBloodTypeHash[btId] = len - 1; // 记录数组下标
+                }
+
+                // 处理 机构跟品种 的对应数据格式
+                var fbId = item.stationTo + '' + item.bloodType;
+                if (facilityBloodTypeHash.hasOwnProperty(fbId)) {
+                    var key = facilityBloodTypeHash[fbId]; // 得到数组下标
+                    facilityBloodTypeData[key][3] += item.amount;
+                } else {
+                    var len = facilityBloodTypeData.push([
+                        item.stationFrom, item.stationTo, item.bloodType, item.amount
+                    ]);
+
+                    facilityBloodTypeHash[fbId] = len - 1; // 记录数组下标
+                }
+
+                //汇总有调剂关系的血站机构
+                if (disaFacility.indexOf(item['stationFrom']) == -1) {
+                    disaFacility.push(item['stationFrom']);
+                } else if (disaFacility.indexOf(item['stationTo']) == -1) {
+                    disaFacility.push(item['stationTo']);
+                }
+            }
+
+            senkeyData.nodes.sort(function (a, b) {
+                var aNode = sankeyNodeWeight[a.name];
+                var bNode = sankeyNodeWeight[b.name];
+                return aNode - bNode;
+            });
+            senkeyData.links = bloodGroupBloodTypeData;
+            sankey(senkeyData);
+            // 血液总数
+            var totalAmount = 0;
+
+
+
+            // 计算最大值和最小值， 总数
+            var amountArr = [];
+
+            for (var i in facilityBloodTypeData) {
+                var d = facilityBloodTypeData[i];
+                var type = d[2];
+                var value = d[3];
+
+                bloodTypeSummary[type].minValue = value < bloodTypeSummary[type].minValue ?
+                    value : bloodTypeSummary[type].minValue; // 最小值
+                bloodTypeSummary[type].maxValue = value > bloodTypeSummary[type].maxValue ?
+                    value : bloodTypeSummary[type].maxValue; // 最大值
+                // 总数
+                totalAmount += value;
+
+                amountArr.push(value);
+
+            };
+
+            // map point R scale
+            radiusScale = d3.scaleLinear()
+                .domain([d3.min(amountArr), d3.max(amountArr)])
+                .range([3, 8]);
+
+
+            senkeyData.nodes.forEach(function (v, k) {
+                if (bloodTypeSummary.hasOwnProperty(v.name)) {
+                    bloodTypeSummary[v.name].y0 = v.y0;
+                    bloodTypeSummary[v.name].x0 = v.x0;
+                    bloodTypeSummary[v.name].x1 = v.x1;
+                    bloodTypeSummary[v.name].y1 = v.y1;
+                }
+            });
+
+
+            console.log('senkeyData------->', senkeyData);
+
             var disaPath = svg.append('g')
                 .attr('class', 'disPoint');
+            // 渲染点
             //update 更新动画的位置
             var disaPathUpdate = disaPath.selectAll('circle').data(data)
             var disaPathEnter = disaPathUpdate.enter(); //enter
@@ -169,7 +427,117 @@
                     return (d['bloodType'] == "红细胞类" ? 1 : 0.1);
                 });
 
+            //调出
+            transPoints = pointLink.append('circle')
+                .attr('class', 'recv')
+                .attr("transform", function (d) {
+                    var coor = projection([facilityMap[d['stationFrom']]['x'], facilityMap[d['stationFrom']]['y']]);
+                    return "translate(" + coor[0] + "," + coor[1] + ")"
+                })
+                .attr('r', function (d) {
+                    return radiusScale(d['amount'])
+                })
+                .style("fill", function (d) {
+                    return randomColor();
+                })
+                .style("filter", 'url(#' + gaussian.attr('id') + ')');
 
+            transPoints.transition()
+                .duration(2000)
+                .attr('opacity', function (d) {
+                    return (d['bloodType'] == "红细胞类" ? 1 : 0.3);
+                });
+
+
+            // 连线
+            dashLine = pointLink.append("path")
+                .attr('fill', 'none')
+                .style("stroke-dasharray", "4,4")
+                .attr('d', function (d) {
+                    var start = projection([facilityMap[d['stationFrom']]['x'], facilityMap[d['stationFrom']]['y']]);
+                    var end = projection([facilityMap[d['stationTo']]['x'], facilityMap[d['stationTo']]['y']]);
+                    var controlPoint = getBezierCurve(start, end, Math.abs(start[1] - end[1]) < 100 ? 0.8 : 0.7)
+                    var context = d3.path();
+                    context.moveTo(start[0], start[1])
+                    context.quadraticCurveTo(controlPoint[0], controlPoint[1], end[0], end[1]);
+                    return context.toString();
+                });
+            dashLine.transition()
+                .duration(1000)
+                .style("stroke", function (d) {
+                    return (d['bloodType'] == "红细胞类" ? '#ddd' : 'transparent');
+                });
+
+            curveLink = pointLink.append('path')
+                .attr('class', 'links')
+                .attr('fill', 'none')
+                .attr("stroke-width", "2px")
+                .attr("stroke", function (d) {
+                    return randomColor();
+                    // return (d['bloodType'] == "红细胞类" ? bgColorMap['links'][d['bloodType']] : 'transparent');
+                })
+                .attr('d', function (d) {
+                    var start = projection([facilityMap[d['stationFrom']]['x'], facilityMap[d['stationFrom']]['y']]);
+                    var end = projection([facilityMap[d['stationTo']]['x'], facilityMap[d['stationTo']]['y']]);
+                    var controlPoint = getBezierCurve(start, end, Math.abs(start[1] - end[1]) < 100 ? 0.8 : 0.7)
+                    var context = d3.path();
+                    context.moveTo(start[0], start[1])
+                    context.quadraticCurveTo(controlPoint[0], controlPoint[1], end[0], end[1]);
+                    return context.toString();
+                });
+            curveLink.call(transition);
+
+            function transition(path) {
+                path.transition()
+                    .duration(7500)
+                    .attrTween("stroke-dasharray", tweenDash)
+            }
+
+            function tweenDash() {
+                var l = this.getTotalLength(),
+                    i = d3.interpolateString("0," + l, l + "," + l);
+                return function (t) {
+                    return i(t);
+                };
+            }
+
+
+            //渲染机构名称
+            svg.append('g')
+                .attr('class', 'disaFacility')
+                .selectAll('text')
+                .data(disaFacility)
+                .enter()
+                .append('text')
+                .attr("transform", function (d) {
+                    var coor = projection([facilityMap[d]['x'], facilityMap[d]['y']]);
+                    return "translate(" + coor[0] + "," + coor[1] + ")"
+                })
+                .attr('x', -50)
+                .attr('y', 20)
+                .attr('fill', '#fff')
+                .transition()
+                .duration(1000)
+                .text(function (d) {
+                    return facilityMap[d]['name'];
+                });
+
+            var linkUpdate = link
+                .data(senkeyData.links);
+            var linkEnter = linkUpdate.enter()
+            sankeyLinks = linkEnter.append("path")
+                .attr("fill", "transparent")
+                .attr("d", d3.sankeyLinkHorizontal())
+                .attr("stroke", function (d) {
+                    return randomColor();
+                    // return d.source.name == '红细胞类' ? bgColorMap['fill'][d.target.name] : '#fff';
+                })
+                .attr("stroke-width", function (d) {
+                    return Math.max(1, d.width);
+                })
+                .style("opacity", function (d) {
+                    return d.source.name == '红细胞类' ? '0.3' : '0.05';
+                });
         }
 
         function init() {
@@ -206,6 +574,55 @@
 
         function randomColor() {
             return '#' + Math.floor(Math.random() * 0xffffff).toString(16);
+        }
+        /**
+         * @desc  获取二次贝塞尔曲线的路径字符串
+         * @param {object} begin - 开始点
+         * @param {object} end - 结束点
+         * @param {number} factor - 0-1 factor越大曲线越接近直线
+         * @example getBezierCurve(position[0], position[1], 0.01)
+         * @returns {string}
+         */
+        function getBezierCurve(begin, end, factor) {
+            var k = 0,
+                b = 0,
+                x = 0,
+                y = 0,
+                middle = {
+                    x: (end[0] + begin[0]) / 2,
+                    y: (end[1] + begin[1]) / 2
+                };
+
+            if (end[1] - begin[1] !== 0) {
+                k = (begin[0] - end[0]) / (end[1] - begin[1]);
+                b = middle.y - k * middle.x;
+            } else {
+                k = 0;
+                b = begin[1];
+            }
+
+
+
+            if (k > 0) {
+                x = begin[0] + (middle.x - begin[0]) * factor;
+            } else {
+                x = end[0] + (middle.x - end[0]) * factor;
+
+            }
+
+            y = k * x + b;
+
+            if (x < 0 || y < 0) {
+                //调整0.99还是小于0的异常情况，防止死循环,按直线绘制
+                if (factor == 0.99) {
+                    return [begin[0], begin[1]];
+                }
+                //如果计算控制点x或y小于零，调整为尽可能接近直线绘制
+                return getBezierCurve(begin, end, 0.99);
+            }
+
+            // return 'M' + begin[0] + ',' + begin[1] + ' Q' + x + ',' + y + ' ' + end[0] + ',' + end[1];
+            return [x, y];
         }
     </script>
 </body>

@@ -1,4 +1,4 @@
-var isLog = false;
+var isLog = true;
 //血型颜色map
 var bgColorMap = {
 
@@ -108,6 +108,7 @@ CHN_ADM0.forEach(function (v, k) {
         goes.push(toporoot);
         getJsonCount++;
         if (getJsonCount == CHN_ADM0.length) {
+            console.log('goes--->>>', goes);
             initDone();
         }
     })
@@ -536,7 +537,6 @@ gaussian.append('feGaussianBlur')
 var disaFacility = [];
 
 function renderData(data) {
-
     //循环替换全血类为红细胞类
     $.each(data, function (k, v) {
         if (v.bloodType == '全血类' || v.bloodType == '血浆类') {
@@ -643,18 +643,18 @@ function renderData(data) {
     };
 
     //获取到联网机构后进行平移缩放
-    /*
-    var zoomed = function () {
-        groups_out.attr('transform', d3.event.transform);
-    }
-    zoom = d3.zoom().on('zoom',zoomed);
-    var mapTrans = zoomToData(disaFacility)
-    isLog && console.log('disaFacility',mapTrans);
-    //平移改省份到中心
-    groups_out.transition().duration(1000).call(zoom.translateTo, mapTrans[0], mapTrans[1]);
-    setTimeout(function() {
-        groups_out.transition().duration(800).call(zoom.scaleTo, mapTrans[2]);
-    },1000);*/
+    
+    // var zoomed = function () {
+    //     groups_out.attr('transform', d3.event.transform);
+    // }
+    // zoom = d3.zoom().on('zoom',zoomed);
+    // var mapTrans = zoomToData(disaFacility)
+    // isLog && console.log('disaFacility-------------------->',mapTrans);
+    // //平移改省份到中心
+    // groups_out.transition().duration(1000).call(zoom.translateTo, mapTrans[0], mapTrans[1]);
+    // setTimeout(function() {
+    //     groups_out.transition().duration(800).call(zoom.scaleTo, mapTrans[2]);
+    // },1000);
 
     isLog && console.log('facilityData', facilityBloodTypeData);
     isLog && console.log('bloodTypeS', bloodTypeSummary);
@@ -1715,8 +1715,8 @@ $(function () {
                         } else if (v.type == '血浆类') {
                             v.volume = Math.round(v.volume / 100);
                         }
-                        console.log('111',v.date);
-                        console.log('222',renderDateMap);
+                        console.log('111', v.date);
+                        console.log('222', renderDateMap);
 
                         render_data[renderDateMap[v.date]][renderTypeMap[v.type]] += v.volume;
                     })

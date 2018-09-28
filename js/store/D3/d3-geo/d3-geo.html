@@ -26,6 +26,7 @@
 
 
 <body>
+    <button id="change">改变</button>
     <svg class="main">
         <defs>
             <!--飞机-->
@@ -39,6 +40,14 @@
 </body>
 
 <script>
+    document.getElementById('change').onclick = function(){
+        console.log(123);
+        var projection = d3.geoMercator()
+        .center([118.8062, 31.9208]).scale(9100)
+        // .center([107, 31]).scale(850)
+        .translate([900, 780]);
+        initDone();
+    }
     var svg = d3.select("svg");
     var groups_out = svg.append("g")
         .attr('class', 'map');
@@ -63,8 +72,8 @@
 
     // 第一步 定义地图的投影
     var projection = d3.geoMercator()
-        .center([118.8062, 31.9208])
-        .scale(9100)
+        // .center([118.8062, 31.9208]).scale(9100)
+        .center([107, 31]).scale(850)
         .translate([900, 780]);
 
 
