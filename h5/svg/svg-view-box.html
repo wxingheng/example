@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>svg-view-box</title>
+</head>
+<!-- 尝试改变页面的大小   svg 会主动缩放 -->
+<body>
+    <svg id="svg" style="width:1920px; height:1080px" viewBox="0 0 1920 1080">
+        <circle cx="200" cy="200" r="200" fill="#fdd" stroke="none"></circle>
+    </svg>
+    <script>
+        var svg = document.getElementById('svg')
+        window.addEventListener('resize', function () {
+            var w = document.documentElement.offsetWidth || document.body.offsetWidth;
+            // var h = document.documentElement.offsetHeight || document.body.offsetHeight;
+            console.log(123);
+            svg.style.width = `${w}px`;
+            // svg.style.height = `${h}px`;
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>d3-geo-study001</title>
+    <script src="../assets/d3.v4.js" charset="utf-8"></script>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+    <script type="text/javascript" src="../big-screen/assets/js/moment/moment.min.js"></script>
+    <script type="text/javascript" src="../big-screen/assets/js/moment/locale/zh-cn.js"></script>
+
+    <style>
+        svg.main {
+            width: 1920px;
+            height: 1080px;
+        }
+
+        body {
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <svg id="svg" class="main" viewBox="0 0 1920 1080"></svg>
+    </div>
+    <script>
+        window.addEventListener('resize', function () {
+            var svg = document.getElementById('svg');
+            var w = document.documentElement.offsetWidth || document.body.offsetWidth;
+            // var h = document.documentElement.offsetHeight || document.body.offsetHeight;
+            console.log(123);
+            svg.style.width = `${w}px`;
+            // svg.style.height = `${h}px`;
+        })
+        var width = document.documentElement.offsetWidth || document.body.offsetWidth,
+            height = document.documentElement.offsetHeight || document.body.offsetHeight,
+            svg = d3.select("svg.main");
+        var sankeyNodeWeight = {
+            "A": 1,
+            "B": 2,
+            "O": 3,
+            "AB": 4,
+            "红细胞类": 5,
+            "血浆类": 6,
+            "血小板类": 7,
+            "冷沉淀": 8,
+            '低温沉淀物类': 8
+        };
+        var facilityMap = {};
+        //增加地图机构点滤镜
+        var gaussian = svg.append('defs')
+            .append('filter')
+            .attr('id', "gaussian");
+
+        gaussian.append('feGaussianBlur')
+            .attr('in', 'SourceGraphic')
+            .attr('stdDeviation', '0.7');
+
+        // 第一步 定义地图的投影
+        var projection = d3.geoMercator()
+            // .center([107, 31]).scale(850)
+            .center([118.8062, 31.9208]).scale(9100)
+            .translate([width / 2, height / 2]);
+        //第二步 定义地理路径生成器
+        var path = d3.geoPath()
+            .projection(projection);
+        //向服务器请求文件并绘制地图
+        init()
+        d3.json("./geodata/china.json", function (error, root) {
+
+            if (error)
+                return console.error(error);
+            console.log(root.features);
+
+            svg.selectAll("path")
+                .data(root.features)
+                .enter()
+                .append("path")
+                .attr("stroke", "#000")
+                .attr("stroke-width", 1)
+                .attr("fill", function (d, i) {
+                    return randomColor();
+                })
+                .attr("d", path) //使用地理路径生成器
+                .on("mouseover", function (d, i) {
+                    d3.select(this)
+                        .attr("fill", "yellow");
+                })
+                .on("mouseout", function (d, i) {
+                    d3.select(this)
+                        .attr("fill", randomColor());
+                });
+            render()
+        });
+
+        function render() {
+            //调剂记录
+            $.ajax({
+                url: "/mock/records/dispatch.json",
+                //url: "demoJsonData/recordDispatch.js",
+                dataType: 'json',
+                type: 'get',
+                beforeSend: function (request) {
+                    request.setRequestHeader("dashboard-device-id", "testdeviceid");
+                },
+                data: {
+                    startTime: moment().subtract(60, 'days').format('YYYY-MM-DD') + ' 23:59:59',
+                    endTime: moment().format('YYYY-MM-DD') + ' 00:00:00'
+                },
+                async: false,
+                success: function (data, status) {
+                    if (status == 'success') {
+                        console.log(data)
+                        // renderData(data);
+                        drawDisaConnect(data);
+                    }
+                },
+                error: function () {
+
+                }
+            });
+
+        }
+
+        function drawDisaConnect(data) {
+            var disaPath = svg.append('g')
+                .attr('class', 'disPoint');
+            //update 更新动画的位置
+            var disaPathUpdate = disaPath.selectAll('circle').data(data)
+            var disaPathEnter = disaPathUpdate.enter(); //enter
+
+            var pointLink = disaPathEnter.append('g')
+                .attr('class', function (d, i) {
+                    d.showInd = sankeyNodeWeight[d.boodType];
+                    if (d.boodType == '红细胞类') {
+                        d.show = true;
+                    } else {
+                        d.show = false;
+                    }
+                    return 'pl_' + d['boodType'] + '_' + i;
+                });
+
+
+            //调入
+            recvPoints = pointLink.append('circle')
+                .attr('class', 'trans')
+                .attr("transform", function (d) {
+                    var coor = projection([facilityMap[d['stationTo']]['x'], facilityMap[d['stationTo']]['y']]);
+                    return "translate(" + coor[0] + "," + coor[1] + ")"
+                })
+                .attr('r', function (d) {
+                    return 3
+                    // return radiusScale(d['amount'])
+                })
+                .style("fill", function (d) {
+                    return randomColor()
+                    // return (d['bloodType'] == "红细胞类" ? bgColorMap['links'][d['bloodType']] : '#fff');
+                })
+                .style("filter", 'url(#' + gaussian.attr('id') + ')');
+            // .transition()
+            // .duration(2000)
+            recvPoints.transition()
+                .duration(1000)
+                .style('opacity', function (d) {
+                    return (d['bloodType'] == "红细胞类" ? 1 : 0.1);
+                });
+
+
+        }
+
+        function init() {
+            //获取机构字典
+            $.ajax({
+                //   url: "/service/dashboard/dicts/facility",
+                url: "/mock/dicts/facility.json",
+                type: 'get',
+                beforeSend: function (request) {
+                    request.setRequestHeader("dashboard-device-id", "testdeviceid");
+                },
+                async: false,
+                success: function (data, status) {
+                    if (status == 'success') {
+
+
+                        facility = data;
+                        data.map(function (v, k) {
+
+                            //地图血站名称重叠的特殊偏移处理
+                            if (v.id == '90017') {
+                                //江苏省血液中心
+                                v.y -= 0.08;
+                            }
+                            facilityMap[v.id] = v;
+                        })
+                    }
+                },
+                error: function () {
+
+                }
+            });
+        }
+
+        function randomColor() {
+            return '#' + Math.floor(Math.random() * 0xffffff).toString(16);
+        }
+    </script>
+</body>
+
+</html>
