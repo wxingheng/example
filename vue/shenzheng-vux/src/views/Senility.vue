@@ -3,7 +3,9 @@
       <header-history :path="'#/apply'"></header-history>
        <div class="default-layout">
                 <group title="用血者信息">
-                    <x-input title="姓名" required v-model="userbase.name" :max="10" name="username" placeholder="请输入姓名"></x-input>
+                    <x-input title="姓名" required v-model="userbase.name" :max="10" name="username" placeholder="请输入姓名">
+                      <label slot="label" class="weui-label "><span class="font-red">* </span>姓名</label>
+                    </x-input>
                     <selector required v-model="userbase.gender"  title="性别" :options="[{
               key: '1',
               value: '男'
@@ -20,11 +22,21 @@
               key: '9',
               value: '未说明性别'
             }
-          ]" ></selector>
-                    <x-number title="年龄" width="80px" :min="0" :max="120" fillable required v-model="userbase.age" name="age" placeholder="请输入年龄"></x-number>
-                    <selector required v-model="userbase.identityType" @on-change="typeChange"  title="证件类型" :options="identityTypeList" ></selector>
-                    <x-input title="证件号码" :is-type="validate" @on-change="typeChange"  required v-model="userbase.idNumber" name="idNumber" placeholder="请输入证件号码"></x-input>
-                    <x-input title="手机号" :is-type="validatePhone" required v-model="userbase.phone" name="phone" placeholder="请输入手机号"></x-input>
+          ]" >
+            <label slot="label" class="weui-label "><span class="font-red">* </span>性别</label>
+          </selector>
+                    <x-number title="年龄" width="80px" :min="0" :max="120" fillable required v-model="userbase.age" name="age" placeholder="请输入年龄">
+                      <label slot="label" class="weui-label "><span class="font-red">* </span>年龄</label>
+                    </x-number>
+                    <selector required v-model="userbase.identityType" @on-change="typeChange"  title="证件类型" :options="identityTypeList" >
+                      <label slot="label" class="weui-label "><span class="font-red">* </span>证件类型</label>
+                    </selector>
+                    <x-input title="证件号码" :is-type="validate" @on-change="typeChange"  required v-model="userbase.idNumber" name="idNumber" placeholder="请输入证件号码">
+                      <label slot="label" class="weui-label "><span class="font-red">* </span>证件号码</label>
+                    </x-input>
+                    <x-input title="手机号" :is-type="validatePhone" required v-model="userbase.phone" name="phone" placeholder="请输入手机号">
+                      <label slot="label" class="weui-label "><span class="font-red">* </span>手机号</label>
+                    </x-input>
                     <uploader
                       :preview="preview"
                       :max="varmax"
@@ -34,23 +46,46 @@
                       :title="'身份证件照片'"
                       :describe="'依次选择身份证姓名面，国徽面'"
                       :headers="headers"
-                    ></uploader>
+                    >
+                      <label slot="label" class="weui-label "><span class="font-red">* </span>身份证件照片</label>
+                    </uploader>
                  </group>
                  <group v-show="userbase.caseType !== '5'" :title="userbase.caseType === '2' ? '家庭成员献血信息' : '献血信息'">
-                    <x-input :max="30" v-show="userbase.caseType === '2'" title="姓名" required v-model="userbase.familyName" name="username" placeholder="请输入姓名"></x-input>
-                    <selector v-show="userbase.caseType === '2'" required v-model="userbase.familyType"  title="证件类型" :options="identityTypeList" ></selector>
-                    <x-input :max="30" v-show="userbase.caseType === '2'" title="证件号码" :is-type="familyValidate" required v-model="userbase.familyNumber" placeholder="请输入证件号码"></x-input>
-                    <selector v-show="userbase.caseType === '2'" required v-model="userbase.relation"  title="与献血者关系" :options="[{key: 'LOCAL', value: '本地',}, {key: '1', value: '父母'}, {key: '2', value: '子女'}, {key: '3', value: '岳父母'}, {key: '4', value: '公婆'}, {key: '5', value: '配偶'}]" ></selector>
-                    <selector v-show="userbase.caseType !== '2'" required v-model="userbase.placeType"  title="献血地点" :options="[{key: 'LOCAL', value: '本地',}, {key: 'NONLOCAL', value: '外地',}, {key: 'NEVER', value: '无',}]" ></selector>
-                    <x-number title="献血次数" width="80px" :min="0" :max="1000" fillable required v-model="userbase.count" name="count"  @on-change="countChange" placeholder="请输入献血次数"></x-number>
+                    <x-input :max="30" v-show="userbase.caseType === '2'" title="姓名" required v-model="userbase.familyName" name="username" placeholder="请输入姓名">
+                      <label slot="label" class="weui-label "><span class="font-red">* </span>姓名</label>
+
+                    </x-input>
+                    <selector v-show="userbase.caseType === '2'" required v-model="userbase.familyType"  title="证件类型" :options="identityTypeList" >
+                      <label slot="label" class="weui-label "><span class="font-red">* </span>证件类型</label>
+
+                    </selector>
+                    <x-input :max="30" v-show="userbase.caseType === '2'" title="证件号码" :is-type="familyValidate" required v-model="userbase.familyNumber" placeholder="请输入证件号码">
+                      <label slot="label" class="weui-label "><span class="font-red">* </span>证件号码</label>
+
+                    </x-input>
+                    <selector v-show="userbase.caseType === '2'" required v-model="userbase.relation"  title="与献血者关系" :options="[{key: 'LOCAL', value: '本地',}, {key: '1', value: '父母'}, {key: '2', value: '子女'}, {key: '3', value: '岳父母'}, {key: '4', value: '公婆'}, {key: '5', value: '配偶'}]" >
+                      <label slot="label" class="weui-label "><span class="font-red">* </span>与献血者关系</label>
+
+                    </selector>
+                    <selector v-show="userbase.caseType !== '2'" required v-model="userbase.placeType"  title="献血地点" :options="[{key: 'LOCAL', value: '本地',}, {key: 'NONLOCAL', value: '外地',}, {key: 'NEVER', value: '无',}]" >
+                      <label slot="label" class="weui-label "><span class="font-red">* </span>献血地点</label>
+
+                    </selector>
+                    <x-number title="献血次数" width="80px" :min="0" :max="1000" fillable required v-model="userbase.count" name="count"  @on-change="countChange" placeholder="请输入献血次数">
+                      <label slot="label" class="weui-label "><span class="font-red">* </span>献血次数</label>
+                    </x-number>
                     <datetime
                         v-model="userbase.donateTime"
                         :title="'最近献血时间'"
                         :min-year="1950"
                         :max-year="new Date().getFullYear()"
-                    ></datetime>
+                    >
+                    </datetime>
                     <selector required v-model="userbase.donateType"
-                     title="献血类型" :options="[{key: 'WHOL', value: '全血'}, { key: 'APHE', value: '单采血小板'}]" ></selector>
+                     title="献血类型" :options="[{key: 'WHOL', value: '全血'}, { key: 'APHE', value: '单采血小板'}]" >
+                      <label slot="label" class="weui-label "><span class="font-red">* </span>献血类型</label>
+
+                     </selector>
                      <uploader
                      v-show="userbase.caseType === '2'"
                       :max="varmax"
@@ -60,7 +95,10 @@
                       name="file"
                       :title="'关系证明'"
                       :describe="'请上传献血者与用血的关系证明，如结婚证、出生证、户口本、公安机关开具的正规关系'"
-                    ></uploader>
+                    >
+                      <label slot="label" class="weui-label "><span class="font-red">* </span>关系证明</label>
+                    
+                    </uploader>
                     <uploader
                     v-show="userbase.caseType === '2'"
                       :max="varmax"
@@ -70,7 +108,10 @@
                       name="file"
                       :title="'献血者身份证明'"
                       :describe="' 依次选择身份证姓名面，国徽面'"
-                    ></uploader>
+                    >
+                      <label slot="label" class="weui-label "><span class="font-red">* </span>献血者身份证明</label>
+
+                    </uploader>
                      <uploader
                       :max="varmax"
                       :images="userbase.prove1"
@@ -79,7 +120,10 @@
                       name="file"
                       :title="'献血证明'"
                       :describe="'请上传一张最近一次的献血证，要求上传献血者信息详情页、献血记录页、用血记录页'"
-                    ></uploader>
+                    >
+                      <label slot="label" class="weui-label "><span v-show="userbase.caseType!=='8' && userbase.caseType!=='6' " class="font-red">* </span>献血证明</label>
+
+                    </uploader>
                  </group>
                   <group title="用血信息">
                       <x-input title="用血医院"
@@ -89,7 +133,10 @@
                       placeholder="请搜索医院"
                       @on-keyup="hospitalChange"
                       v-model="userbase.hospital.name"
-                      ></x-input>
+                      >
+                       <label slot="label" class="weui-label "><span class="font-red">* </span>用血医院</label>
+
+                      </x-input>
                       <div class="weui-cells vux-search_show" v-show="hospitals.length > 0" style="position: absolute;
                           margin-top: 0px;
                           max-height: 200px;
@@ -106,14 +153,23 @@
                       disabled
                       :max="30"
                       v-model="userbase.hospital.areaName"
-                      ></x-input>
-                      <selector required v-model="userbase.diagnosis"  title="临床诊断" :options="disease"></selector>
+                      >
+                       <label slot="label" class="weui-label "><span class="font-red">* </span>医院所在区</label>
+
+                      </x-input>
+                      <selector required v-model="userbase.diagnosis"  title="临床诊断" :options="disease">
+                       <label slot="label" class="weui-label "><span class="font-red">* </span>临床诊断</label>
+                      </selector>
                       <x-input title="其它诊断" v-show="userbase.diagnosis == '40'"
                       :max="30"
                       v-model="userbase.otherDiseaseName"
                       placeholder="请输入临床诊断信息"
-                      ></x-input>
-                      <selector required   title="用血品种"  ref="bloodType" :options="bloodSubTypes"></selector>
+                      >
+                       <label slot="label" class="weui-label "><span class="font-red">* </span>其它诊断</label>
+                      </x-input>
+                      <selector required   title="用血品种"  ref="bloodType" :options="bloodSubTypes">
+                       <label slot="label" class="weui-label "><span class="font-red">* </span>用血品种</label>
+                      </selector>
                     <x-input title="用血量（U）" :min="0" :max="3"  ref="bloodCount" fillable placeholder="请输入" type="number">
                         <x-button slot="right" type="primary" mini @click.native="addBlood()">添加</x-button>
                     </x-input>
@@ -141,7 +197,10 @@
                       name="file"
                       :title="'用血通知书'"
                       :describe="'请上传用血通知书页面，并根据医生填写的用血类型与用血量仔细填写用血情况'"
-                    ></uploader>
+                    >
+                       <label slot="label" class="weui-label "><span class="font-red">* </span>用血通知书</label>
+
+                    </uploader>
 
                   </group>
                   <group v-show="userbase.caseType==='1' || userbase.caseType==='2' || userbase.caseType==='6' || userbase.caseType==='5'" :title="userbase.caseType === '6' ? '本市全日制高校' : '用血者工作情况'">
@@ -176,7 +235,10 @@
                         placeholder="请搜索"
                         @on-keyup="employmentChange"
                         v-model="userbase.employment.name"
-                      ></x-input>
+                      >
+                       <label slot="label" class="weui-label "><span class="font-red">* </span>{{userbase.inauguralStatus.key === 'WORK' ? '单位名称' :( userbase.inauguralStatus.key === 'ETC1' ||  userbase.inauguralStatus.key === 'ETC2') ? '高校名称' :'退休单位名称'}}</label>
+
+                      </x-input>
                       <div class="weui-cells vux-search_show" v-show="employments.length > 0" style="position: absolute;
                           margin-top: 0px;
                           max-height: 200px;
@@ -192,7 +254,10 @@
                      <selector required v-model="userbase.employmentArea"
                      v-show="userbase.inauguralStatus.key !== 'DOCT' && userbase.inauguralStatus.key !== 'ETC1' && userbase.inauguralStatus.key !== 'ETC2'"
                      :title="userbase.inauguralStatus.key === 'WORK' ? '缴纳社保所在区' : userbase.inauguralStatus.key === 'UMEM' ? '户籍所在区': '退休单位所在区'"
-                      :options="areas" ></selector>
+                      :options="areas" >
+                       <label slot="label" class="weui-label "><span class="font-red">* </span>{{userbase.inauguralStatus.key === 'WORK' ? '缴纳社保所在区' : userbase.inauguralStatus.key === 'UMEM' ? '户籍所在区': '退休单位所在区'}}</label>
+                      
+                      </selector>
                       <uploader
                       v-show="userbase.inauguralStatus.key !== 'DOCT'"
                       :max="varmax"
@@ -202,7 +267,10 @@
                       name="file"
                      :title="userbase.inauguralStatus.key === 'WORK' ? '相关材料' : userbase.inauguralStatus.key === 'UMEM' ? '户口本和无业证明': (userbase.inauguralStatus.key === 'ETC1') ? '工作证' : (userbase.inauguralStatus.key === 'ETC2') ? '学生证' :'相关材料'"
                       :describe="userbase.inauguralStatus.key === 'WORK' ? '请填写单位全称，并咨询单位人事确认您单位社保缴纳所在区' : userbase.inauguralStatus.key === 'UMEM' ? '请上传您的无业证明，如劳动手册等': '单位退休则选择单位缴纳社保所在区，街道退休则选择街道所在区'"
-                    ></uploader>
+                    >
+                       <label slot="label" class="weui-label "><span class="font-red">* </span>{{userbase.inauguralStatus.key === 'WORK' ? '相关材料' : userbase.inauguralStatus.key === 'UMEM' ? '户口本和无业证明': (userbase.inauguralStatus.key === 'ETC1') ? '工作证' : (userbase.inauguralStatus.key === 'ETC2') ? '学生证' :'相关材料'}}</label>
+
+                    </uploader>
 
                   </group>
                  <div style="padding:15px 0;">
@@ -275,7 +343,7 @@ export default {
       userbase: {
         ...this.$store.state.userbase,
         placeType: "LOCAL",
-        count: 1,
+        count: "",
         donateTime: "2000-01-01",
         donateType: "WHOL",
         images: [], // 本人证明
@@ -396,6 +464,7 @@ export default {
             !this.userbase.images.length ||
             !this.userbase.placeType ||
             !this.userbase.donateType ||
+            // 军人献血证明不是必填
             // !this.userbase.prove1.length ||
             !this.userbase.hospital ||
             !this.userbase.diagnosis ||
@@ -451,6 +520,7 @@ export default {
             !this.userbase.prove4.length ||
             !this.userbase.prove5.length ||
             // 新增   家庭成员献血信息
+            // 家庭成员献血 不想填写献血地点项
             // !this.userbase.placeType ||
             !this.userbase.donateType ||
             !this.userbase.prove1.length ||
@@ -482,6 +552,7 @@ export default {
             !this.userbase.images.length ||
             !this.userbase.placeType ||
             !this.userbase.donateType ||
+            // 高校师生献血证明不是必填
             // !this.userbase.prove1.length ||
             !this.userbase.hospital ||
             !this.userbase.diagnosis ||
@@ -825,7 +896,7 @@ export default {
           break;
         default:
       }
-      console.log('isImplant------------------------>', this.isImplant)
+      console.log("isImplant------------------------>", this.isImplant);
       if (!this.isImplant) {
         postData.oneNetData = "false";
       }
@@ -1007,5 +1078,8 @@ export default {
   border: 2px solid #1aad19;
   background-color: #1aad19;
   color: #fff;
+}
+.font-red {
+  color: red;
 }
 </style>

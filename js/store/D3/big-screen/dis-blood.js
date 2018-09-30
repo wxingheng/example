@@ -744,7 +744,7 @@ function renderData(data) {
     isLog && console.log('bloodTypeSummary', bloodTypeSummary);
 
 
-
+    console.log('facilityBloodTypeData------------>', facilityBloodTypeData);
     //渲染调剂机构与血液品种连线
     var facilityBloodTypeUpdate = svg.append('g')
         .attr('class', 'facilityBloodLinks')
@@ -790,7 +790,8 @@ function renderData(data) {
                 secondary: secondary
             };
             isLog && console.log("edges", edges);
-
+            
+            
             return getLinkPath(primary, secondary)
 
         }).style("fill", function (d) {

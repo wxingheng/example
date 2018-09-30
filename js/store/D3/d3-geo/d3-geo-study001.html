@@ -272,7 +272,7 @@
                     "name": dataBygroup[i].key
                 });
             }
-            console.log('energy', senkeyData);
+            
             // 机构跟品种 的对应数据格式: [ ["机构", "品种", 数值], [...], ... ]
             var facilityBloodTypeHash = {};
             var facilityBloodTypeData = [];
@@ -334,14 +334,15 @@
                     disaFacility.push(item['stationTo']);
                 }
             }
-
+           
             senkeyData.nodes.sort(function (a, b) {
                 var aNode = sankeyNodeWeight[a.name];
                 var bNode = sankeyNodeWeight[b.name];
                 return aNode - bNode;
             });
             senkeyData.links = bloodGroupBloodTypeData;
-            sankey(senkeyData);
+           
+            
             // 血液总数
             var totalAmount = 0;
 
@@ -380,9 +381,10 @@
                     bloodTypeSummary[v.name].y1 = v.y1;
                 }
             });
+            sankey(senkeyData);
+            
 
 
-            console.log('senkeyData------->', senkeyData);
 
             var disaPath = svg.append('g')
                 .attr('class', 'disPoint');

@@ -3,7 +3,9 @@
     <div class="weui-cell__bd">
       <div class="weui-uploader">
         <div v-show="showHeader" class="weui-uploader__hd">
-          <p class="weui-uploader__title"> {{ title }} </p>
+          <slot name="label">
+            <p class="weui-uploader__title"> {{ title }} </p>
+           </slot>
           <div v-show="showHeader && showTip" class="weui-uploader__info">
             {{ images.length }} / {{ max }}
           </div>

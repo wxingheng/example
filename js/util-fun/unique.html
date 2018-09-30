@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var arr = '2qwe345671dsfa233dsf9876ds243dsaljhkjfzxcxzvdsf'.split('').sort();
+        console.log(arr);
+
+       function unique (arr) {
+		let arrs=[];
+		var news_arr = arr.sort();//排序能减少一次循环
+		for(var i=0;i<news_arr.length;i++){
+				if(news_arr[i] == news_arr[i+1] && news_arr[i]!= news_arr[i-1] ){
+						arrs.push(arr[i]);
+				};
+ 
+		};
+		return arrs.join("");
+	}
+	console.log(unique(arr)) // 12qwe34567dsfa98ljhkzxcv
+
+    </script>
+</body>
+
+</html>

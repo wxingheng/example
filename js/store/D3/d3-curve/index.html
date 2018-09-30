@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>D3-sankey</title>
+    <script src="../assets/d3.v4.js" charset="utf-8"></script>
+    <script src="../big-screen/assets/js/d3-sankey/d3-sankey.js"></script>
+    <style>
+        svg {
+            width: 100%;
+            min-height: 600px;
+        }
+    </style>
+</head>
+
+<body>
+    <svg>
+    </svg>
+    <script>
+        //获取svg  DOM
+        var svg = d3.select('svg');
+
+
+        var facilityBloodTypeUpdate = svg.append('g')
+            .attr('class', 'facilityBloodLinks')
+            .selectAll('path')
+            .data(
+                [{
+                    primary: {
+                        height: randomNumberScope(10, 30),
+                        width: 0,
+                        x: 100,
+                        y: 100
+                    },
+                    secondary: {
+                        height: randomNumberScope(50, 100),
+                        width: 0,
+                        x: 900,
+                        y: 500
+                    }
+                }])
+
+        function render() {
+            //渲染调剂机构与血液品种连线
+
+            var facilityBloodTypeEnter = facilityBloodTypeUpdate.enter();
+
+            facilityBloodTypeLinks = facilityBloodTypeEnter.append('path')
+                .attr('d', function (d) {
+                    return getLinkPath(d.primary, d.secondary)
+                }).style("fill", function (d) {
+                    return randomColor();
+                }).style("opacity", function (d) {
+                    return '0.3';
+                }).attr("type", function (d) {
+                    return d[2];
+                }).attr("class", "edges");
+        }
+
+        setInterval(() => {
+            render();
+        }, 2000)
+
+        function randomColor() {
+            return '#' + Math.floor(Math.random() * 0xffffff).toString(16);
+        }
+
+        function getLinkPath(primary, secondary) {
+            // 曲线算法
+            function n(t, n, e, r, i, u, o, s) {
+                var c = (t + e) / 2,
+                    d = (i + o) / 2;
+                return ["M", t, ",", n, "C", c, ",", n, " ", c, ",", r, ",", e, ",", r, "L", i, ",", u, "C", d, ",", u,
+                    " ", d, ",", s, ",", o, ",", s, "z"
+                ].join("")
+            }
+            // 返回 link 的 path
+            return n(primary.x + primary.width, primary.y + primary.height, secondary.x - secondary.width, secondary.y +
+                secondary.height, secondary.x - secondary.width, secondary.y - secondary.height, primary.x +
+                primary.width, primary.y - primary.height)
+        }
+
+        function randomNumberScope(min, max) {
+            return Math.floor(Math.random() * (max - min) + min)
+        }
+    </script>
+</body>
+
+</html>

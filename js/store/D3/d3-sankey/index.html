@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>D3-sankey</title>
+    <script src="../assets/d3.v4.js" charset="utf-8"></script>
+    <script src="../big-screen/assets/js/d3-sankey/d3-sankey.js"></script>
+    <style>
+        svg {
+            width: 100%;
+            min-height: 600px;
+        }
+    </style>
+</head>
+
+<body>
+    <svg>
+    </svg>
+    <script>
+        // 船舰  sankey 方法
+        var sankey = d3.sankey()
+            // 线的宽度
+            .nodeWidth(30)
+            // 间隔
+            .nodePadding(10)
+            .extent([
+                // 左上角的点
+                [200, 30],
+                // 右下角的点
+                [820, 590]
+            ])
+            // 分类    对应  senkeyData.nodes.name
+            .nodeId(function (d) {
+                return d.name;
+            });
+        //获取svg  DOM
+        var svg = d3.select('svg');
+        // 创建sankey g
+        var sankey_map = svg.append("g")
+            .attr('class', 'map');
+
+        // 创建 sankey   label组
+        var node = svg.append("g")
+            .attr("class", "nodes")
+            .attr("font-family", "sans-serif")
+            .attr("font-size", 10)
+            .selectAll("g");
+
+
+        //渲染调剂机构与血液品种连线
+        var facilityBloodTypeUpdate = svg.append('g')
+            .attr('class', 'facilityBloodLinks')
+            .selectAll('path')
+            .data(
+                [
+                    ['1', '2', '1', 2, {
+                        primary: {
+                            height: 3,
+                            width: 0,
+                            x: 800,
+                            y: 200
+                        },
+                        secondary: {
+                            height: 30,
+                            width: 0,
+                            x: 900,
+                            y: 240
+                        }
+                    }]
+                ])
+        var facilityBloodTypeEnter = facilityBloodTypeUpdate.enter();
+
+        facilityBloodTypeLinks = facilityBloodTypeEnter.append('path')
+            .attr('d', function (d) {
+                console.log(d)
+                return getLinkPath(d[4].primary, d[4].secondary)
+            }).style("fill", function (d) {
+                return randomColor();
+            }).style("opacity", function (d) {
+                return '0.3';
+            }).attr("type", function (d) {
+                return d[2];
+            }).attr("class", "edges");
+
+
+
+        var sankeyNodeWeight = {
+            "A": 1,
+            "B": 2,
+            "O": 3,
+            "AB": 4,
+            "红细胞类": 5,
+            "血浆类": 6,
+            "血小板类": 7,
+            "冷沉淀": 8,
+            '低温沉淀物类': 8
+        };
+
+
+        // 模拟sankey Data
+        var senkeyData = {
+            "nodes": [{
+                "name": "A"
+            }, {
+                "name": "B"
+            }, {
+                "name": "O"
+            }, {
+                "name": "AB"
+            }, {
+                "name": "红细胞类"
+            }, {
+                "name": "血浆类"
+            }, {
+                "name": "血小板类"
+            }, {
+                "name": "低温沉淀物类"
+            }],
+            "links": [{
+                "target": "B",
+                "source": "血浆类",
+                "value": 12
+            }, {
+                "target": "O",
+                "source": "血浆类",
+                "value": 12
+            }, {
+                "target": "A",
+                "source": "血浆类",
+                "value": 12
+            }, {
+                "target": "B",
+                "source": "血小板类",
+                "value": 12
+            }, {
+                "target": "B",
+                "source": "红细胞类",
+                "value": 12
+            }, {
+                "target": "AB",
+                "source": "红细胞类",
+                "value": 12
+            }, {
+                "target": "B",
+                "source": "低温沉淀物类",
+                "value": 12
+            }, {
+                "target": "A",
+                "source": "低温沉淀物类",
+                "value": 12
+            }, {
+                "target": "O",
+                "source": "红细胞类",
+                "value": 12
+            }, {
+                "target": "AB",
+                "source": "血小板类",
+                "value": 12
+            }, {
+                "target": "A",
+                "source": "红细胞类",
+                "value": 12
+            }, {
+                "target": "AB",
+                "source": "血浆类",
+                "value": 4
+            }, {
+                "target": "O",
+                "source": "血小板类",
+                "value": 4
+            }]
+        }
+        // 使用   元素sankey()  
+        sankey(senkeyData);
+        var link = svg.append('g')
+            .attr('class', 'links')
+            .selectAll('path');
+        var linkUpdate = link
+            .data(senkeyData.links);
+        var linkEnter = linkUpdate.enter()
+        var sankeyLinks = linkEnter.append("path")
+            // 交叉部分透明
+            .attr("fill", "transparent")
+            // 使用方法画线
+            .attr("d", d3.sankeyLinkHorizontal())
+            // 线的颜色
+            .attr("stroke", function (d) {
+                return randomColor();
+            })
+            .attr("stroke-width", function (d) {
+                console.log(d);
+                // 最小宽度未1
+                return Math.max(1, d.width);
+            })
+            .style("opacity", function (d) {
+                return '0.5';
+            });
+        console.log(senkeyData);
+
+
+        var nodeUpdate = node
+            .data(senkeyData.nodes);
+
+
+        var nodeEnter = nodeUpdate.enter();
+        var sankeyNodes = nodeEnter.append("rect")
+            .attr("x", function (d) {
+                return d.x0;
+            })
+            .attr("y", function (d) {
+                return d.y0;
+            })
+            .attr("height", function (d) {
+                return d.y1 - d.y0;
+            })
+            .attr("width", function (d) {
+                return d.x1 - d.x0;
+            })
+            .attr("fill", function (d) {
+                return randomColor()
+            })
+            .attr("fill-opacity", "0.4")
+            .attr("stroke-width", "2px")
+            .attr("stroke-opacity", function (d) {
+                if (!(/^[a-zA-Z]*$/.test(d.name))) {
+                    d.showInd = sankeyNodeWeight[d.name];
+                    if (d.name == '红细胞类') {
+                        d.show = true;
+                        return '1';
+                    } else {
+                        d.show = false;
+                        return '0';
+                    }
+                } else {
+                    return "1";
+                }
+            })
+            .attr("stroke", function (d) {
+                if (!(/^[a-zA-Z]*$/.test(d.name))) {
+                    return randomColor()
+                } else {
+                    return randomColor()
+                }
+            });
+
+        nodeEnter.append("text")
+            .attr("x", function (d) {
+                if (/^[a-zA-Z]*$/.test(d.name)) {
+                    return d.name.length < 2 ? (d.x0 + 11) : (d.x0 + 8);
+                } else {
+                    return d.name.length < 3 ? (d.x0 + 4) : d.x0;
+                }
+            })
+            .attr("y", function (d) {
+                return (d.y1 + d.y0) / 2;
+            })
+            .attr("dy", "0.35em")
+            .attr("text-anchor", "center")
+            .text(function (d) {
+                return d.name;
+            })
+            .attr("fill", "#fff")
+
+        nodeEnter.append("text")
+            .attr("x", function (d) {
+                return d.x1 + 10
+            })
+            .attr("y", function (d) {
+                return (d.y1 + d.y0) / 2;
+            })
+            .attr("dy", "0.35em")
+            .attr("fill", "#fff")
+            .text(function (d) {
+                if (!(/^[a-zA-Z]*$/.test(d.name))) {
+                    return d.name == '红细胞类' ? Math.round(d.value) + "  U" : "";
+
+                } else {
+                    return Math.round(d.value) + "  U";
+                }
+            });
+
+
+        function randomColor() {
+            return '#' + Math.floor(Math.random() * 0xffffff).toString(16);
+        }
+
+        function getLinkPath(primary, secondary) {
+            // 曲线算法
+            function n(t, n, e, r, i, u, o, s) {
+                var c = (t + e) / 2,
+                    d = (i + o) / 2;
+                return ["M", t, ",", n, "C", c, ",", n, " ", c, ",", r, ",", e, ",", r, "L", i, ",", u, "C", d, ",", u,
+                    " ", d, ",", s, ",", o, ",", s, "z"
+                ].join("")
+            }
+            // 返回 link 的 path
+            return n(primary.x + primary.width, primary.y + primary.height, secondary.x - secondary.width, secondary.y +
+                secondary.height, secondary.x - secondary.width, secondary.y - secondary.height, primary.x +
+                primary.width, primary.y - primary.height)
+        }
+    </script>
+</body>
+
+</html>
