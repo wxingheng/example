@@ -420,7 +420,7 @@ export default {
       },
       fillable: true,
       varmax: 5,
-      uploadUrl: `${config.baseUrl}/api/service/wechatevidence/upload`,
+      uploadUrl: `${config.baseUrl}/32api/service/wechatevidence/upload`,
       disease: [],
       bloodSubTypes: [],
       headers: {

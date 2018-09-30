@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    请输入身份证号码：<br><input type="text" name="card"><br>
+    <input type="button" value="验证18位身份证" onclick="submit1();">
+    <input type="button" value="17位转18位身份证" onclick="submit2();">
+    <input type="button" value="预留按钮" onclick="submit3();"><br>
+    <br>身份证号验证脚本 作者：xzlAwin<br>
+
+    <script>
+        function submit3() {
+            alert('预留的按钮未实现功能！');
+        }
+
+        function submit1(card) {
+            // var card = document.getElementsByName('card')[0].value;
+            var coefficient = [7, 9, 10, 5, 8, 4, 2, 1, 6, 3, 7, 9, 10, 5, 8, 4, 2];
+            var validate = [1, 0, 'X', 9, 8, 7, 6, 5, 4, 3, 2];
+            card = card.split('');
+            if (card.length == 18) {
+                var sum = 0;
+                for (var i = 0; i < card.length - 1; i++) {
+                    sum += parseInt(card[i]) * parseInt(coefficient[i]);
+                }
+                if (card[17] == validate[sum % 11]) {
+                    console.log('身份证号码正确！');
+                } else {
+                    console.log('身份证号码错误！');
+                }
+            } else {
+                console.log('输入位数错误：要求输入18位数字，您输入了' + card.length + '位数！');
+            }
+        }
+
+        function submit2() {
+            var card = document.getElementsByName('card')[0].value;
+            var coefficient = [7, 9, 10, 5, 8, 4, 2, 1, 6, 3, 7, 9, 10, 5, 8, 4, 2];
+            var validate = [1, 0, 'X', 9, 8, 7, 6, 5, 4, 3, 2];
+            card = card.split('');
+            if (card.length == 17) {
+                var sum = 0;
+                for (var i = 0; i < card.length; i++) {
+                    sum += parseInt(card[i]) * parseInt(coefficient[i]);
+                }
+                alert('最后一位验证码是：' + validate[sum % 11] + '\n' + '完整的身份证号是：' + card.join('') + validate[sum % 11]);
+            } else {
+                alert('输入位数错误：要求输入17位数字，您输入了' + card.length + '位数！');
+            }
+        }
+    </script>
+</body>
+
+</html>

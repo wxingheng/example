@@ -25,10 +25,29 @@ export default {
         var B = D.getFullYear() == a[3] && (D.getMonth() + 1) == a[4] && D.getDate() == a[5];
       }
       if (!B) {
-        return false;
+        return false
       }
     }
-    return true;
+
+    // var card = document.getElementsByName('card')[0].value;
+    var coefficient = [7, 9, 10, 5, 8, 4, 2, 1, 6, 3, 7, 9, 10, 5, 8, 4, 2]
+    var validate = [1, 0, 'X', 9, 8, 7, 6, 5, 4, 3, 2]
+    var card = id_number.toString()
+    card = card.split('')
+    if (card.length === 18) {
+      var sum = 0
+      for (var i = 0; i < card.length - 1; i++) {
+        sum += parseInt(card[i]) * parseInt(coefficient[i])
+      }
+      if (card[17] == validate[sum % 11]) {
+        console.log('身份证号码正确！')
+        return true
+      } else {
+        console.log('身份证号码错误！')
+        return false
+      }
+    }
+    return true
   },
   checkTel: function (tel) {
     const mobile = /^1[3|5|8]\d{9}$/,
@@ -38,36 +57,36 @@ export default {
   IdCard: function (UUserCard, num) {
     const isIdentity = this.isIdentity(UUserCard);
     if (num == 1) {
-//获取出生日期
-        var birth = UUserCard.substring(6, 10) + "-" + UUserCard.substring(10, 12) + "-" + UUserCard.substring(12, 14);
-        return birth;
+      //获取出生日期
+      var birth = UUserCard.substring(6, 10) + "-" + UUserCard.substring(10, 12) + "-" + UUserCard.substring(12, 14);
+      return birth;
     }
     if (num == 2) {
-//获取性别
-      if(!isIdentity){
+      //获取性别
+      if (!isIdentity) {
         return '9'
       }
-        if (parseInt(UUserCard.substr(16, 1)) % 2 == 1) {
-//男
-            return "1";
-        } else {
-//女
-            return "2";
-        }
+      if (parseInt(UUserCard.substr(16, 1)) % 2 == 1) {
+        //男
+        return "1";
+      } else {
+        //女
+        return "2";
+      }
     }
     if (num == 3) {
-      if(!isIdentity){
+      if (!isIdentity) {
         return 0
       }
-//获取年龄
-        var myDate = new Date();
-        var month = myDate.getMonth() + 1;
-        var day = myDate.getDate();
-        var age = myDate.getFullYear() - UUserCard.substring(6, 10) - 1;
-        if (UUserCard.substring(10, 12) < month || UUserCard.substring(10, 12) == month && UUserCard.substring(12, 14) <= day) {
-            age++;
-        }
-        return age;
+      //获取年龄
+      var myDate = new Date();
+      var month = myDate.getMonth() + 1;
+      var day = myDate.getDate();
+      var age = myDate.getFullYear() - UUserCard.substring(6, 10) - 1;
+      if (UUserCard.substring(10, 12) < month || UUserCard.substring(10, 12) == month && UUserCard.substring(12, 14) <= day) {
+        age++;
+      }
+      return age;
     }
-}
+  }
 }

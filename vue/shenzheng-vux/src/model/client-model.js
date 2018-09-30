@@ -12,7 +12,7 @@ const createError = (code, msg) => {
 
 const request = () =>
   axios.create({
-    baseURL: `${config.baseUrl}/api/`,
+    baseURL: `${config.baseUrl}/32api/`,
     headers: {
       Authorization: (() => window.weixinToken)()
     }
@@ -20,7 +20,7 @@ const request = () =>
 
 const requestBao = () =>
   axios.create({
-    baseURL: `${config.baseUrl}/bao/`,
+    baseURL: `${config.baseUrl}/32bao/`,
     headers: {
       Authorization: (() => window.weixinToken)()
     }
