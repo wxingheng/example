@@ -72,7 +72,7 @@
 
                     </selector>
                     <x-number title="献血次数" width="80px" :min="0" :max="1000" fillable required v-model="userbase.count" name="count"  @on-change="countChange" placeholder="请输入献血次数">
-                      <label slot="label" class="weui-label "><span class="font-red">* </span>献血次数</label>
+                      <label slot="label" class="weui-label "><span v-show="userbase.caseType !== '3' && userbase.caseType !== '4' && userbase.caseType !== '8' && userbase.caseType !== '6'" class="font-red">* </span>献血次数</label>
                     </x-number>
                     <datetime
                         v-model="userbase.donateTime"
@@ -83,7 +83,7 @@
                     </datetime>
                     <selector required v-model="userbase.donateType"
                      title="献血类型" :options="[{key: 'WHOL', value: '全血'}, { key: 'APHE', value: '单采血小板'}]" >
-                      <label slot="label" class="weui-label "><span class="font-red">* </span>献血类型</label>
+                      <label slot="label" class="weui-label "><span v-show="userbase.caseType !== '3' && userbase.caseType !== '4' && userbase.caseType !== '8' && userbase.caseType !== '6'" class="font-red">* </span>献血类型</label>
 
                      </selector>
                      <uploader
@@ -121,7 +121,7 @@
                       :title="'献血证明'"
                       :describe="'请上传一张最近一次的献血证，要求上传献血者信息详情页、献血记录页、用血记录页'"
                     >
-                      <label slot="label" class="weui-label "><span v-show="userbase.caseType!=='8' && userbase.caseType!=='6' " class="font-red">* </span>献血证明</label>
+                      <label slot="label" class="weui-label "><span v-show="userbase.caseType!=='8' && userbase.caseType!=='6' && userbase.caseType!=='3' && userbase.caseType!=='4' " class="font-red">* </span>献血证明</label>
 
                     </uploader>
                  </group>
@@ -266,10 +266,10 @@
                       :headers="headers"
                       name="file"
                      :title="userbase.inauguralStatus.key === 'WORK' ? '相关材料' : userbase.inauguralStatus.key === 'UMEM' ? '户口本和无业证明': (userbase.inauguralStatus.key === 'ETC1') ? '工作证' : (userbase.inauguralStatus.key === 'ETC2') ? '学生证' :'相关材料'"
-                      :describe="userbase.inauguralStatus.key === 'WORK' ? '请填写单位全称，并咨询单位人事确认您单位社保缴纳所在区' : userbase.inauguralStatus.key === 'UMEM' ? '请上传您的无业证明，如劳动手册等': '单位退休则选择单位缴纳社保所在区，街道退休则选择街道所在区'"
+                      :describe="userbase.inauguralStatus.key === 'WORK' ? '请填写单位全称，并咨询单位人事确认您单位社保缴纳所在区' : userbase.inauguralStatus.key === 'UMEM' ? '请上传您的无业证明，如劳动手册等': ( userbase.inauguralStatus.key === 'RETI' ||  userbase.inauguralStatus.key === 'DOCT' ) ? '单位退休则选择单位缴纳社保所在区，街道退休则选择街道所在区' :  userbase.inauguralStatus.key === 'ETC1' ? '工作证' : userbase.inauguralStatus.key === 'ETC2' ? '学生证' :''"
                     >
                        <label slot="label" class="weui-label "><span class="font-red">* </span>{{userbase.inauguralStatus.key === 'WORK' ? '相关材料' : userbase.inauguralStatus.key === 'UMEM' ? '户口本和无业证明': (userbase.inauguralStatus.key === 'ETC1') ? '工作证' : (userbase.inauguralStatus.key === 'ETC2') ? '学生证' :'相关材料'}}</label>
-
+                                                                                                                                                                        <!-- RETI DOCT -->
                     </uploader>
 
                   </group>
@@ -454,7 +454,49 @@ export default {
       let result = false;
       switch (this.userbase.caseType) {
         case "3":
+          if (
+            !this.userbase.name ||
+            !this.userbase.age ||
+            !this.userbase.idNumber ||
+            !this.userbase.phone ||
+            !this.userbase.images.length ||
+            !this.userbase.placeType ||
+            // 60 周岁以上可不填
+            // !this.userbase.donateType ||
+            // 60 周岁以上可不填证明不是必填
+            // !this.userbase.prove1.length ||
+            !this.userbase.hospital ||
+            !this.userbase.diagnosis ||
+            !this.userbase.evidenceBloods.length ||
+            !this.userbase.prove2.length ||
+            !this.userbase.agree ||
+            (this.userbase.diagnosis == "40" && !this.userbase.otherDiseaseName)
+          ) {
+            result = true;
+          }
+          break;
         case "4":
+          if (
+            !this.userbase.name ||
+            !this.userbase.age ||
+            !this.userbase.idNumber ||
+            !this.userbase.phone ||
+            !this.userbase.images.length ||
+            !this.userbase.placeType ||
+            // 非大陆居民可不填
+            // !this.userbase.donateType ||
+            // 非大陆居民可不填
+            // !this.userbase.prove1.length ||
+            !this.userbase.hospital ||
+            !this.userbase.diagnosis ||
+            !this.userbase.evidenceBloods.length ||
+            !this.userbase.prove2.length ||
+            !this.userbase.agree ||
+            (this.userbase.diagnosis == "40" && !this.userbase.otherDiseaseName)
+          ) {
+            result = true;
+          }
+          break;
         case "8":
           if (
             !this.userbase.name ||
@@ -463,7 +505,8 @@ export default {
             !this.userbase.phone ||
             !this.userbase.images.length ||
             !this.userbase.placeType ||
-            !this.userbase.donateType ||
+            // 军人献血类型
+            // !this.userbase.donateType ||
             // 军人献血证明不是必填
             // !this.userbase.prove1.length ||
             !this.userbase.hospital ||
@@ -551,7 +594,7 @@ export default {
             !this.userbase.phone ||
             !this.userbase.images.length ||
             !this.userbase.placeType ||
-            !this.userbase.donateType ||
+            // !this.userbase.donateType ||
             // 高校师生献血证明不是必填
             // !this.userbase.prove1.length ||
             !this.userbase.hospital ||
