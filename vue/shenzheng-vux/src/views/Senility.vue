@@ -612,7 +612,7 @@ export default {
             caseType: this.userbase.caseType,
             contact: this.userbase.phone,
             disease: this.userbase.diagnosis,
-            donateNum: parseFloat(this.userbase.count).toFixed(2),
+            donateNum: parseInt(this.userbase.count),
             donateTime: this.userbase.donateTime + " 00:00:00",
             donateType: this.userbase.donateType,
             evidenceBloods: this.userbase.evidenceBloods.map(d => {
@@ -653,7 +653,7 @@ export default {
             caseType: this.userbase.caseType,
             contact: this.userbase.phone,
             disease: this.userbase.diagnosis,
-            donateNum: this.userbase.count.toString() + ".00",
+            donateNum: parseInt(this.userbase.count),
             donateTime: this.userbase.donateTime + " 00:00:00",
             donateType: this.userbase.donateType,
             employment:
@@ -713,7 +713,7 @@ export default {
             caseType: this.userbase.caseType,
             contact: this.userbase.phone,
             disease: this.userbase.diagnosis,
-            donateNum: this.userbase.count.toString() + ".00",
+            donateNum: parseInt(this.userbase.count),
             donateTime: this.userbase.donateTime + " 00:00:00",
             donateType: this.userbase.donateType,
             employment:
@@ -784,7 +784,7 @@ export default {
             caseType: this.userbase.caseType,
             contact: this.userbase.phone,
             disease: this.userbase.diagnosis,
-            donateNum: this.userbase.count.toString() + ".00",
+            donateNum: parseInt(this.userbase.count),
             donateTime: this.userbase.donateTime + " 00:00:00",
             donateType: this.userbase.donateType,
             employment:
