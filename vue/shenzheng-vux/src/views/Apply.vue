@@ -95,14 +95,33 @@ export default {
         });
         return false;
       }
-      if (caseType) {
-        this.$router.push("/" + path + "/" + caseType);
-      } else {
-        this.$router.push("/" + path);
-      }
+      model
+        .getCheckAddData({
+          identityType: this.$store.state.userbase.identityType || "01",
+          identityId: this.$store.state.userbase.idNumber,
+          name: this.$store.state.userbase.name
+        })
+        .then(data => {
+          console.log("--------------->", data);
+          if (data.status === "Com") {
+            if (caseType) {
+              this.$router.push("/" + path + "/" + caseType);
+            } else {
+              this.$router.push("/" + path);
+            }
+          } else {
+            this.$vux.toast.show({
+              type: "warn",
+              position: "middle",
+              text: `你在${data.organName}还有未审核的审证申请，请退出`
+            });
+          }
+        });
     }
   },
   created() {
+    console.log("userbase", this.userbase);
+    console.log("---", this.$store.state.userbase);
     if (this.$store.state.identityTypeList.length <= 0) {
       this.getIdentityType();
     }
@@ -110,41 +129,38 @@ export default {
     // 嵌入一网通
     if (this.environment === "implant") {
       this.updateIsImplant(true);
+      // model.getToken().then(
+      //   data => {
+      //     window.weixinToken = `Bearer ${
+      //       data ? data.access_token : "token error1"
+      //     }`;
+      //     this.getIdentityType();
+      //     return model.getOneNetUser(
+      //       location.href.substr(location.href.search("token=") + 6)
+      //     );
+      //   },
+      //   err => {
+      //     window.weixinToken = "token error2";
+      //     this.getIdentityType();
+      //   }
+      // );
+      this.getIdentityType();
       model
-        .getToken()
+        .getOneNetUser(location.href.substr(location.href.search("token=") + 6))
         .then(
           data => {
-            console.log('1111111111', data);
-            window.weixinToken = `Bearer ${ data ? data.access_token : "token error1"}`;
-            this.getIdentityType();
-            // return model.getOneNetUser({
-            //   portalToken: location.href.substr(location.href.search('token=') + 6)
-            // });
-            return model.getOneNetUser(
-               location.href.substr(location.href.search('token=') + 6)
-            );
-          },
-          err => {
-            console.log('222222222', err);
-
-            window.weixinToken = "token error2";
-            this.getIdentityType();
-          }
-        )
-        .then(
-          data => {
-            console.log('33333333333333', data);
+            console.log("33333333333333", data);
 
             if (data.code === "200" && data.isSuccess) {
               this.updateUserbase({
                 name: data.data.username,
                 idNumber: data.data.idCardNo,
-                phone: data.data.mobile,
+                phone: data.data.mobile
               });
             }
           },
           err => {
-            console.log('4444444444', err);
+            console.log("4444444444", err);
 
             this.$vux.toast.show({
               type: "warn",
@@ -154,7 +170,7 @@ export default {
           }
         )
         .catch(err => {
-            console.log('5555555555', err);
+          console.log("5555555555", err);
 
           window.weixinToken = "token error3";
           this.$vux.toast.show({

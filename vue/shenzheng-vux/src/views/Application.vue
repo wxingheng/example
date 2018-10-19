@@ -96,6 +96,7 @@ export default {
         this.userbase.idNumber &&
         this.userbase.agree
       ) {
+        console.log(this.userbase);
           this.updateUserbase({ ...this.userbase });
         if(this.type === 'search'){
             model.getEvidence({

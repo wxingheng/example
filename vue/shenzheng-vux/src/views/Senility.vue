@@ -97,7 +97,7 @@
                       :describe="'请上传献血者与用血的关系证明，如结婚证、出生证、户口本、公安机关开具的正规关系'"
                     >
                       <label slot="label" class="weui-label "><span class="font-red">* </span>关系证明</label>
-                    
+
                     </uploader>
                     <uploader
                     v-show="userbase.caseType === '2'"
@@ -256,7 +256,7 @@
                      :title="userbase.inauguralStatus.key === 'WORK' ? '缴纳社保所在区' : userbase.inauguralStatus.key === 'UMEM' ? '户籍所在区': '退休单位所在区'"
                       :options="areas" >
                        <label slot="label" class="weui-label "><span class="font-red">* </span>{{userbase.inauguralStatus.key === 'WORK' ? '缴纳社保所在区' : userbase.inauguralStatus.key === 'UMEM' ? '户籍所在区': '退休单位所在区'}}</label>
-                      
+
                       </selector>
                       <uploader
                       v-show="userbase.inauguralStatus.key !== 'DOCT'"
@@ -424,7 +424,7 @@ export default {
       disease: [],
       bloodSubTypes: [],
       headers: {
-        Authorization: window.weixinToken
+        // Authorization: window.weixinToken
       }
     };
   },

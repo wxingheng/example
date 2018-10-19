@@ -17,7 +17,7 @@ export default {
     return {
       msg: "Welcome to Your Vue.js Home",
       bgImage: {
-              backgroundImage: "url(" + require("./../assets/bg.jpg") + ")"
+        backgroundImage: "url(" + require("./../assets/bg.jpg") + ")"
       }
     };
   },
@@ -31,27 +31,29 @@ export default {
     }
   },
   created() {
-    // if (this.$store.state.identityTypeList.length <= 0) {
-    model
-      .getToken()
-      .then(
-        data => {
-            window.weixinToken = `Bearer ${ data ? data.access_token : "token error1"}`;
-          this.getIdentityType();
-        },
-        err => {
-          window.weixinToken = "token error2";
-          localStorage.setItem("token", "token error2");
-          this.getIdentityType();
-        }
-      )
-      .catch(err => {
-        window.weixinToken = "token error3";
-        localStorage.setItem("token", "token error3");
-        this.getIdentityType();
-      });
+    this.getIdentityType();
+
+    // model
+    //   .getToken()
+    //   .then(
+    //     data => {
+    //       window.weixinToken = `Bearer ${
+    //         data ? data.access_token : "token error1"
+    //       }`;
+    //       this.getIdentityType();
+    //     },
+    //     err => {
+    //       window.weixinToken = "token error2";
+    //       localStorage.setItem("token", "token error2");
+    //       this.getIdentityType();
+    //     }
+    //   )
+    //   .catch(err => {
+    //     window.weixinToken = "token error3";
+    //     localStorage.setItem("token", "token error3");
+    //     this.getIdentityType();
+    //   });
   }
-  // }
 };
 </script>
 

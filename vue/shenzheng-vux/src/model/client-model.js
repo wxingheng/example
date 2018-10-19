@@ -14,7 +14,7 @@ const request = () =>
   axios.create({
     baseURL: `${config.baseUrl}/32api/`,
     headers: {
-      Authorization: (() => window.weixinToken)()
+      // Authorization: (() => window.weixinToken)()
     }
   })
 
@@ -22,7 +22,7 @@ const requestBao = () =>
   axios.create({
     baseURL: `${config.baseUrl}/32bao/`,
     headers: {
-      Authorization: (() => window.weixinToken)()
+      // Authorization: (() => window.weixinToken)()
     }
   })
 
@@ -85,11 +85,14 @@ export default {
   getEvidence (query) {
     return handleRequest(request().get(`/service/wechatevidence/getEvidence?id=${query.id}&name=${query.name}`))
   },
-  getToken () {
-    // return handleRequest(requestBase.get(`/ids/oauth/token?grant_type=client_credentials&client_id=weixin&client_secret=weixin`))
-    return handleRequest(requestBase().get(`/ids/oauth/token?grant_type=client_credentials`))
-  },
+  // getToken () {
+  //   return handleRequest(requestBase().get(`/ids/oauth/token?grant_type=client_credentials`))
+  // },
   getOneNetUser (query) {
     return handleRequest(request().post(`/service/wechatevidence/getOneNetUser?portalToken=${query}`, {}))
+  },
+  getCheckAddData (query) {
+    console.log('query-->', query)
+    return handleRequest(requestBao().get(`/service/weixin/checkAddData?identityType=${query.identityType}&identityId=${query.identityId}&name=${query.name}`))
   }
 }
