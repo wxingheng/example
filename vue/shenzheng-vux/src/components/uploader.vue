@@ -103,12 +103,14 @@ export default {
   },
   methods: {
     add() {
+      console.log('add......');
       if (this.handleClick) {
         this.$emit("add-image");
       }
     },
     // 移除第一张图
     remove() {
+      console.log('remove......');
       if (this.handleClick) {
         this.$emit("remove-image");
       } else {
@@ -116,6 +118,7 @@ export default {
       }
     },
     preview(image, i) {
+      console.log('preview......');
       // 暂未实现，可以捕捉preview事件自己实现
       // this.$emit("preview", image);
       //  url = url.match(/url\((.*?)\)/)[1].replace(/"/g, "");
@@ -125,6 +128,7 @@ export default {
         onDelete: () => {
           gallery.hide();
           this.images.splice(i, 1);
+          console.log('del......');
           // if(confirm('确定删除该图片？')){ console.log('删除'); }
           // gallery.hide(function() {
           //     console.log('`gallery` has been hidden');
