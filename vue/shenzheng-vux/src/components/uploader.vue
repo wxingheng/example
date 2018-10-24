@@ -174,6 +174,12 @@ export default {
               );
               resultCount--;
             } else {
+              console.log(formData);
+              var i = formData.entries();
+              console.log(i.next());
+              console.log(i.next());
+
+
               this.$emit("upload-image", formData);
             }
           })
