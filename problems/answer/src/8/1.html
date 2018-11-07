@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>原生js实现给定一个URL地址，把它的每个部分解析出来</title>
+</head>
+<body>
+  <h1>原生js实现给定一个URL地址，把它的每个部分解析出来</h1>
+  <h1>http://localhost:8080/index.html?m=123&pid=abc#hash</h1>
+  <pre style="font-size: 20px;">
+      function parseURL(URL) {
+        let protocol, hostname, port, pathname, params, hash;
+        let lastIndex, hostnameAndPort;
+  
+        // 匹配protocol  
+        let protocolRegExp = /(\w+):\/\//y;
+        protocolRegExp.exec(URL);
+        protocol = RegExp.$1;
+        lastIndex = protocolRegExp.lastIndex;
+  
+        let hostnameAndPortRegExp = /([\w:]*)\/?/y;
+        hostnameAndPortRegExp.lastIndex = lastIndex;
+        hostnameAndPortRegExp.exec(URL)
+        hostnameAndPort = RegExp.$1;
+        lastIndex = hostnameAndPortRegExp.lastIndex;
+        hostname = hostnameAndPort.split(':')[0];
+        port = hostnameAndPort.split(':')[1] || '';
+  
+        let pathnameRegExp = /([\w\.]*)\??/y;
+        pathnameRegExp.lastIndex = lastIndex;
+        pathnameRegExp.exec(URL);
+        pathname = RegExp.$1;
+        lastIndex = pathnameRegExp.lastIndex;
+  
+        let paramsRegExp = /([\w\.&=%]*)#?/y;
+        paramsRegExp.lastIndex = lastIndex;
+        paramsRegExp.exec(URL);
+        params = RegExp.$1;
+        lastIndex = paramsRegExp.lastIndex;
+  
+        let hashRegExp = /(.*)/y;
+        hashRegExp.lastIndex = lastIndex;
+        hashRegExp.exec(URL);
+        hash = RegExp.$1;
+  
+        console.log(URL, {
+          protocol, hostname, port, pathname, params, hash
+        });
+      }
+  </pre>
+  <script>
+    /**
+     * 协议
+     * 域名
+     * 端口号
+     * 路径
+     * 参数
+     * 哈希
+     */ 
+
+    let arr = ['http://localhost',
+               'http://localhost:8080',
+               'http://localhost:8080/index.html',
+               'http://localhost/index.html',
+               'http://localhost:8080/index.html?m=123&pid=abc',
+               'http://localhost/index.html?m=123&pid=abc',
+               'http://localhost:8080/index.html?m=123&pid=abc#hash',
+               'http://localhost/index.html?m=123&pid=abc#hash',]
+
+    arr.forEach((url) => {
+      parseURL(url);
+    })           
+
+    function parseURL(URL) {
+      let protocol, hostname, port, pathname, params, hash;
+      let lastIndex, hostnameAndPort;
+
+      // 匹配protocol  
+      let protocolRegExp = /(\w+):\/\//y;
+      protocolRegExp.exec(URL);
+      protocol = RegExp.$1;
+      lastIndex = protocolRegExp.lastIndex;
+
+      let hostnameAndPortRegExp = /([\w:]*)\/?/y;
+      hostnameAndPortRegExp.lastIndex = lastIndex;
+      hostnameAndPortRegExp.exec(URL)
+      hostnameAndPort = RegExp.$1;
+      lastIndex = hostnameAndPortRegExp.lastIndex;
+      hostname = hostnameAndPort.split(':')[0];
+      port = hostnameAndPort.split(':')[1] || '';
+
+      let pathnameRegExp = /([\w\.]*)\??/y;
+      pathnameRegExp.lastIndex = lastIndex;
+      pathnameRegExp.exec(URL);
+      pathname = RegExp.$1;
+      lastIndex = pathnameRegExp.lastIndex;
+
+      let paramsRegExp = /([\w\.&=%]*)#?/y;
+      paramsRegExp.lastIndex = lastIndex;
+      paramsRegExp.exec(URL);
+      params = RegExp.$1;
+      lastIndex = paramsRegExp.lastIndex;
+
+      let hashRegExp = /(.*)/y;
+      hashRegExp.lastIndex = lastIndex;
+      hashRegExp.exec(URL);
+      hash = RegExp.$1;
+
+      console.log(URL, {
+        protocol, hostname, port, pathname, params, hash
+      });
+    }    
+  </script>
+</body>
+</html>

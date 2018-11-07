@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>垂直水平居中</title>
+  <style>
+    ul, li, body, html {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      height: 100px;
+    }
+    li {
+      background-color: pink;
+      margin-bottom: 10px;
+    }
+    li>div {
+      background-color: palevioletred;
+    }
+    ul>li:nth-of-type(1){
+      position: relative;
+    }
+    ul>li:nth-of-type(1)>div {
+      position: absolute;
+      width: 80px;
+      height: 80px;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+    ul>li:nth-of-type(2) {
+      display: flex;
+      /* 使子项目水平居中 */
+      justify-content: center;
+      /* 使子项目垂直居中 */
+      align-items: center;
+    }
+    ul>li:nth-of-type(2)>div {
+      width: 80px;
+      height: 80px;
+    }
+  </style>
+</head>
+<body>
+  <ul>
+    <li>
+      <div></div>
+    </li>
+    <li>
+        <div></div>
+      </li>
+  </ul>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>对象扁平化</title>
+</head>
+<body>
+  <script>
+    function test(obj) {
+      let result = {}, object = {};
+
+      for (let key in obj) {
+        if (obj.hasOwnProperty(key)) {
+          if (Object.prototype.toString.call(obj[key]).slice(8, -1) === 'Object') {
+            let tempObj = this.test(obj[key]);
+            object = {...object, ...tempObj};
+          } else {
+            result[key] = obj[key];
+          }
+        }
+      }
+
+      return {...result, ...object};
+    }
+      
+    let a = {
+      a: {
+        b: {
+          c : 1, 
+          f: 5
+        }, 
+        e: 3
+      }, 
+      g: {
+        s: 1
+      },
+      d: 2
+    };
+
+    console.log(test(a)); // {d: 2, e: 3, c: 1, f: 5}
+  </script>
+</body>
+</html>

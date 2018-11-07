@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>css实现三角形</title>
+  <style>
+    .triangle {
+      width: 0px;
+      height: 0px;   
+      border-width: 40px;
+      border-style: solid;
+      border-color: red transparent transparent transparent;       
+    }
+  </style>
+</head>
+<body style="height: 4000px;">
+  <div class="triangle"></div>
+  <script>
+    window.onscroll = function() {
+      console.log('scroll');
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>前端路由的实现方案</title>
+</head>
+<body>
+  <h1>hash</h1>
+  <script>
+  //   function matchAndUpdate () {
+  //     // todo 匹配 hash 做 dom 更新操作
+  //     console.log(arguments);
+  //   }
+
+  // window.addEventListener('hashchange', matchAndUpdate);
+
+  function matchAndUpdate () {
+    // todo 匹配路径 做 dom 更新操作
+    console.log(arguments[0]);
+  }
+
+  window.addEventListener('popstate', matchAndUpdate);
+  window.addEventListener('pushstate', matchAndUpdate);
+
+  var stateObj = { foo: 'bar' };
+  history.pushState(stateObj, 'page 2', '2');
+  </script>
+</body>
+</html>

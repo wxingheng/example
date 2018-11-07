@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+    <script id="mytpl">
+        <div>
+        我的名字是：$name$  <br/>
+        今年$age$了！
+        </div>
+    </script>
+  <script>
+    String.prototype.simpleTemplate = function(data){
+      var html = '';
+      if(Array.isArray(data)) {
+            var self = this;
+            data.forEach(function(item){
+                  var pattern,
+                        str = self;
+                  Object.keys(item).forEach(function(key){
+                        pattern = new RegExp('\\$'+key+'\\$', 'g');
+                        str = str.replace(pattern, item[key]);
+                  });
+                  html += str;
+          });
+      }
+      return html;
+    }
+
+
+    var htmlTemplate = $('textarea').val();
+    var data =[
+      {
+              name: '小明',
+              age: 21,
+        },
+      {
+            name: '小红',
+            age: 20
+      }
+
+    ];
+
+    console.log(htmlTemplate.simpleTemplate(data));
+    // $('body').append($(htmlTemplate.simpleTemplate(data)));
+  </script>
+</body>
+</html>

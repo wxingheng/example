@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        div.item {
+            border: 1px solid red;
+        }
+
+        div.item:nth-child(1) {
+            float: left;
+            width: 100px;
+            height: 500px;
+        }
+
+        div.item:nth-child(3) {
+            margin: 0 100px;
+        }
+
+        div.item:nth-child(2) {
+            width: 100px;
+            float: right;
+        }
+
+        .box {
+            border: 2px solid #0f0;
+            /* overflow: hidden; */
+        }
+
+        /*
+        清除浮动
+        */
+        .clearfix:before,
+        .clearfix:after {
+            display: table;
+            content: " ";
+        }
+
+        .clearfix:after {
+            clear: both;
+        }
+
+        .clearfix {
+            zoom: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box clearfix">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <!-- <div style="clear:both"></div> -->
+    </div>
+</body>
+
+</html>

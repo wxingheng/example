@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body style="height: 300px;">
+  <script>
+  HTMLElement.prototype.on = function(eventType, fn){
+    this.addEventListener(eventType, function(event){
+      fn.call(event.target, event);
+    })
+  }
+  
+  document.body.on('click', function() {
+    console.log(arguments);
+  })
+  </script>
+</body>
+</html>

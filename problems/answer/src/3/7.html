@@ -1,0 +1,52 @@
+<!Doctype html>
+
+<html>
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=gbk2312"/>
+
+<title>CSS3动画实现高亮光弧效果</title>
+
+<style type="text/css">
+body{margin:0;padding:0;}
+.box{width:1000px;margin:200px auto;height:500px;position:relative;text-align:center;}
+.box:hover .rolled{
+  animation-play-state:paused;
+}
+.rolled{
+position:absolute;
+top: 0;
+width:80px;
+height:500px;
+background: -webkit-linear-gradient(left,rgba(255,255,255,0)0,rgba(255,255,255,.2)50%,rgba(255,255,255,0)100%);
+transform: skewX(-25deg);
+animation:rolled 2.5s .2s ease both infinite;
+overflow: hidden;
+}
+
+@keyframes rolled{
+
+0%{left:-150px ;}
+
+100%{left:920px;}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="box">
+
+<img src="http://tangjiusheng.com/d/file/css3/2017-05-24/f2ff69d3c4e94e4a65c9f4ab203d4811.jpg">
+
+<div class="rolled"></div>
+
+</div>
+
+</body>
+
+</html>

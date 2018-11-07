@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>数组去重</title>
+</head>
+<body>
+  <script>
+    let a = [1, 2, 3, 3, 2, 1, 3, 1, 2, 2, 4, 5, 4];
+
+    // one 相同的则删除
+    // for (let i = 0, len = a.length; i < len-1; i++) {
+    //   for (let j = i+1; j < len; j++) {
+    //     if (a[i] === a[j]) {
+    //       a.splice(j, 1);
+    //       len--;
+    //       j--;
+    //     }
+    //   }
+    // }
+
+    // two 每次都只push最后一个
+    // let result = [];
+    // for (let i = 0, len = a.length; i < len; i++) {
+    //   for (let j = i+1; j < len; j++) {
+    //     // 如果有相同的值则跳过，不相同则push进数组
+    //     if (a[i] === a[j]) {
+    //       j = ++i;
+    //     }
+    //   }
+    //   result.push(a[i]);
+    // }
+    // console.log(result);
+
+    // two 利用对象的属性不能相同的特点进行去重
+    // console.log(a);
+
+  </script>
+</body>
+</html>

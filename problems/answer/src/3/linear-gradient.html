@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>linear-gradient</title>
+  <style>
+    div {
+      float: left;
+      margin: 10px;
+    }
+    .t1 {
+      background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+    }
+
+    .t2 {
+      background: linear-gradient(45deg, red, orange, yellow, green, blue, indigo, violet);
+    }
+    .t3 {
+      background: linear-gradient(-45deg, red, orange, yellow, green, blue, indigo, violet);
+    }
+  </style>
+</head>
+<body>
+    <div class="t1" style="width: 200px; height: 200px;"></div>
+    <div class="t2" style="width: 200px; height: 200px;"></div>
+    <div class="t3" style="width: 200px; height: 200px;"></div>
+</body>
+</html>

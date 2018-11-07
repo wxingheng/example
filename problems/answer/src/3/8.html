@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>CSS实现三列布局(两边固定，中间自适应)</title>
+<style>
+  ul, li, body, html {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    height: 100px;
+  }
+  li {
+    margin-bottom: 10px;
+  }
+  .left, .right {
+    background: pink;
+    height: 100px;
+  }
+  .main {
+    background:palevioletred;
+    height: 100px;
+  }
+  ul>li:nth-of-type(1)>.left{
+    float: left;
+    margin-right: 10px;
+    width: 100px;
+  }
+  ul>li:nth-of-type(1)>.main{
+    margin-left: 110px;
+    margin-right: 110px;
+    width: auto;;
+  }
+  ul>li:nth-of-type(1)>.right{
+    float: right;
+    margin-left: 10px;
+    width: 100px;
+  }
+</style>
+</head>
+<body>
+  <ul>
+    <li>
+      <div class="left"></div>
+      <div class="right"></div>
+      <div class="main"></div>
+    </li>
+  </ul>
+</body>
+</html>
