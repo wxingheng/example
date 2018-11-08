@@ -5,12 +5,16 @@ module.exports = {
     // context 默认为执行启动 Webpack 时所在的当前工作目录。
     context: path.resolve(__dirname, 'src'),
     // JavaScript 执行入口文件
-    entry: './main.js',
+    entry: './main',
     output: {
         // 把所有依赖的模块合并输出到一个 bundle.js 文件
         filename: 'bundle.js',
         // 把输出文件都放到 dist 目录下
         path: path.resolve(__dirname, './dist'),
+    },
+    resolve: {
+        // 先尝试 ts 后缀的 TypeScript 源码文件
+        extensions: ['.ts', '.js']
     },
     module: {
         rules: [
@@ -25,7 +29,11 @@ module.exports = {
             {
                 test: /\.js$/,
                 use: ['babel-loader'],
-              },
+            },
+            {
+                test: /\.ts$/,
+                loader: 'awesome-typescript-loader'
+            }
         ]
     },
     plugins: [
