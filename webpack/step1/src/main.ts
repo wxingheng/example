@@ -19,4 +19,4 @@ require('./main.scss');
 // import 'main.scss'
 import { show } from './show';
 // 执行 show 函数
-show('Webpack123444');
+show('Webpack000');
