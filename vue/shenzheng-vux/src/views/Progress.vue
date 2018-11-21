@@ -61,7 +61,7 @@
                     </p>
                 </div>
                 <div v-else-if="stepFirst.caseType == '1'" class="row">
-                    <p>用血者本人献过血</p>
+                    <p>本人献过血</p>
                     <p style="text-indent:2em">您好，审核不通过。
                         <br/>{{stepFirst.unPassType}}, 请重新上传附件
                         <br/>请提供一下证明资料：{{stepFirst.unPassObj}}

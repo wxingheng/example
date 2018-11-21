@@ -9,7 +9,7 @@
             <x-button @click.native="go('senility', '2', family)" type="primary">家庭成员5年内在上海市献过血</x-button>
             <x-button @click.native="go('senility', '8', soldier)" type="primary">驻沪部队军人</x-button>
             <x-button @click.native="go('senility', '6', student)" type="primary">本市全日制高校在校师生</x-button>
-            <x-button @click.native="go('senility', '5', noBlood)" type="primary">本人及家庭成员都未献过血</x-button>
+            <x-button @click.native="go('senility', '5', noBlood)" type="primary">本人和家庭成员不符合献血</x-button>
             <x-button @click.native="go('neither')" :disabled="inconformity" type="primary">以上情况均不符合</x-button>
        </div>
   </div>
