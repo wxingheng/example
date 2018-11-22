@@ -5,7 +5,7 @@
           top: 8px;">
            <x-icon type="ios-arrow-back" size="30"></x-icon>
         </a>
-        <di class="text-center title">用血审证</di>
+        <di class="text-center title">{{text}}</di>
     </header>
 </template>
 
@@ -16,6 +16,10 @@ export default {
     path: {
       type: String,
       default: "#/home"
+    },
+     text: {
+      type: String,
+      default: "用血审证"
     },
     noBack: {
       type: Boolean,

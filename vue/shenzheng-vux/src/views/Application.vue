@@ -1,6 +1,6 @@
 <template>
   <div class="layout">
-      <header-history :path="'#/home'"></header-history>
+      <header-history :path="'#/home'" :text="type === 'search'? '用血审证查询': '用血审证'"></header-history>
       <section class="clear" :style="bgImage">
       <div class="default-layout">
                 <toast v-model="show" type="warn">请填写完整信息</toast>
