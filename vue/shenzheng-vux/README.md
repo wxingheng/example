@@ -3,6 +3,16 @@
 /static/    --->    static/
 将  static  目录复制到    /static/css   不然会导致图片找不到
 
+// onKeyUp (e) {
+      // if (e.key === 'Enter') {
+       // e.target.blur()
+       // this.$emit('on-enter', this.currentValue, e)
+     // }
+    // },
+    onKeyUp (e) {
+        this.$emit('on-keyup', this.currentValue, e)
+    },
+
 # shenzheng-vux
 
 > A Vue.js project
