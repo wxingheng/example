@@ -3,8 +3,8 @@ export default {
     state.identityTypeList = data
   },
   setUserbase (state, data) {
-    state.userbase = data
-    localStorage.setItem('userbase', JSON.stringify(data))
+    state.userbase = {...state.userbase, ...data}
+    localStorage.setItem('userbase', JSON.stringify( state.userbase))
   },
   setIsImplant (state, data) {
     state.isImplant = data

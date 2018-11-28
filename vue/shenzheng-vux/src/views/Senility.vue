@@ -63,7 +63,7 @@
                       <label slot="label" class="weui-label "><span class="font-red">* </span>证件号码</label>
 
                     </x-input>
-                    <selector v-show="userbase.caseType === '2'" required v-model="userbase.relation"  title="与献血者关系" :options="[{key: 'LOCAL', value: '本地',}, {key: '1', value: '父母'}, {key: '2', value: '子女'}, {key: '3', value: '岳父母'}, {key: '4', value: '公婆'}, {key: '5', value: '配偶'}]" >
+                    <selector v-show="userbase.caseType === '2'" required v-model="userbase.relation"  title="与献血者关系" :options="[{key: '1', value: '父母'}, {key: '2', value: '子女'}, {key: '3', value: '岳父母'}, {key: '4', value: '公婆'}, {key: '5', value: '配偶'}]" >
                       <label slot="label" class="weui-label "><span class="font-red">* </span>与献血者关系</label>
 
                     </selector>
@@ -733,7 +733,7 @@ export default {
             hospitalName: this.userbase.hospital.name,
             identityId: this.userbase.idNumber,
             inauguralStatus: this.userbase.inauguralStatus.key, // 工作情况
-            identityType: this.userbase.identityType,
+            identityType: this.userbase.identityType || '01',
             isOtherDisease: 0,
             name: this.userbase.name,
             otherDiseaseName: this.userbase.otherDiseaseName,
@@ -942,6 +942,8 @@ export default {
       console.log("isImplant------------------------>", this.isImplant);
       if (!this.isImplant) {
         postData.oneNetData = "false";
+      }else{
+        postData.oneNetData = "true";
       }
       model
         .saveData(postData)
@@ -1055,6 +1057,7 @@ export default {
     }
   },
   created() {
+    console.log('20181123');
     model.getDisease().then(data => {
       this.disease = data.map(d => {
         if (d.name === "其它") {
