@@ -26,7 +26,8 @@ import {
   Checker,
   CheckerItem,
   Flexbox,
-  FlexboxItem
+  FlexboxItem,
+  FormPreview
 } from 'vux'
 
 import HeaderHistory from './components/HeaderHistory.vue'
@@ -56,6 +57,8 @@ Vue.component('checker', Checker)
 Vue.component('checker-item', CheckerItem)
 Vue.component('flexbox', Flexbox)
 Vue.component('flexbox-item', FlexboxItem)
+Vue.component('form-preview', FormPreview)
+
 
 
 router.beforeEach((to, from, next) => {

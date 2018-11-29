@@ -1,0 +1,17 @@
+{
+  "name": "koa-useragent",
+  "version": "1.0.0",
+  "description": "使用中间件",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "koa"
+  ],
+  "author": "wuxh",
+  "license": "ISC",
+  "dependencies": {
+    "koa": "^2.6.2"
+  }
+}

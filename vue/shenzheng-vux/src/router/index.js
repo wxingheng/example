@@ -143,6 +143,16 @@ export default new Router({
             title: '用血审证',
             description: 'neither'
           }
+        },
+        {
+          path: '/history',
+          name: 'history',
+          // component: Neither,
+          component: resolve => require(['./../views/History'], resolve),
+          meta: {
+            title: '用血审证历史记录',
+            description: 'history'
+          }
         }
       ]
     }

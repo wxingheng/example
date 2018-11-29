@@ -1,6 +1,6 @@
 <template>
   <div class="layout">
-      <header-history :path="'#/application/search'"></header-history>
+      <header-history :path="'#/application/search'" :noBack="environment === 'implant'"></header-history>
 
       <div class="p-a">
         <div>
@@ -83,6 +83,9 @@
                         <br/>{{stepFirst.auditRemark}}
                     </p>
                 </div>
+                <div class="history">
+                    <a class="text-info"  href="javascript:void(0)" @click="go('/history')">用血审证历史记录</a>
+                </div>
             </div>
         </section>
     </div>
@@ -95,13 +98,14 @@ export default {
   data() {
     return {
       caseType: this.$route.params.caseType,
-      stepFirst: JSON.parse(decodeURIComponent(this.$route.params.data))
+      stepFirst: JSON.parse(decodeURIComponent(this.$route.params.data)),
+      environment: ''
     };
   },
   computed: {},
   methods: {
     go: function(path) {
-      this.$router.replace(path);
+      this.$router.push(path);
     }
   },
   created() {
@@ -190,5 +194,11 @@ export default {
  .result_frame h5{
   font-size: 20px;
   font-weight: normal !important;
+}
+.history{
+    position: fixed;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 </style>
