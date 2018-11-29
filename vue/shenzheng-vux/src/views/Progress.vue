@@ -84,7 +84,7 @@
                     </p>
                 </div>
                 <div class="history">
-                    <a class="text-info"  href="javascript:void(0)" @click="go('/history')">用血审证历史记录</a>
+                    <a class="text-info"  href="javascript:void(0)" @click="history()">用血审证历史记录</a>
                 </div>
             </div>
         </section>
@@ -98,7 +98,7 @@ export default {
   data() {
     return {
       caseType: this.$route.params.caseType,
-      stepFirst: JSON.parse(decodeURIComponent(this.$route.params.data)),
+      stepFirst: JSON.parse(decodeURIComponent(this.$route.params.data))[0],
       environment: ''
     };
   },
@@ -106,6 +106,11 @@ export default {
   methods: {
     go: function(path) {
       this.$router.push(path);
+              // this.$router.push({name: "progress", params: {data: JSON.stringify(data[0])}});
+    },
+    history: function(){
+        console.log('1231231313', (this.$route.params.data));
+        this.$router.push({name: "history", params: {data: (this.$route.params.data)}});
     }
   },
   created() {

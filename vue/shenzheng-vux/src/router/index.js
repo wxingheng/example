@@ -145,7 +145,7 @@ export default new Router({
           }
         },
         {
-          path: '/history',
+          path: '/history/:data',
           name: 'history',
           // component: Neither,
           component: resolve => require(['./../views/History'], resolve),

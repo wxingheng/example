@@ -103,7 +103,7 @@ export default {
               id: this.userbase.idNumber,
               name: this.userbase.name
             }).then((data) => {
-              this.$router.push({name: "progress", params: {data: JSON.stringify(data[0])}});
+              this.$router.push({name: "progress", params: {data: JSON.stringify(data)}});
             }).catch((err) => {
                  this.$vux.toast.show({
                     type: "warn",

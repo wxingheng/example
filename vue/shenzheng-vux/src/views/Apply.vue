@@ -31,7 +31,7 @@ export default {
       environment: ""
     };
   },
-  computed: {
+   computed: {
     ...mapState(["identityTypeList"]),
     senility: function() {
       if (

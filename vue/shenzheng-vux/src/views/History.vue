@@ -2,11 +2,7 @@
   <div class="layout" :style="bgImage">
       <header-history :text="'用血审证历史记录'" :path="'#/application/post'" :noBack="environment === 'implant'"></header-history>
        <div class="default-layout">
-         <form-preview :header-label="'申请时间'" header-value="208-11-28" :body-items="list"></form-preview>
-         <form-preview :header-label="'申请时间'" header-value="208-11-28" :body-items="list"></form-preview>
-         <form-preview :header-label="'申请时间'" header-value="208-11-28" :body-items="list"></form-preview>
-         <form-preview :header-label="'申请时间'" header-value="208-11-28" :body-items="list"></form-preview>
-          
+         <form-preview v-for="(item, i) in list" :header-label="'申请时间'" :header-value="item[0]['applayTime']" :body-items="item"></form-preview>
        </div>
   </div>
 </template>
@@ -26,31 +22,71 @@ export default {
       },
       environment: "",
       list: [
+        [
         {
         label: '用血医院',
-        value: '上海市第六人民医院'
+        value: '上海市第六人民医院',
+        applayTime: '208-11-28'
         }, 
         {
           label: '临床诊断',
-          value: '肝癌'
+          value: '肝癌',
+           applayTime: '208-11-28'
         },
         {
           label: '用血情况',
-          value: '悬浮红细胞1U；新鲜冰冻血浆1U；新鲜冰冻血浆1U；新鲜冰冻血浆1U；'
+          value: '悬浮红细胞1U；新鲜冰冻血浆1U；新鲜冰冻血浆1U；新鲜冰冻血浆1U；',
+           applayTime: '208-11-28'
         },
         {
           label: '审证类型',
-          value: '60岁以上'
+          value: '60岁以上',
+           applayTime: '208-11-28'
         },
         {
           label: '审证时间',
-          value: '2018-11-30'
+          value: '2018-11-30',
+           applayTime: '208-11-28'
         },
         {
           label: '审证结果',
-          value: '审证通过'
+          value: '审证通过',
+           applayTime: '208-11-28'
+        },
+      ],
+      [
+        {
+        label: '用血医院',
+        value: '上海市第六人民医院',
+         applayTime: '208-11-28'
+        }, 
+        {
+          label: '临床诊断',
+          value: '肝癌',
+           applayTime: '208-11-28'
+        },
+        {
+          label: '用血情况',
+          value: '悬浮红细胞1U；新鲜冰冻血浆1U；新鲜冰冻血浆1U；新鲜冰冻血浆1U；',
+           applayTime: '208-11-28'
+        },
+        {
+          label: '审证类型',
+          value: '60岁以上',
+           applayTime: '208-11-28'
+        },
+        {
+          label: '审证时间',
+          value: '2018-11-30',
+           applayTime: '208-11-28'
+        },
+        {
+          label: '审证结果',
+          value: '审证通过',
+           applayTime: '208-11-28'
         },
       ]
+      ],
     };
   },
   computed: {
@@ -134,67 +170,21 @@ export default {
     }
   },
   created() {
-   
-    console.log("userbase", this.userbase);
-    console.log("---", this.$store.state.userbase);
-    if (this.$store.state.identityTypeList.length <= 0) {
-      this.getIdentityType();
-    }
     this.environment = this.$route.params.environment;
-    // 嵌入一网通
-    if (this.environment === "implant") {
-      this.updateIsImplant(true);
-      // model.getToken().then(
-      //   data => {
-      //     window.weixinToken = `Bearer ${
-      //       data ? data.access_token : "token error1"
-      //     }`;
-      //     this.getIdentityType();
-      //     return model.getOneNetUser(
-      //       location.href.substr(location.href.search("token=") + 6)
-      //     );
-      //   },
-      //   err => {
-      //     window.weixinToken = "token error2";
-      //     this.getIdentityType();
-      //   }
-      // );
-      this.getIdentityType();
-      model
-        .getOneNetUser(location.href.substr(location.href.search("token=") + 6))
-        .then(
-          data => {
-            console.log("33333333333333", data);
-
-            if (data.code === "200" && data.isSuccess) {
-              this.updateUserbase({
-                name: data.data.username,
-                idNumber: data.data.idCardNo,
-                phone: data.data.mobile
-              });
-            }
-          },
-          err => {
-            console.log("4444444444", err);
-
-            this.$vux.toast.show({
-              type: "warn",
-              position: "middle",
-              text: "获取用户基本信息失败！"
-            });
-          }
-        )
-        .catch(err => {
-          console.log("5555555555", err);
-
-          window.weixinToken = "token error3";
-          this.$vux.toast.show({
-            type: "warn",
-            position: "middle",
-            text: "获取用户基本信息失败！"
-          });
-        });
-    }
+    const data = JSON.parse(decodeURIComponent(this.$route.params.data))
+    this.list = data.map(d => {
+      console.log(d.hospitalName);
+      const arr = [
+        {label: '用血医院', value: d.hospitalName, applayTime: d.applyTime},
+        {label: '临床诊断', value: d.diseaseName, applayTime: ''},
+        {label: '用血情况', value: d.useBlood, applayTime: ''},
+        {label: '审证类型', value: d.conditionName, applayTime: ''},
+        {label: '审证时间', value: d.auditTime, applayTime: ''},
+        {label: '审证结果', value: d.result === 'Default' ? '正在审核': d.result === 'Direct' ? '审核完成': '审核未通过', applayTime: ''},
+      ];
+      return arr;
+    })
+    console.log(this.list);
   }
 };
 </script>
