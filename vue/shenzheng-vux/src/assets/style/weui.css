@@ -666,7 +666,7 @@
     bottom:0;
     right:0;
     height:1px;
-    border-bottom:1px solid #e5e5e5;
+    border-bottom:1px solid transparent !important;
     color:#e5e5e5;
     -webkit-transform-origin:0 100%;
             transform-origin:0 100%;

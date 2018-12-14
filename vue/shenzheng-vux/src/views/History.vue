@@ -2,7 +2,7 @@
   <div class="layout" :style="bgImage">
       <header-history :text="'用血审证历史记录'" :path="'#/application/post'" :noBack="environment === 'implant'"></header-history>
        <div class="default-layout">
-         <form-preview v-for="(item, i) in list" :header-label="'申请时间'" :header-value="item[0]['applayTime']" :body-items="item"></form-preview>
+         <form-preview v-for="(item, i) in list" :key="i" :header-label="'申请时间'" :header-value="item[0]['applayTime']" :body-items="item"></form-preview>
        </div>
   </div>
 </template>
@@ -178,9 +178,9 @@ export default {
         {label: '用血医院', value: d.hospitalName, applayTime: d.applyTime},
         {label: '临床诊断', value: d.diseaseName, applayTime: ''},
         {label: '用血情况', value: d.useBlood, applayTime: ''},
-        {label: '审证类型', value: d.conditionName, applayTime: ''},
+        {label: '用血者情况', value: d.conditionName, applayTime: ''},
         {label: '审证时间', value: d.auditTime, applayTime: ''},
-        {label: '审证结果', value: d.result === 'Default' ? '正在审核': d.result === 'Direct' ? '审核完成': '审核未通过', applayTime: ''},
+        {label: '审证结果', value: d.result === 'Default' ? '正在审核': d.result === 'Direct' ? '审核完成': `审核未通过;${d.unPassType};${d.unPassObj}`, applayTime: ''},
       ];
       return arr;
     })
@@ -190,6 +190,7 @@ export default {
 </script>
 
 <style scoped>
+ 
 .layout {
   background-position: center 0;
   background-size: cover;

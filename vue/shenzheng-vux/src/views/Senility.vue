@@ -788,7 +788,7 @@ export default {
                 matterId: this.userbase.prove4.map(d => d.id).toString(),
                 name: this.userbase.familyName,
                 cardType: this.userbase.familyType,
-                cardNo: this.userbase.famifamilyNumberlyName
+                cardNo: this.userbase.familyNumber
               },
               {
                 type: "3",

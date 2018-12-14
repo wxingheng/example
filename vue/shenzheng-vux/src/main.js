@@ -6,6 +6,7 @@ import App from './App'
 import router from './router/index'
 import Vuex from 'vuex'
 import './assets/style/weui.css'
+import './assets/style/main.css'
 
 import createStore from './store/store'
 
