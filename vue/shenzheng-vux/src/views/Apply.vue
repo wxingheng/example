@@ -1,17 +1,21 @@
 <template>
   <div class="layout" :style="bgImage">
-      <header-history :path="'#/application'" :noBack="environment === 'implant'"></header-history>
-       <div class="default-layout">
-           <p class="title">请选择用血者情况  <x-button @click.native="search()" mini plain type="primary" style="float: right"><icon type="search" style="vertical-align: sub"></icon>审证结果查询</x-button></p>
-            <x-button @click.native="go('senility', '3', senility)"  type="primary">60周岁以上</x-button>
-            <x-button @click.native="go('senility', '4', noContinent)" type="primary">非中国大陆居民</x-button>
-            <x-button @click.native="go('senility', '1', donoteBlood)" type="primary">用血者本人曾参加无偿献血</x-button>
-            <x-button @click.native="go('senility', '2', family)" type="primary">家庭成员5年内在上海市献过血</x-button>
-            <x-button @click.native="go('senility', '8', soldier)" type="primary">驻沪部队军人</x-button>
-            <x-button @click.native="go('senility', '6', student)" type="primary">本市全日制高校在校师生</x-button>
-            <x-button @click.native="go('senility', '5', noBlood)" type="primary">本人和家庭成员不符合献血</x-button>
-            <x-button @click.native="go('neither')" :disabled="inconformity" type="primary">以上情况均不符合</x-button>
-       </div>
+    <header-history :path="'#/application'" :noBack="environment === 'implant'"></header-history>
+    <div class="default-layout">
+      <p class="title">请选择用血者情况
+        <x-button @click.native="search()" mini plain type="primary" style="float: right">
+          <icon type="search" style="vertical-align: sub"></icon>审证结果查询
+        </x-button>
+      </p>
+      <x-button @click.native="go('senility', '3', senility)" type="primary">60周岁以上</x-button>
+      <x-button @click.native="go('senility', '4', noContinent)" type="primary">非中国大陆居民</x-button>
+      <x-button @click.native="go('senility', '1', donoteBlood)" type="primary">用血者本人曾参加无偿献血</x-button>
+      <x-button @click.native="go('senility', '2', family)" type="primary">家庭成员5年内在上海市献过血</x-button>
+      <x-button @click.native="go('senility', '8', soldier)" type="primary">驻沪部队军人</x-button>
+      <x-button @click.native="go('senility', '6', student)" type="primary">本市全日制高校在校师生</x-button>
+      <x-button @click.native="go('senility', '5', noBlood)" type="primary">本人和家庭成员未献过血</x-button>
+      <x-button @click.native="go('neither')" :disabled="inconformity" type="primary">以上情况均不符合</x-button>
+    </div>
   </div>
 </template>
 
@@ -31,7 +35,7 @@ export default {
       environment: ""
     };
   },
-   computed: {
+  computed: {
     ...mapState(["identityTypeList"]),
     senility: function() {
       if (
@@ -76,23 +80,28 @@ export default {
   },
   methods: {
     ...mapActions(["getIdentityType", "updateUserbase", "updateIsImplant"]),
-    search: function(){
-      console.log('search--->');
-       model.getEvidence({
-              id: this.$store.state.userbase.idNumber,
-              name: this.$store.state.userbase.name
-            }).then((data) => {
-              this.$router.push({name: "progress", params: {data: JSON.stringify(data)}});
-            }).catch((err) => {
-                 this.$vux.toast.show({
-                    type: "warn",
-                    position: "middle",
-                    text: err
-                  });
-            })
+    search: function() {
+      console.log("search--->");
+      model
+        .getEvidence({
+          id: this.$store.state.userbase.idNumber,
+          name: this.$store.state.userbase.name
+        })
+        .then(data => {
+          this.$router.push({
+            name: "progress",
+            params: { data: JSON.stringify(data) }
+          });
+        })
+        .catch(err => {
+          this.$vux.toast.show({
+            type: "warn",
+            position: "middle",
+            text: err
+          });
+        });
     },
     go: function(path, caseType, disabled) {
-
       if (disabled === true) {
         this.$vux.toast.show({
           type: "warn",
