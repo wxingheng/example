@@ -1,0 +1,8 @@
+<template name="46f8c199">
+  <view class="_view data-v-59e71268 content">
+    <image class="_image data-v-59e71268 logo" src="../../static/logo.png"></image>
+    <view class="_view data-v-59e71268">
+      <text class="_text data-v-59e71268 title">{{title}} xingheng</text>
+    </view>
+  </view>
+</template>
