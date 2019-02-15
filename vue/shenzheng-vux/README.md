@@ -1,17 +1,14 @@
 # 待解决的问题
-打包后的所有路径转换
-/static/    --->    static/
-将  static  目录复制到    /static/css   不然会导致图片找不到
 
 // onKeyUp (e) {
-      // if (e.key === 'Enter') {
-       // e.target.blur()
-       // this.$emit('on-enter', this.currentValue, e)
+// if (e.key === 'Enter') {
+// e.target.blur()
+// this.$emit('on-enter', this.currentValue, e)
      // }
     // },
     onKeyUp (e) {
         this.$emit('on-keyup', this.currentValue, e)
-    },
+},
 
 # shenzheng-vux
 
@@ -19,7 +16,7 @@
 
 ## Build Setup
 
-``` bash
+```bash
 # install dependencies
 npm install
 

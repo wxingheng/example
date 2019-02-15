@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=
+    , initial-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Center</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      /* position + translate */
+      /* .content {
+        width: 500px;
+        height: 500px;
+        border: 1px solid red;
+        position: relative;
+      }
+      .item {
+        border: 1px solid red;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      } */
+
+      /* 使用绝对定位和负边距 */
+      /* .content {
+        width: 500px;
+        height: 500px;
+        border: 1px solid red;
+        display: flex;
+        align-items: center;
+      }
+      .item {
+        border: 1px solid red;
+        margin: 0 auto;
+      } */
+
+      /* 使用绝对定位和负边距(必须子元素是固定宽高才适用) */
+
+      /* .content {
+        width: 500px;
+        height: 500px;
+        border: 1px solid red;
+        position: relative;
+      }
+      .item {
+        border: 1px solid red;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+      } */
+
+      /* 决定定位 + margin auto  (子元素必须固定宽高)*/
+      /* .content {
+        width: 500px;
+        height: 500px;
+        border: 1px solid red;
+        position: relative;
+      }
+      .item {
+        border: 1px solid red;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+      } */
+
+      .content {
+        height: 500px;
+        border: 1px solid red;
+        position: relative;
+      }
+      .left {
+        width: 100px;
+        height: 100px;
+        border: 1px solid red;
+      }
+      .right {
+        position: absolute;
+        left: 0;
+        top: 0;
+        border: 1px solid red;
+        width: 100%;
+        padding-left: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="content">
+      <div class="left">left</div>
+      <div class="right">right</div>
+    </div>
+  </body>
+</html>
