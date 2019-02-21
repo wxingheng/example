@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+
+    <style>
+      .box {
+        width: 300px;
+        height: 300px;
+        border: 1px solid red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box" onclick="console.log('box...')"></div>
+    <script>
+      var box = document.querySelector(".box");
+      box.style.position = "relative";
+
+      var div = document.createElement("div");
+      div.style.position = "absolute";
+      div.style.width = "100%";
+      div.style.height = "100%";
+      div.style.background = "rgba(0,0,0,0.33)";
+      div.onclick = e => {
+        event.stopPropagation();
+        console.log(111);
+      };
+
+      box.append(div);
+    </script>
+  </body>
+</html>
