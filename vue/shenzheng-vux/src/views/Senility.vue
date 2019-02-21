@@ -817,6 +817,7 @@ export default {
     ...mapActions(["getIdentityType", "updateUserbase"]),
     submit: function() {
       let postData = {};
+      console.log("this.userbase", this.userbase);
       switch (this.userbase.caseType) {
         case "3":
         case "4":
@@ -1055,7 +1056,7 @@ export default {
         case "5":
           postData = {
             age: this.userbase.age.toString(),
-            caseType: null, // this.userbase.caseType,
+            caseType: "0", // this.userbase.caseType,
             contact: this.userbase.phone,
             disease: this.userbase.diagnosis,
             // donateNum: this.userbase.count.toString() + ".00",
