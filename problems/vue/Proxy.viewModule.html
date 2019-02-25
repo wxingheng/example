@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <input id="text" />
+      <div id="show"></div>
+    </div>
+    <script>
+      const p = new Proxy(
+        {},
+        {
+          get: function(target, name) {
+            return target[name];
+          },
+          set: function(target, name, value) {
+            target[name] = value;
+
+            switch (name) {
+              case "test":
+                document.getElementById("text").value = value;
+                document.getElementById("show").innerHTML = value;
+                break;
+              default:
+            }
+          }
+        }
+      );
+
+      document.getElementById("text").addEventListener("keyup", function(e) {
+        p.test = e.target.value;
+      });
+    </script>
+  </body>
+</html>
