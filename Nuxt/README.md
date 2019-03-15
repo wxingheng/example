@@ -1,0 +1,1 @@
+[nuxt2.x 升级指南](https://github.com/nuxt/nuxt.js/releases/tag/v2.0.0)

@@ -1,0 +1,68 @@
+{
+  "name": "nuxt-start",
+  "version": "2.4.5",
+  "description": "Starts Nuxt.js Application in production mode",
+  "keywords": [
+    "nuxt",
+    "nuxt.js",
+    "nuxtjs",
+    "ssr",
+    "vue",
+    "vue isomorphic",
+    "vue server side",
+    "vue ssr",
+    "vue universal",
+    "vue versatile",
+    "vue.js",
+    "vuejs"
+  ],
+  "homepage": "https://github.com/nuxt/nuxt.js#readme",
+  "repository": "nuxt/nuxt.js",
+  "license": "MIT",
+  "contributors": [
+    {
+      "name": "Sebastien Chopin (@Atinux)"
+    },
+    {
+      "name": "Alexandre Chopin (@alexchopin)"
+    },
+    {
+      "name": "Pooya Parsa (@pi0)"
+    },
+    {
+      "name": "Clark Du (@clarkdo)"
+    },
+    {
+      "name": "Jonas Galvez (@galvez)"
+    },
+    {
+      "name": "Alexander Lichter (@manniL)"
+    },
+    {
+      "name": "Dmitry Molotkov (@aldarund)"
+    },
+    {
+      "name": "Kevin Marrec (@kevinmarrec)"
+    }
+  ],
+  "files": [
+    "bin",
+    "dist"
+  ],
+  "main": "dist/nuxt-start.js",
+  "bin": "bin/nuxt-start.js",
+  "dependencies": {
+    "@nuxt/cli": "2.4.5",
+    "@nuxt/core": "2.4.5",
+    "node-fetch": "^2.3.0",
+    "vue": "^2.6.9",
+    "vue-meta": "^1.5.8",
+    "vue-no-ssr": "^1.1.1",
+    "vue-router": "^3.0.2",
+    "vuex": "^3.1.0"
+  },
+  "engines": {
+    "node": ">=8.0.0",
+    "npm": ">=5.0.0"
+  }
+}

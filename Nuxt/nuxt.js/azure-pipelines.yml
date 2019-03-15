@@ -1,0 +1,28 @@
+# Node.js
+# Build a general Node.js project with npm.
+# Add steps that analyze code, save build artifacts, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
+
+pool:
+  vmImage: 'vs2017-win2016'
+
+trigger:
+- dev
+
+steps:
+- task: NodeTool@0
+  inputs:
+    versionSpec: '^10.10.0'
+  displayName: 'Install Node.js'
+
+- script: |
+    yarn --frozen-lockfile --non-interactive
+  displayName: 'Install dependencies'
+
+- script: |
+    set NODE_OPTIONS=--max_old_space_size=4096 && yarn test:fixtures -i
+  displayName: 'Test: Build Fixtures'
+
+- script: |
+    set NODE_OPTIONS=--max_old_space_size=4096 && yarn test:unit -w=2
+  displayName: 'Test: Run unit tests'
