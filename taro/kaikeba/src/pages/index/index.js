@@ -5,22 +5,22 @@ import { AtList, AtListItem } from "taro-ui";
 
 export default class Index extends Component {
   config = {
-    navigationBarTitleText: "首页"
+    navigationBarTitleText: "收集箱"
   };
 
   constructor(props) {
     super(props);
     this.state = {
       val: "",
-      todos: Taro.getStorageSync('todos') || []
+      todos: Taro.getStorageSync("todos") || []
       // todos: [{ title: "吃饭饭", done: false }, { title: "写代码", done: true }]
     };
     console.log(Taro.getEnv());
   }
 
   save = () => {
-    Taro.setStorageSync('todos', this.state.todos)
-  }
+    Taro.setStorageSync("todos", this.state.todos);
+  };
 
   handleInout = e => {
     this.setState({
@@ -30,39 +30,48 @@ export default class Index extends Component {
 
   handleClick = () => {
     console.log("handleClick");
-    this.setState({
-      todos: [...this.state.todos, { title: this.state.val, done: false }],
-      val: ""
-    }, this.save);
+    this.setState(
+      {
+        todos: [...this.state.todos, { title: this.state.val, done: false }],
+        val: ""
+      },
+      this.save
+    );
   };
 
   handleChange = (e, i) => {
     console.log(e);
     console.log(i);
-    this.setState({
-      todos: (() => {
-        const todos = [...this.state.todos];
-        todos[i]["done"] = e.detail.value;
-        return todos;
-      })()
-    }, this.save);
+    this.setState(
+      {
+        todos: (() => {
+          const todos = [...this.state.todos];
+          todos[i]["done"] = e.detail.value;
+          return todos;
+        })()
+      },
+      this.save
+    );
   };
 
   handleClear = () => {
     Taro.showLoading({
-      title: '清理中'
-    })
+      title: "清理中"
+    });
     setTimeout(() => {
-      this.setState({
-        todos: this.state.todos.filter(v => !v.done)
-      }, this.save)
+      this.setState(
+        {
+          todos: this.state.todos.filter(v => !v.done)
+        },
+        this.save
+      );
       Taro.hideLoading();
-    }, 2000)
-  }
+    }, 2000);
+  };
 
   render() {
     return (
-      <View className="index">
+      <View >
         <Text>Hello world! wuxh</Text>
         <Input value={this.state.val} onInput={this.handleInout} />
         <Button onClick={this.handleClick}>添加</Button>

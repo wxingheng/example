@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>pic_default_classification</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="主要页面" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="分类" transform="translate(-15.000000, -118.000000)" fill="#EFEFEF">
+            <g id="list" transform="translate(-109.000000, 108.000000)">
+                <g id="热门频道" transform="translate(109.000000, 0.000000)">
+                    <circle id="pic_default_classification" cx="27" cy="22" r="12"></circle>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

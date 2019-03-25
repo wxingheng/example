@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="52px" height="52px" viewBox="0 0 52 52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>icon_stop_player_nor</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="3.061617e-15%" y1="50%" x2="100%" y2="50%" id="linearGradient-1">
+            <stop stop-color="#FFCE53" offset="0%"></stop>
+            <stop stop-color="#FDAD2C" offset="29.0218431%"></stop>
+            <stop stop-color="#F39C11" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="icon_stop_player_nor" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M26,52 C40.3594035,52 52,40.3594035 52,26 C52,11.6405965 40.3594035,0 26,0 C11.6405965,0 0,11.6405965 0,26 C0,40.3594035 11.6405965,52 26,52 Z" fill="url(#linearGradient-1)" fill-rule="nonzero"></path>
+        <path d="M35.0774325,28.0423253 L22.1066251,36.6391383 C21.1859202,37.2493646 19.9448551,36.997672 19.3346288,36.0769671 C19.1175055,35.749373 19.0017126,35.365069 19.0017126,34.9720545 L19.0017126,17.0308796 C19.0017126,15.9263101 19.8971431,15.0308796 21.0017126,15.0308796 C21.4213227,15.0308796 21.8303043,15.162857 22.1707653,15.4081302 L35.1415727,24.7524921 C36.0377924,25.3981421 36.2409194,26.6480745 35.5952694,27.5442943 C35.4541347,27.7402017 35.2786922,27.9089341 35.0774325,28.0423253 Z" fill="#FFFFFF" fill-rule="nonzero"></path>
+    </g>
+</svg>

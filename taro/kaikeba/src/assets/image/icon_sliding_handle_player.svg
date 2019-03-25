@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>icon_sliding_handle_player</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="mini播放器" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="播放器" transform="translate(-268.000000, -812.000000)" fill="#F39C11">
+            <g id="list">
+                <g id="播放界面" transform="translate(0.000000, 128.000000)">
+                    <g id="进度条" transform="translate(24.000000, 684.000000)">
+                        <g id="icon_sliding_handle_player" transform="translate(244.000000, 0.000000)">
+                            <circle id="点02" opacity="0.12" cx="20" cy="20" r="20"></circle>
+                            <circle id="点01" cx="20" cy="20" r="12"></circle>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

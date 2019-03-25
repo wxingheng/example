@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="116px" height="116px" viewBox="0 0 116 116" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>icon_loading_player</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="47.2731774%" id="linearGradient-1">
+            <stop stop-color="#FFFFFF" stop-opacity="0" offset="0%"></stop>
+            <stop stop-color="#FFCE53" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="mini播放器" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="播放器" transform="translate(-318.000000, -782.000000)" fill="url(#linearGradient-1)" fill-rule="nonzero">
+            <g id="list" transform="translate(0.000000, -225.000000)">
+                <g id="播放界面" transform="translate(0.000000, 353.000000)">
+                    <g id="图标列表" transform="translate(42.000000, 654.000000)">
+                        <g id="icon_loading_player" transform="translate(276.000000, 0.000000)">
+                            <path d="M58,0 C59.6568542,0 61,1.34314575 61,3 C61,4.65685425 59.6568542,6 58,6 C29.281193,6 6,29.281193 6,58 C6,86.718807 29.281193,110 58,110 C86.718807,110 110,86.718807 110,58 C110,56.3431458 111.343146,55 113,55 C114.656854,55 116,56.3431458 116,58 C116,90.0325155 90.0325155,116 58,116 C25.9674845,116 0,90.0325155 0,58 C0,25.9674845 25.9674845,0 58,0 Z"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

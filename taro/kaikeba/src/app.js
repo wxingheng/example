@@ -27,11 +27,15 @@ class App extends Component {
       list: [
         {
           pagePath: 'pages/index/index',
-          text: '首页'
+          text: '待办',
+          iconPath: 'assets/image/ic_find_tablebar_normal.png',
+          selectedIconPath: 'assets/image/ic_find_tablebar_focused.png'
         },
         {
           pagePath: 'pages/user/user',
-          text: '用户'
+          text: '我的',
+          iconPath: 'assets/image/ic_personal_tablebar_normal.png',
+          selectedIconPath: 'assets/image/ic_personal_tablebar_focused.png'
         }
       ]
     }
