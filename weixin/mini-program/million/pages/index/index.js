@@ -57,14 +57,12 @@ Page({
         // this.setData({
         //     value: ''
         // });
+        this.fetch()
     },
     fetch() {
         console.log('type');
         wx.request({
-            url: 'https://apis.baidu.com/heweather/weather/free',
-            data: {
-                city: 'beijing'
-            },
+            url: 'https://www.baidu.com',
             method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
             header: {
                 // apikey: 'a37c01591e47494fe320137dbc0fd423'

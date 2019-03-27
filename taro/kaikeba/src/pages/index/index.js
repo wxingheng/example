@@ -1,7 +1,7 @@
 import Taro, { Component } from "@tarojs/taro";
 import { View, Text, Input, Button } from "@tarojs/components";
 import "./index.scss";
-import { AtList, AtListItem } from "taro-ui";
+import { AtList, AtListItem, AtSwipeAction } from "taro-ui";
 
 export default class Index extends Component {
   config = {
@@ -69,26 +69,58 @@ export default class Index extends Component {
     }, 2000);
   };
 
+  handleSingle = (i) => {
+    console.log(i)
+  }
+  handleItem = (i) => {
+    console.log(i)
+  }
+
   render() {
+    const { todos } = this.state;
     return (
-      <View >
-        <Text>Hello world! wuxh</Text>
-        <Input value={this.state.val} onInput={this.handleInout} />
-        <Button onClick={this.handleClick}>添加</Button>
-        <AtList>
-          {this.state.todos.map((todo, i) => (
-            <AtListItem
-              className={{ kkdone: todo.done }}
-              key={i}
-              title={todo.title}
-              isSwitch
-              switchIsCheck={todo.done}
-              onSwitchChange={e => this.handleChange(e, i)}
-            />
-          ))}
-        </AtList>
-        <Button onClick={this.handleClear}>清空</Button>
-      </View>
+      <AtList>
+        {todos.map((item, index) => (
+          <AtSwipeAction
+            key={index}
+            onOpened={this.handleSingle.bind(this, index)}
+            options={[
+              {
+                text: '取消',
+                style: {
+                  backgroundColor: '#6190E8'
+                }
+              },
+              {
+                text: '删除',
+                style: {
+                  backgroundColor: '#FF4949'
+                }
+              }
+            ]}
+          >
+            {item.title}
+          </AtSwipeAction>
+        ))}
+      </AtList>
+      // <View >
+      //   <Text>Hello world! wuxh</Text>
+      //   <Input value={this.state.val} onInput={this.handleInout} />
+      //   <Button onClick={this.handleClick}>添加</Button>
+      //   <AtList>
+      //     {this.state.todos.map((todo, i) => (
+      //       <AtListItem
+      //         className={{ kkdone: todo.done }}
+      //         key={i}
+      //         title={todo.title}
+      //         isSwitch
+      //         switchIsCheck={todo.done}
+      //         onSwitchChange={e => this.handleChange(e, i)}
+      //       />
+      //     ))}
+      //   </AtList>
+      //   <Button onClick={this.handleClear}>清空</Button>
+      // </View>
     );
   }
 }
