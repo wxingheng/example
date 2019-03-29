@@ -1,0 +1,65 @@
+2019-03-29 09:18:57,611 INFO 34028 [egg-logrotator] agent logger reload: got log-reload message
+2019-03-29 12:57:34,132 ERROR 34028 nodejs.ClusterClientNoResponseError: client no response in 307870ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout.Leader._heartbeatTimer.setInterval [as _onTimeout] (/Users/wuxh/Documents/coder/github/example/node/EGG/egg-example/node_modules/cluster-client/lib/leader.js:77:23)
+    at listOnTimeout (timers.js:327:15)
+    at processTimers (timers.js:271:5)
+name: "ClusterClientNoResponseError"
+pid: 34028
+hostname: wuxinghengdeMacBook-Pro.local
+
+2019-03-29 13:03:17,025 ERROR 34028 nodejs.ClusterClientNoResponseError: client no response in 302882ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout.Leader._heartbeatTimer.setInterval [as _onTimeout] (/Users/wuxh/Documents/coder/github/example/node/EGG/egg-example/node_modules/cluster-client/lib/leader.js:77:23)
+    at listOnTimeout (timers.js:327:15)
+    at processTimers (timers.js:271:5)
+name: "ClusterClientNoResponseError"
+pid: 34028
+hostname: wuxinghengdeMacBook-Pro.local
+
+2019-03-29 13:08:59,922 ERROR 34028 nodejs.ClusterClientNoResponseError: client no response in 302883ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout.Leader._heartbeatTimer.setInterval [as _onTimeout] (/Users/wuxh/Documents/coder/github/example/node/EGG/egg-example/node_modules/cluster-client/lib/leader.js:77:23)
+    at listOnTimeout (timers.js:327:15)
+    at processTimers (timers.js:271:5)
+name: "ClusterClientNoResponseError"
+pid: 34028
+hostname: wuxinghengdeMacBook-Pro.local
+
+2019-03-29 13:14:22,856 ERROR 34028 nodejs.ClusterClientNoResponseError: client no response in 302919ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout.Leader._heartbeatTimer.setInterval [as _onTimeout] (/Users/wuxh/Documents/coder/github/example/node/EGG/egg-example/node_modules/cluster-client/lib/leader.js:77:23)
+    at listOnTimeout (timers.js:327:15)
+    at processTimers (timers.js:271:5)
+name: "ClusterClientNoResponseError"
+pid: 34028
+hostname: wuxinghengdeMacBook-Pro.local
+
+2019-03-29 13:21:07,382 ERROR 34028 nodejs.ClusterClientNoResponseError: client no response in 302886ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout.Leader._heartbeatTimer.setInterval [as _onTimeout] (/Users/wuxh/Documents/coder/github/example/node/EGG/egg-example/node_modules/cluster-client/lib/leader.js:77:23)
+    at listOnTimeout (timers.js:327:15)
+    at processTimers (timers.js:271:5)
+name: "ClusterClientNoResponseError"
+pid: 34028
+hostname: wuxinghengdeMacBook-Pro.local
+
+2019-03-29 13:26:31,322 ERROR 34028 nodejs.ClusterClientNoResponseError: client no response in 303929ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout.Leader._heartbeatTimer.setInterval [as _onTimeout] (/Users/wuxh/Documents/coder/github/example/node/EGG/egg-example/node_modules/cluster-client/lib/leader.js:77:23)
+    at listOnTimeout (timers.js:327:15)
+    at processTimers (timers.js:271:5)
+name: "ClusterClientNoResponseError"
+pid: 34028
+hostname: wuxinghengdeMacBook-Pro.local
+
+2019-03-29 13:32:14,228 ERROR 34028 nodejs.ClusterClientNoResponseError: client no response in 302885ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout.Leader._heartbeatTimer.setInterval [as _onTimeout] (/Users/wuxh/Documents/coder/github/example/node/EGG/egg-example/node_modules/cluster-client/lib/leader.js:77:23)
+    at listOnTimeout (timers.js:327:15)
+    at processTimers (timers.js:271:5)
+name: "ClusterClientNoResponseError"
+pid: 34028
+hostname: wuxinghengdeMacBook-Pro.local
+
+2019-03-29 13:37:07,126 ERROR 34028 nodejs.ClusterClientNoResponseError: client no response in 252891ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout.Leader._heartbeatTimer.setInterval [as _onTimeout] (/Users/wuxh/Documents/coder/github/example/node/EGG/egg-example/node_modules/cluster-client/lib/leader.js:77:23)
+    at listOnTimeout (timers.js:327:15)
+    at processTimers (timers.js:271:5)
+name: "ClusterClientNoResponseError"
+pid: 34028
+hostname: wuxinghengdeMacBook-Pro.local
+

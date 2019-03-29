@@ -1,0 +1,60 @@
+2019-03-28 22:21:11,681 INFO 33348 [Timer] /Users/wuxh/Documents/coder/github/example/node/EGG/egg-example/node_modules/egg-logrotator/app/schedule/clean_log.js next time will execute after 5928322ms at 2019-03-29 00:00:00.003
+2019-03-28 22:21:11,681 INFO 33348 [Timer] /Users/wuxh/Documents/coder/github/example/node/EGG/egg-example/node_modules/egg-logrotator/app/schedule/rotate_by_file.js next time will execute after 5929319ms at 2019-03-29 00:00:01.000
+2019-03-28 22:21:11,587 INFO 33353 [egg-schedule]: register schedule /Users/wuxh/Documents/coder/github/example/node/EGG/egg-example/node_modules/egg-logrotator/app/schedule/clean_log.js
+2019-03-28 22:21:11,587 INFO 33353 [egg-schedule]: register schedule /Users/wuxh/Documents/coder/github/example/node/EGG/egg-example/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2019-03-28 22:26:54,454 INFO 33506 [Timer] /Users/wuxh/Documents/coder/github/example/node/EGG/egg-example/node_modules/egg-logrotator/app/schedule/clean_log.js next time will execute after 5585548ms at 2019-03-29 00:00:00.002
+2019-03-28 22:26:54,454 INFO 33506 [Timer] /Users/wuxh/Documents/coder/github/example/node/EGG/egg-example/node_modules/egg-logrotator/app/schedule/rotate_by_file.js next time will execute after 5586546ms at 2019-03-29 00:00:01.000
+2019-03-28 22:26:54,361 INFO 33511 [egg-schedule]: register schedule /Users/wuxh/Documents/coder/github/example/node/EGG/egg-example/node_modules/egg-logrotator/app/schedule/clean_log.js
+2019-03-28 22:26:54,361 INFO 33511 [egg-schedule]: register schedule /Users/wuxh/Documents/coder/github/example/node/EGG/egg-example/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2019-03-28 22:29:41,626 INFO 33597 [Timer] /Users/wuxh/Documents/coder/github/example/node/EGG/egg-example/node_modules/egg-logrotator/app/schedule/clean_log.js next time will execute after 5418376ms at 2019-03-29 00:00:00.002
+2019-03-28 22:29:41,627 INFO 33597 [Timer] /Users/wuxh/Documents/coder/github/example/node/EGG/egg-example/node_modules/egg-logrotator/app/schedule/rotate_by_file.js next time will execute after 5419373ms at 2019-03-29 00:00:01.000
+2019-03-28 22:29:41,533 INFO 33602 [egg-schedule]: register schedule /Users/wuxh/Documents/coder/github/example/node/EGG/egg-example/node_modules/egg-logrotator/app/schedule/clean_log.js
+2019-03-28 22:29:41,533 INFO 33602 [egg-schedule]: register schedule /Users/wuxh/Documents/coder/github/example/node/EGG/egg-example/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2019-03-28 22:31:06,517 INFO 33646 [egg-schedule]: register schedule /Users/wuxh/Documents/coder/github/example/node/EGG/egg-example/node_modules/egg-logrotator/app/schedule/clean_log.js
+2019-03-28 22:31:06,517 INFO 33646 [egg-schedule]: register schedule /Users/wuxh/Documents/coder/github/example/node/EGG/egg-example/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2019-03-28 22:31:44,931 INFO 33662 [egg-schedule]: register schedule /Users/wuxh/Documents/coder/github/example/node/EGG/egg-example/node_modules/egg-logrotator/app/schedule/clean_log.js
+2019-03-28 22:31:44,931 INFO 33662 [egg-schedule]: register schedule /Users/wuxh/Documents/coder/github/example/node/EGG/egg-example/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2019-03-28 22:33:09,272 INFO 33681 [egg-schedule]: register schedule /Users/wuxh/Documents/coder/github/example/node/EGG/egg-example/node_modules/egg-logrotator/app/schedule/clean_log.js
+2019-03-28 22:33:09,272 INFO 33681 [egg-schedule]: register schedule /Users/wuxh/Documents/coder/github/example/node/EGG/egg-example/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2019-03-28 22:33:09,862 INFO 33682 [egg-schedule]: register schedule /Users/wuxh/Documents/coder/github/example/node/EGG/egg-example/node_modules/egg-logrotator/app/schedule/clean_log.js
+2019-03-28 22:33:09,862 INFO 33682 [egg-schedule]: register schedule /Users/wuxh/Documents/coder/github/example/node/EGG/egg-example/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2019-03-28 22:36:11,072 INFO 33768 [egg-schedule]: register schedule /Users/wuxh/Documents/coder/github/example/node/EGG/egg-example/node_modules/egg-logrotator/app/schedule/clean_log.js
+2019-03-28 22:36:11,072 INFO 33768 [egg-schedule]: register schedule /Users/wuxh/Documents/coder/github/example/node/EGG/egg-example/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2019-03-28 22:38:53,939 INFO 33794 [egg-schedule]: register schedule /Users/wuxh/Documents/coder/github/example/node/EGG/egg-example/node_modules/egg-logrotator/app/schedule/clean_log.js
+2019-03-28 22:38:53,939 INFO 33794 [egg-schedule]: register schedule /Users/wuxh/Documents/coder/github/example/node/EGG/egg-example/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2019-03-28 22:39:41,176 INFO 33826 [egg-schedule]: register schedule /Users/wuxh/Documents/coder/github/example/node/EGG/egg-example/node_modules/egg-logrotator/app/schedule/clean_log.js
+2019-03-28 22:39:41,176 INFO 33826 [egg-schedule]: register schedule /Users/wuxh/Documents/coder/github/example/node/EGG/egg-example/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2019-03-28 22:39:41,793 INFO 33827 [egg-schedule]: register schedule /Users/wuxh/Documents/coder/github/example/node/EGG/egg-example/node_modules/egg-logrotator/app/schedule/clean_log.js
+2019-03-28 22:39:41,793 INFO 33827 [egg-schedule]: register schedule /Users/wuxh/Documents/coder/github/example/node/EGG/egg-example/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2019-03-28 22:40:32,096 INFO 33848 [egg-schedule]: register schedule /Users/wuxh/Documents/coder/github/example/node/EGG/egg-example/node_modules/egg-logrotator/app/schedule/clean_log.js
+2019-03-28 22:40:32,096 INFO 33848 [egg-schedule]: register schedule /Users/wuxh/Documents/coder/github/example/node/EGG/egg-example/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2019-03-28 22:40:32,697 INFO 33849 [egg-schedule]: register schedule /Users/wuxh/Documents/coder/github/example/node/EGG/egg-example/node_modules/egg-logrotator/app/schedule/clean_log.js
+2019-03-28 22:40:32,697 INFO 33849 [egg-schedule]: register schedule /Users/wuxh/Documents/coder/github/example/node/EGG/egg-example/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2019-03-28 22:42:26,357 INFO 33880 [egg-schedule]: register schedule /Users/wuxh/Documents/coder/github/example/node/EGG/egg-example/node_modules/egg-logrotator/app/schedule/clean_log.js
+2019-03-28 22:42:26,357 INFO 33880 [egg-schedule]: register schedule /Users/wuxh/Documents/coder/github/example/node/EGG/egg-example/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2019-03-28 22:47:19,007 INFO 33902 [egg-schedule]: register schedule /Users/wuxh/Documents/coder/github/example/node/EGG/egg-example/node_modules/egg-logrotator/app/schedule/clean_log.js
+2019-03-28 22:47:19,007 INFO 33902 [egg-schedule]: register schedule /Users/wuxh/Documents/coder/github/example/node/EGG/egg-example/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2019-03-28 22:48:18,409 INFO 33926 [egg-schedule]: register schedule /Users/wuxh/Documents/coder/github/example/node/EGG/egg-example/node_modules/egg-logrotator/app/schedule/clean_log.js
+2019-03-28 22:48:18,409 INFO 33926 [egg-schedule]: register schedule /Users/wuxh/Documents/coder/github/example/node/EGG/egg-example/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2019-03-28 22:48:19,008 INFO 33927 [egg-schedule]: register schedule /Users/wuxh/Documents/coder/github/example/node/EGG/egg-example/node_modules/egg-logrotator/app/schedule/clean_log.js
+2019-03-28 22:48:19,009 INFO 33927 [egg-schedule]: register schedule /Users/wuxh/Documents/coder/github/example/node/EGG/egg-example/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2019-03-28 22:49:36,510 INFO 33951 [egg-schedule]: register schedule /Users/wuxh/Documents/coder/github/example/node/EGG/egg-example/node_modules/egg-logrotator/app/schedule/clean_log.js
+2019-03-28 22:49:36,510 INFO 33951 [egg-schedule]: register schedule /Users/wuxh/Documents/coder/github/example/node/EGG/egg-example/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2019-03-28 22:49:37,150 INFO 33952 [egg-schedule]: register schedule /Users/wuxh/Documents/coder/github/example/node/EGG/egg-example/node_modules/egg-logrotator/app/schedule/clean_log.js
+2019-03-28 22:49:37,150 INFO 33952 [egg-schedule]: register schedule /Users/wuxh/Documents/coder/github/example/node/EGG/egg-example/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2019-03-28 22:50:34,506 INFO 33969 [egg-schedule]: register schedule /Users/wuxh/Documents/coder/github/example/node/EGG/egg-example/node_modules/egg-logrotator/app/schedule/clean_log.js
+2019-03-28 22:50:34,507 INFO 33969 [egg-schedule]: register schedule /Users/wuxh/Documents/coder/github/example/node/EGG/egg-example/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2019-03-28 22:50:35,163 INFO 33970 [egg-schedule]: register schedule /Users/wuxh/Documents/coder/github/example/node/EGG/egg-example/node_modules/egg-logrotator/app/schedule/clean_log.js
+2019-03-28 22:50:35,163 INFO 33970 [egg-schedule]: register schedule /Users/wuxh/Documents/coder/github/example/node/EGG/egg-example/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2019-03-28 22:51:42,919 INFO 33998 [egg-schedule]: register schedule /Users/wuxh/Documents/coder/github/example/node/EGG/egg-example/node_modules/egg-logrotator/app/schedule/clean_log.js
+2019-03-28 22:51:42,919 INFO 33998 [egg-schedule]: register schedule /Users/wuxh/Documents/coder/github/example/node/EGG/egg-example/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2019-03-28 22:53:10,785 INFO 34028 [Timer] /Users/wuxh/Documents/coder/github/example/node/EGG/egg-example/node_modules/egg-logrotator/app/schedule/clean_log.js next time will execute after 4009217ms at 2019-03-29 00:00:00.002
+2019-03-28 22:53:10,785 INFO 34028 [Timer] /Users/wuxh/Documents/coder/github/example/node/EGG/egg-example/node_modules/egg-logrotator/app/schedule/rotate_by_file.js next time will execute after 4010215ms at 2019-03-29 00:00:01.000
+2019-03-28 22:53:10,721 INFO 34029 [egg-schedule]: register schedule /Users/wuxh/Documents/coder/github/example/node/EGG/egg-example/node_modules/egg-logrotator/app/schedule/clean_log.js
+2019-03-28 22:53:10,721 INFO 34029 [egg-schedule]: register schedule /Users/wuxh/Documents/coder/github/example/node/EGG/egg-example/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2019-03-29 09:18:56,614 INFO 34028 [Timer] /Users/wuxh/Documents/coder/github/example/node/EGG/egg-example/node_modules/egg-logrotator/app/schedule/clean_log.js next time will execute after 52863391ms at 2019-03-30 00:00:00.005
+2019-03-29 09:18:56,638 INFO 34029 [Job#15538223366033619446951137081] /Users/wuxh/Documents/coder/github/example/node/EGG/egg-example/node_modules/egg-logrotator/app/schedule/clean_log.js executing by app
+2019-03-29 09:18:56,649 INFO 34029 [Job#15538223366033619446951137081] /Users/wuxh/Documents/coder/github/example/node/EGG/egg-example/node_modules/egg-logrotator/app/schedule/clean_log.js execute succeed, used 10ms
+2019-03-29 09:18:57,602 INFO 34029 [Job#15538223376013619456915683441] /Users/wuxh/Documents/coder/github/example/node/EGG/egg-example/node_modules/egg-logrotator/app/schedule/rotate_by_file.js executing by app
+2019-03-29 09:18:57,609 INFO 34029 [Job#15538223376013619456915683441] /Users/wuxh/Documents/coder/github/example/node/EGG/egg-example/node_modules/egg-logrotator/app/schedule/rotate_by_file.js execute succeed, used 7ms
+2019-03-29 09:18:57,606 INFO 34028 [Timer] /Users/wuxh/Documents/coder/github/example/node/EGG/egg-example/node_modules/egg-logrotator/app/schedule/rotate_by_file.js next time will execute after 52863399ms at 2019-03-30 00:00:01.005

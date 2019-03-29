@@ -1,0 +1,79 @@
+2019-03-28 22:21:27,395 ERROR 33353 [-/127.0.0.1/-/7ms GET /] nodejs.Error: Please set config.keys first
+    at Application.get keys [as keys] (/Users/wuxh/Documents/coder/github/example/node/EGG/egg-example/node_modules/egg/lib/application.js:257:15)
+    at Object.get cookies [as cookies] (/Users/wuxh/Documents/coder/github/example/node/EGG/egg-example/node_modules/egg/app/extend/context.js:22:66)
+    at Object.get [egg-security#CSRF_SECRET] (/Users/wuxh/Documents/coder/github/example/node/EGG/egg-example/node_modules/egg-security/app/extend/context.js:86:33)
+    at Object.ensureCsrfSecret (/Users/wuxh/Documents/coder/github/example/node/EGG/egg-example/node_modules/egg-security/app/extend/context.js:97:13)
+    at csrf (/Users/wuxh/Documents/coder/github/example/node/EGG/egg-example/node_modules/egg-security/lib/middlewares/csrf.js:14:9)
+    at dispatch (/Users/wuxh/Documents/coder/github/example/node/EGG/egg-example/node_modules/koa-compose/index.js:42:32)
+    at /Users/wuxh/Documents/coder/github/example/node/EGG/egg-example/node_modules/koa-compose/index.js:34:12
+    at dispatch (/Users/wuxh/Documents/coder/github/example/node/EGG/egg-example/node_modules/koa-compose/index.js:42:32)
+    at session (/Users/wuxh/Documents/coder/github/example/node/EGG/egg-example/node_modules/koa-session/index.js:41:13)
+    at dispatch (/Users/wuxh/Documents/coder/github/example/node/EGG/egg-example/node_modules/koa-compose/index.js:42:32)
+
+pid: 33353
+hostname: wuxinghengdeMacBook-Pro.local
+
+2019-03-28 22:49:49,145 ERROR 33952 [-/127.0.0.1/-/5031ms GET /news] nodejs.ConnectionTimeoutError: Connect timeout for 5000ms, GET https://hacker-news.firebaseio.com/v0/topstories.json -2 (connected: false, keepalive socket: false, agent status: {"createSocketCount":1,"createSocketErrorCount":0,"closeSocketCount":1,"errorSocketCount":0,"timeoutSocketCount":0,"requestCount":0,"freeSockets":{},"sockets":{},"requests":{}}, socketHandledRequests: 1, socketHandledResponses: 0)
+headers: {}
+headers: {}
+    at Timeout._onTimeout (/Users/wuxh/Documents/coder/github/example/node/EGG/egg-example/node_modules/urllib/lib/urllib.js:855:15)
+    at listOnTimeout (timers.js:327:15)
+    at processTimers (timers.js:271:5)
+name: "ConnectionTimeoutError"
+requestId: 1
+data: undefined
+path: "/v0/topstories.json?orderBy=%22%24key%22&startAt=%220%22&endAt=%224%22"
+status: -2
+headers: {}
+res: {"status":-2,"statusCode":-2,"statusMessage":null,"headers":{},"size":0,"aborted":false,"rt":5021,"keepAliveSocket":false,"requestUrls":["https://hacker-news.firebaseio.com/v0/topstories.json"],"timing":null,"remoteAddress":"35.201.97.85","remotePort":"","socketHandledRequests":1,"socketHandledResponses":0}
+pid: 33952
+hostname: wuxinghengdeMacBook-Pro.local
+
+2019-03-28 22:50:52,072 ERROR 33970 [-/127.0.0.1/-/5030ms GET /news] nodejs.ConnectionTimeoutError: Connect timeout for 5000ms, GET https://hacker-news.firebaseio.com/v0/topstories.json -2 (connected: false, keepalive socket: false, agent status: {"createSocketCount":1,"createSocketErrorCount":0,"closeSocketCount":1,"errorSocketCount":0,"timeoutSocketCount":0,"requestCount":0,"freeSockets":{},"sockets":{},"requests":{}}, socketHandledRequests: 1, socketHandledResponses: 0)
+headers: {}
+headers: {}
+    at Timeout._onTimeout (/Users/wuxh/Documents/coder/github/example/node/EGG/egg-example/node_modules/urllib/lib/urllib.js:855:15)
+    at listOnTimeout (timers.js:327:15)
+    at processTimers (timers.js:271:5)
+name: "ConnectionTimeoutError"
+requestId: 1
+data: undefined
+path: "/v0/topstories.json?orderBy=%22%24key%22&startAt=%220%22&endAt=%224%22"
+status: -2
+headers: {}
+res: {"status":-2,"statusCode":-2,"statusMessage":null,"headers":{},"size":0,"aborted":false,"rt":5020,"keepAliveSocket":false,"requestUrls":["https://hacker-news.firebaseio.com/v0/topstories.json"],"timing":null,"remoteAddress":"35.201.97.85","remotePort":"","socketHandledRequests":1,"socketHandledResponses":0}
+pid: 33970
+hostname: wuxinghengdeMacBook-Pro.local
+
+2019-03-28 22:52:01,397 ERROR 33998 [-/127.0.0.1/-/5032ms GET /news] nodejs.ConnectionTimeoutError: Connect timeout for 5000ms, GET https://hacker-news.firebaseio.com/v0/topstories.json -2 (connected: false, keepalive socket: false, agent status: {"createSocketCount":1,"createSocketErrorCount":0,"closeSocketCount":1,"errorSocketCount":0,"timeoutSocketCount":0,"requestCount":0,"freeSockets":{},"sockets":{},"requests":{}}, socketHandledRequests: 1, socketHandledResponses: 0)
+headers: {}
+headers: {}
+    at Timeout._onTimeout (/Users/wuxh/Documents/coder/github/example/node/EGG/egg-example/node_modules/urllib/lib/urllib.js:855:15)
+    at listOnTimeout (timers.js:327:15)
+    at processTimers (timers.js:271:5)
+name: "ConnectionTimeoutError"
+requestId: 1
+data: undefined
+path: "/v0/topstories.json?orderBy=%22%24key%22&startAt=%220%22&endAt=%224%22"
+status: -2
+headers: {}
+res: {"status":-2,"statusCode":-2,"statusMessage":null,"headers":{},"size":0,"aborted":false,"rt":5022,"keepAliveSocket":false,"requestUrls":["https://hacker-news.firebaseio.com/v0/topstories.json"],"timing":null,"remoteAddress":"35.201.97.85","remotePort":"","socketHandledRequests":1,"socketHandledResponses":0}
+pid: 33998
+hostname: wuxinghengdeMacBook-Pro.local
+
+2019-03-28 22:53:18,643 ERROR 34029 [-/127.0.0.1/-/5025ms GET /news] nodejs.ConnectionTimeoutError: Connect timeout for 5000ms, GET https://hacker-news.firebaseio.com/v0/topstories.json -2 (connected: false, keepalive socket: false, agent status: {"createSocketCount":1,"createSocketErrorCount":0,"closeSocketCount":1,"errorSocketCount":0,"timeoutSocketCount":0,"requestCount":0,"freeSockets":{},"sockets":{},"requests":{}}, socketHandledRequests: 1, socketHandledResponses: 0)
+headers: {}
+headers: {}
+    at Timeout._onTimeout (/Users/wuxh/Documents/coder/github/example/node/EGG/egg-example/node_modules/urllib/lib/urllib.js:855:15)
+    at listOnTimeout (timers.js:327:15)
+    at processTimers (timers.js:271:5)
+name: "ConnectionTimeoutError"
+requestId: 1
+data: undefined
+path: "/v0/topstories.json?orderBy=%22%24key%22&startAt=%220%22&endAt=%224%22"
+status: -2
+headers: {}
+res: {"status":-2,"statusCode":-2,"statusMessage":null,"headers":{},"size":0,"aborted":false,"rt":5016,"keepAliveSocket":false,"requestUrls":["https://hacker-news.firebaseio.com/v0/topstories.json"],"timing":null,"remoteAddress":"35.201.97.85","remotePort":"","socketHandledRequests":1,"socketHandledResponses":0}
+pid: 34029
+hostname: wuxinghengdeMacBook-Pro.local
+
