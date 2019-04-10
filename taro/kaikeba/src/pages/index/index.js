@@ -1,7 +1,7 @@
+/* eslint-disable jsx-quotes */
 import Taro, { Component } from "@tarojs/taro";
-import { View, Text, Input, Button } from "@tarojs/components";
+import { View, Checkbox, Input } from "@tarojs/components";
 import "./index.scss";
-import { AtList, AtListItem, AtSwipeAction } from "taro-ui";
 
 export default class Index extends Component {
   config = {
@@ -12,7 +12,11 @@ export default class Index extends Component {
     super(props);
     this.state = {
       val: "",
-      todos: Taro.getStorageSync("todos") || []
+      todos: Taro.getStorageSync("todos") || [],
+      // show add button
+      showAdd: true,
+      // add input is focus
+      addFocus: false
       // todos: [{ title: "吃饭饭", done: false }, { title: "写代码", done: true }]
     };
     console.log(Taro.getEnv());
@@ -69,57 +73,88 @@ export default class Index extends Component {
     }, 2000);
   };
 
-  handleSingle = (i) => {
-    console.log(i)
-  }
-  handleItem = (i) => {
-    console.log(i)
+  handleSingle = i => {
+    console.log(i);
+  };
+  handleItem = i => {
+    console.log(i);
+  };
+  handleAdd = () => {
+    console.log("handleAdd");
+    this.setState({
+      showAdd: !this.state.showAdd,
+      addFocus: true
+    });
+  };
+  handleAddBlur = e => {
+    console.log("handleAddBlur--->>>", e);
+    console.log("handleAddBlur--->>>", e.target.value);
+    const result = e.target.value;
+    if (result && result.trim()) {
+      console.log("11111");
+      this.setState(
+        {
+          todos: [...this.state.todos, { title: result.trim(), done: false }],
+          showAdd: true,
+          addFocus: false,
+          val: ""
+        },
+        this.save
+      );
+    } else {
+      console.log("2222");
+      this.setState({
+        showAdd: true,
+        addFocus: false
+      });
+    }
+  };
+
+  handleCheckboxChange = (i, done) => {
+    console.log(i);
+    console.log(done);
+    const todos = [...this.state.todos];
+    todos[i]['done'] = !done;
+    console.log('todos', todos);
+    this.setState({
+      todos
+    }, this.save)
   }
 
   render() {
-    const { todos } = this.state;
+    const { todos, showAdd, val, addFocus } = this.state;
+    console.log('this.state---->', this.state);
     return (
-      // <AtList>
-      //   {todos.map((item, index) => (
-      //     <AtSwipeAction
-      //       key={index}
-      //       onOpened={this.handleSingle.bind(this, index)}
-      //       options={[
-      //         {
-      //           text: '取消',
-      //           style: {
-      //             backgroundColor: '#6190E8'
-      //           }
-      //         },
-      //         {
-      //           text: '删除',
-      //           style: {
-      //             backgroundColor: '#FF4949'
-      //           }
-      //         }
-      //       ]}
-      //     >
-      //       {item.title}
-      //     </AtSwipeAction>
-      //   ))}
-      // </AtList>
-      <View >
-        <Text>Hello world! wuxh</Text>
-        <Input value={this.state.val} onInput={this.handleInout} />
-        <Button onClick={this.handleClick}>添加</Button>
-        <AtList>
-          {this.state.todos.map((todo, i) => (
-            <AtListItem
-              className={{ kkdone: todo.done }}
-              key={i}
-              title={todo.title}
-              isSwitch
-              switchIsCheck={todo.done}
-              onSwitchChange={e => this.handleChange(e, i)}
-            />
-          ))}
-        </AtList>
-        <Button onClick={this.handleClear}>清空</Button>
+      <View>
+        <View className="header">
+          <View className="header_left">编辑</View>
+          <View className="header_center">清单</View>
+          <View className="header_right">删除</View>
+        </View>
+        <View className="main">
+          <View className="ul">
+            {todos.map((item, i) => (
+              <View className="li" key={i}>
+                <Checkbox className="checkbox" onChange={() => {this.handleCheckboxChange(i, item.done)}} checked={item.done} />
+                <Input className={`input ${item.done && "line-through"}`} disabled={item.done} type="text" value={item.title} />
+              </View>
+            ))}
+          </View>
+
+          {showAdd ? (
+            <View className="add" onClick={this.handleAdd}>
+              +
+            </View>
+          ) : (
+            // 只能第一次自动获取焦点
+            <View className="ul">
+              <View className="li">
+                <Checkbox className="checkbox" />
+                <Input className="input" focus={addFocus} autoFocus type="text" value={val} onBlur={this.handleAddBlur} />
+              </View>
+            </View>
+          )}
+        </View>
       </View>
     );
   }

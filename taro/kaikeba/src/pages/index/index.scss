@@ -2,3 +2,54 @@
     color: red;
     text-decoration: line-through;
 }
+.header{
+  color: #66a5da;
+  font-size: 30px;
+  display: flex;
+  padding: 16px 22px;
+  border-bottom: 1px solid #ccc;
+}
+.header_left, .header_right, .header_center{
+  flex: 1;
+}
+.header_right{
+  text-align: right;
+}
+.header_center{
+  text-align: center;
+  color: #000000;
+}
+.main{
+  font-size: 32px;
+}
+.ul{
+  padding: 2px 0 2px 34px;
+}
+.li{
+  display: flex;
+  padding: 22px 0;
+  border-bottom: 1px solid #ccc;
+  &:last-child{
+    border: none;
+  }
+}
+.checkbox{
+  flex: 1;
+  margin-left: 12px;
+}
+.input{
+  flex: 1;
+  padding-top: 16px;
+  margin-left: 14px;
+}
+.line-through{
+  text-decoration: line-through;
+}
+.add{
+  // border: 1px solid red;
+  font-size: 70px;
+  color: #bbb;
+  line-height: 70px;
+  padding-left: 26px;
+  min-height: 300px;
+}
