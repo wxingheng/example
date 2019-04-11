@@ -1,15 +1,15 @@
 /* eslint-disable jsx-quotes */
 import Taro, { Component } from "@tarojs/taro";
-import { View, Checkbox, Input } from "@tarojs/components";
-import { AtSwipeAction } from "taro-ui";
+import { View, Input } from "@tarojs/components";
+import { AtSwipeAction, AtIcon } from "taro-ui";
 import "./index.scss";
 // import { Mcheckbox } from "./../../components/MCheckbox/index.js";
-// import { Mcheckbox } from "@/components/Mcheckbox";
-import { Mcheckbox } from "./mcheckbox";
+// eslint-disable-next-line import/first
+import Mcheckbox from "@/components/Mcheckbox";
 
 export default class Index extends Component {
   config = {
-    navigationBarTitleText: "收集箱"
+    navigationBarTitleText: "待办"
   };
 
   constructor(props) {
@@ -154,11 +154,13 @@ export default class Index extends Component {
     console.log("this.state---->", this.state);
     return (
       <View>
-        <View className="header">
-          {/** <View className="header_left">编辑</View> */}
-          <View className="header_center">清单12312322</View>
-          {/** <View className="header_right">删除</View> */}
+        {/**
+       <View className="header">
+           <View className="header_left">编辑</View>
+          <View className="header_center">清单</View>
+           <View className="header_right">删除</View>
         </View>
+      */}
         <View className="main">
           <View className="ul">
             {todos.map((item, i) => (
@@ -196,13 +198,13 @@ export default class Index extends Component {
 
           {showAdd ? (
             <View className="add" onClick={this.handleAdd}>
-              +
+              <AtIcon value="add"  size="20" color="#bbbbbb" />
             </View>
           ) : (
             // 只能第一次自动获取焦点
             <View className="ul">
               <View className="li">
-                <Checkbox className="checkbox" />
+                <Mcheckbox />
                 <Input className="input" focus={addFocus} autoFocus type="text" value={val} onBlur={this.handleAddBlur} />
               </View>
             </View>
