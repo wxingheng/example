@@ -111,19 +111,31 @@ export default class Index extends Component {
   };
 
   handleCheckboxChange = (i, done) => {
-    console.log(i);
-    console.log(done);
     const todos = [...this.state.todos];
-    todos[i]['done'] = !done;
-    console.log('todos', todos);
-    this.setState({
-      todos
-    }, this.save)
+    todos[i]["done"] = !done;
+    this.setState(
+      {
+        todos
+      },
+      this.save
+    );
+  };
+
+  handleItemBlur = (e, i) => {
+    console.log('+++++++++++>>>', e.target.value);
+    const todos = [...this.state.todos];
+    todos[i]["title"] = e.target.value;
+    this.setState(
+      {
+        todos
+      },
+      this.save
+    );
   }
 
   render() {
     const { todos, showAdd, val, addFocus } = this.state;
-    console.log('this.state---->', this.state);
+    console.log("this.state---->", this.state);
     return (
       <View>
         <View className="header">
@@ -135,8 +147,14 @@ export default class Index extends Component {
           <View className="ul">
             {todos.map((item, i) => (
               <View className="li" key={i}>
-                <Checkbox className="checkbox" onChange={() => {this.handleCheckboxChange(i, item.done)}} checked={item.done} />
-                <Input className={`input ${item.done && "line-through"}`} disabled={item.done} type="text" value={item.title} />
+                <Checkbox
+                  className="checkbox"
+                  onChange={() => {
+                    this.handleCheckboxChange(i, item.done);
+                  }}
+                  checked={item.done}
+                />
+                <Input className={`input ${item.done && "line-through"}`} disabled={item.done} onBlur={(e) => this.handleItemBlur(e, i)} type="text" value={item.title} />
               </View>
             ))}
           </View>

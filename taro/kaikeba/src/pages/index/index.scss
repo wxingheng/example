@@ -36,10 +36,11 @@
 .checkbox{
   flex: 1;
   margin-left: 12px;
+  margin-top: -12px;
 }
 .input{
   flex: 1;
-  padding-top: 16px;
+  // padding-top: 16px;
   margin-left: 14px;
 }
 .line-through{
