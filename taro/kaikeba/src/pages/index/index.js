@@ -1,7 +1,11 @@
 /* eslint-disable jsx-quotes */
 import Taro, { Component } from "@tarojs/taro";
 import { View, Checkbox, Input } from "@tarojs/components";
+import { AtSwipeAction } from "taro-ui";
 import "./index.scss";
+// import { Mcheckbox } from "./../../components/MCheckbox/index.js";
+// import { Mcheckbox } from "@/components/Mcheckbox";
+import { Mcheckbox } from "./mcheckbox";
 
 export default class Index extends Component {
   config = {
@@ -122,7 +126,7 @@ export default class Index extends Component {
   };
 
   handleItemBlur = (e, i) => {
-    console.log('+++++++++++>>>', e.target.value);
+    console.log("+++++++++++>>>", e.target.value);
     const todos = [...this.state.todos];
     todos[i]["title"] = e.target.value;
     this.setState(
@@ -131,7 +135,19 @@ export default class Index extends Component {
       },
       this.save
     );
-  }
+  };
+
+  handleSwipeClick = i => {
+    console.log("handleSwipeClick");
+    let todos = this.state.todos;
+    todos.splice(i, 1);
+    this.setState(
+      {
+        todos
+      },
+      this.save
+    );
+  };
 
   render() {
     const { todos, showAdd, val, addFocus } = this.state;
@@ -139,23 +155,42 @@ export default class Index extends Component {
     return (
       <View>
         <View className="header">
-          <View className="header_left">编辑</View>
-          <View className="header_center">清单</View>
-          <View className="header_right">删除</View>
+          {/** <View className="header_left">编辑</View> */}
+          <View className="header_center">清单12312322</View>
+          {/** <View className="header_right">删除</View> */}
         </View>
         <View className="main">
           <View className="ul">
             {todos.map((item, i) => (
-              <View className="li" key={i}>
-                <Checkbox
-                  className="checkbox"
-                  onChange={() => {
-                    this.handleCheckboxChange(i, item.done);
-                  }}
-                  checked={item.done}
-                />
-                <Input className={`input ${item.done && "line-through"}`} disabled={item.done} onBlur={(e) => this.handleItemBlur(e, i)} type="text" value={item.title} />
-              </View>
+              <AtSwipeAction
+                onClick={() => this.handleSwipeClick(i)}
+                key={i}
+                options={[
+                  {
+                    text: "删除",
+                    style: {
+                      backgroundColor: "#FF4949"
+                    }
+                  }
+                ]}
+              >
+                <View className="li">
+                  <Mcheckbox
+                    checked={item.done}
+                    onClick={() => {
+                      this.handleCheckboxChange(i, item.done);
+                    }}
+                  />
+
+                  <Input
+                    className={`input ${item.done && "line-through"}`}
+                    disabled={item.done ? true : null}
+                    onBlur={e => this.handleItemBlur(e, i)}
+                    type="text"
+                    value={item.title}
+                  />
+                </View>
+              </AtSwipeAction>
             ))}
           </View>
 

@@ -1,3 +1,5 @@
+const path = require('path')
+
 const config = {
   projectName: 'kaikeba',
   date: '2019-3-20',
@@ -31,6 +33,9 @@ const config = {
     ],
     options: {
     }
+  },
+  alias: {
+    '@': path.resolve(__dirname, '..', 'src/')
   },
   weapp: {
     module: {

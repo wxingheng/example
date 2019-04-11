@@ -1,8 +1,8 @@
 {
 	"miniprogramRoot": "dist/",
-	"projectname": "kaikeba",
+	"projectname": "todo-list",
 	"description": "kaikeba",
-	"appid": "touristappid",
+	"appid": "wx5e6189f24363171b",
 	"setting": {
 		"urlCheck": true,
 		"es6": false,
@@ -12,5 +12,7 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.6.2",
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
 	"condition": {}
 }
