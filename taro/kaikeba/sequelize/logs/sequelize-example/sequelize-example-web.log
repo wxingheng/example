@@ -1,0 +1,90 @@
+2019-04-14 22:10:36,069 INFO 28246 [egg-sequelize](1ms) Executed (default): SELECT 1+1 AS result
+2019-04-14 22:11:19,991 INFO 28582 [egg-sequelize](1ms) Executed (default): SELECT 1+1 AS result
+2019-04-14 22:13:30,287 INFO 28582 [egg-sequelize](3ms) Executed (default): SELECT `id`, `name`, `age`, `created_at`, `updated_at` FROM `users` AS `user` ORDER BY `user`.`created_at` DESC, `user`.`id` DESC LIMIT 0, 10;
+2019-04-14 22:13:30,289 INFO 28582 [egg-sequelize](6ms) Executed (default): SELECT count(*) AS `count` FROM `users` AS `user`;
+2019-04-14 22:14:13,729 INFO 28582 [egg-sequelize](1ms) Executed (default): SELECT `id`, `name`, `age`, `created_at`, `updated_at` FROM `users` AS `user` WHERE `user`.`id` = 0;
+2019-04-14 22:14:13,731 WARN 28582 [-/127.0.0.1/-/12ms GET /users/create] nodejs.NotFoundError: user not found
+    at Object.throw (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/koa/lib/context.js:97:11)
+    at User.find (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/app/service/user.js:17:21)
+message: "user not found"
+pid: 28582
+hostname: wuxinghengdeMacBook-Pro.local
+
+2019-04-14 22:14:15,695 INFO 28582 [egg-sequelize](1ms) Executed (default): SELECT count(*) AS `count` FROM `users` AS `user`;
+2019-04-14 22:14:15,697 INFO 28582 [egg-sequelize](1ms) Executed (default): SELECT `id`, `name`, `age`, `created_at`, `updated_at` FROM `users` AS `user` ORDER BY `user`.`created_at` DESC, `user`.`id` DESC LIMIT 0, 10;
+2019-04-14 22:17:12,483 INFO 28582 [egg-sequelize](1ms) Executed (default): SELECT count(*) AS `count` FROM `posts` AS `post`;
+2019-04-14 22:17:12,484 INFO 28582 [egg-sequelize](1ms) Executed (default): SELECT `id`, `title`, `user_id`, `created_at`, `updated_at` FROM `posts` AS `post` ORDER BY `post`.`created_at` DESC, `post`.`id` DESC LIMIT 0, 10;
+2019-04-14 22:17:15,173 INFO 28582 [egg-sequelize](2ms) Executed (default): SELECT count(*) AS `count` FROM `posts` AS `post`;
+2019-04-14 22:17:15,173 INFO 28582 [egg-sequelize](1ms) Executed (default): SELECT `id`, `title`, `user_id`, `created_at`, `updated_at` FROM `posts` AS `post` ORDER BY `post`.`created_at` DESC, `post`.`id` DESC LIMIT 0, 10;
+2019-04-14 22:17:15,700 INFO 28582 [egg-sequelize](1ms) Executed (default): SELECT count(*) AS `count` FROM `posts` AS `post`;
+2019-04-14 22:17:15,701 INFO 28582 [egg-sequelize](1ms) Executed (default): SELECT `id`, `title`, `user_id`, `created_at`, `updated_at` FROM `posts` AS `post` ORDER BY `post`.`created_at` DESC, `post`.`id` DESC LIMIT 0, 10;
+2019-04-14 22:17:15,870 INFO 28582 [egg-sequelize](1ms) Executed (default): SELECT count(*) AS `count` FROM `posts` AS `post`;
+2019-04-14 22:17:15,870 INFO 28582 [egg-sequelize](0ms) Executed (default): SELECT `id`, `title`, `user_id`, `created_at`, `updated_at` FROM `posts` AS `post` ORDER BY `post`.`created_at` DESC, `post`.`id` DESC LIMIT 0, 10;
+2019-04-14 22:22:07,947 INFO 33224 [egg-sequelize](1ms) Executed (default): SELECT 1+1 AS result
+2019-04-14 22:22:08,714 INFO 33226 [egg-sequelize](1ms) Executed (default): SELECT 1+1 AS result
+2019-04-14 22:22:12,745 INFO 33226 [egg-sequelize](3ms) Executed (default): SELECT count(*) AS `count` FROM `users` AS `user`;
+2019-04-14 22:22:12,748 INFO 33226 [egg-sequelize](1ms) Executed (default): SELECT `id`, `name`, `age`, `created_at`, `updated_at` FROM `users` AS `user` ORDER BY `user`.`created_at` DESC, `user`.`id` DESC LIMIT 0, 10;
+2019-04-14 22:22:45,909 WARN 33226 [-/127.0.0.1/-/13ms POST /user] missing csrf token. See https://eggjs.org/zh-cn/core/security.html#安全威胁csrf的防范
+2019-04-14 22:22:45,911 WARN 33226 [-/127.0.0.1/-/15ms POST /user] nodejs.ForbiddenError: missing csrf token
+    at Object.throw (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/koa/lib/context.js:97:11)
+    at Object.assertCsrf (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-security/app/extend/context.js:148:17)
+    at csrf (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-security/lib/middlewares/csrf.js:31:9)
+    at dispatch (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/koa-compose/index.js:42:32)
+    at /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/koa-compose/index.js:34:12
+    at dispatch (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/koa-compose/index.js:42:32)
+    at session (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/koa-session/index.js:41:13)
+    at dispatch (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/koa-compose/index.js:42:32)
+    at overrideMethod (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/koa-override/index.js:38:12)
+    at dispatch (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/koa-compose/index.js:42:32)
+    at bodyParser (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/koa-bodyparser/index.js:86:11)
+    at processTicksAndRejections (internal/process/next_tick.js:81:5)
+message: "missing csrf token"
+pid: 33226
+hostname: wuxinghengdeMacBook-Pro.local
+
+2019-04-14 22:23:44,317 WARN 33226 [-/127.0.0.1/-/0ms POST /user] invalid csrf token. See https://eggjs.org/zh-cn/core/security.html#安全威胁csrf的防范
+2019-04-14 22:23:44,318 WARN 33226 [-/127.0.0.1/-/1ms POST /user] nodejs.ForbiddenError: invalid csrf token
+    at Object.throw (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/koa/lib/context.js:97:11)
+    at Object.assertCsrf (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-security/app/extend/context.js:157:17)
+    at csrf (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-security/lib/middlewares/csrf.js:31:9)
+    at dispatch (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/koa-compose/index.js:42:32)
+    at /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/koa-compose/index.js:34:12
+    at dispatch (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/koa-compose/index.js:42:32)
+    at session (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/koa-session/index.js:41:13)
+    at dispatch (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/koa-compose/index.js:42:32)
+    at overrideMethod (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/koa-override/index.js:38:12)
+    at dispatch (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/koa-compose/index.js:42:32)
+    at bodyParser (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/koa-bodyparser/index.js:86:11)
+    at processTicksAndRejections (internal/process/next_tick.js:81:5)
+message: "invalid csrf token"
+pid: 33226
+hostname: wuxinghengdeMacBook-Pro.local
+
+2019-04-14 22:23:56,988 WARN 33226 [-/127.0.0.1/-/0ms POST /user] invalid csrf token. See https://eggjs.org/zh-cn/core/security.html#安全威胁csrf的防范
+2019-04-14 22:23:56,988 WARN 33226 [-/127.0.0.1/-/0ms POST /user] nodejs.ForbiddenError: invalid csrf token
+    at Object.throw (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/koa/lib/context.js:97:11)
+    at Object.assertCsrf (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-security/app/extend/context.js:157:17)
+    at csrf (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-security/lib/middlewares/csrf.js:31:9)
+    at dispatch (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/koa-compose/index.js:42:32)
+    at /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/koa-compose/index.js:34:12
+    at dispatch (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/koa-compose/index.js:42:32)
+    at session (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/koa-session/index.js:41:13)
+    at dispatch (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/koa-compose/index.js:42:32)
+    at overrideMethod (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/koa-override/index.js:38:12)
+    at dispatch (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/koa-compose/index.js:42:32)
+    at bodyParser (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/koa-bodyparser/index.js:86:11)
+    at processTicksAndRejections (internal/process/next_tick.js:81:5)
+message: "invalid csrf token"
+pid: 33226
+hostname: wuxinghengdeMacBook-Pro.local
+
+2019-04-14 22:25:05,122 INFO 34460 [egg-sequelize](1ms) Executed (default): SELECT 1+1 AS result
+2019-04-14 22:25:14,198 INFO 34556 [egg-sequelize](1ms) Executed (default): SELECT 1+1 AS result
+2019-04-14 22:25:18,959 INFO 34556 [egg-sequelize](17ms) Executed (default): INSERT INTO `users` (`id`,`name`,`age`,`created_at`,`updated_at`) VALUES (DEFAULT,'123',12,'2019-04-14 14:25:18','2019-04-14 14:25:18');
+2019-04-14 22:26:48,906 INFO 34556 [egg-sequelize](3ms) Executed (default): INSERT INTO `users` (`id`,`name`,`age`,`created_at`,`updated_at`) VALUES (DEFAULT,'001','22','2019-04-14 14:26:48','2019-04-14 14:26:48');
+2019-04-14 22:27:34,800 INFO 34556 [egg-sequelize](2ms) Executed (default): INSERT INTO `users` (`id`,`name`,`age`,`created_at`,`updated_at`) VALUES (DEFAULT,'001','23','2019-04-14 14:27:34','2019-04-14 14:27:34');
+2019-04-14 22:37:54,493 INFO 40075 [egg-sequelize](1ms) Executed (default): SELECT 1+1 AS result
+2019-04-14 22:37:55,243 INFO 40077 [egg-sequelize](1ms) Executed (default): SELECT 1+1 AS result
+2019-04-14 22:40:50,265 INFO 41385 [egg-sequelize](0ms) Executed (default): SELECT 1+1 AS result
+2019-04-14 22:44:14,979 INFO 42898 [egg-sequelize](0ms) Executed (default): SELECT 1+1 AS result
+2019-04-14 22:44:22,344 INFO 42986 [egg-sequelize](1ms) Executed (default): SELECT 1+1 AS result

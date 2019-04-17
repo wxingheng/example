@@ -1,0 +1,337 @@
+2019-04-14 21:18:46,389 INFO 5994 [egg:logger] init all loggers with options: {"dir":"/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/logs/sequelize-example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"sequelize-example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"agent"}
+2019-04-14 21:18:46,800 INFO 5994 [egg:core] dump config after load, 3ms
+2019-04-14 21:18:46,831 INFO 5994 [egg-watcher] Start watching: ["/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/app","/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/config","/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/mocks","/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/mocks_proxy","/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/app.js"]
+2019-04-14 21:18:46,831 INFO 5994 [egg-watcher] Start watching: "/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/app"
+2019-04-14 21:18:46,831 INFO 5994 [egg-watcher] Start watching: "/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/config"
+2019-04-14 21:18:46,831 INFO 5994 [egg-watcher] Start watching: "/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/mocks"
+2019-04-14 21:18:46,831 INFO 5994 [egg-watcher] Start watching: "/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/mocks_proxy"
+2019-04-14 21:18:46,831 INFO 5994 [egg-watcher] Start watching: "/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/app.js"
+2019-04-14 21:18:46,832 INFO 5994 [egg-watcher:agent] watcher start success
+2019-04-14 21:18:46,865 ERROR 5994 nodejs.SequelizeAccessDeniedError: Access denied for user 'root'@'localhost' (using password: NO)
+    at Utils.Promise.tap.then.catch.err (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:141:19)
+From previous event:
+    at ConnectionManager.connect (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:136:13)
+    at sequelize.runHooks.then (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:320:50)
+    at processImmediate (timers.js:637:19)
+From previous event:
+    at ConnectionManager._connect (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:320:8)
+    at ConnectionManager.getConnection (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:250:46)
+    at Promise.try (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/sequelize.js:554:34)
+From previous event:
+    at Promise.resolve.retryParameters (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/sequelize.js:454:64)
+    at /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/retry-as-promised/index.js:39:21
+    at retryAsPromised (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/retry-as-promised/index.js:29:10)
+    at Sequelize.query (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/sequelize.js:454:28)
+    at Sequelize.authenticate (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/sequelize.js:783:17)
+    at authenticate (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-sequelize/lib/loader.js:129:22)
+    at Promise.all.databases.map.database (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-sequelize/lib/loader.js:40:49)
+    at Array.map (<anonymous>)
+    at app.beforeStart (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-sequelize/lib/loader.js:40:33)
+    at Object.callFn (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-core/lib/utils/index.js:44:42)
+    at process.nextTick (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-core/lib/lifecycle.js:248:13)
+    at processTicksAndRejections (internal/process/next_tick.js:74:9)
+    at process.runNextTicks [as _tickCallback] (internal/process/next_tick.js:51:3)
+    at Function.Module.runMain (internal/modules/cjs/loader.js:804:11)
+    at internal/main/run_main_module.js:21:11
+name: "SequelizeAccessDeniedError"
+parent: {"code":"ER_ACCESS_DENIED_ERROR","errno":1045,"sqlState":"28000","sqlMessage":"Access denied for user 'root'@'localhost' (using password: NO)"}
+original: {"code":"ER_ACCESS_DENIED_ERROR","errno":1045,"sqlState":"28000","sqlMessage":"Access denied for user 'root'@'localhost' (using password: NO)"}
+pid: 5994
+hostname: wuxinghengdeMacBook-Pro.local
+
+2019-04-14 21:18:46,869 INFO 5994 [egg:core] dump config after ready, 2ms
+2019-04-14 21:32:20,338 INFO 11785 [egg:logger] init all loggers with options: {"dir":"/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/logs/sequelize-example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"sequelize-example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"agent"}
+2019-04-14 21:32:20,750 INFO 11785 [egg:core] dump config after load, 9ms
+2019-04-14 21:32:20,788 INFO 11785 [egg-watcher] Start watching: ["/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/app","/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/config","/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/mocks","/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/mocks_proxy","/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/app.js"]
+2019-04-14 21:32:20,788 INFO 11785 [egg-watcher] Start watching: "/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/app"
+2019-04-14 21:32:20,788 INFO 11785 [egg-watcher] Start watching: "/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/config"
+2019-04-14 21:32:20,789 INFO 11785 [egg-watcher] Start watching: "/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/mocks"
+2019-04-14 21:32:20,789 INFO 11785 [egg-watcher] Start watching: "/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/mocks_proxy"
+2019-04-14 21:32:20,789 INFO 11785 [egg-watcher] Start watching: "/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/app.js"
+2019-04-14 21:32:20,789 INFO 11785 [egg-watcher:agent] watcher start success
+2019-04-14 21:32:20,818 ERROR 11785 nodejs.SequelizeAccessDeniedError: Access denied for user 'root'@'localhost' (using password: NO)
+    at Utils.Promise.tap.then.catch.err (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:141:19)
+From previous event:
+    at ConnectionManager.connect (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:136:13)
+    at sequelize.runHooks.then (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:320:50)
+    at processImmediate (timers.js:637:19)
+From previous event:
+    at ConnectionManager._connect (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:320:8)
+    at ConnectionManager.getConnection (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:250:46)
+    at Promise.try (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/sequelize.js:554:34)
+From previous event:
+    at Promise.resolve.retryParameters (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/sequelize.js:454:64)
+    at /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/retry-as-promised/index.js:39:21
+    at retryAsPromised (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/retry-as-promised/index.js:29:10)
+    at Sequelize.query (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/sequelize.js:454:28)
+    at Sequelize.authenticate (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/sequelize.js:783:17)
+    at authenticate (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-sequelize/lib/loader.js:129:22)
+    at Promise.all.databases.map.database (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-sequelize/lib/loader.js:40:49)
+    at Array.map (<anonymous>)
+    at app.beforeStart (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-sequelize/lib/loader.js:40:33)
+    at Object.callFn (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-core/lib/utils/index.js:44:42)
+    at process.nextTick (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-core/lib/lifecycle.js:248:13)
+    at processTicksAndRejections (internal/process/next_tick.js:74:9)
+    at process.runNextTicks [as _tickCallback] (internal/process/next_tick.js:51:3)
+    at Function.Module.runMain (internal/modules/cjs/loader.js:804:11)
+    at internal/main/run_main_module.js:21:11
+name: "SequelizeAccessDeniedError"
+parent: {"code":"ER_ACCESS_DENIED_ERROR","errno":1045,"sqlState":"28000","sqlMessage":"Access denied for user 'root'@'localhost' (using password: NO)"}
+original: {"code":"ER_ACCESS_DENIED_ERROR","errno":1045,"sqlState":"28000","sqlMessage":"Access denied for user 'root'@'localhost' (using password: NO)"}
+pid: 11785
+hostname: wuxinghengdeMacBook-Pro.local
+
+2019-04-14 21:32:20,834 INFO 11785 [egg:core] dump config after ready, 3ms
+2019-04-14 21:33:59,132 INFO 12547 [egg:logger] init all loggers with options: {"dir":"/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/logs/sequelize-example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"sequelize-example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"agent"}
+2019-04-14 21:33:59,502 INFO 12547 [egg:core] dump config after load, 2ms
+2019-04-14 21:33:59,531 INFO 12547 [egg-watcher] Start watching: ["/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/app","/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/config","/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/mocks","/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/mocks_proxy","/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/app.js"]
+2019-04-14 21:33:59,531 INFO 12547 [egg-watcher] Start watching: "/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/app"
+2019-04-14 21:33:59,531 INFO 12547 [egg-watcher] Start watching: "/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/config"
+2019-04-14 21:33:59,531 INFO 12547 [egg-watcher] Start watching: "/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/mocks"
+2019-04-14 21:33:59,531 INFO 12547 [egg-watcher] Start watching: "/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/mocks_proxy"
+2019-04-14 21:33:59,531 INFO 12547 [egg-watcher] Start watching: "/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/app.js"
+2019-04-14 21:33:59,531 INFO 12547 [egg-watcher:agent] watcher start success
+2019-04-14 21:33:59,619 ERROR 12547 nodejs.SequelizeAccessDeniedError: Access denied for user 'root'@'localhost' (using password: NO)
+    at Utils.Promise.tap.then.catch.err (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:141:19)
+From previous event:
+    at ConnectionManager.connect (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:136:13)
+    at sequelize.runHooks.then (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:320:50)
+    at processImmediate (timers.js:637:19)
+From previous event:
+    at ConnectionManager._connect (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:320:8)
+    at ConnectionManager.getConnection (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:250:46)
+    at Promise.try (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/sequelize.js:554:34)
+From previous event:
+    at Promise.resolve.retryParameters (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/sequelize.js:454:64)
+    at /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/retry-as-promised/index.js:39:21
+    at retryAsPromised (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/retry-as-promised/index.js:29:10)
+    at Sequelize.query (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/sequelize.js:454:28)
+    at Sequelize.authenticate (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/sequelize.js:783:17)
+    at authenticate (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-sequelize/lib/loader.js:129:22)
+    at Promise.all.databases.map.database (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-sequelize/lib/loader.js:40:49)
+    at Array.map (<anonymous>)
+    at app.beforeStart (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-sequelize/lib/loader.js:40:33)
+    at Object.callFn (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-core/lib/utils/index.js:44:42)
+    at process.nextTick (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-core/lib/lifecycle.js:248:13)
+    at processTicksAndRejections (internal/process/next_tick.js:74:9)
+    at process.runNextTicks [as _tickCallback] (internal/process/next_tick.js:51:3)
+    at Function.Module.runMain (internal/modules/cjs/loader.js:804:11)
+    at internal/main/run_main_module.js:21:11
+name: "SequelizeAccessDeniedError"
+parent: {"code":"ER_ACCESS_DENIED_ERROR","errno":1045,"sqlState":"28000","sqlMessage":"Access denied for user 'root'@'localhost' (using password: NO)"}
+original: {"code":"ER_ACCESS_DENIED_ERROR","errno":1045,"sqlState":"28000","sqlMessage":"Access denied for user 'root'@'localhost' (using password: NO)"}
+pid: 12547
+hostname: wuxinghengdeMacBook-Pro.local
+
+2019-04-14 21:33:59,623 INFO 12547 [egg:core] dump config after ready, 3ms
+2019-04-14 21:35:48,251 INFO 13298 [egg:logger] init all loggers with options: {"dir":"/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/logs/sequelize-example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"sequelize-example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"agent"}
+2019-04-14 21:35:48,490 INFO 13298 [egg:core] dump config after load, 3ms
+2019-04-14 21:35:48,512 INFO 13298 [egg-watcher] Start watching: ["/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/app","/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/config","/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/mocks","/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/mocks_proxy","/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/app.js"]
+2019-04-14 21:35:48,512 INFO 13298 [egg-watcher] Start watching: "/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/app"
+2019-04-14 21:35:48,512 INFO 13298 [egg-watcher] Start watching: "/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/config"
+2019-04-14 21:35:48,512 INFO 13298 [egg-watcher] Start watching: "/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/mocks"
+2019-04-14 21:35:48,512 INFO 13298 [egg-watcher] Start watching: "/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/mocks_proxy"
+2019-04-14 21:35:48,512 INFO 13298 [egg-watcher] Start watching: "/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/app.js"
+2019-04-14 21:35:48,513 INFO 13298 [egg-watcher:agent] watcher start success
+2019-04-14 21:35:48,550 ERROR 13298 nodejs.SequelizeAccessDeniedError: Access denied for user 'root'@'localhost' (using password: NO)
+    at Utils.Promise.tap.then.catch.err (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:141:19)
+From previous event:
+    at ConnectionManager.connect (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:136:13)
+    at sequelize.runHooks.then (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:320:50)
+    at processImmediate (timers.js:637:19)
+From previous event:
+    at ConnectionManager._connect (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:320:8)
+    at ConnectionManager.getConnection (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:250:46)
+    at Promise.try (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/sequelize.js:554:34)
+From previous event:
+    at Promise.resolve.retryParameters (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/sequelize.js:454:64)
+    at /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/retry-as-promised/index.js:39:21
+    at retryAsPromised (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/retry-as-promised/index.js:29:10)
+    at Sequelize.query (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/sequelize.js:454:28)
+    at Sequelize.authenticate (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/sequelize.js:783:17)
+    at authenticate (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-sequelize/lib/loader.js:129:22)
+    at Promise.all.databases.map.database (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-sequelize/lib/loader.js:40:49)
+    at Array.map (<anonymous>)
+    at app.beforeStart (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-sequelize/lib/loader.js:40:33)
+    at Object.callFn (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-core/lib/utils/index.js:44:42)
+    at process.nextTick (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-core/lib/lifecycle.js:248:13)
+    at processTicksAndRejections (internal/process/next_tick.js:74:9)
+    at process.runNextTicks [as _tickCallback] (internal/process/next_tick.js:51:3)
+    at Function.Module.runMain (internal/modules/cjs/loader.js:804:11)
+    at internal/main/run_main_module.js:21:11
+name: "SequelizeAccessDeniedError"
+parent: {"code":"ER_ACCESS_DENIED_ERROR","errno":1045,"sqlState":"28000","sqlMessage":"Access denied for user 'root'@'localhost' (using password: NO)"}
+original: {"code":"ER_ACCESS_DENIED_ERROR","errno":1045,"sqlState":"28000","sqlMessage":"Access denied for user 'root'@'localhost' (using password: NO)"}
+pid: 13298
+hostname: wuxinghengdeMacBook-Pro.local
+
+2019-04-14 21:35:48,564 INFO 13298 [egg:core] dump config after ready, 3ms
+2019-04-14 21:51:02,221 INFO 19810 [egg:logger] init all loggers with options: {"dir":"/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/logs/sequelize-example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"sequelize-example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"agent"}
+2019-04-14 21:51:02,509 INFO 19810 [egg:core] dump config after load, 11ms
+2019-04-14 21:51:02,543 INFO 19810 [egg-watcher] Start watching: ["/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/app","/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/config","/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/mocks","/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/mocks_proxy","/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/app.js"]
+2019-04-14 21:51:02,543 INFO 19810 [egg-watcher] Start watching: "/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/app"
+2019-04-14 21:51:02,543 INFO 19810 [egg-watcher] Start watching: "/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/config"
+2019-04-14 21:51:02,543 INFO 19810 [egg-watcher] Start watching: "/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/mocks"
+2019-04-14 21:51:02,543 INFO 19810 [egg-watcher] Start watching: "/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/mocks_proxy"
+2019-04-14 21:51:02,543 INFO 19810 [egg-watcher] Start watching: "/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/app.js"
+2019-04-14 21:51:02,544 INFO 19810 [egg-watcher:agent] watcher start success
+2019-04-14 21:51:02,572 ERROR 19810 nodejs.SequelizeAccessDeniedError: Access denied for user 'root'@'localhost' (using password: NO)
+    at Utils.Promise.tap.then.catch.err (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:141:19)
+From previous event:
+    at ConnectionManager.connect (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:136:13)
+    at sequelize.runHooks.then (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:320:50)
+    at processImmediate (timers.js:637:19)
+From previous event:
+    at ConnectionManager._connect (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:320:8)
+    at ConnectionManager.getConnection (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:250:46)
+    at Promise.try (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/sequelize.js:554:34)
+From previous event:
+    at Promise.resolve.retryParameters (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/sequelize.js:454:64)
+    at /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/retry-as-promised/index.js:39:21
+    at retryAsPromised (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/retry-as-promised/index.js:29:10)
+    at Sequelize.query (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/sequelize.js:454:28)
+    at Sequelize.authenticate (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/sequelize.js:783:17)
+    at authenticate (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-sequelize/lib/loader.js:129:22)
+    at Promise.all.databases.map.database (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-sequelize/lib/loader.js:40:49)
+    at Array.map (<anonymous>)
+    at app.beforeStart (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-sequelize/lib/loader.js:40:33)
+    at Object.callFn (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-core/lib/utils/index.js:44:42)
+    at process.nextTick (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-core/lib/lifecycle.js:248:13)
+    at processTicksAndRejections (internal/process/next_tick.js:74:9)
+    at process.runNextTicks [as _tickCallback] (internal/process/next_tick.js:51:3)
+    at Function.Module.runMain (internal/modules/cjs/loader.js:804:11)
+    at internal/main/run_main_module.js:21:11
+name: "SequelizeAccessDeniedError"
+parent: {"code":"ER_ACCESS_DENIED_ERROR","errno":1045,"sqlState":"28000","sqlMessage":"Access denied for user 'root'@'localhost' (using password: NO)"}
+original: {"code":"ER_ACCESS_DENIED_ERROR","errno":1045,"sqlState":"28000","sqlMessage":"Access denied for user 'root'@'localhost' (using password: NO)"}
+pid: 19810
+hostname: wuxinghengdeMacBook-Pro.local
+
+2019-04-14 21:51:02,577 INFO 19810 [egg:core] dump config after ready, 4ms
+2019-04-14 22:10:35,223 INFO 28241 [egg-sequelize](1ms) Executed (default): SELECT 1+1 AS result
+2019-04-14 22:10:34,712 INFO 28241 [egg:logger] init all loggers with options: {"dir":"/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/logs/sequelize-example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"sequelize-example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"agent"}
+2019-04-14 22:10:35,147 INFO 28241 [egg:core] dump config after load, 3ms
+2019-04-14 22:10:35,184 INFO 28241 [egg-watcher] Start watching: ["/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/app","/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/config","/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/mocks","/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/mocks_proxy","/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/app.js"]
+2019-04-14 22:10:35,184 INFO 28241 [egg-watcher] Start watching: "/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/app"
+2019-04-14 22:10:35,185 INFO 28241 [egg-watcher] Start watching: "/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/config"
+2019-04-14 22:10:35,185 INFO 28241 [egg-watcher] Start watching: "/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/mocks"
+2019-04-14 22:10:35,185 INFO 28241 [egg-watcher] Start watching: "/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/mocks_proxy"
+2019-04-14 22:10:35,185 INFO 28241 [egg-watcher] Start watching: "/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/app.js"
+2019-04-14 22:10:35,185 INFO 28241 [egg-watcher:agent] watcher start success
+2019-04-14 22:10:35,228 INFO 28241 [egg:core] dump config after ready, 2ms
+2019-04-14 22:10:36,022 INFO 28241 [egg-watcher] Recieved a change event from eventSource: {"event":"rename","path":"/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/app/public","stat":{"dev":16777220,"mode":16877,"nlink":2,"uid":501,"gid":20,"rdev":0,"blksize":4096,"ino":29089550,"size":64,"blocks":0,"atimeMs":1555251036010.727,"mtimeMs":1555251036010.727,"ctimeMs":1555251036010.727,"birthtimeMs":1555251036010.727,"atime":"2019-04-14T14:10:36.011Z","mtime":"2019-04-14T14:10:36.011Z","ctime":"2019-04-14T14:10:36.011Z","birthtime":"2019-04-14T14:10:36.011Z"},"remove":false,"isDirectory":true,"isFile":false}
+2019-04-14 22:11:19,151 INFO 28581 [egg-sequelize](0ms) Executed (default): SELECT 1+1 AS result
+2019-04-14 22:11:18,833 INFO 28581 [egg:logger] init all loggers with options: {"dir":"/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/logs/sequelize-example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"sequelize-example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"agent"}
+2019-04-14 22:11:19,092 INFO 28581 [egg:core] dump config after load, 7ms
+2019-04-14 22:11:19,117 INFO 28581 [egg-watcher] Start watching: ["/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/app","/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/config","/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/mocks","/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/mocks_proxy","/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/app.js"]
+2019-04-14 22:11:19,117 INFO 28581 [egg-watcher] Start watching: "/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/app"
+2019-04-14 22:11:19,118 INFO 28581 [egg-watcher] Start watching: "/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/config"
+2019-04-14 22:11:19,118 INFO 28581 [egg-watcher] Start watching: "/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/mocks"
+2019-04-14 22:11:19,118 INFO 28581 [egg-watcher] Start watching: "/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/mocks_proxy"
+2019-04-14 22:11:19,118 INFO 28581 [egg-watcher] Start watching: "/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/app.js"
+2019-04-14 22:11:19,118 INFO 28581 [egg-watcher:agent] watcher start success
+2019-04-14 22:11:19,157 INFO 28581 [egg:core] dump config after ready, 2ms
+2019-04-14 22:22:06,418 INFO 28581 [egg-watcher] Recieved a change event from eventSource: {"event":"change","path":"/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/app/router.js","stat":{"dev":16777220,"mode":33188,"nlink":1,"uid":501,"gid":20,"rdev":0,"blksize":4096,"ino":29052450,"size":214,"blocks":8,"atimeMs":1555251726356.074,"mtimeMs":1555251726356.3142,"ctimeMs":1555251726356.3142,"birthtimeMs":1555247460585.4944,"atime":"2019-04-14T14:22:06.356Z","mtime":"2019-04-14T14:22:06.356Z","ctime":"2019-04-14T14:22:06.356Z","birthtime":"2019-04-14T13:11:00.585Z"},"remove":false,"isDirectory":false,"isFile":true}
+2019-04-14 22:22:06,622 WARN 28581 [agent:development] reload worker because /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/app/router.js change
+2019-04-14 22:22:06,879 WARN 28581 [agent:development] reload worker because /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/app/router.js change
+2019-04-14 22:22:07,255 WARN 28581 [agent:development] reload worker because /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/app/router.js change
+2019-04-14 22:22:06,627 INFO 28581 [egg-watcher] Recieved a change event from eventSource: {"event":"change","path":"/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/app/router.js","stat":{"dev":16777220,"mode":33188,"nlink":1,"uid":501,"gid":20,"rdev":0,"blksize":4096,"ino":29052450,"size":214,"blocks":8,"atimeMs":1555251726615.605,"mtimeMs":1555251726615.8008,"ctimeMs":1555251726615.8008,"birthtimeMs":1555247460585.4944,"atime":"2019-04-14T14:22:06.616Z","mtime":"2019-04-14T14:22:06.616Z","ctime":"2019-04-14T14:22:06.616Z","birthtime":"2019-04-14T13:11:00.585Z"},"remove":false,"isDirectory":false,"isFile":true}
+2019-04-14 22:22:06,677 INFO 28581 [egg-watcher] Recieved a change event from eventSource: {"event":"change","path":"/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/app/router.js","stat":{"dev":16777220,"mode":33188,"nlink":1,"uid":501,"gid":20,"rdev":0,"blksize":4096,"ino":29052450,"size":214,"blocks":8,"atimeMs":1555251726615.605,"mtimeMs":1555251726615.8008,"ctimeMs":1555251726615.8008,"birthtimeMs":1555247460585.4944,"atime":"2019-04-14T14:22:06.616Z","mtime":"2019-04-14T14:22:06.616Z","ctime":"2019-04-14T14:22:06.616Z","birthtime":"2019-04-14T13:11:00.585Z"},"remove":false,"isDirectory":false,"isFile":true}
+2019-04-14 22:22:07,003 INFO 28581 [egg-watcher] Recieved a change event from eventSource: {"event":"change","path":"/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/app/router.js","stat":{"dev":16777220,"mode":33188,"nlink":1,"uid":501,"gid":20,"rdev":0,"blksize":4096,"ino":29052450,"size":214,"blocks":8,"atimeMs":1555251727000.7346,"mtimeMs":1555251727001.0166,"ctimeMs":1555251727001.0166,"birthtimeMs":1555247460585.4944,"atime":"2019-04-14T14:22:07.001Z","mtime":"2019-04-14T14:22:07.001Z","ctime":"2019-04-14T14:22:07.001Z","birthtime":"2019-04-14T13:11:00.585Z"},"remove":false,"isDirectory":false,"isFile":true}
+2019-04-14 22:22:07,054 INFO 28581 [egg-watcher] Recieved a change event from eventSource: {"event":"change","path":"/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/app/router.js","stat":{"dev":16777220,"mode":33188,"nlink":1,"uid":501,"gid":20,"rdev":0,"blksize":4096,"ino":29052450,"size":214,"blocks":8,"atimeMs":1555251727000.7346,"mtimeMs":1555251727001.0166,"ctimeMs":1555251727001.0166,"birthtimeMs":1555247460585.4944,"atime":"2019-04-14T14:22:07.001Z","mtime":"2019-04-14T14:22:07.001Z","ctime":"2019-04-14T14:22:07.001Z","birthtime":"2019-04-14T13:11:00.585Z"},"remove":false,"isDirectory":false,"isFile":true}
+2019-04-14 22:25:03,804 WARN 28581 [agent:development] reload worker because /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/config/config.default.js change
+2019-04-14 22:25:03,232 INFO 28581 [egg-watcher] Recieved a change event from eventSource: {"event":"change","path":"/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/config/config.default.js","stat":{"dev":16777220,"mode":33188,"nlink":1,"uid":501,"gid":20,"rdev":0,"blksize":4096,"ino":29052455,"size":559,"blocks":8,"atimeMs":1555251903170.6536,"mtimeMs":1555251903170.976,"ctimeMs":1555251903170.976,"birthtimeMs":1555247460587.8062,"atime":"2019-04-14T14:25:03.171Z","mtime":"2019-04-14T14:25:03.171Z","ctime":"2019-04-14T14:25:03.171Z","birthtime":"2019-04-14T13:11:00.588Z"},"remove":false,"isDirectory":false,"isFile":true}
+2019-04-14 22:25:03,399 INFO 28581 [egg-watcher] Recieved a change event from eventSource: {"event":"change","path":"/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/config/config.default.js","stat":{"dev":16777220,"mode":33188,"nlink":1,"uid":501,"gid":20,"rdev":0,"blksize":4096,"ino":29052455,"size":559,"blocks":8,"atimeMs":1555251903387.7678,"mtimeMs":1555251903388.0095,"ctimeMs":1555251903388.0095,"birthtimeMs":1555247460587.8062,"atime":"2019-04-14T14:25:03.388Z","mtime":"2019-04-14T14:25:03.388Z","ctime":"2019-04-14T14:25:03.388Z","birthtime":"2019-04-14T13:11:00.588Z"},"remove":false,"isDirectory":false,"isFile":true}
+2019-04-14 22:25:03,599 INFO 28581 [egg-watcher] Recieved a change event from eventSource: {"event":"change","path":"/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/config/config.default.js","stat":{"dev":16777220,"mode":33188,"nlink":1,"uid":501,"gid":20,"rdev":0,"blksize":4096,"ino":29052455,"size":559,"blocks":8,"atimeMs":1555251903587.599,"mtimeMs":1555251903587.936,"ctimeMs":1555251903587.936,"birthtimeMs":1555247460587.8062,"atime":"2019-04-14T14:25:03.588Z","mtime":"2019-04-14T14:25:03.588Z","ctime":"2019-04-14T14:25:03.588Z","birthtime":"2019-04-14T13:11:00.588Z"},"remove":false,"isDirectory":false,"isFile":true}
+2019-04-14 22:25:13,407 INFO 34554 [egg-sequelize](1ms) Executed (default): SELECT 1+1 AS result
+2019-04-14 22:25:13,061 INFO 34554 [egg:logger] init all loggers with options: {"dir":"/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/logs/sequelize-example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"sequelize-example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"agent"}
+2019-04-14 22:25:13,329 INFO 34554 [egg:core] dump config after load, 4ms
+2019-04-14 22:25:13,360 INFO 34554 [egg-watcher] Start watching: ["/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/app","/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/config","/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/mocks","/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/mocks_proxy","/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/app.js"]
+2019-04-14 22:25:13,360 INFO 34554 [egg-watcher] Start watching: "/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/app"
+2019-04-14 22:25:13,361 INFO 34554 [egg-watcher] Start watching: "/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/config"
+2019-04-14 22:25:13,361 INFO 34554 [egg-watcher] Start watching: "/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/mocks"
+2019-04-14 22:25:13,361 INFO 34554 [egg-watcher] Start watching: "/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/mocks_proxy"
+2019-04-14 22:25:13,361 INFO 34554 [egg-watcher] Start watching: "/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/app.js"
+2019-04-14 22:25:13,361 INFO 34554 [egg-watcher:agent] watcher start success
+2019-04-14 22:25:13,413 INFO 34554 [egg:core] dump config after ready, 3ms
+2019-04-14 22:37:52,863 INFO 34554 [egg-watcher] Recieved a change event from eventSource: {"event":"change","path":"/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/config/config.default.js","stat":{"dev":16777220,"mode":33188,"nlink":1,"uid":501,"gid":20,"rdev":0,"blksize":4096,"ino":29052455,"size":753,"blocks":8,"atimeMs":1555252672798.7366,"mtimeMs":1555252672799.0803,"ctimeMs":1555252672799.0803,"birthtimeMs":1555247460587.8062,"atime":"2019-04-14T14:37:52.799Z","mtime":"2019-04-14T14:37:52.799Z","ctime":"2019-04-14T14:37:52.799Z","birthtime":"2019-04-14T13:11:00.588Z"},"remove":false,"isDirectory":false,"isFile":true}
+2019-04-14 22:37:53,256 WARN 34554 [agent:development] reload worker because /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/config/config.default.js change
+2019-04-14 22:37:53,489 WARN 34554 [agent:development] reload worker because /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/config/config.default.js change
+2019-04-14 22:37:53,754 WARN 34554 [agent:development] reload worker because /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/config/config.default.js change
+2019-04-14 22:37:53,051 INFO 34554 [egg-watcher] Recieved a change event from eventSource: {"event":"change","path":"/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/config/config.default.js","stat":{"dev":16777220,"mode":33188,"nlink":1,"uid":501,"gid":20,"rdev":0,"blksize":4096,"ino":29052455,"size":753,"blocks":8,"atimeMs":1555252673040.2615,"mtimeMs":1555252673040.6072,"ctimeMs":1555252673040.6072,"birthtimeMs":1555247460587.8062,"atime":"2019-04-14T14:37:53.040Z","mtime":"2019-04-14T14:37:53.041Z","ctime":"2019-04-14T14:37:53.041Z","birthtime":"2019-04-14T13:11:00.588Z"},"remove":false,"isDirectory":false,"isFile":true}
+2019-04-14 22:37:53,287 INFO 34554 [egg-watcher] Recieved a change event from eventSource: {"event":"change","path":"/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/config/config.default.js","stat":{"dev":16777220,"mode":33188,"nlink":1,"uid":501,"gid":20,"rdev":0,"blksize":4096,"ino":29052455,"size":753,"blocks":8,"atimeMs":1555252673276.85,"mtimeMs":1555252673277.147,"ctimeMs":1555252673277.147,"birthtimeMs":1555247460587.8062,"atime":"2019-04-14T14:37:53.277Z","mtime":"2019-04-14T14:37:53.277Z","ctime":"2019-04-14T14:37:53.277Z","birthtime":"2019-04-14T13:11:00.588Z"},"remove":false,"isDirectory":false,"isFile":true}
+2019-04-14 22:37:53,498 INFO 34554 [egg-watcher] Recieved a change event from eventSource: {"event":"change","path":"/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/config/config.default.js","stat":{"dev":16777220,"mode":33188,"nlink":1,"uid":501,"gid":20,"rdev":0,"blksize":4096,"ino":29052455,"size":753,"blocks":8,"atimeMs":1555252673487.4263,"mtimeMs":1555252673487.7527,"ctimeMs":1555252673487.7527,"birthtimeMs":1555247460587.8062,"atime":"2019-04-14T14:37:53.487Z","mtime":"2019-04-14T14:37:53.488Z","ctime":"2019-04-14T14:37:53.488Z","birthtime":"2019-04-14T13:11:00.588Z"},"remove":false,"isDirectory":false,"isFile":true}
+2019-04-14 22:37:53,549 INFO 34554 [egg-watcher] Recieved a change event from eventSource: {"event":"change","path":"/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/config/config.default.js","stat":{"dev":16777220,"mode":33188,"nlink":1,"uid":501,"gid":20,"rdev":0,"blksize":4096,"ino":29052455,"size":753,"blocks":8,"atimeMs":1555252673487.4263,"mtimeMs":1555252673487.7527,"ctimeMs":1555252673487.7527,"birthtimeMs":1555247460587.8062,"atime":"2019-04-14T14:37:53.487Z","mtime":"2019-04-14T14:37:53.488Z","ctime":"2019-04-14T14:37:53.488Z","birthtime":"2019-04-14T13:11:00.588Z"},"remove":false,"isDirectory":false,"isFile":true}
+2019-04-14 22:40:49,460 INFO 41384 [egg-sequelize](1ms) Executed (default): SELECT 1+1 AS result
+2019-04-14 22:40:49,135 INFO 41384 [egg:logger] init all loggers with options: {"dir":"/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/logs/sequelize-example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"sequelize-example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"agent"}
+2019-04-14 22:40:49,397 INFO 41384 [egg:core] dump config after load, 3ms
+2019-04-14 22:40:49,424 INFO 41384 [egg-watcher] Start watching: ["/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/app","/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/config","/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/mocks","/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/mocks_proxy","/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/app.js"]
+2019-04-14 22:40:49,424 INFO 41384 [egg-watcher] Start watching: "/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/app"
+2019-04-14 22:40:49,424 INFO 41384 [egg-watcher] Start watching: "/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/config"
+2019-04-14 22:40:49,424 INFO 41384 [egg-watcher] Start watching: "/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/mocks"
+2019-04-14 22:40:49,424 INFO 41384 [egg-watcher] Start watching: "/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/mocks_proxy"
+2019-04-14 22:40:49,425 INFO 41384 [egg-watcher] Start watching: "/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/app.js"
+2019-04-14 22:40:49,425 INFO 41384 [egg-watcher:agent] watcher start success
+2019-04-14 22:40:49,465 INFO 41384 [egg:core] dump config after ready, 2ms
+2019-04-14 22:44:12,539 INFO 41384 [egg-watcher] Recieved a change event from eventSource: {"event":"change","path":"/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/config/config.default.js","stat":{"dev":16777220,"mode":33188,"nlink":1,"uid":501,"gid":20,"rdev":0,"blksize":4096,"ino":29052455,"size":773,"blocks":8,"atimeMs":1555253052478.182,"mtimeMs":1555253052478.5376,"ctimeMs":1555253052478.5376,"birthtimeMs":1555247460587.8062,"atime":"2019-04-14T14:44:12.478Z","mtime":"2019-04-14T14:44:12.479Z","ctime":"2019-04-14T14:44:12.479Z","birthtime":"2019-04-14T13:11:00.588Z"},"remove":false,"isDirectory":false,"isFile":true}
+2019-04-14 22:44:12,689 INFO 41384 [egg-watcher] Recieved a change event from eventSource: {"event":"change","path":"/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/config/config.default.js","stat":{"dev":16777220,"mode":33188,"nlink":1,"uid":501,"gid":20,"rdev":0,"blksize":4096,"ino":29052455,"size":773,"blocks":8,"atimeMs":1555253052678.1123,"mtimeMs":1555253052678.4214,"ctimeMs":1555253052678.4214,"birthtimeMs":1555247460587.8062,"atime":"2019-04-14T14:44:12.678Z","mtime":"2019-04-14T14:44:12.678Z","ctime":"2019-04-14T14:44:12.678Z","birthtime":"2019-04-14T13:11:00.588Z"},"remove":false,"isDirectory":false,"isFile":true}
+2019-04-14 22:44:12,854 INFO 41384 [egg-watcher] Recieved a change event from eventSource: {"event":"change","path":"/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/config/config.default.js","stat":{"dev":16777220,"mode":33188,"nlink":1,"uid":501,"gid":20,"rdev":0,"blksize":4096,"ino":29052455,"size":773,"blocks":8,"atimeMs":1555253052842.238,"mtimeMs":1555253052842.5906,"ctimeMs":1555253052842.5906,"birthtimeMs":1555247460587.8062,"atime":"2019-04-14T14:44:12.842Z","mtime":"2019-04-14T14:44:12.843Z","ctime":"2019-04-14T14:44:12.843Z","birthtime":"2019-04-14T13:11:00.588Z"},"remove":false,"isDirectory":false,"isFile":true}
+2019-04-14 22:44:13,034 INFO 41384 [egg-watcher] Recieved a change event from eventSource: {"event":"change","path":"/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/config/config.default.js","stat":{"dev":16777220,"mode":33188,"nlink":1,"uid":501,"gid":20,"rdev":0,"blksize":4096,"ino":29052455,"size":773,"blocks":8,"atimeMs":1555253053022.9866,"mtimeMs":1555253053023.386,"ctimeMs":1555253053023.386,"birthtimeMs":1555247460587.8062,"atime":"2019-04-14T14:44:13.023Z","mtime":"2019-04-14T14:44:13.023Z","ctime":"2019-04-14T14:44:13.023Z","birthtime":"2019-04-14T13:11:00.588Z"},"remove":false,"isDirectory":false,"isFile":true}
+2019-04-14 22:44:13,203 INFO 41384 [egg-watcher] Recieved a change event from eventSource: {"event":"change","path":"/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/config/config.default.js","stat":{"dev":16777220,"mode":33188,"nlink":1,"uid":501,"gid":20,"rdev":0,"blksize":4096,"ino":29052455,"size":773,"blocks":8,"atimeMs":1555253053192.0803,"mtimeMs":1555253053192.4373,"ctimeMs":1555253053192.4373,"birthtimeMs":1555247460587.8062,"atime":"2019-04-14T14:44:13.192Z","mtime":"2019-04-14T14:44:13.192Z","ctime":"2019-04-14T14:44:13.192Z","birthtime":"2019-04-14T13:11:00.588Z"},"remove":false,"isDirectory":false,"isFile":true}
+2019-04-14 22:44:13,370 INFO 41384 [egg-watcher] Recieved a change event from eventSource: {"event":"change","path":"/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/config/config.default.js","stat":{"dev":16777220,"mode":33188,"nlink":1,"uid":501,"gid":20,"rdev":0,"blksize":4096,"ino":29052455,"size":773,"blocks":8,"atimeMs":1555253053359.268,"mtimeMs":1555253053359.793,"ctimeMs":1555253053359.793,"birthtimeMs":1555247460587.8062,"atime":"2019-04-14T14:44:13.359Z","mtime":"2019-04-14T14:44:13.360Z","ctime":"2019-04-14T14:44:13.360Z","birthtime":"2019-04-14T13:11:00.588Z"},"remove":false,"isDirectory":false,"isFile":true}
+2019-04-14 22:44:13,534 INFO 41384 [egg-watcher] Recieved a change event from eventSource: {"event":"change","path":"/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/config/config.default.js","stat":{"dev":16777220,"mode":33188,"nlink":1,"uid":501,"gid":20,"rdev":0,"blksize":4096,"ino":29052455,"size":773,"blocks":8,"atimeMs":1555253053522.4934,"mtimeMs":1555253053522.833,"ctimeMs":1555253053522.833,"birthtimeMs":1555247460587.8062,"atime":"2019-04-14T14:44:13.522Z","mtime":"2019-04-14T14:44:13.523Z","ctime":"2019-04-14T14:44:13.523Z","birthtime":"2019-04-14T13:11:00.588Z"},"remove":false,"isDirectory":false,"isFile":true}
+2019-04-14 22:44:13,737 WARN 41384 [agent:development] reload worker because /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/config/config.default.js change
+2019-04-14 22:44:21,492 WARN 41384 [agent:development] reload worker because /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/config/config.default.js change
+2019-04-14 22:44:20,875 INFO 41384 [egg-watcher] Recieved a change event from eventSource: {"event":"change","path":"/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/config/config.default.js","stat":{"dev":16777220,"mode":33188,"nlink":1,"uid":501,"gid":20,"rdev":0,"blksize":4096,"ino":29052455,"size":773,"blocks":8,"atimeMs":1555253060864.5232,"mtimeMs":1555253060864.9102,"ctimeMs":1555253060864.9102,"birthtimeMs":1555247460587.8062,"atime":"2019-04-14T14:44:20.865Z","mtime":"2019-04-14T14:44:20.865Z","ctime":"2019-04-14T14:44:20.865Z","birthtime":"2019-04-14T13:11:00.588Z"},"remove":false,"isDirectory":false,"isFile":true}
+2019-04-14 22:44:20,925 INFO 41384 [egg-watcher] Recieved a change event from eventSource: {"event":"change","path":"/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/config/config.default.js","stat":{"dev":16777220,"mode":33188,"nlink":1,"uid":501,"gid":20,"rdev":0,"blksize":4096,"ino":29052455,"size":773,"blocks":8,"atimeMs":1555253060864.5232,"mtimeMs":1555253060864.9102,"ctimeMs":1555253060864.9102,"birthtimeMs":1555247460587.8062,"atime":"2019-04-14T14:44:20.865Z","mtime":"2019-04-14T14:44:20.865Z","ctime":"2019-04-14T14:44:20.865Z","birthtime":"2019-04-14T13:11:00.588Z"},"remove":false,"isDirectory":false,"isFile":true}
+2019-04-14 22:44:21,081 INFO 41384 [egg-watcher] Recieved a change event from eventSource: {"event":"change","path":"/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/config/config.default.js","stat":{"dev":16777220,"mode":33188,"nlink":1,"uid":501,"gid":20,"rdev":0,"blksize":4096,"ino":29052455,"size":773,"blocks":8,"atimeMs":1555253061077.6375,"mtimeMs":1555253061077.959,"ctimeMs":1555253061077.959,"birthtimeMs":1555247460587.8062,"atime":"2019-04-14T14:44:21.078Z","mtime":"2019-04-14T14:44:21.078Z","ctime":"2019-04-14T14:44:21.078Z","birthtime":"2019-04-14T13:11:00.588Z"},"remove":false,"isDirectory":false,"isFile":true}
+2019-04-14 22:44:21,132 INFO 41384 [egg-watcher] Recieved a change event from eventSource: {"event":"change","path":"/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/config/config.default.js","stat":{"dev":16777220,"mode":33188,"nlink":1,"uid":501,"gid":20,"rdev":0,"blksize":4096,"ino":29052455,"size":773,"blocks":8,"atimeMs":1555253061077.6375,"mtimeMs":1555253061077.959,"ctimeMs":1555253061077.959,"birthtimeMs":1555247460587.8062,"atime":"2019-04-14T14:44:21.078Z","mtime":"2019-04-14T14:44:21.078Z","ctime":"2019-04-14T14:44:21.078Z","birthtime":"2019-04-14T13:11:00.588Z"},"remove":false,"isDirectory":false,"isFile":true}
+2019-04-14 22:44:21,287 INFO 41384 [egg-watcher] Recieved a change event from eventSource: {"event":"change","path":"/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/config/config.default.js","stat":{"dev":16777220,"mode":33188,"nlink":1,"uid":501,"gid":20,"rdev":0,"blksize":4096,"ino":29052455,"size":773,"blocks":8,"atimeMs":1555253061276.5105,"mtimeMs":1555253061276.796,"ctimeMs":1555253061276.796,"birthtimeMs":1555247460587.8062,"atime":"2019-04-14T14:44:21.277Z","mtime":"2019-04-14T14:44:21.277Z","ctime":"2019-04-14T14:44:21.277Z","birthtime":"2019-04-14T13:11:00.588Z"},"remove":false,"isDirectory":false,"isFile":true}
+2019-04-15 00:22:42,617 ERROR 41384 nodejs.ClusterClientNoResponseError: client no response in 5214229ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout.Leader._heartbeatTimer.setInterval [as _onTimeout] (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/cluster-client/lib/leader.js:77:23)
+    at listOnTimeout (timers.js:327:15)
+    at processTimers (timers.js:271:5)
+name: "ClusterClientNoResponseError"
+pid: 41384
+hostname: wuxinghengdeMacBook-Pro.local
+
+2019-04-15 00:28:27,831 ERROR 41384 nodejs.ClusterClientNoResponseError: client no response in 305116ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout.Leader._heartbeatTimer.setInterval [as _onTimeout] (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/cluster-client/lib/leader.js:77:23)
+    at listOnTimeout (timers.js:327:15)
+    at processTimers (timers.js:271:5)
+name: "ClusterClientNoResponseError"
+pid: 41384
+hostname: wuxinghengdeMacBook-Pro.local
+
+2019-04-15 01:55:51,529 ERROR 41384 nodejs.ClusterClientNoResponseError: client no response in 5203678ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout.Leader._heartbeatTimer.setInterval [as _onTimeout] (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/cluster-client/lib/leader.js:77:23)
+    at listOnTimeout (timers.js:327:15)
+    at processTimers (timers.js:271:5)
+name: "ClusterClientNoResponseError"
+pid: 41384
+hostname: wuxinghengdeMacBook-Pro.local
+
+2019-04-15 08:53:56,076 ERROR 41384 nodejs.ClusterClientNoResponseError: client no response in 25084474ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout.Leader._heartbeatTimer.setInterval [as _onTimeout] (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/cluster-client/lib/leader.js:77:23)
+    at listOnTimeout (timers.js:327:15)
+    at processTimers (timers.js:271:5)
+name: "ClusterClientNoResponseError"
+pid: 41384
+hostname: wuxinghengdeMacBook-Pro.local
+
+2019-04-15 08:57:44,588 ERROR 41384 nodejs.ClusterClientNoResponseError: client no response in 88528ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout.Leader._heartbeatTimer.setInterval [as _onTimeout] (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/cluster-client/lib/leader.js:77:23)
+    at listOnTimeout (timers.js:327:15)
+    at processTimers (timers.js:271:5)
+name: "ClusterClientNoResponseError"
+pid: 41384
+hostname: wuxinghengdeMacBook-Pro.local
+
+2019-04-15 09:04:33,545 ERROR 41384 nodejs.ClusterClientNoResponseError: client no response in 288934ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout.Leader._heartbeatTimer.setInterval [as _onTimeout] (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/cluster-client/lib/leader.js:77:23)
+    at listOnTimeout (timers.js:327:15)
+    at processTimers (timers.js:271:5)
+name: "ClusterClientNoResponseError"
+pid: 41384
+hostname: wuxinghengdeMacBook-Pro.local
+

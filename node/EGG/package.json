@@ -1,6 +1,0 @@
-{
-  "dependencies": {
-    "egg-init": "^1.16.1",
-    "global": "^4.3.2"
-  }
-}

@@ -1,0 +1,208 @@
+2019-04-14 21:18:46,864 ERROR 5994 nodejs.SequelizeAccessDeniedError: Access denied for user 'root'@'localhost' (using password: NO)
+    at Utils.Promise.tap.then.catch.err (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:141:19)
+From previous event:
+    at ConnectionManager.connect (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:136:13)
+    at sequelize.runHooks.then (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:320:50)
+    at processImmediate (timers.js:637:19)
+From previous event:
+    at ConnectionManager._connect (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:320:8)
+    at ConnectionManager.getConnection (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:250:46)
+    at Promise.try (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/sequelize.js:554:34)
+From previous event:
+    at Promise.resolve.retryParameters (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/sequelize.js:454:64)
+    at /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/retry-as-promised/index.js:39:21
+    at retryAsPromised (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/retry-as-promised/index.js:29:10)
+    at Sequelize.query (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/sequelize.js:454:28)
+    at Sequelize.authenticate (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/sequelize.js:783:17)
+    at authenticate (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-sequelize/lib/loader.js:129:22)
+    at Promise.all.databases.map.database (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-sequelize/lib/loader.js:40:49)
+    at Array.map (<anonymous>)
+    at app.beforeStart (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-sequelize/lib/loader.js:40:33)
+    at Object.callFn (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-core/lib/utils/index.js:44:42)
+    at process.nextTick (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-core/lib/lifecycle.js:248:13)
+    at processTicksAndRejections (internal/process/next_tick.js:74:9)
+    at process.runNextTicks [as _tickCallback] (internal/process/next_tick.js:51:3)
+    at Function.Module.runMain (internal/modules/cjs/loader.js:804:11)
+    at internal/main/run_main_module.js:21:11
+name: "SequelizeAccessDeniedError"
+parent: {"code":"ER_ACCESS_DENIED_ERROR","errno":1045,"sqlState":"28000","sqlMessage":"Access denied for user 'root'@'localhost' (using password: NO)"}
+original: {"code":"ER_ACCESS_DENIED_ERROR","errno":1045,"sqlState":"28000","sqlMessage":"Access denied for user 'root'@'localhost' (using password: NO)"}
+pid: 5994
+hostname: wuxinghengdeMacBook-Pro.local
+
+2019-04-14 21:32:20,817 ERROR 11785 nodejs.SequelizeAccessDeniedError: Access denied for user 'root'@'localhost' (using password: NO)
+    at Utils.Promise.tap.then.catch.err (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:141:19)
+From previous event:
+    at ConnectionManager.connect (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:136:13)
+    at sequelize.runHooks.then (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:320:50)
+    at processImmediate (timers.js:637:19)
+From previous event:
+    at ConnectionManager._connect (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:320:8)
+    at ConnectionManager.getConnection (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:250:46)
+    at Promise.try (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/sequelize.js:554:34)
+From previous event:
+    at Promise.resolve.retryParameters (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/sequelize.js:454:64)
+    at /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/retry-as-promised/index.js:39:21
+    at retryAsPromised (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/retry-as-promised/index.js:29:10)
+    at Sequelize.query (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/sequelize.js:454:28)
+    at Sequelize.authenticate (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/sequelize.js:783:17)
+    at authenticate (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-sequelize/lib/loader.js:129:22)
+    at Promise.all.databases.map.database (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-sequelize/lib/loader.js:40:49)
+    at Array.map (<anonymous>)
+    at app.beforeStart (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-sequelize/lib/loader.js:40:33)
+    at Object.callFn (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-core/lib/utils/index.js:44:42)
+    at process.nextTick (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-core/lib/lifecycle.js:248:13)
+    at processTicksAndRejections (internal/process/next_tick.js:74:9)
+    at process.runNextTicks [as _tickCallback] (internal/process/next_tick.js:51:3)
+    at Function.Module.runMain (internal/modules/cjs/loader.js:804:11)
+    at internal/main/run_main_module.js:21:11
+name: "SequelizeAccessDeniedError"
+parent: {"code":"ER_ACCESS_DENIED_ERROR","errno":1045,"sqlState":"28000","sqlMessage":"Access denied for user 'root'@'localhost' (using password: NO)"}
+original: {"code":"ER_ACCESS_DENIED_ERROR","errno":1045,"sqlState":"28000","sqlMessage":"Access denied for user 'root'@'localhost' (using password: NO)"}
+pid: 11785
+hostname: wuxinghengdeMacBook-Pro.local
+
+2019-04-14 21:33:59,565 ERROR 12547 nodejs.SequelizeAccessDeniedError: Access denied for user 'root'@'localhost' (using password: NO)
+    at Utils.Promise.tap.then.catch.err (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:141:19)
+From previous event:
+    at ConnectionManager.connect (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:136:13)
+    at sequelize.runHooks.then (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:320:50)
+    at processImmediate (timers.js:637:19)
+From previous event:
+    at ConnectionManager._connect (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:320:8)
+    at ConnectionManager.getConnection (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:250:46)
+    at Promise.try (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/sequelize.js:554:34)
+From previous event:
+    at Promise.resolve.retryParameters (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/sequelize.js:454:64)
+    at /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/retry-as-promised/index.js:39:21
+    at retryAsPromised (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/retry-as-promised/index.js:29:10)
+    at Sequelize.query (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/sequelize.js:454:28)
+    at Sequelize.authenticate (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/sequelize.js:783:17)
+    at authenticate (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-sequelize/lib/loader.js:129:22)
+    at Promise.all.databases.map.database (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-sequelize/lib/loader.js:40:49)
+    at Array.map (<anonymous>)
+    at app.beforeStart (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-sequelize/lib/loader.js:40:33)
+    at Object.callFn (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-core/lib/utils/index.js:44:42)
+    at process.nextTick (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-core/lib/lifecycle.js:248:13)
+    at processTicksAndRejections (internal/process/next_tick.js:74:9)
+    at process.runNextTicks [as _tickCallback] (internal/process/next_tick.js:51:3)
+    at Function.Module.runMain (internal/modules/cjs/loader.js:804:11)
+    at internal/main/run_main_module.js:21:11
+name: "SequelizeAccessDeniedError"
+parent: {"code":"ER_ACCESS_DENIED_ERROR","errno":1045,"sqlState":"28000","sqlMessage":"Access denied for user 'root'@'localhost' (using password: NO)"}
+original: {"code":"ER_ACCESS_DENIED_ERROR","errno":1045,"sqlState":"28000","sqlMessage":"Access denied for user 'root'@'localhost' (using password: NO)"}
+pid: 12547
+hostname: wuxinghengdeMacBook-Pro.local
+
+2019-04-14 21:35:48,548 ERROR 13298 nodejs.SequelizeAccessDeniedError: Access denied for user 'root'@'localhost' (using password: NO)
+    at Utils.Promise.tap.then.catch.err (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:141:19)
+From previous event:
+    at ConnectionManager.connect (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:136:13)
+    at sequelize.runHooks.then (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:320:50)
+    at processImmediate (timers.js:637:19)
+From previous event:
+    at ConnectionManager._connect (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:320:8)
+    at ConnectionManager.getConnection (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:250:46)
+    at Promise.try (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/sequelize.js:554:34)
+From previous event:
+    at Promise.resolve.retryParameters (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/sequelize.js:454:64)
+    at /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/retry-as-promised/index.js:39:21
+    at retryAsPromised (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/retry-as-promised/index.js:29:10)
+    at Sequelize.query (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/sequelize.js:454:28)
+    at Sequelize.authenticate (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/sequelize.js:783:17)
+    at authenticate (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-sequelize/lib/loader.js:129:22)
+    at Promise.all.databases.map.database (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-sequelize/lib/loader.js:40:49)
+    at Array.map (<anonymous>)
+    at app.beforeStart (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-sequelize/lib/loader.js:40:33)
+    at Object.callFn (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-core/lib/utils/index.js:44:42)
+    at process.nextTick (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-core/lib/lifecycle.js:248:13)
+    at processTicksAndRejections (internal/process/next_tick.js:74:9)
+    at process.runNextTicks [as _tickCallback] (internal/process/next_tick.js:51:3)
+    at Function.Module.runMain (internal/modules/cjs/loader.js:804:11)
+    at internal/main/run_main_module.js:21:11
+name: "SequelizeAccessDeniedError"
+parent: {"code":"ER_ACCESS_DENIED_ERROR","errno":1045,"sqlState":"28000","sqlMessage":"Access denied for user 'root'@'localhost' (using password: NO)"}
+original: {"code":"ER_ACCESS_DENIED_ERROR","errno":1045,"sqlState":"28000","sqlMessage":"Access denied for user 'root'@'localhost' (using password: NO)"}
+pid: 13298
+hostname: wuxinghengdeMacBook-Pro.local
+
+2019-04-14 21:51:02,571 ERROR 19810 nodejs.SequelizeAccessDeniedError: Access denied for user 'root'@'localhost' (using password: NO)
+    at Utils.Promise.tap.then.catch.err (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:141:19)
+From previous event:
+    at ConnectionManager.connect (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:136:13)
+    at sequelize.runHooks.then (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:320:50)
+    at processImmediate (timers.js:637:19)
+From previous event:
+    at ConnectionManager._connect (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:320:8)
+    at ConnectionManager.getConnection (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:250:46)
+    at Promise.try (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/sequelize.js:554:34)
+From previous event:
+    at Promise.resolve.retryParameters (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/sequelize.js:454:64)
+    at /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/retry-as-promised/index.js:39:21
+    at retryAsPromised (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/retry-as-promised/index.js:29:10)
+    at Sequelize.query (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/sequelize.js:454:28)
+    at Sequelize.authenticate (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/sequelize.js:783:17)
+    at authenticate (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-sequelize/lib/loader.js:129:22)
+    at Promise.all.databases.map.database (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-sequelize/lib/loader.js:40:49)
+    at Array.map (<anonymous>)
+    at app.beforeStart (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-sequelize/lib/loader.js:40:33)
+    at Object.callFn (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-core/lib/utils/index.js:44:42)
+    at process.nextTick (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-core/lib/lifecycle.js:248:13)
+    at processTicksAndRejections (internal/process/next_tick.js:74:9)
+    at process.runNextTicks [as _tickCallback] (internal/process/next_tick.js:51:3)
+    at Function.Module.runMain (internal/modules/cjs/loader.js:804:11)
+    at internal/main/run_main_module.js:21:11
+name: "SequelizeAccessDeniedError"
+parent: {"code":"ER_ACCESS_DENIED_ERROR","errno":1045,"sqlState":"28000","sqlMessage":"Access denied for user 'root'@'localhost' (using password: NO)"}
+original: {"code":"ER_ACCESS_DENIED_ERROR","errno":1045,"sqlState":"28000","sqlMessage":"Access denied for user 'root'@'localhost' (using password: NO)"}
+pid: 19810
+hostname: wuxinghengdeMacBook-Pro.local
+
+2019-04-15 00:22:42,617 ERROR 41384 nodejs.ClusterClientNoResponseError: client no response in 5214229ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout.Leader._heartbeatTimer.setInterval [as _onTimeout] (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/cluster-client/lib/leader.js:77:23)
+    at listOnTimeout (timers.js:327:15)
+    at processTimers (timers.js:271:5)
+name: "ClusterClientNoResponseError"
+pid: 41384
+hostname: wuxinghengdeMacBook-Pro.local
+
+2019-04-15 00:28:27,831 ERROR 41384 nodejs.ClusterClientNoResponseError: client no response in 305116ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout.Leader._heartbeatTimer.setInterval [as _onTimeout] (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/cluster-client/lib/leader.js:77:23)
+    at listOnTimeout (timers.js:327:15)
+    at processTimers (timers.js:271:5)
+name: "ClusterClientNoResponseError"
+pid: 41384
+hostname: wuxinghengdeMacBook-Pro.local
+
+2019-04-15 01:55:51,529 ERROR 41384 nodejs.ClusterClientNoResponseError: client no response in 5203678ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout.Leader._heartbeatTimer.setInterval [as _onTimeout] (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/cluster-client/lib/leader.js:77:23)
+    at listOnTimeout (timers.js:327:15)
+    at processTimers (timers.js:271:5)
+name: "ClusterClientNoResponseError"
+pid: 41384
+hostname: wuxinghengdeMacBook-Pro.local
+
+2019-04-15 08:53:56,076 ERROR 41384 nodejs.ClusterClientNoResponseError: client no response in 25084474ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout.Leader._heartbeatTimer.setInterval [as _onTimeout] (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/cluster-client/lib/leader.js:77:23)
+    at listOnTimeout (timers.js:327:15)
+    at processTimers (timers.js:271:5)
+name: "ClusterClientNoResponseError"
+pid: 41384
+hostname: wuxinghengdeMacBook-Pro.local
+
+2019-04-15 08:57:44,580 ERROR 41384 nodejs.ClusterClientNoResponseError: client no response in 88528ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout.Leader._heartbeatTimer.setInterval [as _onTimeout] (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/cluster-client/lib/leader.js:77:23)
+    at listOnTimeout (timers.js:327:15)
+    at processTimers (timers.js:271:5)
+name: "ClusterClientNoResponseError"
+pid: 41384
+hostname: wuxinghengdeMacBook-Pro.local
+
+2019-04-15 09:04:33,544 ERROR 41384 nodejs.ClusterClientNoResponseError: client no response in 288934ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout.Leader._heartbeatTimer.setInterval [as _onTimeout] (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/cluster-client/lib/leader.js:77:23)
+    at listOnTimeout (timers.js:327:15)
+    at processTimers (timers.js:271:5)
+name: "ClusterClientNoResponseError"
+pid: 41384
+hostname: wuxinghengdeMacBook-Pro.local
+
