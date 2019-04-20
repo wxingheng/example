@@ -202,5 +202,17 @@
     "stack": [
       "wrappedController"
     ]
+  },
+  {
+    "name": "api",
+    "methods": [
+      "POST"
+    ],
+    "paramNames": [],
+    "path": "/api/login",
+    "regexp": "/^\\/api\\/login(?:\\/(?=$))?$/",
+    "stack": [
+      "wrappedController"
+    ]
   }
 ]

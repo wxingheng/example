@@ -206,3 +206,222 @@ name: "ClusterClientNoResponseError"
 pid: 41384
 hostname: wuxinghengdeMacBook-Pro.local
 
+2019-04-20 15:56:01,303 ERROR 38667 [-/::1/-/693ms POST /api/login] nodejs.Error: secretOrPrivateKey must have a value
+    at Object.module.exports [as sign] (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/jsonwebtoken/sign.js:107:20)
+    at createToken (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/app/service/api.js:7:19)
+    at User.login (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/app/service/api.js:57:19)
+    at processTicksAndRejections (internal/process/next_tick.js:81:5)
+
+pid: 38667
+hostname: wuxinghengdeMacBook-Pro.local
+
+2019-04-20 15:57:10,327 ERROR 39024 [-/::1/-/6330ms POST /api/login] nodejs.ResponseTimeoutError: Response timeout for 5000ms, GET https://api.weixin.qq.com/sns/jscode2session?appid=wx5e6189f24363171b&secret=23f4e01eea5fa660ecbd802e55e1b91f&js_code=061HD0fx1Mpoqh0gRPgx1f5hfx1HD0fq&grant_type=authorization_code -1 (connected: true, keepalive socket: false, agent status: {"createSocketCount":4,"createSocketErrorCount":0,"closeSocketCount":1,"errorSocketCount":0,"timeoutSocketCount":0,"requestCount":0,"freeSockets":{},"sockets":{"api.weixin.qq.com:443::::::::::::::::::":3},"requests":{}}, socketHandledRequests: 1, socketHandledResponses: 0)
+headers: {}
+headers: {}
+    at Timeout._onTimeout (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/urllib/lib/urllib.js:869:15)
+    at listOnTimeout (timers.js:327:15)
+    at processTimers (timers.js:271:5)
+name: "ResponseTimeoutError"
+requestId: 1
+data: undefined
+path: "/sns/jscode2session?appid=wx5e6189f24363171b&secret=23f4e01eea5fa660ecbd802e55e1b91f&js_code=061HD0fx1Mpoqh0gRPgx1f5hfx1HD0fq&grant_type=authorization_code"
+status: -1
+headers: {}
+res: {"status":-1,"statusCode":-1,"statusMessage":null,"headers":{},"size":0,"aborted":false,"rt":6308,"keepAliveSocket":false,"requestUrls":["https://api.weixin.qq.com/sns/jscode2session?appid=wx5e6189f24363171b&secret=23f4e01eea5fa660ecbd802e55e1b91f&js_code=061HD0fx1Mpoqh0gRPgx1f5hfx1HD0fq&grant_type=authorization_code"],"timing":null,"remoteAddress":"183.232.103.145","remotePort":443,"socketHandledRequests":1,"socketHandledResponses":0}
+pid: 39024
+hostname: wuxinghengdeMacBook-Pro.local
+
+2019-04-20 15:57:12,488 ERROR 39024 [-/::1/-/7110ms POST /api/login] nodejs.ResponseTimeoutError: Response timeout for 5000ms, GET https://api.weixin.qq.com/sns/jscode2session?appid=wx5e6189f24363171b&secret=23f4e01eea5fa660ecbd802e55e1b91f&js_code=061HD0fx1Mpoqh0gRPgx1f5hfx1HD0fq&grant_type=authorization_code -1 (connected: true, keepalive socket: false, agent status: {"createSocketCount":4,"createSocketErrorCount":0,"closeSocketCount":2,"errorSocketCount":0,"timeoutSocketCount":0,"requestCount":0,"freeSockets":{},"sockets":{"api.weixin.qq.com:443::::::::::::::::::":2},"requests":{}}, socketHandledRequests: 1, socketHandledResponses: 0)
+headers: {}
+headers: {}
+    at Timeout._onTimeout (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/urllib/lib/urllib.js:869:15)
+    at listOnTimeout (timers.js:327:15)
+    at processTimers (timers.js:271:5)
+name: "ResponseTimeoutError"
+requestId: 2
+data: undefined
+path: "/sns/jscode2session?appid=wx5e6189f24363171b&secret=23f4e01eea5fa660ecbd802e55e1b91f&js_code=061HD0fx1Mpoqh0gRPgx1f5hfx1HD0fq&grant_type=authorization_code"
+status: -1
+headers: {}
+res: {"status":-1,"statusCode":-1,"statusMessage":null,"headers":{},"size":0,"aborted":false,"rt":7108,"keepAliveSocket":false,"requestUrls":["https://api.weixin.qq.com/sns/jscode2session?appid=wx5e6189f24363171b&secret=23f4e01eea5fa660ecbd802e55e1b91f&js_code=061HD0fx1Mpoqh0gRPgx1f5hfx1HD0fq&grant_type=authorization_code"],"timing":null,"remoteAddress":"183.232.103.145","remotePort":443,"socketHandledRequests":1,"socketHandledResponses":0}
+pid: 39024
+hostname: wuxinghengdeMacBook-Pro.local
+
+2019-04-20 15:57:14,689 ERROR 39024 [-/::1/-/7148ms POST /api/login] nodejs.ResponseTimeoutError: Response timeout for 5000ms, GET https://api.weixin.qq.com/sns/jscode2session?appid=wx5e6189f24363171b&secret=23f4e01eea5fa660ecbd802e55e1b91f&js_code=061HD0fx1Mpoqh0gRPgx1f5hfx1HD0fq&grant_type=authorization_code -1 (connected: true, keepalive socket: false, agent status: {"createSocketCount":4,"createSocketErrorCount":0,"closeSocketCount":3,"errorSocketCount":0,"timeoutSocketCount":0,"requestCount":0,"freeSockets":{},"sockets":{"api.weixin.qq.com:443::::::::::::::::::":1},"requests":{}}, socketHandledRequests: 1, socketHandledResponses: 0)
+headers: {}
+headers: {}
+    at Timeout._onTimeout (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/urllib/lib/urllib.js:869:15)
+    at listOnTimeout (timers.js:327:15)
+    at processTimers (timers.js:271:5)
+name: "ResponseTimeoutError"
+requestId: 3
+data: undefined
+path: "/sns/jscode2session?appid=wx5e6189f24363171b&secret=23f4e01eea5fa660ecbd802e55e1b91f&js_code=061HD0fx1Mpoqh0gRPgx1f5hfx1HD0fq&grant_type=authorization_code"
+status: -1
+headers: {}
+res: {"status":-1,"statusCode":-1,"statusMessage":null,"headers":{},"size":0,"aborted":false,"rt":7147,"keepAliveSocket":false,"requestUrls":["https://api.weixin.qq.com/sns/jscode2session?appid=wx5e6189f24363171b&secret=23f4e01eea5fa660ecbd802e55e1b91f&js_code=061HD0fx1Mpoqh0gRPgx1f5hfx1HD0fq&grant_type=authorization_code"],"timing":null,"remoteAddress":"183.232.103.145","remotePort":443,"socketHandledRequests":1,"socketHandledResponses":0}
+pid: 39024
+hostname: wuxinghengdeMacBook-Pro.local
+
+2019-04-20 15:57:16,277 ERROR 39024 [-/::1/-/6490ms POST /api/login] nodejs.Error: secretOrPrivateKey must have a value
+    at Object.module.exports [as sign] (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/jsonwebtoken/sign.js:107:20)
+    at createToken (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/app/service/api.js:7:19)
+    at User.login (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/app/service/api.js:57:19)
+    at processTicksAndRejections (internal/process/next_tick.js:81:5)
+
+pid: 39024
+hostname: wuxinghengdeMacBook-Pro.local
+
+2019-04-20 15:58:09,023 ERROR 39479 [-/::1/-/7130ms POST /api/login] nodejs.ResponseTimeoutError: Response timeout for 5000ms, GET https://api.weixin.qq.com/sns/jscode2session?appid=wx5e6189f24363171b&secret=23f4e01eea5fa660ecbd802e55e1b91f&js_code=0018JSeA07IZqe1Kn3fA01v0fA08JSeo&grant_type=authorization_code -1 (connected: true, keepalive socket: false, agent status: {"createSocketCount":2,"createSocketErrorCount":0,"closeSocketCount":1,"errorSocketCount":0,"timeoutSocketCount":0,"requestCount":0,"freeSockets":{},"sockets":{"api.weixin.qq.com:443::::::::::::::::::":1},"requests":{}}, socketHandledRequests: 1, socketHandledResponses: 0)
+headers: {}
+headers: {}
+    at Timeout._onTimeout (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/urllib/lib/urllib.js:869:15)
+    at listOnTimeout (timers.js:327:15)
+    at processTimers (timers.js:271:5)
+name: "ResponseTimeoutError"
+requestId: 1
+data: undefined
+path: "/sns/jscode2session?appid=wx5e6189f24363171b&secret=23f4e01eea5fa660ecbd802e55e1b91f&js_code=0018JSeA07IZqe1Kn3fA01v0fA08JSeo&grant_type=authorization_code"
+status: -1
+headers: {}
+res: {"status":-1,"statusCode":-1,"statusMessage":null,"headers":{},"size":0,"aborted":false,"rt":7109,"keepAliveSocket":false,"requestUrls":["https://api.weixin.qq.com/sns/jscode2session?appid=wx5e6189f24363171b&secret=23f4e01eea5fa660ecbd802e55e1b91f&js_code=0018JSeA07IZqe1Kn3fA01v0fA08JSeo&grant_type=authorization_code"],"timing":null,"remoteAddress":"183.232.103.145","remotePort":443,"socketHandledRequests":1,"socketHandledResponses":0}
+pid: 39479
+hostname: wuxinghengdeMacBook-Pro.local
+
+2019-04-20 15:58:14,978 ERROR 39479 [-/::1/-/6440ms POST /api/login] nodejs.Error: secretOrPrivateKey must have a value
+    at Object.module.exports [as sign] (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/jsonwebtoken/sign.js:107:20)
+    at createToken (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/app/service/api.js:7:19)
+    at User.login (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/app/service/api.js:57:19)
+    at processTicksAndRejections (internal/process/next_tick.js:81:5)
+
+pid: 39479
+hostname: wuxinghengdeMacBook-Pro.local
+
+2019-04-20 15:59:42,493 ERROR 40182 [-/::1/-/7194ms POST /api/login] nodejs.ResponseTimeoutError: Response timeout for 5000ms, GET https://api.weixin.qq.com/sns/jscode2session?appid=wx5e6189f24363171b&secret=23f4e01eea5fa660ecbd802e55e1b91f&js_code=0611elSt1BHbZd0VwRSt1sDgSt11elSd&grant_type=authorization_code -1 (connected: true, keepalive socket: false, agent status: {"createSocketCount":4,"createSocketErrorCount":0,"closeSocketCount":1,"errorSocketCount":0,"timeoutSocketCount":0,"requestCount":0,"freeSockets":{},"sockets":{"api.weixin.qq.com:443::::::::::::::::::":3},"requests":{}}, socketHandledRequests: 1, socketHandledResponses: 0)
+headers: {}
+headers: {}
+    at Timeout._onTimeout (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/urllib/lib/urllib.js:869:15)
+    at listOnTimeout (timers.js:327:15)
+    at processTimers (timers.js:271:5)
+name: "ResponseTimeoutError"
+requestId: 1
+data: undefined
+path: "/sns/jscode2session?appid=wx5e6189f24363171b&secret=23f4e01eea5fa660ecbd802e55e1b91f&js_code=0611elSt1BHbZd0VwRSt1sDgSt11elSd&grant_type=authorization_code"
+status: -1
+headers: {}
+res: {"status":-1,"statusCode":-1,"statusMessage":null,"headers":{},"size":0,"aborted":false,"rt":7172,"keepAliveSocket":false,"requestUrls":["https://api.weixin.qq.com/sns/jscode2session?appid=wx5e6189f24363171b&secret=23f4e01eea5fa660ecbd802e55e1b91f&js_code=0611elSt1BHbZd0VwRSt1sDgSt11elSd&grant_type=authorization_code"],"timing":null,"remoteAddress":"183.232.103.145","remotePort":443,"socketHandledRequests":1,"socketHandledResponses":0}
+pid: 40182
+hostname: wuxinghengdeMacBook-Pro.local
+
+2019-04-20 15:59:46,275 ERROR 40182 [-/::1/-/7176ms POST /api/login] nodejs.ResponseTimeoutError: Response timeout for 5000ms, GET https://api.weixin.qq.com/sns/jscode2session?appid=wx5e6189f24363171b&secret=23f4e01eea5fa660ecbd802e55e1b91f&js_code=0611elSt1BHbZd0VwRSt1sDgSt11elSd&grant_type=authorization_code -1 (connected: true, keepalive socket: false, agent status: {"createSocketCount":4,"createSocketErrorCount":0,"closeSocketCount":2,"errorSocketCount":0,"timeoutSocketCount":0,"requestCount":0,"freeSockets":{},"sockets":{"api.weixin.qq.com:443::::::::::::::::::":2},"requests":{}}, socketHandledRequests: 1, socketHandledResponses: 0)
+headers: {}
+headers: {}
+    at Timeout._onTimeout (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/urllib/lib/urllib.js:869:15)
+    at listOnTimeout (timers.js:327:15)
+    at processTimers (timers.js:271:5)
+name: "ResponseTimeoutError"
+requestId: 2
+data: undefined
+path: "/sns/jscode2session?appid=wx5e6189f24363171b&secret=23f4e01eea5fa660ecbd802e55e1b91f&js_code=0611elSt1BHbZd0VwRSt1sDgSt11elSd&grant_type=authorization_code"
+status: -1
+headers: {}
+res: {"status":-1,"statusCode":-1,"statusMessage":null,"headers":{},"size":0,"aborted":false,"rt":7174,"keepAliveSocket":false,"requestUrls":["https://api.weixin.qq.com/sns/jscode2session?appid=wx5e6189f24363171b&secret=23f4e01eea5fa660ecbd802e55e1b91f&js_code=0611elSt1BHbZd0VwRSt1sDgSt11elSd&grant_type=authorization_code"],"timing":null,"remoteAddress":"183.232.103.145","remotePort":443,"socketHandledRequests":1,"socketHandledResponses":0}
+pid: 40182
+hostname: wuxinghengdeMacBook-Pro.local
+
+2019-04-20 15:59:47,541 ERROR 40182 [-/::1/-/7138ms POST /api/login] nodejs.ResponseTimeoutError: Response timeout for 5000ms, GET https://api.weixin.qq.com/sns/jscode2session?appid=wx5e6189f24363171b&secret=23f4e01eea5fa660ecbd802e55e1b91f&js_code=0611elSt1BHbZd0VwRSt1sDgSt11elSd&grant_type=authorization_code -1 (connected: true, keepalive socket: false, agent status: {"createSocketCount":4,"createSocketErrorCount":0,"closeSocketCount":3,"errorSocketCount":0,"timeoutSocketCount":0,"requestCount":0,"freeSockets":{},"sockets":{"api.weixin.qq.com:443::::::::::::::::::":1},"requests":{}}, socketHandledRequests: 1, socketHandledResponses: 0)
+headers: {}
+headers: {}
+    at Timeout._onTimeout (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/urllib/lib/urllib.js:869:15)
+    at listOnTimeout (timers.js:327:15)
+    at processTimers (timers.js:271:5)
+name: "ResponseTimeoutError"
+requestId: 3
+data: undefined
+path: "/sns/jscode2session?appid=wx5e6189f24363171b&secret=23f4e01eea5fa660ecbd802e55e1b91f&js_code=0611elSt1BHbZd0VwRSt1sDgSt11elSd&grant_type=authorization_code"
+status: -1
+headers: {}
+res: {"status":-1,"statusCode":-1,"statusMessage":null,"headers":{},"size":0,"aborted":false,"rt":7137,"keepAliveSocket":false,"requestUrls":["https://api.weixin.qq.com/sns/jscode2session?appid=wx5e6189f24363171b&secret=23f4e01eea5fa660ecbd802e55e1b91f&js_code=0611elSt1BHbZd0VwRSt1sDgSt11elSd&grant_type=authorization_code"],"timing":null,"remoteAddress":"183.232.103.145","remotePort":443,"socketHandledRequests":1,"socketHandledResponses":0}
+pid: 40182
+hostname: wuxinghengdeMacBook-Pro.local
+
+2019-04-20 15:59:48,657 ERROR 40182 [-/::1/-/7157ms POST /api/login] nodejs.ResponseTimeoutError: Response timeout for 5000ms, GET https://api.weixin.qq.com/sns/jscode2session?appid=wx5e6189f24363171b&secret=23f4e01eea5fa660ecbd802e55e1b91f&js_code=0611elSt1BHbZd0VwRSt1sDgSt11elSd&grant_type=authorization_code -1 (connected: true, keepalive socket: false, agent status: {"createSocketCount":4,"createSocketErrorCount":0,"closeSocketCount":4,"errorSocketCount":0,"timeoutSocketCount":0,"requestCount":0,"freeSockets":{},"sockets":{},"requests":{}}, socketHandledRequests: 1, socketHandledResponses: 0)
+headers: {}
+headers: {}
+    at Timeout._onTimeout (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/urllib/lib/urllib.js:869:15)
+    at listOnTimeout (timers.js:327:15)
+    at processTimers (timers.js:271:5)
+name: "ResponseTimeoutError"
+requestId: 4
+data: undefined
+path: "/sns/jscode2session?appid=wx5e6189f24363171b&secret=23f4e01eea5fa660ecbd802e55e1b91f&js_code=0611elSt1BHbZd0VwRSt1sDgSt11elSd&grant_type=authorization_code"
+status: -1
+headers: {}
+res: {"status":-1,"statusCode":-1,"statusMessage":null,"headers":{},"size":0,"aborted":false,"rt":7156,"keepAliveSocket":false,"requestUrls":["https://api.weixin.qq.com/sns/jscode2session?appid=wx5e6189f24363171b&secret=23f4e01eea5fa660ecbd802e55e1b91f&js_code=0611elSt1BHbZd0VwRSt1sDgSt11elSd&grant_type=authorization_code"],"timing":null,"remoteAddress":"183.232.103.145","remotePort":443,"socketHandledRequests":1,"socketHandledResponses":0}
+pid: 40182
+hostname: wuxinghengdeMacBook-Pro.local
+
+2019-04-20 16:00:42,174 ERROR 40607 [-/::1/-/7149ms POST /api/login] nodejs.ResponseTimeoutError: Response timeout for 5000ms, GET https://api.weixin.qq.com/sns/jscode2session?appid=wx5e6189f24363171b&secret=23f4e01eea5fa660ecbd802e55e1b91f&js_code=071Xbpx31LqxGQ1Hrpy31Smbx31Xbpxp&grant_type=authorization_code -1 (connected: true, keepalive socket: false, agent status: {"createSocketCount":4,"createSocketErrorCount":0,"closeSocketCount":1,"errorSocketCount":0,"timeoutSocketCount":0,"requestCount":0,"freeSockets":{},"sockets":{"api.weixin.qq.com:443::::::::::::::::::":3},"requests":{}}, socketHandledRequests: 1, socketHandledResponses: 0)
+headers: {}
+headers: {}
+    at Timeout._onTimeout (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/urllib/lib/urllib.js:869:15)
+    at listOnTimeout (timers.js:327:15)
+    at processTimers (timers.js:271:5)
+name: "ResponseTimeoutError"
+requestId: 1
+data: undefined
+path: "/sns/jscode2session?appid=wx5e6189f24363171b&secret=23f4e01eea5fa660ecbd802e55e1b91f&js_code=071Xbpx31LqxGQ1Hrpy31Smbx31Xbpxp&grant_type=authorization_code"
+status: -1
+headers: {}
+res: {"status":-1,"statusCode":-1,"statusMessage":null,"headers":{},"size":0,"aborted":false,"rt":7127,"keepAliveSocket":false,"requestUrls":["https://api.weixin.qq.com/sns/jscode2session?appid=wx5e6189f24363171b&secret=23f4e01eea5fa660ecbd802e55e1b91f&js_code=071Xbpx31LqxGQ1Hrpy31Smbx31Xbpxp&grant_type=authorization_code"],"timing":null,"remoteAddress":"120.198.199.239","remotePort":443,"socketHandledRequests":1,"socketHandledResponses":0}
+pid: 40607
+hostname: wuxinghengdeMacBook-Pro.local
+
+2019-04-20 16:00:46,497 ERROR 40607 [-/::1/-/7107ms POST /api/login] nodejs.ResponseTimeoutError: Response timeout for 5000ms, GET https://api.weixin.qq.com/sns/jscode2session?appid=wx5e6189f24363171b&secret=23f4e01eea5fa660ecbd802e55e1b91f&js_code=071Xbpx31LqxGQ1Hrpy31Smbx31Xbpxp&grant_type=authorization_code -1 (connected: true, keepalive socket: false, agent status: {"createSocketCount":4,"createSocketErrorCount":0,"closeSocketCount":2,"errorSocketCount":0,"timeoutSocketCount":0,"requestCount":0,"freeSockets":{},"sockets":{"api.weixin.qq.com:443::::::::::::::::::":2},"requests":{}}, socketHandledRequests: 1, socketHandledResponses: 0)
+headers: {}
+headers: {}
+    at Timeout._onTimeout (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/urllib/lib/urllib.js:869:15)
+    at listOnTimeout (timers.js:327:15)
+    at processTimers (timers.js:271:5)
+name: "ResponseTimeoutError"
+requestId: 2
+data: undefined
+path: "/sns/jscode2session?appid=wx5e6189f24363171b&secret=23f4e01eea5fa660ecbd802e55e1b91f&js_code=071Xbpx31LqxGQ1Hrpy31Smbx31Xbpxp&grant_type=authorization_code"
+status: -1
+headers: {}
+res: {"status":-1,"statusCode":-1,"statusMessage":null,"headers":{},"size":0,"aborted":false,"rt":7105,"keepAliveSocket":false,"requestUrls":["https://api.weixin.qq.com/sns/jscode2session?appid=wx5e6189f24363171b&secret=23f4e01eea5fa660ecbd802e55e1b91f&js_code=071Xbpx31LqxGQ1Hrpy31Smbx31Xbpxp&grant_type=authorization_code"],"timing":null,"remoteAddress":"120.198.199.239","remotePort":443,"socketHandledRequests":1,"socketHandledResponses":0}
+pid: 40607
+hostname: wuxinghengdeMacBook-Pro.local
+
+2019-04-20 16:02:06,356 ERROR 40607 [-/::1/-/7108ms POST /api/login] nodejs.ResponseTimeoutError: Response timeout for 5000ms, GET https://api.weixin.qq.com/sns/jscode2session?appid=wx5e6189f24363171b&secret=23f4e01eea5fa660ecbd802e55e1b91f&js_code=061ElesE1q4jp708gHqE14GbsE1Eles0&grant_type=authorization_code -1 (connected: true, keepalive socket: false, agent status: {"createSocketCount":8,"createSocketErrorCount":0,"closeSocketCount":8,"errorSocketCount":0,"timeoutSocketCount":5,"requestCount":5,"freeSockets":{},"sockets":{},"requests":{}}, socketHandledRequests: 1, socketHandledResponses: 0)
+headers: {}
+headers: {}
+    at Timeout._onTimeout (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/urllib/lib/urllib.js:869:15)
+    at listOnTimeout (timers.js:327:15)
+    at processTimers (timers.js:271:5)
+name: "ResponseTimeoutError"
+requestId: 8
+data: undefined
+path: "/sns/jscode2session?appid=wx5e6189f24363171b&secret=23f4e01eea5fa660ecbd802e55e1b91f&js_code=061ElesE1q4jp708gHqE14GbsE1Eles0&grant_type=authorization_code"
+status: -1
+headers: {}
+res: {"status":-1,"statusCode":-1,"statusMessage":null,"headers":{},"size":0,"aborted":false,"rt":7106,"keepAliveSocket":false,"requestUrls":["https://api.weixin.qq.com/sns/jscode2session?appid=wx5e6189f24363171b&secret=23f4e01eea5fa660ecbd802e55e1b91f&js_code=061ElesE1q4jp708gHqE14GbsE1Eles0&grant_type=authorization_code"],"timing":null,"remoteAddress":"120.198.199.239","remotePort":443,"socketHandledRequests":1,"socketHandledResponses":0}
+pid: 40607
+hostname: wuxinghengdeMacBook-Pro.local
+
+2019-04-20 16:03:53,374 ERROR 41805 [-/::1/-/7178ms POST /api/login] nodejs.ResponseTimeoutError: Response timeout for 5000ms, GET https://api.weixin.qq.com/sns/jscode2session?appid=wx5e6189f24363171b&secret=23f4e01eea5fa660ecbd802e55e1b91f&js_code=0614UBgO0Dnqi42fRAhO0W0jgO04UBgL&grant_type=authorization_code -1 (connected: true, keepalive socket: false, agent status: {"createSocketCount":1,"createSocketErrorCount":0,"closeSocketCount":1,"errorSocketCount":0,"timeoutSocketCount":0,"requestCount":0,"freeSockets":{},"sockets":{},"requests":{}}, socketHandledRequests: 1, socketHandledResponses: 0)
+headers: {}
+headers: {}
+    at Timeout._onTimeout (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/urllib/lib/urllib.js:869:15)
+    at listOnTimeout (timers.js:327:15)
+    at processTimers (timers.js:271:5)
+name: "ResponseTimeoutError"
+requestId: 1
+data: undefined
+path: "/sns/jscode2session?appid=wx5e6189f24363171b&secret=23f4e01eea5fa660ecbd802e55e1b91f&js_code=0614UBgO0Dnqi42fRAhO0W0jgO04UBgL&grant_type=authorization_code"
+status: -1
+headers: {}
+res: {"status":-1,"statusCode":-1,"statusMessage":null,"headers":{},"size":0,"aborted":false,"rt":7153,"keepAliveSocket":false,"requestUrls":["https://api.weixin.qq.com/sns/jscode2session?appid=wx5e6189f24363171b&secret=23f4e01eea5fa660ecbd802e55e1b91f&js_code=0614UBgO0Dnqi42fRAhO0W0jgO04UBgL&grant_type=authorization_code"],"timing":null,"remoteAddress":"120.198.199.239","remotePort":443,"socketHandledRequests":1,"socketHandledResponses":0}
+pid: 41805
+hostname: wuxinghengdeMacBook-Pro.local
+

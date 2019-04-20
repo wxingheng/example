@@ -164,7 +164,9 @@
     "dependencies": {
       "egg": "/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg/config/config.default.js",
       "egg-sequelize": "/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg/config/config.default.js",
-      "mysql2": "/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg/config/config.default.js"
+      "jsonwebtoken": "/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg/config/config.default.js",
+      "mysql2": "/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg/config/config.default.js",
+      "querystring": "/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg/config/config.default.js"
     },
     "devDependencies": {
       "autod": "/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg/config/config.default.js",
