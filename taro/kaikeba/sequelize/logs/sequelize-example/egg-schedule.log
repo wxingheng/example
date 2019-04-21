@@ -102,3 +102,73 @@
 2019-04-20 16:03:21,168 INFO 41797 [egg-schedule]: register schedule /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
 2019-04-20 16:03:22,105 INFO 41805 [egg-schedule]: register schedule /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-logrotator/app/schedule/clean_log.js
 2019-04-20 16:03:22,105 INFO 41805 [egg-schedule]: register schedule /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2019-04-20 17:28:41,669 INFO 77424 [Timer] /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-logrotator/app/schedule/clean_log.js next time will execute after 23478333ms at 2019-04-21 00:00:00.002
+2019-04-20 17:28:41,669 INFO 77424 [Timer] /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-logrotator/app/schedule/rotate_by_file.js next time will execute after 23479331ms at 2019-04-21 00:00:01.000
+2019-04-20 17:28:41,309 INFO 77429 [egg-schedule]: register schedule /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-logrotator/app/schedule/clean_log.js
+2019-04-20 17:28:41,309 INFO 77429 [egg-schedule]: register schedule /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2019-04-20 17:29:42,505 INFO 77879 [egg-schedule]: register schedule /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-logrotator/app/schedule/clean_log.js
+2019-04-20 17:29:42,505 INFO 77879 [egg-schedule]: register schedule /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2019-04-20 17:31:43,406 INFO 78748 [egg-schedule]: register schedule /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-logrotator/app/schedule/clean_log.js
+2019-04-20 17:31:43,406 INFO 78748 [egg-schedule]: register schedule /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2019-04-20 17:31:44,485 INFO 78753 [egg-schedule]: register schedule /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-logrotator/app/schedule/clean_log.js
+2019-04-20 17:31:44,485 INFO 78753 [egg-schedule]: register schedule /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2019-04-20 17:31:53,921 INFO 78843 [egg-schedule]: register schedule /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-logrotator/app/schedule/clean_log.js
+2019-04-20 17:31:53,921 INFO 78843 [egg-schedule]: register schedule /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2019-04-20 17:31:54,959 INFO 78844 [egg-schedule]: register schedule /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-logrotator/app/schedule/clean_log.js
+2019-04-20 17:31:54,959 INFO 78844 [egg-schedule]: register schedule /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2019-04-20 17:34:16,289 INFO 79835 [egg-schedule]: register schedule /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-logrotator/app/schedule/clean_log.js
+2019-04-20 17:34:16,289 INFO 79835 [egg-schedule]: register schedule /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2019-04-20 17:34:17,127 INFO 79836 [egg-schedule]: register schedule /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-logrotator/app/schedule/clean_log.js
+2019-04-20 17:34:17,127 INFO 79836 [egg-schedule]: register schedule /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2019-04-20 17:34:17,440 INFO 79837 [egg-schedule]: register schedule /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-logrotator/app/schedule/clean_log.js
+2019-04-20 17:34:17,440 INFO 79837 [egg-schedule]: register schedule /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2019-04-20 17:35:11,235 INFO 80194 [egg-schedule]: register schedule /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-logrotator/app/schedule/clean_log.js
+2019-04-20 17:35:11,235 INFO 80194 [egg-schedule]: register schedule /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2019-04-20 17:35:12,210 INFO 80195 [egg-schedule]: register schedule /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-logrotator/app/schedule/clean_log.js
+2019-04-20 17:35:12,210 INFO 80195 [egg-schedule]: register schedule /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2019-04-20 17:38:14,009 INFO 81453 [egg-schedule]: register schedule /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-logrotator/app/schedule/clean_log.js
+2019-04-20 17:38:14,009 INFO 81453 [egg-schedule]: register schedule /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2019-04-20 17:38:15,036 INFO 81454 [egg-schedule]: register schedule /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-logrotator/app/schedule/clean_log.js
+2019-04-20 17:38:15,036 INFO 81454 [egg-schedule]: register schedule /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2019-04-20 17:38:17,260 INFO 81465 [egg-schedule]: register schedule /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-logrotator/app/schedule/clean_log.js
+2019-04-20 17:38:17,260 INFO 81465 [egg-schedule]: register schedule /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2019-04-20 17:39:32,533 INFO 82031 [egg-schedule]: register schedule /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-logrotator/app/schedule/clean_log.js
+2019-04-20 17:39:32,533 INFO 82031 [egg-schedule]: register schedule /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2019-04-20 17:39:33,403 INFO 82032 [egg-schedule]: register schedule /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-logrotator/app/schedule/clean_log.js
+2019-04-20 17:39:33,403 INFO 82032 [egg-schedule]: register schedule /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2019-04-20 17:39:55,383 INFO 82182 [egg-schedule]: register schedule /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-logrotator/app/schedule/clean_log.js
+2019-04-20 17:39:55,383 INFO 82182 [egg-schedule]: register schedule /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2019-04-20 17:44:12,266 INFO 83937 [egg-schedule]: register schedule /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-logrotator/app/schedule/clean_log.js
+2019-04-20 17:44:12,266 INFO 83937 [egg-schedule]: register schedule /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2019-04-20 17:44:13,295 INFO 83947 [egg-schedule]: register schedule /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-logrotator/app/schedule/clean_log.js
+2019-04-20 17:44:13,295 INFO 83947 [egg-schedule]: register schedule /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2019-04-20 17:48:26,770 INFO 85685 [egg-schedule]: register schedule /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-logrotator/app/schedule/clean_log.js
+2019-04-20 17:48:26,770 INFO 85685 [egg-schedule]: register schedule /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2019-04-20 17:48:27,799 INFO 85689 [egg-schedule]: register schedule /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-logrotator/app/schedule/clean_log.js
+2019-04-20 17:48:27,799 INFO 85689 [egg-schedule]: register schedule /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2019-04-20 17:48:50,080 INFO 85845 [egg-schedule]: register schedule /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-logrotator/app/schedule/clean_log.js
+2019-04-20 17:48:50,080 INFO 85845 [egg-schedule]: register schedule /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2019-04-20 17:50:11,217 INFO 86408 [egg-schedule]: register schedule /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-logrotator/app/schedule/clean_log.js
+2019-04-20 17:50:11,217 INFO 86408 [egg-schedule]: register schedule /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2019-04-20 17:50:12,002 INFO 86409 [egg-schedule]: register schedule /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-logrotator/app/schedule/clean_log.js
+2019-04-20 17:50:12,002 INFO 86409 [egg-schedule]: register schedule /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2019-04-20 17:50:12,016 INFO 86410 [egg-schedule]: register schedule /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-logrotator/app/schedule/clean_log.js
+2019-04-20 17:50:12,016 INFO 86410 [egg-schedule]: register schedule /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2019-04-21 12:38:27,131 INFO 34869 [Timer] /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-logrotator/app/schedule/clean_log.js next time will execute after 40892871ms at 2019-04-22 00:00:00.002
+2019-04-21 12:38:27,131 INFO 34869 [Timer] /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-logrotator/app/schedule/rotate_by_file.js next time will execute after 40893869ms at 2019-04-22 00:00:01.000
+2019-04-21 12:38:26,800 INFO 34874 [egg-schedule]: register schedule /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-logrotator/app/schedule/clean_log.js
+2019-04-21 12:38:26,800 INFO 34874 [egg-schedule]: register schedule /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2019-04-21 13:18:27,649 INFO 52066 [egg-schedule]: register schedule /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-logrotator/app/schedule/clean_log.js
+2019-04-21 13:18:27,649 INFO 52066 [egg-schedule]: register schedule /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2019-04-21 13:18:27,984 INFO 52064 [Timer] /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-logrotator/app/schedule/clean_log.js next time will execute after 38492018ms at 2019-04-22 00:00:00.002
+2019-04-21 13:18:27,985 INFO 52064 [Timer] /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-logrotator/app/schedule/rotate_by_file.js next time will execute after 38493016ms at 2019-04-22 00:00:01.001
+2019-04-21 13:54:05,676 INFO 67264 [egg-schedule]: register schedule /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-logrotator/app/schedule/clean_log.js
+2019-04-21 13:54:05,676 INFO 67264 [egg-schedule]: register schedule /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2019-04-21 13:54:06,737 INFO 67344 [egg-schedule]: register schedule /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-logrotator/app/schedule/clean_log.js
+2019-04-21 13:54:06,737 INFO 67344 [egg-schedule]: register schedule /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2019-04-21 13:59:51,041 INFO 69701 [egg-schedule]: register schedule /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-logrotator/app/schedule/clean_log.js
+2019-04-21 13:59:51,041 INFO 69701 [egg-schedule]: register schedule /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2019-04-21 13:59:51,867 INFO 69702 [egg-schedule]: register schedule /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-logrotator/app/schedule/clean_log.js
+2019-04-21 13:59:51,867 INFO 69702 [egg-schedule]: register schedule /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2019-04-21 14:07:31,545 INFO 72964 [egg-schedule]: register schedule /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-logrotator/app/schedule/clean_log.js
+2019-04-21 14:07:31,545 INFO 72964 [egg-schedule]: register schedule /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-logrotator/app/schedule/rotate_by_file.js

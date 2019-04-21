@@ -55,11 +55,29 @@ class User extends Service {
     // 成功获取用户的 session_key   openid
     const openid = newdata.openid;
     const token = createToken(JSON.parse(res.rawData), openid);
-
+    // 用 openid 去user 表查询是否存在该用户
+    const user = await this.ctx.model.Api.find({
+      open_id: openid
+    });
+    if(!user){
+      // 如果找不到，就新建用户
+      this.ctx.model.Api.create({
+        name: 'name001',
+        age: 24,
+        open_id: openid,
+        token
+      });
+    }else{
+      // 用户存在就更新用户token
+      user.update({
+        token
+      });
+    }
+    // 返回token 供用户进行业务操作
     return {
       status: result.status,
       headers: result.headers,
-      data: {newdata, res, t: token},
+      data: {newdata, res, token, user, status: 0},
     }
 
   }

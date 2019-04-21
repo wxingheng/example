@@ -651,3 +651,476 @@
 2019-04-20 16:03:22,331 INFO 41805 [egg:core] dump config after load, 8ms
 2019-04-20 16:03:22,352 INFO 41805 [egg-watcher:application] watcher start success
 2019-04-20 16:03:22,370 INFO 41805 [egg:core] dump config after ready, 3ms
+2019-04-20 17:28:41,277 INFO 77429 [egg:logger] init all loggers with options: {"dir":"/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/logs/sequelize-example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"sequelize-example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2019-04-20 17:28:41,310 INFO 77429 [egg-multipart] stream mode enable
+2019-04-20 17:28:41,600 INFO 77429 [egg-static] starting static serve /public/ -> /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/public
+2019-04-20 17:28:41,603 INFO 77429 [egg-security] use csrf middleware
+2019-04-20 17:28:41,604 INFO 77429 [egg-security] use methodnoallow middleware
+2019-04-20 17:28:41,604 INFO 77429 [egg-security] use noopen middleware
+2019-04-20 17:28:41,605 INFO 77429 [egg-security] use nosniff middleware
+2019-04-20 17:28:41,605 INFO 77429 [egg-security] use xssProtection middleware
+2019-04-20 17:28:41,606 INFO 77429 [egg-security] use xframe middleware
+2019-04-20 17:28:41,606 INFO 77429 [egg-security] use dta middleware
+2019-04-20 17:28:41,606 INFO 77429 [egg-security] compose 7 middlewares into one security middleware
+2019-04-20 17:28:41,618 INFO 77429 [egg:core] dump config after load, 5ms
+2019-04-20 17:28:41,646 INFO 77429 [egg-watcher:application] watcher start success
+2019-04-20 17:28:41,664 INFO 77429 [egg:core] dump config after ready, 3ms
+2019-04-20 17:29:42,474 INFO 77879 [egg:logger] init all loggers with options: {"dir":"/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/logs/sequelize-example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"sequelize-example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2019-04-20 17:29:42,505 INFO 77879 [egg-multipart] stream mode enable
+2019-04-20 17:29:42,777 INFO 77879 [egg-static] starting static serve /public/ -> /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/public
+2019-04-20 17:29:42,779 INFO 77879 [egg-security] use csrf middleware
+2019-04-20 17:29:42,779 INFO 77879 [egg-security] use methodnoallow middleware
+2019-04-20 17:29:42,779 INFO 77879 [egg-security] use noopen middleware
+2019-04-20 17:29:42,780 INFO 77879 [egg-security] use nosniff middleware
+2019-04-20 17:29:42,780 INFO 77879 [egg-security] use xssProtection middleware
+2019-04-20 17:29:42,781 INFO 77879 [egg-security] use xframe middleware
+2019-04-20 17:29:42,781 INFO 77879 [egg-security] use dta middleware
+2019-04-20 17:29:42,781 INFO 77879 [egg-security] compose 7 middlewares into one security middleware
+2019-04-20 17:29:42,790 INFO 77879 [egg:core] dump config after load, 4ms
+2019-04-20 17:29:42,816 INFO 77879 [egg-watcher:application] watcher start success
+2019-04-20 17:29:42,834 INFO 77879 [egg:core] dump config after ready, 3ms
+2019-04-20 17:31:43,364 INFO 78748 [egg:logger] init all loggers with options: {"dir":"/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/logs/sequelize-example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"sequelize-example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2019-04-20 17:31:43,407 INFO 78748 [egg-multipart] stream mode enable
+2019-04-20 17:31:43,821 INFO 78748 [egg-static] starting static serve /public/ -> /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/public
+2019-04-20 17:31:43,824 INFO 78748 [egg-security] use csrf middleware
+2019-04-20 17:31:43,825 INFO 78748 [egg-security] use methodnoallow middleware
+2019-04-20 17:31:43,826 INFO 78748 [egg-security] use noopen middleware
+2019-04-20 17:31:43,827 INFO 78748 [egg-security] use nosniff middleware
+2019-04-20 17:31:43,827 INFO 78748 [egg-security] use xssProtection middleware
+2019-04-20 17:31:43,828 INFO 78748 [egg-security] use xframe middleware
+2019-04-20 17:31:43,828 INFO 78748 [egg-security] use dta middleware
+2019-04-20 17:31:43,828 INFO 78748 [egg-security] compose 7 middlewares into one security middleware
+2019-04-20 17:31:43,841 INFO 78748 [egg:core] dump config after load, 6ms
+2019-04-20 17:31:43,880 INFO 78748 [egg-watcher:application] watcher start success
+2019-04-20 17:31:43,901 INFO 78748 [egg:core] dump config after ready, 3ms
+2019-04-20 17:31:44,450 INFO 78753 [egg:logger] init all loggers with options: {"dir":"/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/logs/sequelize-example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"sequelize-example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2019-04-20 17:31:44,486 INFO 78753 [egg-multipart] stream mode enable
+2019-04-20 17:31:44,786 INFO 78753 [egg-static] starting static serve /public/ -> /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/public
+2019-04-20 17:31:44,788 INFO 78753 [egg-security] use csrf middleware
+2019-04-20 17:31:44,789 INFO 78753 [egg-security] use methodnoallow middleware
+2019-04-20 17:31:44,789 INFO 78753 [egg-security] use noopen middleware
+2019-04-20 17:31:44,790 INFO 78753 [egg-security] use nosniff middleware
+2019-04-20 17:31:44,790 INFO 78753 [egg-security] use xssProtection middleware
+2019-04-20 17:31:44,790 INFO 78753 [egg-security] use xframe middleware
+2019-04-20 17:31:44,791 INFO 78753 [egg-security] use dta middleware
+2019-04-20 17:31:44,791 INFO 78753 [egg-security] compose 7 middlewares into one security middleware
+2019-04-20 17:31:44,802 INFO 78753 [egg:core] dump config after load, 5ms
+2019-04-20 17:31:44,832 INFO 78753 [egg-watcher:application] watcher start success
+2019-04-20 17:31:44,853 INFO 78753 [egg:core] dump config after ready, 3ms
+2019-04-20 17:31:53,893 INFO 78843 [egg:logger] init all loggers with options: {"dir":"/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/logs/sequelize-example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"sequelize-example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2019-04-20 17:31:53,922 INFO 78843 [egg-multipart] stream mode enable
+2019-04-20 17:31:54,235 INFO 78843 [egg-static] starting static serve /public/ -> /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/public
+2019-04-20 17:31:54,238 INFO 78843 [egg-security] use csrf middleware
+2019-04-20 17:31:54,239 INFO 78843 [egg-security] use methodnoallow middleware
+2019-04-20 17:31:54,239 INFO 78843 [egg-security] use noopen middleware
+2019-04-20 17:31:54,240 INFO 78843 [egg-security] use nosniff middleware
+2019-04-20 17:31:54,240 INFO 78843 [egg-security] use xssProtection middleware
+2019-04-20 17:31:54,241 INFO 78843 [egg-security] use xframe middleware
+2019-04-20 17:31:54,242 INFO 78843 [egg-security] use dta middleware
+2019-04-20 17:31:54,242 INFO 78843 [egg-security] compose 7 middlewares into one security middleware
+2019-04-20 17:31:54,259 INFO 78843 [egg:core] dump config after load, 8ms
+2019-04-20 17:31:54,298 INFO 78843 [egg-watcher:application] watcher start success
+2019-04-20 17:31:54,318 INFO 78843 [egg:core] dump config after ready, 3ms
+2019-04-20 17:31:54,919 INFO 78844 [egg:logger] init all loggers with options: {"dir":"/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/logs/sequelize-example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"sequelize-example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2019-04-20 17:31:54,960 INFO 78844 [egg-multipart] stream mode enable
+2019-04-20 17:31:55,242 INFO 78844 [egg-static] starting static serve /public/ -> /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/public
+2019-04-20 17:31:55,245 INFO 78844 [egg-security] use csrf middleware
+2019-04-20 17:31:55,245 INFO 78844 [egg-security] use methodnoallow middleware
+2019-04-20 17:31:55,245 INFO 78844 [egg-security] use noopen middleware
+2019-04-20 17:31:55,246 INFO 78844 [egg-security] use nosniff middleware
+2019-04-20 17:31:55,246 INFO 78844 [egg-security] use xssProtection middleware
+2019-04-20 17:31:55,246 INFO 78844 [egg-security] use xframe middleware
+2019-04-20 17:31:55,247 INFO 78844 [egg-security] use dta middleware
+2019-04-20 17:31:55,247 INFO 78844 [egg-security] compose 7 middlewares into one security middleware
+2019-04-20 17:31:55,256 INFO 78844 [egg:core] dump config after load, 5ms
+2019-04-20 17:31:55,283 INFO 78844 [egg-watcher:application] watcher start success
+2019-04-20 17:31:55,301 INFO 78844 [egg:core] dump config after ready, 2ms
+2019-04-20 17:34:16,258 INFO 79835 [egg:logger] init all loggers with options: {"dir":"/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/logs/sequelize-example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"sequelize-example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2019-04-20 17:34:16,289 INFO 79835 [egg-multipart] stream mode enable
+2019-04-20 17:34:16,517 INFO 79835 [egg-static] starting static serve /public/ -> /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/public
+2019-04-20 17:34:16,519 INFO 79835 [egg-security] use csrf middleware
+2019-04-20 17:34:16,520 INFO 79835 [egg-security] use methodnoallow middleware
+2019-04-20 17:34:16,520 INFO 79835 [egg-security] use noopen middleware
+2019-04-20 17:34:16,520 INFO 79835 [egg-security] use nosniff middleware
+2019-04-20 17:34:16,521 INFO 79835 [egg-security] use xssProtection middleware
+2019-04-20 17:34:16,521 INFO 79835 [egg-security] use xframe middleware
+2019-04-20 17:34:16,525 INFO 79835 [egg-security] use dta middleware
+2019-04-20 17:34:16,525 INFO 79835 [egg-security] compose 7 middlewares into one security middleware
+2019-04-20 17:34:16,535 INFO 79835 [egg:core] dump config after load, 5ms
+2019-04-20 17:34:16,559 INFO 79835 [egg-watcher:application] watcher start success
+2019-04-20 17:34:16,576 INFO 79835 [egg:core] dump config after ready, 3ms
+2019-04-20 17:34:17,095 INFO 79836 [egg:logger] init all loggers with options: {"dir":"/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/logs/sequelize-example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"sequelize-example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2019-04-20 17:34:17,127 INFO 79836 [egg-multipart] stream mode enable
+2019-04-20 17:34:17,368 INFO 79836 [egg-static] starting static serve /public/ -> /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/public
+2019-04-20 17:34:17,370 INFO 79836 [egg-security] use csrf middleware
+2019-04-20 17:34:17,371 INFO 79836 [egg-security] use methodnoallow middleware
+2019-04-20 17:34:17,371 INFO 79836 [egg-security] use noopen middleware
+2019-04-20 17:34:17,372 INFO 79836 [egg-security] use nosniff middleware
+2019-04-20 17:34:17,372 INFO 79836 [egg-security] use xssProtection middleware
+2019-04-20 17:34:17,372 INFO 79836 [egg-security] use xframe middleware
+2019-04-20 17:34:17,373 INFO 79836 [egg-security] use dta middleware
+2019-04-20 17:34:17,373 INFO 79836 [egg-security] compose 7 middlewares into one security middleware
+2019-04-20 17:34:17,388 INFO 79836 [egg:core] dump config after load, 5ms
+2019-04-20 17:34:17,407 INFO 79836 [egg-watcher:application] watcher start success
+2019-04-20 17:34:17,402 INFO 79837 [egg:logger] init all loggers with options: {"dir":"/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/logs/sequelize-example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"sequelize-example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2019-04-20 17:34:17,441 INFO 79837 [egg-multipart] stream mode enable
+2019-04-20 17:34:17,693 INFO 79837 [egg-static] starting static serve /public/ -> /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/public
+2019-04-20 17:34:17,695 INFO 79837 [egg-security] use csrf middleware
+2019-04-20 17:34:17,696 INFO 79837 [egg-security] use methodnoallow middleware
+2019-04-20 17:34:17,696 INFO 79837 [egg-security] use noopen middleware
+2019-04-20 17:34:17,697 INFO 79837 [egg-security] use nosniff middleware
+2019-04-20 17:34:17,697 INFO 79837 [egg-security] use xssProtection middleware
+2019-04-20 17:34:17,697 INFO 79837 [egg-security] use xframe middleware
+2019-04-20 17:34:17,697 INFO 79837 [egg-security] use dta middleware
+2019-04-20 17:34:17,698 INFO 79837 [egg-security] compose 7 middlewares into one security middleware
+2019-04-20 17:34:17,712 INFO 79837 [egg:core] dump config after load, 5ms
+2019-04-20 17:34:17,737 INFO 79837 [egg-watcher:application] watcher start success
+2019-04-20 17:34:17,755 INFO 79837 [egg:core] dump config after ready, 3ms
+2019-04-20 17:35:11,201 INFO 80194 [egg:logger] init all loggers with options: {"dir":"/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/logs/sequelize-example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"sequelize-example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2019-04-20 17:35:11,236 INFO 80194 [egg-multipart] stream mode enable
+2019-04-20 17:35:11,529 INFO 80194 [egg-static] starting static serve /public/ -> /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/public
+2019-04-20 17:35:11,531 INFO 80194 [egg-security] use csrf middleware
+2019-04-20 17:35:11,532 INFO 80194 [egg-security] use methodnoallow middleware
+2019-04-20 17:35:11,532 INFO 80194 [egg-security] use noopen middleware
+2019-04-20 17:35:11,532 INFO 80194 [egg-security] use nosniff middleware
+2019-04-20 17:35:11,533 INFO 80194 [egg-security] use xssProtection middleware
+2019-04-20 17:35:11,533 INFO 80194 [egg-security] use xframe middleware
+2019-04-20 17:35:11,533 INFO 80194 [egg-security] use dta middleware
+2019-04-20 17:35:11,533 INFO 80194 [egg-security] compose 7 middlewares into one security middleware
+2019-04-20 17:35:11,543 INFO 80194 [egg:core] dump config after load, 5ms
+2019-04-20 17:35:11,569 INFO 80194 [egg-watcher:application] watcher start success
+2019-04-20 17:35:11,588 INFO 80194 [egg:core] dump config after ready, 3ms
+2019-04-20 17:35:12,178 INFO 80195 [egg:logger] init all loggers with options: {"dir":"/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/logs/sequelize-example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"sequelize-example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2019-04-20 17:35:12,210 INFO 80195 [egg-multipart] stream mode enable
+2019-04-20 17:35:12,464 INFO 80195 [egg-static] starting static serve /public/ -> /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/public
+2019-04-20 17:35:12,466 INFO 80195 [egg-security] use csrf middleware
+2019-04-20 17:35:12,467 INFO 80195 [egg-security] use methodnoallow middleware
+2019-04-20 17:35:12,467 INFO 80195 [egg-security] use noopen middleware
+2019-04-20 17:35:12,467 INFO 80195 [egg-security] use nosniff middleware
+2019-04-20 17:35:12,468 INFO 80195 [egg-security] use xssProtection middleware
+2019-04-20 17:35:12,468 INFO 80195 [egg-security] use xframe middleware
+2019-04-20 17:35:12,468 INFO 80195 [egg-security] use dta middleware
+2019-04-20 17:35:12,468 INFO 80195 [egg-security] compose 7 middlewares into one security middleware
+2019-04-20 17:35:12,479 INFO 80195 [egg:core] dump config after load, 5ms
+2019-04-20 17:35:12,506 INFO 80195 [egg-watcher:application] watcher start success
+2019-04-20 17:35:12,526 INFO 80195 [egg:core] dump config after ready, 3ms
+2019-04-20 17:38:13,972 INFO 81453 [egg:logger] init all loggers with options: {"dir":"/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/logs/sequelize-example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"sequelize-example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2019-04-20 17:38:14,009 INFO 81453 [egg-multipart] stream mode enable
+2019-04-20 17:38:14,424 INFO 81453 [egg-static] starting static serve /public/ -> /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/public
+2019-04-20 17:38:14,427 INFO 81453 [egg-security] use csrf middleware
+2019-04-20 17:38:14,428 INFO 81453 [egg-security] use methodnoallow middleware
+2019-04-20 17:38:14,428 INFO 81453 [egg-security] use noopen middleware
+2019-04-20 17:38:14,429 INFO 81453 [egg-security] use nosniff middleware
+2019-04-20 17:38:14,429 INFO 81453 [egg-security] use xssProtection middleware
+2019-04-20 17:38:14,430 INFO 81453 [egg-security] use xframe middleware
+2019-04-20 17:38:14,430 INFO 81453 [egg-security] use dta middleware
+2019-04-20 17:38:14,430 INFO 81453 [egg-security] compose 7 middlewares into one security middleware
+2019-04-20 17:38:14,442 INFO 81453 [egg:core] dump config after load, 5ms
+2019-04-20 17:38:14,474 INFO 81453 [egg-watcher:application] watcher start success
+2019-04-20 17:38:14,495 INFO 81453 [egg:core] dump config after ready, 4ms
+2019-04-20 17:38:14,999 INFO 81454 [egg:logger] init all loggers with options: {"dir":"/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/logs/sequelize-example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"sequelize-example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2019-04-20 17:38:15,037 INFO 81454 [egg-multipart] stream mode enable
+2019-04-20 17:38:15,299 INFO 81454 [egg-static] starting static serve /public/ -> /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/public
+2019-04-20 17:38:15,301 INFO 81454 [egg-security] use csrf middleware
+2019-04-20 17:38:15,301 INFO 81454 [egg-security] use methodnoallow middleware
+2019-04-20 17:38:15,301 INFO 81454 [egg-security] use noopen middleware
+2019-04-20 17:38:15,302 INFO 81454 [egg-security] use nosniff middleware
+2019-04-20 17:38:15,302 INFO 81454 [egg-security] use xssProtection middleware
+2019-04-20 17:38:15,302 INFO 81454 [egg-security] use xframe middleware
+2019-04-20 17:38:15,302 INFO 81454 [egg-security] use dta middleware
+2019-04-20 17:38:15,302 INFO 81454 [egg-security] compose 7 middlewares into one security middleware
+2019-04-20 17:38:15,312 INFO 81454 [egg:core] dump config after load, 5ms
+2019-04-20 17:38:15,336 INFO 81454 [egg-watcher:application] watcher start success
+2019-04-20 17:38:15,353 INFO 81454 [egg:core] dump config after ready, 3ms
+2019-04-20 17:38:17,230 INFO 81465 [egg:logger] init all loggers with options: {"dir":"/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/logs/sequelize-example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"sequelize-example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2019-04-20 17:38:17,260 INFO 81465 [egg-multipart] stream mode enable
+2019-04-20 17:38:17,479 INFO 81465 [egg-static] starting static serve /public/ -> /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/public
+2019-04-20 17:38:17,481 INFO 81465 [egg-security] use csrf middleware
+2019-04-20 17:38:17,482 INFO 81465 [egg-security] use methodnoallow middleware
+2019-04-20 17:38:17,482 INFO 81465 [egg-security] use noopen middleware
+2019-04-20 17:38:17,482 INFO 81465 [egg-security] use nosniff middleware
+2019-04-20 17:38:17,482 INFO 81465 [egg-security] use xssProtection middleware
+2019-04-20 17:38:17,483 INFO 81465 [egg-security] use xframe middleware
+2019-04-20 17:38:17,483 INFO 81465 [egg-security] use dta middleware
+2019-04-20 17:38:17,483 INFO 81465 [egg-security] compose 7 middlewares into one security middleware
+2019-04-20 17:38:17,495 INFO 81465 [egg:core] dump config after load, 4ms
+2019-04-20 17:38:17,516 INFO 81465 [egg-watcher:application] watcher start success
+2019-04-20 17:38:17,534 INFO 81465 [egg:core] dump config after ready, 2ms
+2019-04-20 17:39:32,498 INFO 82031 [egg:logger] init all loggers with options: {"dir":"/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/logs/sequelize-example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"sequelize-example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2019-04-20 17:39:32,533 INFO 82031 [egg-multipart] stream mode enable
+2019-04-20 17:39:32,761 INFO 82031 [egg-static] starting static serve /public/ -> /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/public
+2019-04-20 17:39:32,763 INFO 82031 [egg-security] use csrf middleware
+2019-04-20 17:39:32,763 INFO 82031 [egg-security] use methodnoallow middleware
+2019-04-20 17:39:32,764 INFO 82031 [egg-security] use noopen middleware
+2019-04-20 17:39:32,764 INFO 82031 [egg-security] use nosniff middleware
+2019-04-20 17:39:32,764 INFO 82031 [egg-security] use xssProtection middleware
+2019-04-20 17:39:32,765 INFO 82031 [egg-security] use xframe middleware
+2019-04-20 17:39:32,765 INFO 82031 [egg-security] use dta middleware
+2019-04-20 17:39:32,765 INFO 82031 [egg-security] compose 7 middlewares into one security middleware
+2019-04-20 17:39:32,777 INFO 82031 [egg:core] dump config after load, 4ms
+2019-04-20 17:39:32,800 INFO 82031 [egg-watcher:application] watcher start success
+2019-04-20 17:39:32,819 INFO 82031 [egg:core] dump config after ready, 3ms
+2019-04-20 17:39:33,365 INFO 82032 [egg:logger] init all loggers with options: {"dir":"/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/logs/sequelize-example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"sequelize-example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2019-04-20 17:39:33,404 INFO 82032 [egg-multipart] stream mode enable
+2019-04-20 17:39:33,674 INFO 82032 [egg-static] starting static serve /public/ -> /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/public
+2019-04-20 17:39:33,677 INFO 82032 [egg-security] use csrf middleware
+2019-04-20 17:39:33,677 INFO 82032 [egg-security] use methodnoallow middleware
+2019-04-20 17:39:33,678 INFO 82032 [egg-security] use noopen middleware
+2019-04-20 17:39:33,678 INFO 82032 [egg-security] use nosniff middleware
+2019-04-20 17:39:33,678 INFO 82032 [egg-security] use xssProtection middleware
+2019-04-20 17:39:33,679 INFO 82032 [egg-security] use xframe middleware
+2019-04-20 17:39:33,679 INFO 82032 [egg-security] use dta middleware
+2019-04-20 17:39:33,679 INFO 82032 [egg-security] compose 7 middlewares into one security middleware
+2019-04-20 17:39:33,695 INFO 82032 [egg:core] dump config after load, 7ms
+2019-04-20 17:39:33,730 INFO 82032 [egg-watcher:application] watcher start success
+2019-04-20 17:39:33,754 INFO 82032 [egg:core] dump config after ready, 3ms
+2019-04-20 17:39:55,350 INFO 82182 [egg:logger] init all loggers with options: {"dir":"/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/logs/sequelize-example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"sequelize-example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2019-04-20 17:39:55,383 INFO 82182 [egg-multipart] stream mode enable
+2019-04-20 17:39:55,618 INFO 82182 [egg-static] starting static serve /public/ -> /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/public
+2019-04-20 17:39:55,620 INFO 82182 [egg-security] use csrf middleware
+2019-04-20 17:39:55,621 INFO 82182 [egg-security] use methodnoallow middleware
+2019-04-20 17:39:55,621 INFO 82182 [egg-security] use noopen middleware
+2019-04-20 17:39:55,622 INFO 82182 [egg-security] use nosniff middleware
+2019-04-20 17:39:55,622 INFO 82182 [egg-security] use xssProtection middleware
+2019-04-20 17:39:55,622 INFO 82182 [egg-security] use xframe middleware
+2019-04-20 17:39:55,626 INFO 82182 [egg-security] use dta middleware
+2019-04-20 17:39:55,626 INFO 82182 [egg-security] compose 7 middlewares into one security middleware
+2019-04-20 17:39:55,635 INFO 82182 [egg:core] dump config after load, 4ms
+2019-04-20 17:39:55,658 INFO 82182 [egg-watcher:application] watcher start success
+2019-04-20 17:39:55,675 INFO 82182 [egg:core] dump config after ready, 4ms
+2019-04-20 17:44:12,217 INFO 83937 [egg:logger] init all loggers with options: {"dir":"/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/logs/sequelize-example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"sequelize-example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2019-04-20 17:44:12,266 INFO 83937 [egg-multipart] stream mode enable
+2019-04-20 17:44:12,655 INFO 83937 [egg-static] starting static serve /public/ -> /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/public
+2019-04-20 17:44:12,657 INFO 83937 [egg-security] use csrf middleware
+2019-04-20 17:44:12,657 INFO 83937 [egg-security] use methodnoallow middleware
+2019-04-20 17:44:12,658 INFO 83937 [egg-security] use noopen middleware
+2019-04-20 17:44:12,658 INFO 83937 [egg-security] use nosniff middleware
+2019-04-20 17:44:12,658 INFO 83937 [egg-security] use xssProtection middleware
+2019-04-20 17:44:12,659 INFO 83937 [egg-security] use xframe middleware
+2019-04-20 17:44:12,659 INFO 83937 [egg-security] use dta middleware
+2019-04-20 17:44:12,659 INFO 83937 [egg-security] compose 7 middlewares into one security middleware
+2019-04-20 17:44:12,669 INFO 83937 [egg:core] dump config after load, 5ms
+2019-04-20 17:44:12,696 INFO 83937 [egg-watcher:application] watcher start success
+2019-04-20 17:44:12,713 INFO 83937 [egg:core] dump config after ready, 3ms
+2019-04-20 17:44:13,263 INFO 83947 [egg:logger] init all loggers with options: {"dir":"/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/logs/sequelize-example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"sequelize-example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2019-04-20 17:44:13,296 INFO 83947 [egg-multipart] stream mode enable
+2019-04-20 17:44:13,530 INFO 83947 [egg-static] starting static serve /public/ -> /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/public
+2019-04-20 17:44:13,532 INFO 83947 [egg-security] use csrf middleware
+2019-04-20 17:44:13,532 INFO 83947 [egg-security] use methodnoallow middleware
+2019-04-20 17:44:13,532 INFO 83947 [egg-security] use noopen middleware
+2019-04-20 17:44:13,533 INFO 83947 [egg-security] use nosniff middleware
+2019-04-20 17:44:13,533 INFO 83947 [egg-security] use xssProtection middleware
+2019-04-20 17:44:13,533 INFO 83947 [egg-security] use xframe middleware
+2019-04-20 17:44:13,534 INFO 83947 [egg-security] use dta middleware
+2019-04-20 17:44:13,534 INFO 83947 [egg-security] compose 7 middlewares into one security middleware
+2019-04-20 17:44:13,547 INFO 83947 [egg:core] dump config after load, 5ms
+2019-04-20 17:44:13,573 INFO 83947 [egg-watcher:application] watcher start success
+2019-04-20 17:44:13,591 INFO 83947 [egg:core] dump config after ready, 3ms
+2019-04-20 17:48:26,736 INFO 85685 [egg:logger] init all loggers with options: {"dir":"/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/logs/sequelize-example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"sequelize-example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2019-04-20 17:48:26,771 INFO 85685 [egg-multipart] stream mode enable
+2019-04-20 17:48:27,166 INFO 85685 [egg-static] starting static serve /public/ -> /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/public
+2019-04-20 17:48:27,168 INFO 85685 [egg-security] use csrf middleware
+2019-04-20 17:48:27,169 INFO 85685 [egg-security] use methodnoallow middleware
+2019-04-20 17:48:27,169 INFO 85685 [egg-security] use noopen middleware
+2019-04-20 17:48:27,170 INFO 85685 [egg-security] use nosniff middleware
+2019-04-20 17:48:27,170 INFO 85685 [egg-security] use xssProtection middleware
+2019-04-20 17:48:27,171 INFO 85685 [egg-security] use xframe middleware
+2019-04-20 17:48:27,171 INFO 85685 [egg-security] use dta middleware
+2019-04-20 17:48:27,171 INFO 85685 [egg-security] compose 7 middlewares into one security middleware
+2019-04-20 17:48:27,183 INFO 85685 [egg:core] dump config after load, 5ms
+2019-04-20 17:48:27,215 INFO 85685 [egg-watcher:application] watcher start success
+2019-04-20 17:48:27,234 INFO 85685 [egg:core] dump config after ready, 3ms
+2019-04-20 17:48:27,768 INFO 85689 [egg:logger] init all loggers with options: {"dir":"/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/logs/sequelize-example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"sequelize-example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2019-04-20 17:48:27,799 INFO 85689 [egg-multipart] stream mode enable
+2019-04-20 17:48:28,047 INFO 85689 [egg-static] starting static serve /public/ -> /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/public
+2019-04-20 17:48:28,050 INFO 85689 [egg-security] use csrf middleware
+2019-04-20 17:48:28,050 INFO 85689 [egg-security] use methodnoallow middleware
+2019-04-20 17:48:28,051 INFO 85689 [egg-security] use noopen middleware
+2019-04-20 17:48:28,051 INFO 85689 [egg-security] use nosniff middleware
+2019-04-20 17:48:28,051 INFO 85689 [egg-security] use xssProtection middleware
+2019-04-20 17:48:28,052 INFO 85689 [egg-security] use xframe middleware
+2019-04-20 17:48:28,052 INFO 85689 [egg-security] use dta middleware
+2019-04-20 17:48:28,052 INFO 85689 [egg-security] compose 7 middlewares into one security middleware
+2019-04-20 17:48:28,061 INFO 85689 [egg:core] dump config after load, 4ms
+2019-04-20 17:48:28,088 INFO 85689 [egg-watcher:application] watcher start success
+2019-04-20 17:48:28,107 INFO 85689 [egg:core] dump config after ready, 4ms
+2019-04-20 17:48:50,038 INFO 85845 [egg:logger] init all loggers with options: {"dir":"/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/logs/sequelize-example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"sequelize-example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2019-04-20 17:48:50,081 INFO 85845 [egg-multipart] stream mode enable
+2019-04-20 17:48:50,496 INFO 85845 [egg-static] starting static serve /public/ -> /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/public
+2019-04-20 17:48:50,498 INFO 85845 [egg-security] use csrf middleware
+2019-04-20 17:48:50,499 INFO 85845 [egg-security] use methodnoallow middleware
+2019-04-20 17:48:50,499 INFO 85845 [egg-security] use noopen middleware
+2019-04-20 17:48:50,500 INFO 85845 [egg-security] use nosniff middleware
+2019-04-20 17:48:50,500 INFO 85845 [egg-security] use xssProtection middleware
+2019-04-20 17:48:50,501 INFO 85845 [egg-security] use xframe middleware
+2019-04-20 17:48:50,501 INFO 85845 [egg-security] use dta middleware
+2019-04-20 17:48:50,501 INFO 85845 [egg-security] compose 7 middlewares into one security middleware
+2019-04-20 17:48:50,511 INFO 85845 [egg:core] dump config after load, 4ms
+2019-04-20 17:48:50,539 INFO 85845 [egg-watcher:application] watcher start success
+2019-04-20 17:48:50,559 INFO 85845 [egg:core] dump config after ready, 3ms
+2019-04-20 17:50:11,185 INFO 86408 [egg:logger] init all loggers with options: {"dir":"/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/logs/sequelize-example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"sequelize-example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2019-04-20 17:50:11,217 INFO 86408 [egg-multipart] stream mode enable
+2019-04-20 17:50:11,441 INFO 86408 [egg-static] starting static serve /public/ -> /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/public
+2019-04-20 17:50:11,443 INFO 86408 [egg-security] use csrf middleware
+2019-04-20 17:50:11,443 INFO 86408 [egg-security] use methodnoallow middleware
+2019-04-20 17:50:11,444 INFO 86408 [egg-security] use noopen middleware
+2019-04-20 17:50:11,444 INFO 86408 [egg-security] use nosniff middleware
+2019-04-20 17:50:11,444 INFO 86408 [egg-security] use xssProtection middleware
+2019-04-20 17:50:11,445 INFO 86408 [egg-security] use xframe middleware
+2019-04-20 17:50:11,445 INFO 86408 [egg-security] use dta middleware
+2019-04-20 17:50:11,445 INFO 86408 [egg-security] compose 7 middlewares into one security middleware
+2019-04-20 17:50:11,454 INFO 86408 [egg:core] dump config after load, 4ms
+2019-04-20 17:50:11,482 INFO 86408 [egg-watcher:application] watcher start success
+2019-04-20 17:50:11,500 INFO 86408 [egg:core] dump config after ready, 3ms
+2019-04-20 17:50:11,973 INFO 86409 [egg:logger] init all loggers with options: {"dir":"/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/logs/sequelize-example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"sequelize-example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2019-04-20 17:50:12,002 INFO 86409 [egg-multipart] stream mode enable
+2019-04-20 17:50:12,230 INFO 86409 [egg-static] starting static serve /public/ -> /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/public
+2019-04-20 17:50:12,232 INFO 86409 [egg-security] use csrf middleware
+2019-04-20 17:50:12,233 INFO 86409 [egg-security] use methodnoallow middleware
+2019-04-20 17:50:12,233 INFO 86409 [egg-security] use noopen middleware
+2019-04-20 17:50:12,234 INFO 86409 [egg-security] use nosniff middleware
+2019-04-20 17:50:12,234 INFO 86409 [egg-security] use xssProtection middleware
+2019-04-20 17:50:12,234 INFO 86409 [egg-security] use xframe middleware
+2019-04-20 17:50:12,234 INFO 86409 [egg-security] use dta middleware
+2019-04-20 17:50:12,234 INFO 86409 [egg-security] compose 7 middlewares into one security middleware
+2019-04-20 17:50:12,247 INFO 86409 [egg:core] dump config after load, 8ms
+2019-04-20 17:50:12,266 INFO 86409 [egg-watcher:application] watcher start success
+2019-04-20 17:50:11,987 INFO 86410 [egg:logger] init all loggers with options: {"dir":"/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/logs/sequelize-example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"sequelize-example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2019-04-20 17:50:12,017 INFO 86410 [egg-multipart] stream mode enable
+2019-04-20 17:50:12,246 INFO 86410 [egg-static] starting static serve /public/ -> /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/public
+2019-04-20 17:50:12,248 INFO 86410 [egg-security] use csrf middleware
+2019-04-20 17:50:12,249 INFO 86410 [egg-security] use methodnoallow middleware
+2019-04-20 17:50:12,249 INFO 86410 [egg-security] use noopen middleware
+2019-04-20 17:50:12,250 INFO 86410 [egg-security] use nosniff middleware
+2019-04-20 17:50:12,250 INFO 86410 [egg-security] use xssProtection middleware
+2019-04-20 17:50:12,250 INFO 86410 [egg-security] use xframe middleware
+2019-04-20 17:50:12,251 INFO 86410 [egg-security] use dta middleware
+2019-04-20 17:50:12,251 INFO 86410 [egg-security] compose 7 middlewares into one security middleware
+2019-04-20 17:50:12,265 INFO 86410 [egg:core] dump config after load, 5ms
+2019-04-20 17:50:12,288 INFO 86410 [egg-watcher:application] watcher start success
+2019-04-20 17:50:12,307 INFO 86410 [egg:core] dump config after ready, 3ms
+2019-04-20 19:07:46,298 WARN 86410 [ClusterClient:Watcher] follower closed, and try to init it again
+2019-04-20 19:17:47,814 WARN 86410 [ClusterClient:Watcher] follower closed, and try to init it again
+2019-04-20 19:31:47,477 WARN 86410 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2019-04-20 19:31:47,477 WARN 86410 [ClusterClient:Watcher] follower closed, and try to init it again
+2019-04-20 19:34:33,403 WARN 86410 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2019-04-20 19:34:33,403 WARN 86410 [ClusterClient:Watcher] follower closed, and try to init it again
+2019-04-20 19:44:54,310 WARN 86410 [ClusterClient:Watcher] follower closed, and try to init it again
+2019-04-20 20:20:53,303 WARN 86410 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2019-04-20 20:20:53,303 WARN 86410 [ClusterClient:Watcher] follower closed, and try to init it again
+2019-04-20 20:39:40,773 WARN 86410 [ClusterClient:Watcher] follower closed, and try to init it again
+2019-04-20 21:04:00,750 WARN 86410 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2019-04-20 21:04:00,750 WARN 86410 [ClusterClient:Watcher] follower closed, and try to init it again
+2019-04-20 21:09:28,661 WARN 86410 [ClusterClient:Watcher] follower closed, and try to init it again
+2019-04-20 21:47:10,614 WARN 86410 [ClusterClient:Watcher] follower closed, and try to init it again
+2019-04-20 22:24:09,050 WARN 86410 [ClusterClient:Watcher] follower closed, and try to init it again
+2019-04-21 04:52:55,662 WARN 86410 [ClusterClient:Watcher] follower closed, and try to init it again
+2019-04-21 06:41:12,245 WARN 86410 [ClusterClient:Watcher] follower closed, and try to init it again
+2019-04-21 06:57:17,105 WARN 86410 [ClusterClient:Watcher] follower closed, and try to init it again
+2019-04-21 07:05:07,053 WARN 86410 [ClusterClient:Watcher] follower closed, and try to init it again
+2019-04-21 07:45:57,637 WARN 86410 [ClusterClient:Watcher] follower closed, and try to init it again
+2019-04-21 10:47:30,559 WARN 86410 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2019-04-21 10:47:30,559 WARN 86410 [ClusterClient:Watcher] follower closed, and try to init it again
+2019-04-21 11:30:53,729 WARN 86410 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2019-04-21 11:30:53,729 WARN 86410 [ClusterClient:Watcher] follower closed, and try to init it again
+2019-04-21 11:43:58,440 WARN 86410 [ClusterClient:Watcher] follower closed, and try to init it again
+2019-04-21 12:32:19,097 WARN 86410 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2019-04-21 12:32:19,097 WARN 86410 [ClusterClient:Watcher] follower closed, and try to init it again
+2019-04-21 12:38:26,771 INFO 34874 [egg:logger] init all loggers with options: {"dir":"/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/logs/sequelize-example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"sequelize-example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2019-04-21 12:38:26,801 INFO 34874 [egg-multipart] stream mode enable
+2019-04-21 12:38:27,074 INFO 34874 [egg-static] starting static serve /public/ -> /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/public
+2019-04-21 12:38:27,076 INFO 34874 [egg-security] use csrf middleware
+2019-04-21 12:38:27,077 INFO 34874 [egg-security] use methodnoallow middleware
+2019-04-21 12:38:27,077 INFO 34874 [egg-security] use noopen middleware
+2019-04-21 12:38:27,078 INFO 34874 [egg-security] use nosniff middleware
+2019-04-21 12:38:27,078 INFO 34874 [egg-security] use xssProtection middleware
+2019-04-21 12:38:27,079 INFO 34874 [egg-security] use xframe middleware
+2019-04-21 12:38:27,079 INFO 34874 [egg-security] use dta middleware
+2019-04-21 12:38:27,079 INFO 34874 [egg-security] compose 7 middlewares into one security middleware
+2019-04-21 12:38:27,089 INFO 34874 [egg:core] dump config after load, 5ms
+2019-04-21 12:38:27,110 INFO 34874 [egg-watcher:application] watcher start success
+2019-04-21 12:38:27,126 INFO 34874 [egg:core] dump config after ready, 3ms
+2019-04-21 13:18:27,620 INFO 52066 [egg:logger] init all loggers with options: {"dir":"/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/logs/sequelize-example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"sequelize-example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2019-04-21 13:18:27,649 INFO 52066 [egg-multipart] stream mode enable
+2019-04-21 13:18:27,916 INFO 52066 [egg-static] starting static serve /public/ -> /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/public
+2019-04-21 13:18:27,924 INFO 52066 [egg-security] use csrf middleware
+2019-04-21 13:18:27,925 INFO 52066 [egg-security] use methodnoallow middleware
+2019-04-21 13:18:27,926 INFO 52066 [egg-security] use noopen middleware
+2019-04-21 13:18:27,927 INFO 52066 [egg-security] use nosniff middleware
+2019-04-21 13:18:27,927 INFO 52066 [egg-security] use xssProtection middleware
+2019-04-21 13:18:27,928 INFO 52066 [egg-security] use xframe middleware
+2019-04-21 13:18:27,928 INFO 52066 [egg-security] use dta middleware
+2019-04-21 13:18:27,928 INFO 52066 [egg-security] compose 7 middlewares into one security middleware
+2019-04-21 13:18:27,938 INFO 52066 [egg:core] dump config after load, 5ms
+2019-04-21 13:18:27,962 INFO 52066 [egg-watcher:application] watcher start success
+2019-04-21 13:18:27,979 INFO 52066 [egg:core] dump config after ready, 3ms
+2019-04-21 13:54:05,639 INFO 67264 [egg:logger] init all loggers with options: {"dir":"/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/logs/sequelize-example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"sequelize-example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2019-04-21 13:54:05,677 INFO 67264 [egg-multipart] stream mode enable
+2019-04-21 13:54:06,141 INFO 67264 [egg-static] starting static serve /public/ -> /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/public
+2019-04-21 13:54:06,143 INFO 67264 [egg-security] use csrf middleware
+2019-04-21 13:54:06,143 INFO 67264 [egg-security] use methodnoallow middleware
+2019-04-21 13:54:06,144 INFO 67264 [egg-security] use noopen middleware
+2019-04-21 13:54:06,144 INFO 67264 [egg-security] use nosniff middleware
+2019-04-21 13:54:06,144 INFO 67264 [egg-security] use xssProtection middleware
+2019-04-21 13:54:06,145 INFO 67264 [egg-security] use xframe middleware
+2019-04-21 13:54:06,145 INFO 67264 [egg-security] use dta middleware
+2019-04-21 13:54:06,145 INFO 67264 [egg-security] compose 7 middlewares into one security middleware
+2019-04-21 13:54:06,155 INFO 67264 [egg:core] dump config after load, 4ms
+2019-04-21 13:54:06,182 INFO 67264 [egg-watcher:application] watcher start success
+2019-04-21 13:54:06,200 INFO 67264 [egg:core] dump config after ready, 3ms
+2019-04-21 13:54:06,708 INFO 67344 [egg:logger] init all loggers with options: {"dir":"/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/logs/sequelize-example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"sequelize-example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2019-04-21 13:54:06,737 INFO 67344 [egg-multipart] stream mode enable
+2019-04-21 13:54:07,010 INFO 67344 [egg-static] starting static serve /public/ -> /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/public
+2019-04-21 13:54:07,012 INFO 67344 [egg-security] use csrf middleware
+2019-04-21 13:54:07,013 INFO 67344 [egg-security] use methodnoallow middleware
+2019-04-21 13:54:07,013 INFO 67344 [egg-security] use noopen middleware
+2019-04-21 13:54:07,013 INFO 67344 [egg-security] use nosniff middleware
+2019-04-21 13:54:07,014 INFO 67344 [egg-security] use xssProtection middleware
+2019-04-21 13:54:07,014 INFO 67344 [egg-security] use xframe middleware
+2019-04-21 13:54:07,014 INFO 67344 [egg-security] use dta middleware
+2019-04-21 13:54:07,014 INFO 67344 [egg-security] compose 7 middlewares into one security middleware
+2019-04-21 13:54:07,023 INFO 67344 [egg:core] dump config after load, 4ms
+2019-04-21 13:54:07,049 INFO 67344 [egg-watcher:application] watcher start success
+2019-04-21 13:54:07,078 INFO 67344 [egg:core] dump config after ready, 5ms
+2019-04-21 13:59:51,014 INFO 69701 [egg:logger] init all loggers with options: {"dir":"/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/logs/sequelize-example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"sequelize-example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2019-04-21 13:59:51,042 INFO 69701 [egg-multipart] stream mode enable
+2019-04-21 13:59:51,262 INFO 69701 [egg-static] starting static serve /public/ -> /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/public
+2019-04-21 13:59:51,264 INFO 69701 [egg-security] use csrf middleware
+2019-04-21 13:59:51,265 INFO 69701 [egg-security] use methodnoallow middleware
+2019-04-21 13:59:51,265 INFO 69701 [egg-security] use noopen middleware
+2019-04-21 13:59:51,265 INFO 69701 [egg-security] use nosniff middleware
+2019-04-21 13:59:51,265 INFO 69701 [egg-security] use xssProtection middleware
+2019-04-21 13:59:51,266 INFO 69701 [egg-security] use xframe middleware
+2019-04-21 13:59:51,266 INFO 69701 [egg-security] use dta middleware
+2019-04-21 13:59:51,266 INFO 69701 [egg-security] compose 7 middlewares into one security middleware
+2019-04-21 13:59:51,279 INFO 69701 [egg:core] dump config after load, 4ms
+2019-04-21 13:59:51,306 INFO 69701 [egg-watcher:application] watcher start success
+2019-04-21 13:59:51,325 INFO 69701 [egg:core] dump config after ready, 3ms
+2019-04-21 13:59:51,832 INFO 69702 [egg:logger] init all loggers with options: {"dir":"/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/logs/sequelize-example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"sequelize-example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2019-04-21 13:59:51,868 INFO 69702 [egg-multipart] stream mode enable
+2019-04-21 13:59:52,184 INFO 69702 [egg-static] starting static serve /public/ -> /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/public
+2019-04-21 13:59:52,187 INFO 69702 [egg-security] use csrf middleware
+2019-04-21 13:59:52,187 INFO 69702 [egg-security] use methodnoallow middleware
+2019-04-21 13:59:52,188 INFO 69702 [egg-security] use noopen middleware
+2019-04-21 13:59:52,188 INFO 69702 [egg-security] use nosniff middleware
+2019-04-21 13:59:52,189 INFO 69702 [egg-security] use xssProtection middleware
+2019-04-21 13:59:52,189 INFO 69702 [egg-security] use xframe middleware
+2019-04-21 13:59:52,189 INFO 69702 [egg-security] use dta middleware
+2019-04-21 13:59:52,189 INFO 69702 [egg-security] compose 7 middlewares into one security middleware
+2019-04-21 13:59:52,200 INFO 69702 [egg:core] dump config after load, 5ms
+2019-04-21 13:59:52,234 INFO 69702 [egg-watcher:application] watcher start success
+2019-04-21 13:59:52,255 INFO 69702 [egg:core] dump config after ready, 3ms
+2019-04-21 14:07:31,507 INFO 72964 [egg:logger] init all loggers with options: {"dir":"/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/logs/sequelize-example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"sequelize-example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2019-04-21 14:07:31,546 INFO 72964 [egg-multipart] stream mode enable
+2019-04-21 14:07:31,969 INFO 72964 [egg-static] starting static serve /public/ -> /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/public
+2019-04-21 14:07:31,971 INFO 72964 [egg-security] use csrf middleware
+2019-04-21 14:07:31,972 INFO 72964 [egg-security] use methodnoallow middleware
+2019-04-21 14:07:31,972 INFO 72964 [egg-security] use noopen middleware
+2019-04-21 14:07:31,973 INFO 72964 [egg-security] use nosniff middleware
+2019-04-21 14:07:31,973 INFO 72964 [egg-security] use xssProtection middleware
+2019-04-21 14:07:31,974 INFO 72964 [egg-security] use xframe middleware
+2019-04-21 14:07:31,974 INFO 72964 [egg-security] use dta middleware
+2019-04-21 14:07:31,974 INFO 72964 [egg-security] compose 7 middlewares into one security middleware
+2019-04-21 14:07:31,984 INFO 72964 [egg:core] dump config after load, 4ms
+2019-04-21 14:07:32,011 INFO 72964 [egg-watcher:application] watcher start success
+2019-04-21 14:07:32,032 INFO 72964 [egg:core] dump config after ready, 4ms

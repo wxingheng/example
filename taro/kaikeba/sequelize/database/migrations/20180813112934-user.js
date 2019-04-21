@@ -9,8 +9,8 @@ module.exports = {
       age: INTEGER,
       created_at: DATE,
       updated_at: DATE,
-      open_id: STRING(30),
-      token: STRING(30)
+      open_id: STRING(100),
+      token: STRING(500)
     });
   },
 
