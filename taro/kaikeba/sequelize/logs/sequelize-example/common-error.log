@@ -594,3 +594,459 @@ hostname: wuxinghengdeMacBook-Pro.local
 pid: 34874
 hostname: wuxinghengdeMacBook-Pro.local
 
+2019-04-21 14:58:54,544 ERROR 52064 nodejs.ClusterClientNoResponseError: client no response in 1802308ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout.Leader._heartbeatTimer.setInterval [as _onTimeout] (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/cluster-client/lib/leader.js:77:23)
+    at listOnTimeout (timers.js:327:15)
+    at processTimers (timers.js:271:5)
+name: "ClusterClientNoResponseError"
+pid: 52064
+hostname: wuxinghengdeMacBook-Pro.local
+
+2019-04-21 15:22:59,480 ERROR 52064 nodejs.ClusterClientNoResponseError: client no response in 1404838ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout.Leader._heartbeatTimer.setInterval [as _onTimeout] (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/cluster-client/lib/leader.js:77:23)
+    at listOnTimeout (timers.js:327:15)
+    at processTimers (timers.js:271:5)
+name: "ClusterClientNoResponseError"
+pid: 52064
+hostname: wuxinghengdeMacBook-Pro.local
+
+2019-04-21 15:41:19,987 ERROR 52064 nodejs.ClusterClientNoResponseError: client no response in 960474ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout.Leader._heartbeatTimer.setInterval [as _onTimeout] (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/cluster-client/lib/leader.js:77:23)
+    at listOnTimeout (timers.js:327:15)
+    at processTimers (timers.js:271:5)
+name: "ClusterClientNoResponseError"
+pid: 52064
+hostname: wuxinghengdeMacBook-Pro.local
+
+2019-04-21 16:28:57,360 ERROR 3556 [-/127.0.0.1/-/7ms GET /api/lists] nodejs.TypeError: Cannot read property 'lists' of undefined
+    at UserController.index (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/app/controller/lists.js:12:40)
+    at Object.callFn (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-core/lib/utils/index.js:44:21)
+    at Object.classControllerMiddleware (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-core/lib/loader/mixin/controller.js:87:20)
+    at Object.callFn (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/@eggjs/router/lib/utils.js:12:21)
+    at wrappedController (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/@eggjs/router/lib/egg_router.js:322:18)
+    at dispatch (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/@eggjs/router/node_modules/koa-compose/index.js:44:32)
+    at next (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/@eggjs/router/node_modules/koa-compose/index.js:45:18)
+    at /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/@eggjs/router/lib/router.js:190:18
+    at dispatch (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/@eggjs/router/node_modules/koa-compose/index.js:44:32)
+    at /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/@eggjs/router/node_modules/koa-compose/index.js:36:12
+    at dispatch (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/@eggjs/router/lib/router.js:195:33)
+    at dispatch (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/koa-compose/index.js:42:32)
+    at /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-development/app/middleware/egg_loader_trace.js:9:56
+    at dispatch (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/koa-compose/index.js:42:32)
+    at i18n (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-i18n/app/middleware/i18n.js:13:12)
+    at dispatch (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/koa-compose/index.js:42:32)
+    at dispatch (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/koa-compose/index.js:42:32)
+    at dta (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-security/lib/middlewares/dta.js:12:12)
+    at dispatch (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/koa-compose/index.js:42:32)
+    at xframe (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-security/lib/middlewares/xframe.js:7:11)
+    at dispatch (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/koa-compose/index.js:42:32)
+    at xssProtection (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-security/lib/middlewares/xssProtection.js:7:11)
+
+pid: 3556
+hostname: wuxinghengdeMacBook-Pro.local
+
+2019-04-21 16:29:02,321 ERROR 3574 [-/127.0.0.1/-/7ms GET /api/lists] nodejs.TypeError: Cannot read property 'lists' of undefined
+    at UserController.index (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/app/controller/lists.js:12:40)
+    at Object.callFn (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-core/lib/utils/index.js:44:21)
+    at Object.classControllerMiddleware (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-core/lib/loader/mixin/controller.js:87:20)
+    at Object.callFn (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/@eggjs/router/lib/utils.js:12:21)
+    at wrappedController (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/@eggjs/router/lib/egg_router.js:322:18)
+    at dispatch (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/@eggjs/router/node_modules/koa-compose/index.js:44:32)
+    at next (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/@eggjs/router/node_modules/koa-compose/index.js:45:18)
+    at /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/@eggjs/router/lib/router.js:190:18
+    at dispatch (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/@eggjs/router/node_modules/koa-compose/index.js:44:32)
+    at /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/@eggjs/router/node_modules/koa-compose/index.js:36:12
+    at dispatch (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/@eggjs/router/lib/router.js:195:33)
+    at dispatch (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/koa-compose/index.js:42:32)
+    at /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-development/app/middleware/egg_loader_trace.js:9:56
+    at dispatch (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/koa-compose/index.js:42:32)
+    at i18n (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-i18n/app/middleware/i18n.js:13:12)
+    at dispatch (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/koa-compose/index.js:42:32)
+    at dispatch (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/koa-compose/index.js:42:32)
+    at dta (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-security/lib/middlewares/dta.js:12:12)
+    at dispatch (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/koa-compose/index.js:42:32)
+    at xframe (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-security/lib/middlewares/xframe.js:7:11)
+    at dispatch (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/koa-compose/index.js:42:32)
+    at xssProtection (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-security/lib/middlewares/xssProtection.js:7:11)
+
+pid: 3574
+hostname: wuxinghengdeMacBook-Pro.local
+
+2019-04-21 16:29:13,969 ERROR 3679 [-/127.0.0.1/-/8ms GET /api/lists] nodejs.TypeError: ctx.service.lists.lists is not a function
+    at UserController.index (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/app/controller/lists.js:12:40)
+    at Object.callFn (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-core/lib/utils/index.js:44:21)
+    at Object.classControllerMiddleware (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-core/lib/loader/mixin/controller.js:87:20)
+    at Object.callFn (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/@eggjs/router/lib/utils.js:12:21)
+    at wrappedController (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/@eggjs/router/lib/egg_router.js:322:18)
+    at dispatch (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/@eggjs/router/node_modules/koa-compose/index.js:44:32)
+    at next (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/@eggjs/router/node_modules/koa-compose/index.js:45:18)
+    at /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/@eggjs/router/lib/router.js:190:18
+    at dispatch (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/@eggjs/router/node_modules/koa-compose/index.js:44:32)
+    at /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/@eggjs/router/node_modules/koa-compose/index.js:36:12
+    at dispatch (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/@eggjs/router/lib/router.js:195:33)
+    at dispatch (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/koa-compose/index.js:42:32)
+    at /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-development/app/middleware/egg_loader_trace.js:9:56
+    at dispatch (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/koa-compose/index.js:42:32)
+    at i18n (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-i18n/app/middleware/i18n.js:13:12)
+    at dispatch (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/koa-compose/index.js:42:32)
+    at dispatch (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/koa-compose/index.js:42:32)
+    at dta (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-security/lib/middlewares/dta.js:12:12)
+    at dispatch (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/koa-compose/index.js:42:32)
+    at xframe (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-security/lib/middlewares/xframe.js:7:11)
+    at dispatch (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/koa-compose/index.js:42:32)
+    at xssProtection (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-security/lib/middlewares/xssProtection.js:7:11)
+
+pid: 3679
+hostname: wuxinghengdeMacBook-Pro.local
+
+2019-04-21 17:11:13,405 ERROR 22067 nodejs.NotFoundError: user not found
+    at Object.throw (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/koa/lib/context.js:97:11)
+    at User.update (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/app/service/lists.js:41:21)
+message: "user not found"
+pid: 22067
+hostname: wuxinghengdeMacBook-Pro.local
+
+2019-04-21 17:34:36,876 ERROR 30918 [-/127.0.0.1/-/12ms POST /api/lists] nodejs.SequelizeUniqueConstraintError: Validation error
+    at Query.formatError (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/dialects/mysql/query.js:226:16)
+    at Query.handler [as onResult] (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/dialects/mysql/query.js:68:23)
+    at Query.execute (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/mysql2/lib/commands/command.js:30:14)
+    at Connection.handlePacket (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/mysql2/lib/connection.js:449:32)
+    at PacketParser.Connection.packetParser.p [as onPacket] (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/mysql2/lib/connection.js:72:12)
+    at PacketParser.executeStart (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.Connection.stream.on.data (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/mysql2/lib/connection.js:79:25)
+    at Socket.emit (events.js:197:13)
+    at addChunk (_stream_readable.js:288:12)
+    at readableAddChunk (_stream_readable.js:269:11)
+    at Socket.Readable.push (_stream_readable.js:224:10)
+    at TCP.onStreamRead [as onread] (internal/stream_base_commons.js:145:17)
+From previous event:
+    at Query.run (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/dialects/mysql/query.js:57:12)
+    at Promise.try.then.connection (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/sequelize.js:558:20)
+From previous event:
+    at Promise.resolve.retryParameters (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/sequelize.js:555:8)
+    at /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/retry-as-promised/index.js:39:21
+    at retryAsPromised (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/retry-as-promised/index.js:29:10)
+    at Sequelize.query (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/sequelize.js:454:28)
+    at QueryInterface.bulkInsert (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/query-interface.js:1013:27)
+    at Promise.try.then.then (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/model.js:2428:36)
+    at processImmediate (timers.js:637:19)
+From previous event:
+    at Function.bulkCreate (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/model.js:2379:8)
+    at User.bulkCreate (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/app/service/lists.js:55:45)
+    at UserController.update (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/app/controller/lists.js:34:40)
+    at Object.callFn (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-core/lib/utils/index.js:44:21)
+    at Object.classControllerMiddleware (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-core/lib/loader/mixin/controller.js:87:20)
+    at Object.callFn (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/@eggjs/router/lib/utils.js:12:21)
+    at wrappedController (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/@eggjs/router/lib/egg_router.js:322:18)
+    at dispatch (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/@eggjs/router/node_modules/koa-compose/index.js:44:32)
+    at next (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/@eggjs/router/node_modules/koa-compose/index.js:45:18)
+    at /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/@eggjs/router/lib/router.js:190:18
+    at dispatch (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/@eggjs/router/node_modules/koa-compose/index.js:44:32)
+    at /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/@eggjs/router/node_modules/koa-compose/index.js:36:12
+    at dispatch (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/@eggjs/router/lib/router.js:195:33)
+    at dispatch (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/koa-compose/index.js:42:32)
+    at /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-development/app/middleware/egg_loader_trace.js:9:56
+    at dispatch (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/koa-compose/index.js:42:32)
+    at i18n (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-i18n/app/middleware/i18n.js:13:12)
+    at dispatch (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/koa-compose/index.js:42:32)
+    at dispatch (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/koa-compose/index.js:42:32)
+    at dta (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-security/lib/middlewares/dta.js:12:12)
+    at dispatch (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/koa-compose/index.js:42:32)
+    at xframe (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-security/lib/middlewares/xframe.js:7:11)
+    at dispatch (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/koa-compose/index.js:42:32)
+    at xssProtection (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-security/lib/middlewares/xssProtection.js:7:11)
+    at dispatch (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/koa-compose/index.js:42:32)
+name: "SequelizeUniqueConstraintError"
+errors: [{"message":"PRIMARY must be unique","type":"unique violation","path":"PRIMARY","value":"56","origin":"DB","instance":null,"validatorKey":"not_unique","validatorName":null,"validatorArgs":[]}]
+fields: {"PRIMARY":"56"}
+parent: {"code":"ER_DUP_ENTRY","errno":1062,"sqlState":"23000","sqlMessage":"Duplicate entry '56' for key 'PRIMARY'","sql":"INSERT INTO `lists` (`id`,`title`,`updated_at`,`created_at`,`done`) VALUES (56,'取芯隔行','2019-04-21 09:34:20','2019-04-21 09:34:20',true),(57,'按实际的看法哈克斯','2019-04-21 09:34:20','2019-04-21 09:34:20',false),(58,'发送的','2019-04-21 09:34:20','2019-04-21 09:34:20',false),(59,'f阿斯顿sdfgdsg发顺丰dsfg','2019-04-21 09:34:20','2019-04-21 09:34:20',true),(60,'明天去迈阿密am， 哈哈哈','2019-04-21 09:34:20','2019-04-21 09:34:20',true),(61,'发多少爱上对方即可','2019-04-21 09:34:20','2019-04-21 09:34:20',false),(62,'ddd','2019-04-21 09:34:20','2019-04-21 09:34:20',false);"}
+original: {"code":"ER_DUP_ENTRY","errno":1062,"sqlState":"23000","sqlMessage":"Duplicate entry '56' for key 'PRIMARY'","sql":"INSERT INTO `lists` (`id`,`title`,`updated_at`,`created_at`,`done`) VALUES (56,'取芯隔行','2019-04-21 09:34:20','2019-04-21 09:34:20',true),(57,'按实际的看法哈克斯','2019-04-21 09:34:20','2019-04-21 09:34:20',false),(58,'发送的','2019-04-21 09:34:20','2019-04-21 09:34:20',false),(59,'f阿斯顿sdfgdsg发顺丰dsfg','2019-04-21 09:34:20','2019-04-21 09:34:20',true),(60,'明天去迈阿密am， 哈哈哈','2019-04-21 09:34:20','2019-04-21 09:34:20',true),(61,'发多少爱上对方即可','2019-04-21 09:34:20','2019-04-21 09:34:20',false),(62,'ddd','2019-04-21 09:34:20','2019-04-21 09:34:20',false);"}
+sql: "INSERT INTO `lists` (`id`,`title`,`updated_at`,`created_at`,`done`) VALUES (56,'取芯隔行','2019-04-21 09:34:20','2019-04-21 09:34:20',true),(57,'按实际的看法哈克斯','2019-04-21 09:34:20','2019-04-21 09:34:20',false),(58,'发送的','2019-04-21 09:34:20','2019-04-21 09:34:20',false),(59,'f阿斯顿sdfgdsg发顺丰dsfg','2019-04-21 09:34:20','2019-04-21 09:34:20',true),(60,'明天去迈阿密am， 哈哈哈','2019-04-21 09:34:20','2019-04-21 09:34:20',true),(61,'发多少爱上对方即可','2019-04-21 09:34:20','2019-04-21 09:34:20',false),(62,'ddd','2019-04-21 09:34:20','2019-04-21 09:34:20',false);"
+pid: 30918
+hostname: wuxinghengdeMacBook-Pro.local
+
+2019-04-21 17:36:14,131 ERROR 30918 [-/127.0.0.1/-/8ms POST /api/lists] nodejs.SequelizeUniqueConstraintError: Validation error
+    at Query.formatError (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/dialects/mysql/query.js:226:16)
+    at Query.handler [as onResult] (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/dialects/mysql/query.js:68:23)
+    at Query.execute (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/mysql2/lib/commands/command.js:30:14)
+    at Connection.handlePacket (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/mysql2/lib/connection.js:449:32)
+    at PacketParser.Connection.packetParser.p [as onPacket] (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/mysql2/lib/connection.js:72:12)
+    at PacketParser.executeStart (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.Connection.stream.on.data (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/mysql2/lib/connection.js:79:25)
+    at Socket.emit (events.js:197:13)
+    at addChunk (_stream_readable.js:288:12)
+    at readableAddChunk (_stream_readable.js:269:11)
+    at Socket.Readable.push (_stream_readable.js:224:10)
+    at TCP.onStreamRead [as onread] (internal/stream_base_commons.js:145:17)
+From previous event:
+    at Query.run (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/dialects/mysql/query.js:57:12)
+    at Promise.try.then.connection (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/sequelize.js:558:20)
+From previous event:
+    at Promise.resolve.retryParameters (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/sequelize.js:555:8)
+    at /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/retry-as-promised/index.js:39:21
+    at retryAsPromised (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/retry-as-promised/index.js:29:10)
+    at Sequelize.query (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/sequelize.js:454:28)
+    at QueryInterface.bulkInsert (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/query-interface.js:1013:27)
+    at Promise.try.then.then (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/model.js:2428:36)
+    at processImmediate (timers.js:637:19)
+From previous event:
+    at Function.bulkCreate (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/model.js:2379:8)
+    at User.bulkCreate (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/app/service/lists.js:55:45)
+    at UserController.update (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/app/controller/lists.js:34:40)
+    at Object.callFn (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-core/lib/utils/index.js:44:21)
+    at Object.classControllerMiddleware (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-core/lib/loader/mixin/controller.js:87:20)
+    at Object.callFn (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/@eggjs/router/lib/utils.js:12:21)
+    at wrappedController (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/@eggjs/router/lib/egg_router.js:322:18)
+    at dispatch (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/@eggjs/router/node_modules/koa-compose/index.js:44:32)
+    at next (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/@eggjs/router/node_modules/koa-compose/index.js:45:18)
+    at /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/@eggjs/router/lib/router.js:190:18
+    at dispatch (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/@eggjs/router/node_modules/koa-compose/index.js:44:32)
+    at /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/@eggjs/router/node_modules/koa-compose/index.js:36:12
+    at dispatch (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/@eggjs/router/lib/router.js:195:33)
+    at dispatch (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/koa-compose/index.js:42:32)
+    at /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-development/app/middleware/egg_loader_trace.js:9:56
+    at dispatch (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/koa-compose/index.js:42:32)
+    at i18n (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-i18n/app/middleware/i18n.js:13:12)
+    at dispatch (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/koa-compose/index.js:42:32)
+    at dispatch (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/koa-compose/index.js:42:32)
+    at dta (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-security/lib/middlewares/dta.js:12:12)
+    at dispatch (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/koa-compose/index.js:42:32)
+    at xframe (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-security/lib/middlewares/xframe.js:7:11)
+    at dispatch (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/koa-compose/index.js:42:32)
+    at xssProtection (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-security/lib/middlewares/xssProtection.js:7:11)
+    at dispatch (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/koa-compose/index.js:42:32)
+name: "SequelizeUniqueConstraintError"
+errors: [{"message":"PRIMARY must be unique","type":"unique violation","path":"PRIMARY","value":"63","origin":"DB","instance":null,"validatorKey":"not_unique","validatorName":null,"validatorArgs":[]}]
+fields: {"PRIMARY":"63"}
+parent: {"code":"ER_DUP_ENTRY","errno":1062,"sqlState":"23000","sqlMessage":"Duplicate entry '63' for key 'PRIMARY'","sql":"INSERT INTO `lists` (`id`,`title`,`updated_at`,`created_at`,`done`) VALUES (63,'取芯隔行','2019-04-21 09:35:58','2019-04-21 09:35:58',true),(64,'按实际的看法哈克斯','2019-04-21 09:35:58','2019-04-21 09:35:58',false),(65,'发送的','2019-04-21 09:35:58','2019-04-21 09:35:58',false),(66,'f阿斯顿sdfgdsg发顺丰dsfg','2019-04-21 09:35:58','2019-04-21 09:35:58',true),(67,'明天去迈阿密am， 哈哈哈','2019-04-21 09:35:58','2019-04-21 09:35:58',true),(68,'发多少爱上对方即可','2019-04-21 09:35:58','2019-04-21 09:35:58',false),(69,'ddd111','2019-04-21 09:35:58','2019-04-21 09:35:58',false);"}
+original: {"code":"ER_DUP_ENTRY","errno":1062,"sqlState":"23000","sqlMessage":"Duplicate entry '63' for key 'PRIMARY'","sql":"INSERT INTO `lists` (`id`,`title`,`updated_at`,`created_at`,`done`) VALUES (63,'取芯隔行','2019-04-21 09:35:58','2019-04-21 09:35:58',true),(64,'按实际的看法哈克斯','2019-04-21 09:35:58','2019-04-21 09:35:58',false),(65,'发送的','2019-04-21 09:35:58','2019-04-21 09:35:58',false),(66,'f阿斯顿sdfgdsg发顺丰dsfg','2019-04-21 09:35:58','2019-04-21 09:35:58',true),(67,'明天去迈阿密am， 哈哈哈','2019-04-21 09:35:58','2019-04-21 09:35:58',true),(68,'发多少爱上对方即可','2019-04-21 09:35:58','2019-04-21 09:35:58',false),(69,'ddd111','2019-04-21 09:35:58','2019-04-21 09:35:58',false);"}
+sql: "INSERT INTO `lists` (`id`,`title`,`updated_at`,`created_at`,`done`) VALUES (63,'取芯隔行','2019-04-21 09:35:58','2019-04-21 09:35:58',true),(64,'按实际的看法哈克斯','2019-04-21 09:35:58','2019-04-21 09:35:58',false),(65,'发送的','2019-04-21 09:35:58','2019-04-21 09:35:58',false),(66,'f阿斯顿sdfgdsg发顺丰dsfg','2019-04-21 09:35:58','2019-04-21 09:35:58',true),(67,'明天去迈阿密am， 哈哈哈','2019-04-21 09:35:58','2019-04-21 09:35:58',true),(68,'发多少爱上对方即可','2019-04-21 09:35:58','2019-04-21 09:35:58',false),(69,'ddd111','2019-04-21 09:35:58','2019-04-21 09:35:58',false);"
+pid: 30918
+hostname: wuxinghengdeMacBook-Pro.local
+
+2019-04-21 17:54:29,886 ERROR 40188 [-/127.0.0.1/-/23ms POST /api/lists] nodejs.SequelizeUniqueConstraintError: Validation error
+    at Query.formatError (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/dialects/mysql/query.js:226:16)
+    at Query.handler [as onResult] (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/dialects/mysql/query.js:68:23)
+    at Query.execute (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/mysql2/lib/commands/command.js:30:14)
+    at Connection.handlePacket (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/mysql2/lib/connection.js:449:32)
+    at PacketParser.Connection.packetParser.p [as onPacket] (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/mysql2/lib/connection.js:72:12)
+    at PacketParser.executeStart (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.Connection.stream.on.data (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/mysql2/lib/connection.js:79:25)
+    at Socket.emit (events.js:197:13)
+    at addChunk (_stream_readable.js:288:12)
+    at readableAddChunk (_stream_readable.js:269:11)
+    at Socket.Readable.push (_stream_readable.js:224:10)
+    at TCP.onStreamRead [as onread] (internal/stream_base_commons.js:145:17)
+From previous event:
+    at Query.run (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/dialects/mysql/query.js:57:12)
+    at Promise.try.then.connection (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/sequelize.js:558:20)
+From previous event:
+    at Promise.resolve.retryParameters (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/sequelize.js:555:8)
+    at /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/retry-as-promised/index.js:39:21
+    at retryAsPromised (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/retry-as-promised/index.js:29:10)
+    at Sequelize.query (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/sequelize.js:454:28)
+    at QueryInterface.bulkInsert (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/query-interface.js:1013:27)
+    at Promise.try.then.then (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/model.js:2428:36)
+    at processImmediate (timers.js:637:19)
+From previous event:
+    at Function.bulkCreate (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/model.js:2379:8)
+    at User.bulkCreate (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/app/service/lists.js:55:45)
+    at UserController.update (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/app/controller/lists.js:34:40)
+    at Object.callFn (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-core/lib/utils/index.js:44:21)
+    at Object.classControllerMiddleware (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-core/lib/loader/mixin/controller.js:87:20)
+    at Object.callFn (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/@eggjs/router/lib/utils.js:12:21)
+    at wrappedController (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/@eggjs/router/lib/egg_router.js:322:18)
+    at dispatch (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/@eggjs/router/node_modules/koa-compose/index.js:44:32)
+    at next (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/@eggjs/router/node_modules/koa-compose/index.js:45:18)
+    at /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/@eggjs/router/lib/router.js:190:18
+    at dispatch (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/@eggjs/router/node_modules/koa-compose/index.js:44:32)
+    at /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/@eggjs/router/node_modules/koa-compose/index.js:36:12
+    at dispatch (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/@eggjs/router/lib/router.js:195:33)
+    at dispatch (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/koa-compose/index.js:42:32)
+    at /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-development/app/middleware/egg_loader_trace.js:9:56
+    at dispatch (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/koa-compose/index.js:42:32)
+    at i18n (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-i18n/app/middleware/i18n.js:13:12)
+    at dispatch (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/koa-compose/index.js:42:32)
+    at dispatch (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/koa-compose/index.js:42:32)
+    at dta (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-security/lib/middlewares/dta.js:12:12)
+    at dispatch (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/koa-compose/index.js:42:32)
+    at xframe (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-security/lib/middlewares/xframe.js:7:11)
+    at dispatch (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/koa-compose/index.js:42:32)
+    at xssProtection (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/egg-security/lib/middlewares/xssProtection.js:7:11)
+    at dispatch (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/koa-compose/index.js:42:32)
+name: "SequelizeUniqueConstraintError"
+errors: [{"message":"PRIMARY must be unique","type":"unique violation","path":"PRIMARY","value":"64","origin":"DB","instance":null,"validatorKey":"not_unique","validatorName":null,"validatorArgs":[]}]
+fields: {"PRIMARY":"64"}
+parent: {"code":"ER_DUP_ENTRY","errno":1062,"sqlState":"23000","sqlMessage":"Duplicate entry '64' for key 'PRIMARY'","sql":"INSERT INTO `lists` (`id`,`title`,`updated_at`,`created_at`,`done`) VALUES (64,'按实际的看法哈克斯11111','2019-04-21 09:35:58','2019-04-21 09:35:58',false);"}
+original: {"code":"ER_DUP_ENTRY","errno":1062,"sqlState":"23000","sqlMessage":"Duplicate entry '64' for key 'PRIMARY'","sql":"INSERT INTO `lists` (`id`,`title`,`updated_at`,`created_at`,`done`) VALUES (64,'按实际的看法哈克斯11111','2019-04-21 09:35:58','2019-04-21 09:35:58',false);"}
+sql: "INSERT INTO `lists` (`id`,`title`,`updated_at`,`created_at`,`done`) VALUES (64,'按实际的看法哈克斯11111','2019-04-21 09:35:58','2019-04-21 09:35:58',false);"
+pid: 40188
+hostname: wuxinghengdeMacBook-Pro.local
+
+2019-04-21 18:48:53,006 ERROR 98573 nodejs.ClusterClientNoResponseError: client no response in 65324ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout.Leader._heartbeatTimer.setInterval [as _onTimeout] (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/cluster-client/lib/leader.js:77:23)
+    at listOnTimeout (timers.js:327:15)
+    at processTimers (timers.js:271:5)
+name: "ClusterClientNoResponseError"
+pid: 98573
+hostname: wuxinghengdeMacBook-Pro.local
+
+2019-04-21 18:52:15,531 ERROR 98573 nodejs.ClusterClientNoResponseError: client no response in 162438ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout.Leader._heartbeatTimer.setInterval [as _onTimeout] (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/cluster-client/lib/leader.js:77:23)
+    at listOnTimeout (timers.js:327:15)
+    at processTimers (timers.js:271:5)
+name: "ClusterClientNoResponseError"
+pid: 98573
+hostname: wuxinghengdeMacBook-Pro.local
+
+2019-04-21 19:03:34,403 ERROR 98573 nodejs.ClusterClientNoResponseError: client no response in 638856ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout.Leader._heartbeatTimer.setInterval [as _onTimeout] (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/cluster-client/lib/leader.js:77:23)
+    at listOnTimeout (timers.js:327:15)
+    at processTimers (timers.js:271:5)
+name: "ClusterClientNoResponseError"
+pid: 98573
+hostname: wuxinghengdeMacBook-Pro.local
+
+2019-04-21 19:19:40,112 ERROR 98573 nodejs.ClusterClientNoResponseError: client no response in 945701ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout.Leader._heartbeatTimer.setInterval [as _onTimeout] (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/cluster-client/lib/leader.js:77:23)
+    at listOnTimeout (timers.js:327:15)
+    at processTimers (timers.js:271:5)
+name: "ClusterClientNoResponseError"
+pid: 98573
+hostname: wuxinghengdeMacBook-Pro.local
+
+2019-04-21 19:30:59,005 ERROR 98573 nodejs.ClusterClientNoResponseError: client no response in 638865ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout.Leader._heartbeatTimer.setInterval [as _onTimeout] (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/cluster-client/lib/leader.js:77:23)
+    at listOnTimeout (timers.js:327:15)
+    at processTimers (timers.js:271:5)
+name: "ClusterClientNoResponseError"
+pid: 98573
+hostname: wuxinghengdeMacBook-Pro.local
+
+2019-04-21 19:38:56,018 ERROR 98573 nodejs.ClusterClientNoResponseError: client no response in 436985ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout.Leader._heartbeatTimer.setInterval [as _onTimeout] (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/cluster-client/lib/leader.js:77:23)
+    at listOnTimeout (timers.js:327:15)
+    at processTimers (timers.js:271:5)
+name: "ClusterClientNoResponseError"
+pid: 98573
+hostname: wuxinghengdeMacBook-Pro.local
+
+2019-04-21 20:29:56,253 ERROR 98573 nodejs.ClusterClientNoResponseError: client no response in 3020213ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout.Leader._heartbeatTimer.setInterval [as _onTimeout] (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/cluster-client/lib/leader.js:77:23)
+    at listOnTimeout (timers.js:327:15)
+    at processTimers (timers.js:271:5)
+name: "ClusterClientNoResponseError"
+pid: 98573
+hostname: wuxinghengdeMacBook-Pro.local
+
+2019-04-21 20:38:50,972 ERROR 68610 [-/127.0.0.1/-/33ms GET /api/lists] nodejs.Error: Invalid value { open_id: 'otiAB5d9Fn3m_5abJ20EIU2FWat8' }
+    at Object.escape (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/sql-string.js:66:11)
+    at Object.escape (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/dialects/abstract/query-generator.js:936:22)
+    at Object._whereParseSingleValueObject (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/dialects/abstract/query-generator.js:2432:41)
+    at Object.whereItemQuery (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/dialects/abstract/query-generator.js:2136:21)
+    at Utils.getComplexKeys.forEach.prop (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1997:25)
+    at Array.forEach (<anonymous>)
+    at Object.whereItemsQuery (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1995:35)
+    at Object.getWhereConditions (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/dialects/abstract/query-generator.js:2459:19)
+    at Object.selectQuery (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1143:28)
+    at QueryInterface.rawSelect (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/query-interface.js:1147:37)
+    at Function.aggregate (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/model.js:1810:32)
+    at Promise.try.then (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/model.js:1855:19)
+    at processImmediate (timers.js:637:19)
+From previous event:
+    at Function.count (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/model.js:1839:8)
+    at Function.findAndCountAll (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/sequelize/lib/model.js:1903:12)
+    at User.list (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/app/service/lists.js:19:40)
+    at UserController.index (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/app/controller/lists.js:15:40)
+
+pid: 68610
+hostname: wuxinghengdeMacBook-Pro.local
+
+2019-04-22 01:39:59,097 ERROR 98573 nodejs.ClusterClientNoResponseError: client no response in 7186375ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout.Leader._heartbeatTimer.setInterval [as _onTimeout] (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/cluster-client/lib/leader.js:77:23)
+    at listOnTimeout (timers.js:327:15)
+    at processTimers (timers.js:271:5)
+name: "ClusterClientNoResponseError"
+pid: 98573
+hostname: wuxinghengdeMacBook-Pro.local
+
+2019-04-22 03:40:48,668 ERROR 98573 nodejs.ClusterClientNoResponseError: client no response in 7208858ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout.Leader._heartbeatTimer.setInterval [as _onTimeout] (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/cluster-client/lib/leader.js:77:23)
+    at listOnTimeout (timers.js:327:15)
+    at processTimers (timers.js:271:5)
+name: "ClusterClientNoResponseError"
+pid: 98573
+hostname: wuxinghengdeMacBook-Pro.local
+
+2019-04-22 05:41:41,647 ERROR 98573 nodejs.ClusterClientNoResponseError: client no response in 7212390ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout.Leader._heartbeatTimer.setInterval [as _onTimeout] (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/cluster-client/lib/leader.js:77:23)
+    at listOnTimeout (timers.js:327:15)
+    at processTimers (timers.js:271:5)
+name: "ClusterClientNoResponseError"
+pid: 98573
+hostname: wuxinghengdeMacBook-Pro.local
+
+2019-04-22 05:58:18,090 ERROR 98573 nodejs.ClusterClientNoResponseError: client no response in 956084ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout.Leader._heartbeatTimer.setInterval [as _onTimeout] (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/cluster-client/lib/leader.js:77:23)
+    at listOnTimeout (timers.js:327:15)
+    at processTimers (timers.js:271:5)
+name: "ClusterClientNoResponseError"
+pid: 98573
+hostname: wuxinghengdeMacBook-Pro.local
+
+2019-04-22 06:14:47,854 ERROR 98573 nodejs.ClusterClientNoResponseError: client no response in 949708ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout.Leader._heartbeatTimer.setInterval [as _onTimeout] (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/cluster-client/lib/leader.js:77:23)
+    at listOnTimeout (timers.js:327:15)
+    at processTimers (timers.js:271:5)
+name: "ClusterClientNoResponseError"
+pid: 98573
+hostname: wuxinghengdeMacBook-Pro.local
+
+2019-04-22 06:26:12,028 ERROR 98573 nodejs.ClusterClientNoResponseError: client no response in 644148ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout.Leader._heartbeatTimer.setInterval [as _onTimeout] (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/cluster-client/lib/leader.js:77:23)
+    at listOnTimeout (timers.js:327:15)
+    at processTimers (timers.js:271:5)
+name: "ClusterClientNoResponseError"
+pid: 98573
+hostname: wuxinghengdeMacBook-Pro.local
+
+2019-04-22 06:34:14,096 ERROR 98573 nodejs.ClusterClientNoResponseError: client no response in 442032ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout.Leader._heartbeatTimer.setInterval [as _onTimeout] (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/cluster-client/lib/leader.js:77:23)
+    at listOnTimeout (timers.js:327:15)
+    at processTimers (timers.js:271:5)
+name: "ClusterClientNoResponseError"
+pid: 98573
+hostname: wuxinghengdeMacBook-Pro.local
+
+2019-04-22 06:59:15,931 ERROR 98573 nodejs.ClusterClientNoResponseError: client no response in 1461808ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout.Leader._heartbeatTimer.setInterval [as _onTimeout] (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/cluster-client/lib/leader.js:77:23)
+    at listOnTimeout (timers.js:327:15)
+    at processTimers (timers.js:271:5)
+name: "ClusterClientNoResponseError"
+pid: 98573
+hostname: wuxinghengdeMacBook-Pro.local
+
+2019-04-22 08:00:10,449 ERROR 98573 nodejs.ClusterClientNoResponseError: client no response in 3614488ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout.Leader._heartbeatTimer.setInterval [as _onTimeout] (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/cluster-client/lib/leader.js:77:23)
+    at listOnTimeout (timers.js:327:15)
+    at processTimers (timers.js:271:5)
+name: "ClusterClientNoResponseError"
+pid: 98573
+hostname: wuxinghengdeMacBook-Pro.local
+
+2019-04-22 08:50:47,717 ERROR 98573 nodejs.ClusterClientNoResponseError: client no response in 3037246ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout.Leader._heartbeatTimer.setInterval [as _onTimeout] (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/cluster-client/lib/leader.js:77:23)
+    at listOnTimeout (timers.js:327:15)
+    at processTimers (timers.js:271:5)
+name: "ClusterClientNoResponseError"
+pid: 98573
+hostname: wuxinghengdeMacBook-Pro.local
+
+2019-04-22 08:52:42,752 ERROR 98573 nodejs.ClusterClientNoResponseError: client no response in 74978ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout.Leader._heartbeatTimer.setInterval [as _onTimeout] (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/cluster-client/lib/leader.js:77:23)
+    at listOnTimeout (timers.js:327:15)
+    at processTimers (timers.js:271:5)
+name: "ClusterClientNoResponseError"
+pid: 98573
+hostname: wuxinghengdeMacBook-Pro.local
+

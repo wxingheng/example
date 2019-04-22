@@ -1,6 +1,6 @@
 /* eslint-disable jsx-quotes */
 import Taro, { Component } from "@tarojs/taro";
-import { View, Input } from "@tarojs/components";
+import { View, Input, Button } from "@tarojs/components";
 import { AtSwipeAction, AtIcon } from "taro-ui";
 import "./index.scss";
 // import { Mcheckbox } from "./../../components/MCheckbox/index.js";
@@ -16,7 +16,7 @@ export default class Index extends Component {
     super(props);
     this.state = {
       val: "",
-      todos: Taro.getStorageSync("todos") || [],
+      todos: [], // Taro.getStorageSync("todos") || [],
       // show add button
       showAdd: true,
       // add input is focus
@@ -25,9 +25,103 @@ export default class Index extends Component {
     };
     console.log(Taro.getEnv());
   }
+  componentWillMount() {
+    this.login();
+    this.getData();
+    this.getSetting();
+  }
+
+  async getSetting() {
+    const setting = await Taro.getSetting();
+    console.log("setting----->", setting);
+  }
+
+  async login() {
+    let userInfo, loginRes;
+
+    try {
+      userInfo = await Taro.getUserInfo();
+      loginRes = await Taro.login();
+    } catch (err) {
+      console.log('err---->', err);
+      Taro.switchTab({
+         url: '../mine/index'
+        });
+      return;
+    }
+
+    console.log("userInfo---_>>", userInfo);
+    console.log("loginRes---_>>", loginRes);
+    const loginPost = {
+      code: loginRes.code,
+      rawData: userInfo.rawData,
+      signature: userInfo.signature,
+      encryptedData: userInfo.encryptedData
+    };
+    this.loginServer(loginPost);
+  }
+
+  async openSetting() {
+    Taro.openSetting().then(d => {
+      console.log(d);
+    });
+  }
+
+  async loginServer(data) {
+    const result = await Taro.ajax({
+      url: "/api/login",
+      method: "post",
+      data
+    });
+    const {
+      data: { token }
+    } = result;
+    Taro.setStorage({
+      key: "token",
+      data: token
+    });
+  }
+
+  async getData() {
+    const result = await Taro.ajax({
+      url: "/api/lists"
+    });
+    console.log("result", result);
+    if (result.code === -1) {
+      Taro.showToast({
+        title: result.msg,
+        icon: "none",
+        duration: 2000
+      });
+    } else {
+      this.setState({
+        todos: result.data.rows
+      });
+    }
+  }
+
+  async createItem(data) {
+    const result = await Taro.ajax({
+      url: "/api/list",
+      method: "post",
+      data
+    });
+    console.log("result", result);
+  }
+
+  async listSync() {
+    const result = await Taro.ajax({
+      url: "/api/lists",
+      method: "post",
+      data: this.state.todos
+    });
+    console.log("listSync--->", result);
+    this.getData();
+  }
 
   save = () => {
     Taro.setStorageSync("todos", this.state.todos);
+    // this.listSync();
   };
 
   handleInout = e => {
@@ -90,12 +184,17 @@ export default class Index extends Component {
       addFocus: true
     });
   };
-  handleAddBlur = e => {
-    console.log("handleAddBlur--->>>", e);
+  async handleAddBlur(e) {
     console.log("handleAddBlur--->>>", e.target.value);
     const result = e.target.value;
     if (result && result.trim()) {
-      console.log("11111");
+      const r = await Taro.ajax({
+        url: "/api/lists",
+        method: "post",
+        data: [{ title: result.trim(), done: false }]
+      });
+      console.log("listSync--->", r);
+      this.getData();
       this.setState(
         {
           todos: [...this.state.todos, { title: result.trim(), done: false }],
@@ -106,13 +205,12 @@ export default class Index extends Component {
         this.save
       );
     } else {
-      console.log("2222");
       this.setState({
         showAdd: true,
         addFocus: false
       });
     }
-  };
+  }
 
   handleCheckboxChange = (i, done) => {
     const todos = [...this.state.todos];
@@ -125,42 +223,70 @@ export default class Index extends Component {
     );
   };
 
-  handleItemBlur = (e, i) => {
+  async handleItemBlur(e, i) {
     console.log("+++++++++++>>>", e.target.value);
     const todos = [...this.state.todos];
     todos[i]["title"] = e.target.value;
+    const result = await Taro.ajax({
+      url: "/api/lists",
+      method: "post",
+      data: [todos[i]]
+    });
+    console.log("listSync--->", result);
+    this.getData();
     this.setState(
       {
         todos
       },
       this.save
     );
-  };
+  }
 
-  handleSwipeClick = i => {
+  async handleSwipeClick(i) {
     console.log("handleSwipeClick");
     let todos = this.state.todos;
-    todos.splice(i, 1);
-    this.setState(
-      {
-        todos
-      },
-      this.save
-    );
-  };
+    const item = this.state.todos[i];
+    if (item.id) {
+      const result = await Taro.ajax({
+        url: "/api/list/delete",
+        method: "post",
+        data: { id: item.id }
+      });
+
+      console.log("delete---->>>", result);
+
+      todos.splice(i, 1);
+      this.setState(
+        {
+          todos
+        },
+        this.save
+      );
+    } else {
+      todos.splice(i, 1);
+      this.setState(
+        {
+          todos
+        },
+        this.save
+      );
+    }
+  }
 
   render() {
     const { todos, showAdd, val, addFocus } = this.state;
     console.log("this.state---->", this.state);
     return (
       <View>
-        {/**
-       <View className="header">
-           <View className="header_left">编辑</View>
+        <View className="header">
+          {/**
+     <View className="header_left">编辑</View>
           <View className="header_center">清单</View>
-           <View className="header_right">删除</View>
+    */}
+          <View className="header_right" onClick={this.listSync}>
+            同步
+          </View>
         </View>
-      */}
         <View className="main">
           <View className="ul">
             {todos.map((item, i) => (
@@ -198,7 +324,7 @@ export default class Index extends Component {
 
           {showAdd ? (
             <View className="add" onClick={this.handleAdd}>
-              <AtIcon value="add"  size="20" color="#bbbbbb" />
+              <AtIcon value="add" size="20" color="#bbbbbb" />
             </View>
           ) : (
             // 只能第一次自动获取焦点
@@ -210,6 +336,7 @@ export default class Index extends Component {
             </View>
           )}
         </View>
+        <Button onClick={this.openSetting}>设置权限</Button>
       </View>
     );
   }

@@ -214,5 +214,54 @@
     "stack": [
       "wrappedController"
     ]
+  },
+  {
+    "name": "list",
+    "methods": [
+      "HEAD",
+      "GET"
+    ],
+    "paramNames": [],
+    "path": "/api/lists",
+    "regexp": "/^\\/api\\/lists(?:\\/(?=$))?$/",
+    "stack": [
+      "wrappedController"
+    ]
+  },
+  {
+    "name": "list",
+    "methods": [
+      "POST"
+    ],
+    "paramNames": [],
+    "path": "/api/list",
+    "regexp": "/^\\/api\\/list(?:\\/(?=$))?$/",
+    "stack": [
+      "wrappedController"
+    ]
+  },
+  {
+    "name": "list",
+    "methods": [
+      "POST"
+    ],
+    "paramNames": [],
+    "path": "/api/lists",
+    "regexp": "/^\\/api\\/lists(?:\\/(?=$))?$/",
+    "stack": [
+      "wrappedController"
+    ]
+  },
+  {
+    "name": "list",
+    "methods": [
+      "POST"
+    ],
+    "paramNames": [],
+    "path": "/api/list/delete",
+    "regexp": "/^\\/api\\/list\\/delete(?:\\/(?=$))?$/",
+    "stack": [
+      "wrappedController"
+    ]
   }
 ]

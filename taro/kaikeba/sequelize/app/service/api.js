@@ -26,10 +26,13 @@ class User extends Service {
     });
   }
 
-  async find(id) {
-    const user = await this.ctx.model.User.findById(id);
+  async find(token) {
+    console.log("token------>>>>", token)
+    const user = await this.ctx.model.Api.findOne({
+      token
+    });
     if (!user) {
-      this.ctx.throw(404, 'user not found');
+      this.ctx.throw(404, 'token not found');
     }
     return user;
   }

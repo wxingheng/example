@@ -20,6 +20,8 @@ export default class Mine extends Component {
   };
 
   login(userInfo) {
+    console.log("-------userInfo--->>>", userInfo);
+
     if (typeof userInfo.target.userInfo === "undefined") {
       return;
     } else {
@@ -30,12 +32,13 @@ export default class Mine extends Component {
           signature: userInfo.detail.signature,
           encryptedData: userInfo.detail.encryptedData
         };
-        console.log("---------->>>", loginPost);
         this.loginServer(loginPost);
       });
-      // this.setState({
-      //   userInfo: userInfo.target.userInfo
-      // });
+
+      Taro.setStorage({
+        key: "userInfo",
+        data: userInfo.target.userInfo
+      });
     }
   }
 
@@ -48,10 +51,12 @@ export default class Mine extends Component {
     const {
       data: { token }
     } = result;
-    console.log("token--->", token);
     Taro.setStorage({
       key: "token",
       data: token
+    });
+    this.setState({
+      userInfo: Taro.getStorageSync("userInfo")
     });
   }
 
