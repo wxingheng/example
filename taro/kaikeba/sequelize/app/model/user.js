@@ -13,6 +13,8 @@ module.exports = app => {
     age: INTEGER,
     created_at: DATE,
     updated_at: DATE,
+    open_id: STRING(100),
+    token: STRING(500)
   });
 
   User.prototype.associate = function() {

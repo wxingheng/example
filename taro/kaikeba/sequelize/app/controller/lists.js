@@ -18,7 +18,7 @@ class UserController extends Controller {
         msg: "请登录..."
       }
     }else{
-      const user = await ctx.service.api.find(token);
+      const user = await ctx.service.user.find(token);
       ctx.body = await ctx.service.lists.list(user.open_id);
     }
   }
@@ -42,7 +42,7 @@ class UserController extends Controller {
     // ctx.body = await ctx.service.lists.update(ctx.request.body);
     const {request: {header: {token}}} = ctx;
     // 找出token 对应的 open_id
-    const user = await ctx.service.api.find(token);
+    const user = await ctx.service.user.find(token);
     const result = await ctx.service.lists.bulkCreate(ctx.request.body.map(d => ({...d, open_id: user.open_id})));
     ctx.body = {...result}
   }

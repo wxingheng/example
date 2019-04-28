@@ -3,8 +3,8 @@
 module.exports = app => {
   app.resources('users', '/users', app.controller.user);
   app.resources('posts', '/posts', app.controller.post);
-  app.post('user', '/user', app.controller.user.create);
-  app.post('api', '/api/login', app.controller.api.login);
+  // app.post('user', '/user', app.controller.user.create);
+  app.post('user', '/api/login', app.controller.user.login);
   app.get('list', '/api/lists', app.controller.lists.index);
   app.post('list', '/api/list', app.controller.lists.create);
   app.post('list', '/api/lists', app.controller.lists.update);
