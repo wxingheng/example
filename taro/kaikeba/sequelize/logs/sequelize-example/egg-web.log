@@ -1,1 +1,36 @@
 2019-04-24 08:40:06,488 INFO 55190 [egg-logrotator] app logger reload: got log-reload message
+2019-04-28 18:30:42,355 INFO 24806 [egg:logger] init all loggers with options: {"dir":"/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/logs/sequelize-example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"sequelize-example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2019-04-28 18:30:42,386 INFO 24806 [egg-multipart] stream mode enable
+2019-04-28 18:30:42,640 INFO 24806 [egg-static] starting static serve /public/ -> /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/public
+2019-04-28 18:30:42,643 INFO 24806 [egg-security] use csrf middleware
+2019-04-28 18:30:42,643 INFO 24806 [egg-security] use methodnoallow middleware
+2019-04-28 18:30:42,644 INFO 24806 [egg-security] use noopen middleware
+2019-04-28 18:30:42,644 INFO 24806 [egg-security] use nosniff middleware
+2019-04-28 18:30:42,645 INFO 24806 [egg-security] use xssProtection middleware
+2019-04-28 18:30:42,645 INFO 24806 [egg-security] use xframe middleware
+2019-04-28 18:30:42,646 INFO 24806 [egg-security] use dta middleware
+2019-04-28 18:30:42,646 INFO 24806 [egg-security] compose 7 middlewares into one security middleware
+2019-04-28 18:30:42,659 INFO 24806 [egg:core] dump config after load, 8ms
+2019-04-28 18:30:42,681 INFO 24806 [egg-watcher:application] watcher start success
+2019-04-28 18:30:42,697 INFO 24806 [egg:core] dump config after ready, 3ms
+2019-04-28 19:31:17,319 WARN 24806 [ClusterClient:Watcher] follower closed, and try to init it again
+2019-04-28 19:41:59,776 WARN 24806 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2019-04-28 19:41:59,776 WARN 24806 [ClusterClient:Watcher] follower closed, and try to init it again
+2019-04-28 20:10:47,101 WARN 24806 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2019-04-28 20:10:47,102 WARN 24806 [ClusterClient:Watcher] follower closed, and try to init it again
+2019-04-28 20:16:30,008 WARN 24806 [ClusterClient:Watcher] follower closed, and try to init it again
+2019-04-28 21:04:39,778 WARN 24806 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2019-04-28 21:04:39,778 WARN 24806 [ClusterClient:Watcher] follower closed, and try to init it again
+2019-04-28 21:21:09,669 WARN 24806 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2019-04-28 21:21:09,670 WARN 24806 [ClusterClient:Watcher] follower closed, and try to init it again
+2019-04-28 21:37:34,498 WARN 24806 [ClusterClient:Watcher] follower closed, and try to init it again
+2019-04-28 21:48:53,444 WARN 24806 [ClusterClient:Watcher] follower closed, and try to init it again
+2019-04-28 21:56:30,339 WARN 24806 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2019-04-28 21:56:30,340 WARN 24806 [ClusterClient:Watcher] follower closed, and try to init it again
+2019-04-28 22:07:13,807 WARN 24806 [ClusterClient:Watcher] follower closed, and try to init it again
+2019-04-28 23:15:05,072 WARN 24806 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2019-04-28 23:15:05,072 WARN 24806 [ClusterClient:Watcher] follower closed, and try to init it again
+2019-04-29 07:30:29,715 WARN 24806 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2019-04-29 07:30:29,721 WARN 24806 [ClusterClient:Watcher] follower closed, and try to init it again
+2019-04-29 08:50:22,874 WARN 24806 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2019-04-29 08:50:22,878 WARN 24806 [ClusterClient:Watcher] follower closed, and try to init it again

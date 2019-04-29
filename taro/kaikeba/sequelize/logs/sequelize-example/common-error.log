@@ -1,0 +1,104 @@
+2019-04-28 19:31:17,320 ERROR 24801 nodejs.ClusterClientNoResponseError: client no response in 114021ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout.Leader._heartbeatTimer.setInterval [as _onTimeout] (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/cluster-client/lib/leader.js:77:23)
+    at listOnTimeout (timers.js:327:15)
+    at processTimers (timers.js:271:5)
+name: "ClusterClientNoResponseError"
+pid: 24801
+hostname: wuxinghengdeMacBook-Pro.local
+
+2019-04-28 19:41:59,775 ERROR 24801 nodejs.ClusterClientNoResponseError: client no response in 517388ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout.Leader._heartbeatTimer.setInterval [as _onTimeout] (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/cluster-client/lib/leader.js:77:23)
+    at listOnTimeout (timers.js:327:15)
+    at processTimers (timers.js:271:5)
+name: "ClusterClientNoResponseError"
+pid: 24801
+hostname: wuxinghengdeMacBook-Pro.local
+
+2019-04-28 20:10:47,101 ERROR 24801 nodejs.ClusterClientNoResponseError: client no response in 1687312ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout.Leader._heartbeatTimer.setInterval [as _onTimeout] (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/cluster-client/lib/leader.js:77:23)
+    at listOnTimeout (timers.js:327:15)
+    at processTimers (timers.js:271:5)
+name: "ClusterClientNoResponseError"
+pid: 24801
+hostname: wuxinghengdeMacBook-Pro.local
+
+2019-04-28 20:16:30,008 ERROR 24801 nodejs.ClusterClientNoResponseError: client no response in 302865ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout.Leader._heartbeatTimer.setInterval [as _onTimeout] (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/cluster-client/lib/leader.js:77:23)
+    at listOnTimeout (timers.js:327:15)
+    at processTimers (timers.js:271:5)
+name: "ClusterClientNoResponseError"
+pid: 24801
+hostname: wuxinghengdeMacBook-Pro.local
+
+2019-04-28 21:04:39,778 ERROR 24801 nodejs.ClusterClientNoResponseError: client no response in 2869763ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout.Leader._heartbeatTimer.setInterval [as _onTimeout] (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/cluster-client/lib/leader.js:77:23)
+    at listOnTimeout (timers.js:327:15)
+    at processTimers (timers.js:271:5)
+name: "ClusterClientNoResponseError"
+pid: 24801
+hostname: wuxinghengdeMacBook-Pro.local
+
+2019-04-28 21:21:09,671 ERROR 24801 nodejs.ClusterClientNoResponseError: client no response in 949874ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout.Leader._heartbeatTimer.setInterval [as _onTimeout] (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/cluster-client/lib/leader.js:77:23)
+    at listOnTimeout (timers.js:327:15)
+    at processTimers (timers.js:271:5)
+name: "ClusterClientNoResponseError"
+pid: 24801
+hostname: wuxinghengdeMacBook-Pro.local
+
+2019-04-28 21:37:34,498 ERROR 24801 nodejs.ClusterClientNoResponseError: client no response in 944824ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout.Leader._heartbeatTimer.setInterval [as _onTimeout] (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/cluster-client/lib/leader.js:77:23)
+    at listOnTimeout (timers.js:327:15)
+    at processTimers (timers.js:271:5)
+name: "ClusterClientNoResponseError"
+pid: 24801
+hostname: wuxinghengdeMacBook-Pro.local
+
+2019-04-28 21:48:53,444 ERROR 24801 nodejs.ClusterClientNoResponseError: client no response in 638932ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout.Leader._heartbeatTimer.setInterval [as _onTimeout] (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/cluster-client/lib/leader.js:77:23)
+    at listOnTimeout (timers.js:327:15)
+    at processTimers (timers.js:271:5)
+name: "ClusterClientNoResponseError"
+pid: 24801
+hostname: wuxinghengdeMacBook-Pro.local
+
+2019-04-28 21:56:30,339 ERROR 24801 nodejs.ClusterClientNoResponseError: client no response in 436884ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout.Leader._heartbeatTimer.setInterval [as _onTimeout] (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/cluster-client/lib/leader.js:77:23)
+    at listOnTimeout (timers.js:327:15)
+    at processTimers (timers.js:271:5)
+name: "ClusterClientNoResponseError"
+pid: 24801
+hostname: wuxinghengdeMacBook-Pro.local
+
+2019-04-28 22:07:13,807 ERROR 24801 nodejs.ClusterClientNoResponseError: client no response in 603450ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout.Leader._heartbeatTimer.setInterval [as _onTimeout] (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/cluster-client/lib/leader.js:77:23)
+    at listOnTimeout (timers.js:327:15)
+    at processTimers (timers.js:271:5)
+name: "ClusterClientNoResponseError"
+pid: 24801
+hostname: wuxinghengdeMacBook-Pro.local
+
+2019-04-28 23:15:05,072 ERROR 24801 nodejs.ClusterClientNoResponseError: client no response in 4051254ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout.Leader._heartbeatTimer.setInterval [as _onTimeout] (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/cluster-client/lib/leader.js:77:23)
+    at listOnTimeout (timers.js:327:15)
+    at processTimers (timers.js:271:5)
+name: "ClusterClientNoResponseError"
+pid: 24801
+hostname: wuxinghengdeMacBook-Pro.local
+
+2019-04-29 07:30:29,717 ERROR 24801 nodejs.ClusterClientNoResponseError: client no response in 29724585ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout.Leader._heartbeatTimer.setInterval [as _onTimeout] (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/cluster-client/lib/leader.js:77:23)
+    at listOnTimeout (timers.js:327:15)
+    at processTimers (timers.js:271:5)
+name: "ClusterClientNoResponseError"
+pid: 24801
+hostname: wuxinghengdeMacBook-Pro.local
+
+2019-04-29 08:50:22,875 ERROR 24801 nodejs.ClusterClientNoResponseError: client no response in 4752996ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout.Leader._heartbeatTimer.setInterval [as _onTimeout] (/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/node_modules/cluster-client/lib/leader.js:77:23)
+    at listOnTimeout (timers.js:327:15)
+    at processTimers (timers.js:271:5)
+name: "ClusterClientNoResponseError"
+pid: 24801
+hostname: wuxinghengdeMacBook-Pro.local
+
