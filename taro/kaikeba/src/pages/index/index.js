@@ -25,10 +25,15 @@ export default class Index extends Component {
     };
     console.log(Taro.getEnv());
   }
+
   componentWillMount() {
     this.login();
-    this.getData();
-    this.getSetting();
+    console.log('11111111111')
+  }
+
+  componentDidShow = () => {
+    this.login();
+    console.log('22222222')
   }
 
   async getSetting() {
@@ -38,20 +43,16 @@ export default class Index extends Component {
 
   async login() {
     let userInfo, loginRes;
-
     try {
       userInfo = await Taro.getUserInfo();
       loginRes = await Taro.login();
     } catch (err) {
       console.log('err---->', err);
       Taro.switchTab({
-         url: '../mine/index'
-        });
+        url: '../mine/index'
+      });
       return;
     }
-
-    console.log("userInfo---_>>", userInfo);
-    console.log("loginRes---_>>", loginRes);
     const loginPost = {
       code: loginRes.code,
       rawData: userInfo.rawData,
@@ -67,6 +68,8 @@ export default class Index extends Component {
     });
   }
 
+
+  // 请求server登录成功
   async loginServer(data) {
     const result = await Taro.ajax({
       url: "/api/login",
@@ -80,13 +83,14 @@ export default class Index extends Component {
       key: "token",
       data: token
     });
+    // 拉取列表
+    this.getData();
   }
 
   async getData() {
     const result = await Taro.ajax({
       url: "/api/lists"
     });
-    console.log("result", result);
     if (result.code === -1) {
       Taro.showToast({
         title: result.msg,
@@ -327,14 +331,14 @@ export default class Index extends Component {
               <AtIcon value="add" size="20" color="#bbbbbb" />
             </View>
           ) : (
-            // 只能第一次自动获取焦点
-            <View className="ul">
-              <View className="li">
-                <Mcheckbox />
-                <Input className="input" focus={addFocus} autoFocus type="text" value={val} onBlur={this.handleAddBlur} />
+              // 只能第一次自动获取焦点
+              <View className="ul">
+                <View className="li">
+                  <Mcheckbox />
+                  <Input className="input" focus={addFocus} autoFocus type="text" value={val} onBlur={this.handleAddBlur} />
+                </View>
               </View>
-            </View>
-          )}
+            )}
         </View>
         <Button onClick={this.openSetting}>设置权限</Button>
       </View>

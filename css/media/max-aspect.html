@@ -1,0 +1,62 @@
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>aspect-ratio测试</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="keywords" content="123">
+    <meta name="description" content="321">
+    <meta name="robots" content="all">
+    <meta name="baiduspider" content="all">
+    <meta name="googlebot" content="all">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="format-detection" content="telephone=no">
+    <style type="text/css">
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        body {
+            width: 320px;
+            margin: 10px auto;
+        }
+
+        .desc {
+            color: #f00;
+        }
+
+        @media screen and (max-aspect-ratio:1/1) {
+            .desc:after {
+                content: "max-aspect-ratio:1/1";
+            }
+        }
+
+        @media screen and (max-aspect-ratio:3/4) {
+            .desc:after {
+                content: "max-aspect-ratio:3/4";
+            }
+        }
+
+        @media screen and (max-aspect-ratio:9/16) {
+            .desc:after {
+                content: "max-aspect-ratio:9/16";
+            }
+        }
+        @media screen and (aspect-ratio:16/9) {
+            .desc:after {
+                content: "aspect-ratio === 16/9";
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <p>当前屏幕的宽高比：</p>
+    <p class="desc"></p>
+
+
+</body>
+
+</html>
