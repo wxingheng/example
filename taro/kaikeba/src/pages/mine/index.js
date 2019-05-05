@@ -6,9 +6,20 @@ import Taro, { Component } from "@tarojs/taro";
 import { View, Image, Button, Text } from "@tarojs/components";
 import "./index.scss";
 import defaultValues from "@/config/default-value.js";
+import { connect } from '@tarojs/redux'
+import { loginDone } from '../../actions/user'
+
 
 console.log("defaultValues", defaultValues);
 
+
+@connect(({ user, config }) => ({
+  user, config
+}), (dispatch) => ({
+  loginDone(user) {
+    dispatch(loginDone(user))
+  },
+}))
 export default class Mine extends Component {
   constructor(props) {
     super(props);
@@ -19,8 +30,7 @@ export default class Mine extends Component {
     navigationBarTitleText: "我的"
   };
 
-  login(userInfo) {
-    console.log("-------userInfo--->>>", userInfo);
+  login = (userInfo) => {
 
     if (typeof userInfo.target.userInfo === "undefined") {
       return;
@@ -39,6 +49,8 @@ export default class Mine extends Component {
         key: "userInfo",
         data: userInfo.target.userInfo
       });
+      console.log("-------userInfo--->>>", userInfo.target.userInfo);
+      this.props.loginDone(userInfo.target.userInfo)
     }
   }
 
@@ -61,6 +73,8 @@ export default class Mine extends Component {
   }
 
   render() {
+    console.log('this.props---->', this.props)
+
     const { userInfo } = this.state;
     const cover = userInfo.avatarUrl || defaultValues.mineCover;
     const name = userInfo.nickName || "点击登录";

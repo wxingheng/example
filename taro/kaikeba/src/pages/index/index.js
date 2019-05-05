@@ -6,7 +6,24 @@ import "./index.scss";
 // import { Mcheckbox } from "./../../components/MCheckbox/index.js";
 // eslint-disable-next-line import/first
 import Mcheckbox from "@/components/Mcheckbox";
+import { connect } from '@tarojs/redux';
+import { login, getCollection, removeRecordItem } from '../../actions/user'
 
+
+@connect(({ user }) => ({
+  user
+}), (dispatch) => ({
+  // login(callback) {
+  //   dispatch(login(callback))
+  // },
+  // getCollection(list) {
+  //   dispatch(getCollection(list))
+  // },
+  // removeRecordItem(id, callback = () => { }) {
+  //   dispatch(removeRecordItem(id))
+  //   callback()
+  // }
+}))
 export default class Index extends Component {
   config = {
     navigationBarTitleText: "待办"
@@ -28,7 +45,7 @@ export default class Index extends Component {
 
   componentWillMount() {
     this.login();
-    console.log('11111111111')
+    console.log('11111111111', this.props)
   }
 
   componentDidShow = () => {
@@ -278,6 +295,7 @@ export default class Index extends Component {
   }
 
   render() {
+    console.log('this.props---->', this.props)
     const { todos, showAdd, val, addFocus } = this.state;
     console.log("this.state---->", this.state);
     return (
