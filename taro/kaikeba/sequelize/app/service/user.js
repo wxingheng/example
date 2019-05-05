@@ -80,7 +80,7 @@ class User extends Service {
     return {
       status: result.status,
       headers: result.headers,
-      data: {newdata, res, token, user, status: 0},
+      data: {token, status: 0},
     }
 
   }

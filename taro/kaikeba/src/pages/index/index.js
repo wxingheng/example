@@ -371,8 +371,10 @@ export default class Index extends Component {
               </View>
             )}
         </View>
-        <Button onClick={this.openSetting}>设置权限</Button>
       </View>
     );
   }
 }
+
+
+// <Button onClick={this.openSetting}>设置权限</Button>

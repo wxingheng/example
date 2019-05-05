@@ -21,7 +21,6 @@ class User extends Service {
        },
       }),
       status: 200,
-      open_id
     }
   }
 
