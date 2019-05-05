@@ -6,23 +6,16 @@ import "./index.scss";
 // import { Mcheckbox } from "./../../components/MCheckbox/index.js";
 // eslint-disable-next-line import/first
 import Mcheckbox from "@/components/Mcheckbox";
-import { connect } from '@tarojs/redux';
-import { login, getCollection, removeRecordItem } from '../../actions/user'
+import { connect } from '@tarojs/redux'
+import { loginDone } from '../../actions/user'
 
 
 @connect(({ user }) => ({
   user
 }), (dispatch) => ({
-  // login(callback) {
-  //   dispatch(login(callback))
-  // },
-  // getCollection(list) {
-  //   dispatch(getCollection(list))
-  // },
-  // removeRecordItem(id, callback = () => { }) {
-  //   dispatch(removeRecordItem(id))
-  //   callback()
-  // }
+  loginDone(user) {
+    dispatch(loginDone(user))
+  },
 }))
 export default class Index extends Component {
   config = {
@@ -43,14 +36,27 @@ export default class Index extends Component {
     console.log(Taro.getEnv());
   }
 
+  loadData() {
+    const { user: { isLogin } } = this.props
+    console.log('loadData-->', this.props);
+    if (!isLogin) {
+      this.login();
+      // Taro.switchTab({
+      //   url: '../mine/index'
+      // });
+    } else {
+      this.getData();
+    }
+  }
+
   componentWillMount() {
-    this.login();
-    console.log('11111111111', this.props)
+    this.loadData();
+    // this.login();
   }
 
   componentDidShow = () => {
-    this.login();
-    console.log('22222222')
+    // this.login();
+    this.loadData();
   }
 
   async getSetting() {
@@ -64,7 +70,6 @@ export default class Index extends Component {
       userInfo = await Taro.getUserInfo();
       loginRes = await Taro.login();
     } catch (err) {
-      console.log('err---->', err);
       Taro.switchTab({
         url: '../mine/index'
       });
@@ -76,6 +81,9 @@ export default class Index extends Component {
       signature: userInfo.signature,
       encryptedData: userInfo.encryptedData
     };
+    console.log('err---->', userInfo);
+
+    this.props.loginDone(userInfo.userInfo)
     this.loginServer(loginPost);
   }
 
@@ -233,9 +241,14 @@ export default class Index extends Component {
     }
   }
 
-  handleCheckboxChange = (i, done) => {
+  async handleCheckboxChange(i, done) {
     const todos = [...this.state.todos];
     todos[i]["done"] = !done;
+    await Taro.ajax({
+      url: "/api/lists",
+      method: "post",
+      data: [todos[i]]
+    });
     this.setState(
       {
         todos

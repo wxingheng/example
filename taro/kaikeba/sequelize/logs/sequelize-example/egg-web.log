@@ -57,3 +57,17 @@
 2019-05-04 18:35:46,581 WARN 39671 [ClusterClient:Watcher] follower closed, and try to init it again
 2019-05-05 09:14:56,061 WARN 39671 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
 2019-05-05 09:14:56,261 WARN 39671 [ClusterClient:Watcher] follower closed, and try to init it again
+2019-05-05 21:13:26,024 INFO 47917 [egg:logger] init all loggers with options: {"dir":"/Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/logs/sequelize-example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"sequelize-example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2019-05-05 21:13:26,057 INFO 47917 [egg-multipart] stream mode enable
+2019-05-05 21:13:26,354 INFO 47917 [egg-static] starting static serve /public/ -> /Users/wuxh/Documents/coder/github/example/taro/kaikeba/sequelize/public
+2019-05-05 21:13:26,356 INFO 47917 [egg-security] use csrf middleware
+2019-05-05 21:13:26,357 INFO 47917 [egg-security] use methodnoallow middleware
+2019-05-05 21:13:26,357 INFO 47917 [egg-security] use noopen middleware
+2019-05-05 21:13:26,358 INFO 47917 [egg-security] use nosniff middleware
+2019-05-05 21:13:26,358 INFO 47917 [egg-security] use xssProtection middleware
+2019-05-05 21:13:26,359 INFO 47917 [egg-security] use xframe middleware
+2019-05-05 21:13:26,359 INFO 47917 [egg-security] use dta middleware
+2019-05-05 21:13:26,359 INFO 47917 [egg-security] compose 7 middlewares into one security middleware
+2019-05-05 21:13:26,370 INFO 47917 [egg:core] dump config after load, 5ms
+2019-05-05 21:13:26,394 INFO 47917 [egg-watcher:application] watcher start success
+2019-05-05 21:13:26,411 INFO 47917 [egg:core] dump config after ready, 3ms

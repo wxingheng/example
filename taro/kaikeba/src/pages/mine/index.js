@@ -31,7 +31,7 @@ export default class Mine extends Component {
   };
 
   login = (userInfo) => {
-
+    console.log('login====>>>',userInfo)
     if (typeof userInfo.target.userInfo === "undefined") {
       return;
     } else {
@@ -75,9 +75,9 @@ export default class Mine extends Component {
   render() {
     console.log('this.props---->', this.props)
 
-    const { userInfo } = this.state;
-    const cover = userInfo.avatarUrl || defaultValues.mineCover;
-    const name = userInfo.nickName || "点击登录";
+    const { user } = this.props.user;
+    const cover = user.avatarUrl || defaultValues.mineCover;
+    const name = user.nickName || "点击登录";
     return (
       <View className="mine">
         <View className="mine-top">
