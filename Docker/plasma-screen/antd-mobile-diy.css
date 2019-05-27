@@ -1,0 +1,27 @@
+.am-card {
+  border-radius: 0 !important;
+  background-color: #1f222b;
+}
+.am-card::before {
+  border: 1px solid #3c3d41 !important;
+}
+.am-card-header {
+  background-color: #2d313c;
+}
+.am-card-body::before {
+  background-color: #3c3d41 !important;
+}
+.am-accordion-header,
+.am-list-item {
+  background-color: #1f222b !important;
+}
+.am-accordion::before,
+.am-accordion .am-accordion-item .am-accordion-header::after,
+.am-list-body div:not(:last-child) .am-list-line::after,
+html:not([data-scale])
+  .am-accordion
+  .am-accordion-item
+  .am-accordion-content
+  .am-accordion-content-box::after {
+  background-color: #434446 !important;
+}
