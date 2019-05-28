@@ -1,0 +1,100 @@
+<html>
+<head>
+    <style>
+        .xport, .btn {
+            display: inline;
+            text-align: center;
+        }
+    </style>
+    <script type="text/javascript" src="xlsx.full.min.js"></script>
+    <script type="text/javascript" src="FileSaver.js"></script>
+    <script>
+
+        function exportExcel(id, type, fn){
+            this._this = this;
+            this.s2ab = function(s){
+                if(typeof ArrayBuffer !== 'undefined') {
+                    var buf = new ArrayBuffer(s.length);
+                    var view = new Uint8Array(buf);
+                    for (var i=0; i!=s.length; ++i) view[i] = s.charCodeAt(i) & 0xFF;
+                    return buf;
+                } else {
+                    var buf = new Array(s.length);
+                    for (var i=0; i!=s.length; ++i) buf[i] = s.charCodeAt(i) & 0xFF;
+                    return buf;
+                }
+            };
+            this.export_table_to_excel = function(id, type, fn){
+                var wb = XLSX.utils.table_to_book(document.getElementById(id), {sheet:"Sheet JS"});
+                var wbout = XLSX.write(wb, {bookType:type, bookSST:true, type: 'binary'});
+                var fname = fn || '001.' + type;
+                try {
+                    saveAs(new Blob([this.s2ab(wbout)],{type:"application/octet-stream"}), fname);
+                } catch(e) { if(typeof console != 'undefined') console.log(e, wbout); }
+                return wbout;
+            };
+            this.doit = function(id, type, fn){
+                return this.export_table_to_excel(id, type || 'xlsx', fn);
+            };
+            this.doit(id, type, fn);
+        }
+
+    </script>
+</head>
+<body style="margin-top: 50px; position: relative;">
+<table id="table" border="1">
+    <thead>
+    <tr>
+       <th>111</th>
+       <th>222</th>
+       <th>333</th>
+       <th>444</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>This</td>
+        <td>is</td>
+        <td rowspan="2">a</td>
+        <td>Test</td>
+    </tr>
+    <tr>
+        <td>Fee</td>
+        <td>Fi</td>
+        <!-- <td>Fo</td> -->
+        <td>Fum</td>
+    </tr>
+    <tr>
+        <td colspan="2">Foo</td>
+        <!-- <td></td> -->
+        <td>Bar</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>Baz</td>
+        <td>(unicode sushi) x1f363</td>
+        <td>Qux</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+    </tr>
+    </tbody>
+</table>
+<br>
+<table id="">
+    <tbody>
+    <tr>
+        <td>XLSX Excel 2007+ XML</td>
+        <td>
+            <input type="submit" value="Export to XLSX!" onclick="exportExcel('table','xlsx','xingheng.xlsx');">
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>
