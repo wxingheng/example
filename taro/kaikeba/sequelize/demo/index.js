@@ -1,5 +1,5 @@
 const Sequelize = require('sequelize');
-const sequelize = new Sequelize('egg-sequelize-example-dev', 'root', 'zxcvbnm94927', {
+const sequelize = new Sequelize('egg-sequelize-example-dev', 'root', '123456', {
   host: 'localhost',
   dialect: 'mysql',
 

@@ -12,7 +12,7 @@ module.exports = appInfo => {
     database: "egg-sequelize-example-dev",
     host: "127.0.0.1",
     port: 3306,
-    password: "zxcvbnm94927"
+    password: "123456"
   };
 
   config.security = {
