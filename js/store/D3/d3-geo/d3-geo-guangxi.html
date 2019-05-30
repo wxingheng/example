@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>d3 geo</title>
+    <script src="../assets/d3.v4.js" charset="utf-8"></script>
+    <script src="../assets/topojson.js" charset="utf-8"></script>
+    <!-- <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script> -->
+    <!-- <script type="text/javascript" src="../assets/moment/moment.min.js"></script> -->
+    <!-- <script type="text/javascript" src="../assets/moment/locale/zh-cn.js"></script> -->
+
+    <!-- <script type="text/javascript" src="js/d3.js"></script> -->
+    <style>
+        html,
+        body,
+        svg.main {
+            width: 1920px;
+            height: 1080px;
+            padding: 0;
+            margin: 0;
+        }
+    </style>
+</head>
+
+
+<body>
+    <svg class="main">
+
+    </svg>
+</body>
+
+<script>
+    // document.getElementById('change').onclick = function () {
+    //     console.log(123);
+    //     var projection = d3.geoMercator()
+    //         .center([118.8062, 31.9208]).scale(9100)
+    //         // .center([107, 31]).scale(850)
+    //         .translate([900, 780]);
+    //     initDone();
+    // }
+    var svg = d3.select("svg");
+    var groups_out = svg.append("g")
+        .attr('class', 'map');
+
+    var zoom, zoomed, transformMap, goes = [];
+
+    var w = document.documentElement.offsetWidth || document.body.offsetWidth;
+    var h = document.documentElement.offsetHeight || document.body.offsetHeight;
+
+    //定义本省和周边省份
+    var homecity = '3201';
+    var homeProvince = '45';
+    var neighbors = ['31', '33', '34', '37'];
+
+    var geoMap = {};
+    var cityGeoMap = {};
+
+    var CHN_ADM0 = ['45'];
+
+    // 第一步 定义地图的投影
+    var projection = d3.geoMercator()
+        // .center([118.8062, 31.9208]).scale(9100)
+        .center([108, 23]).scale(6850)
+        .translate([1200, 680]);
+
+
+    //第二步 定义地理路径生成器
+    var path = d3.geoPath()
+        .projection(projection);
+
+
+    //第三步 处理地理数据
+    var getJsonCount = 0;
+    CHN_ADM0.forEach(function (v, k) {
+        d3.json("geodata/" + v + ".s.json", function (error, toporoot) {
+            goes.push(toporoot);
+            getJsonCount++;
+            if (getJsonCount == CHN_ADM0.length) {
+                initDone();
+            }
+        })
+    });
+
+    var facilityMap = {};
+
+    var initDone = function () {
+
+        goes.forEach(function (v, k) {
+            console.log(123);
+            geoMap[v.properties.name] = {
+                "province": v.properties,
+                "cities": {},
+                "transform": v.transform
+            };
+
+            //合并省份下城市的地理数据 (轮廓，用作地图边框)
+            v.provinceBorders = topojson.merge(v, v.objects.cities.geometries); 
+
+            v.objects.cities.geometries.forEach(function (a, e) {
+                geoMap[v.properties.name]['cities'][a.properties.name] = a.properties;
+                cityGeoMap[a.properties.id] = a.properties;
+            });
+
+            // 绘制城市的边界
+            //只有本省市与临近省市才绘制边界
+            if (v.properties.id == homeProvince || neighbors.includes(v.properties.id)) {
+                console.log('1111111')
+                var cityBorders = topojson.feature(v, v.objects.cities);
+                var groups = groups_out.append("g");
+                groups.selectAll("path")
+                    .data(cityBorders.features)
+                    .enter()
+                    .append("path")
+                    .style("fill", function (d, i) {
+                        return "transparent";
+                        // return v.properties.id == homeProvince ? "#202d5c" : "#152147";
+                    })
+                    .attr("stroke", function (d, i) {
+                        return "#245079";
+                        // return v.properties.id == homeProvince ? "#245079" : "#1c446b";
+                    })
+                    .attr("d", path);
+
+                groups.append("path")
+                    .datum(v.provinceBorders)
+                    .style("fill", "transparent")
+                    .attr('id', ('p' + v.properties.id))
+                    .attr("stroke", "#0f0")
+                    .attr("stroke-width", "3")
+                    .attr("d", path);
+
+            }
+
+        })
+
+
+
+    }
+</script>
+
+</html>
