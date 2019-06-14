@@ -95,7 +95,7 @@
             };
 
             //合并省份下城市的地理数据 (轮廓，用作地图边框)
-            v.provinceBorders = topojson.merge(v, v.objects.cities.geometries); 
+            v.provinceBorders = topojson.merge(v, v.objects.cities.geometries);
 
             v.objects.cities.geometries.forEach(function (a, e) {
                 geoMap[v.properties.name]['cities'][a.properties.name] = a.properties;
