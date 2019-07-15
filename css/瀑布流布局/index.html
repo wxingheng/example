@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>css 瀑布流布局</title>
+    <style>
+        * {
+            word-break: break-all;
+        }
+
+        :root {
+            --bg: #4F000B;
+            --itemBg1: #720026;
+            --itemBg2: #CE4257;
+            --itemBg3: #FFC093;
+            --itemBg4: #FF7F51;
+            --counterBg: #222;
+        }
+
+        .masonry {
+            column-gap: 0;
+            column-count: 2;
+
+        }
+
+        .item {
+            break-inside: avoid;
+            box-sizing: border-box;
+            padding: 10px;
+        }
+
+        .item__content {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            /* height: 220px; */
+            font-size: 60px;
+            color: var(--bg);
+            background: var(--itemBg1);
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="masonry">
+        <div class="item">
+            <div class="item__content">
+                11111
+            </div>
+        </div>
+        <div class="item">
+            <div class="item__content">
+                22222222222222
+            </div>
+        </div>
+        <div class="item">
+            <div class="item__content">
+                33333
+            </div>
+        </div>
+
+        <div class="item">
+            <div class="item__content">
+                44
+            </div>
+        </div>
+        <div class="item">
+            <div class="item__content">
+                55
+            </div>
+        </div>
+        <div class="item">
+            <div class="item__content">
+                66
+            </div>
+        </div>
+        <div class="item">
+            <div class="item__content">
+                77
+            </div>
+        </div>
+        <div class="item">
+            <div class="item__content">
+                88
+            </div>
+        </div>
+        <div class="item">
+            <div class="item__content">
+                99999
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
