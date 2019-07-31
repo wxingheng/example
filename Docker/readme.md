@@ -32,3 +32,6 @@ docker load < node-web-app.tar
 //  查看磁盘空间
 df -h
 
+
+
+
