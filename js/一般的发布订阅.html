@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>简单的发布订阅</title>
+</head>
+
+<body>
+    <script>
+
+        const event = {
+            list: {},
+            on: function (key, fn) {
+                if (!this.list[key]) {
+                    this.list[key] = [fn]
+                } else {
+                    this.list[key].push(fn)
+                }
+            },
+            emit: function (key, ...data) {
+                if (!this.list[key]) {
+                    return;
+                } else {
+
+                    const fns = this.list[key];
+                    fns.forEach((cb) => {
+                        cb(...data);
+                    })
+                }
+            },
+            remove: function (key, fn) {
+                if (!this.list[key]) {
+                    return;
+                } else {
+                    const fns = this.list[key];
+                    fns.forEach((cb, i) => {
+                        if (fn === cb) {
+                            this.list[key].splice(i, 1)
+                        }
+                    })
+                }
+            }
+        }
+
+        function cat(a, b) {
+            console.log('test001-a', a);
+            console.log('test001-b', b);
+        }
+        event.on('test001', cat)
+
+        event.remove('test001', cat)
+
+        event.on('test002', function (a, b) {
+            console.log('test002-a', a);
+            console.log('test002-b', b);
+        })
+
+        event.emit('test002', 12, 13)
+
+    </script>
+</body>
+
+</html>

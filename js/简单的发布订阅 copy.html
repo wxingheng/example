@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>简单的发布订阅</title>
+</head>
+
+<body>
+    <script>
+        let corp = {};
+        corp.list = {};
+        corp.on = function (key, fn) {
+            if(!this.list[key]){
+                this.list[key] = [];
+            }
+            this.list[key].push(fn);
+        }
+        corp.emit = function () {
+            // this.list.forEach(cb => {
+            //     cb(...arguments)
+            // })
+            let key = [...arguments][0];
+            let fns = this.list[key];
+
+            if(!fns || fns.length === 0){
+                return false;
+            }
+            console.log('12');
+            fns.forEach(fn => {
+                fn(...([...arguments].slice(1)))
+            })
+        }
+
+        // 测试用例
+        corp.on('join', function (position, salary) {
+            console.log('你的职位是：' + position);
+            console.log('期望薪水：' + salary);
+        });
+        corp.on('other', function (skill, hobby) {
+            console.log('你的技能有： ' + skill);
+            console.log('爱好： ' + hobby);
+        });
+
+        corp.emit('join', '前端', 10000);
+
+        console.log(corp);
+
+    </script>
+</body>
+
+</html>
