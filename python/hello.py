@@ -1,6 +1,11 @@
 # -*- coding: utf-8 -*-
-print "123"
+import urllib2
+import bs4
 
-L = []
-L.append(1)
-print L
+url = "http://www.baidu.com"
+
+print '第一种方法'
+response1 = urllib2.urlopen(url)
+print response1.getcode()
+# print response1.read()
+print bs4
