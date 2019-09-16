@@ -12,6 +12,7 @@ docker rmi  IMAGE_ID
 sudo docker run --name test001  -d -p 6060:8080 node-web-app:v1.2
 
 // 运行一个容器, 并将容器内部与外部映射 <可能需要登录 或者 sudo> 
+<!-- sudo docker run --name fed-fed-doc -v /nginx/html/fed/fed-doc:/usr/src/app/public -d -p 3000:8080 node-web-app:v1.0 -->
 sudo docker run --name test002 -v :/usr/src/app/public  -d -p 3008:8080 node-web-app:v1.0
 
 // 停止一个容器
