@@ -30,6 +30,9 @@ docker save -o node-web-app.tar node-web-app:v1.2
 // 导入镜像
 docker load < node-web-app.tar
 
+// 修改镜像名称
+docker tag c43dc1beb4b6 popup-server:1.1
+
 //  查看磁盘空间
 df -h
 
