@@ -1,5 +1,8 @@
 ## RN 基本
 
+## https://github.com/reactnativecn/react-native-guide
+## https://reactnative.cn/docs/getting-started/
+
 #### script
 
 ```

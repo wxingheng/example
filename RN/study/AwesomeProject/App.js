@@ -43,7 +43,7 @@ const App = () => {
           <View style={styles.body}>
             <View style={{ flex: 1, alignItems: 'center', backgroundColor: 'white' }}>
               <SearchBar placeholder="Search" showCancelButton />
-              <Text style={{ margin: 50 }}>123</Text>
+              <Text style={{ margin: 50 }}>12345</Text>
             </View>
             {/**
           

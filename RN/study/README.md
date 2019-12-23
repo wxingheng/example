@@ -1,5 +1,6 @@
 中文官网
 https://reactnative.cn/docs/getting-started.html
+https://github.com/thecodingmachine/react-native-boilerplate
 
 1，初始化项目
 react-native init AwesomeProject
