@@ -16,8 +16,17 @@
        * param5:  duration(整个动画运动的总时间，默认为2s) *可选
        * param6: options(用来修改默认的配置项) *可选
        **/
-      function CountUp (target, startVal, endVal, decimals, duration, options) {
+      function CountUp (
+        target,
+        startVal,
+        endVal,
+        decimals,
+        duration,
+        options,
+        callBack
+      ) {
         var self = this
+        var done = false
         self.version = function () {
           return '1.9.3'
         } // 设置版本，没什么卵用
@@ -31,7 +40,7 @@
           formattingFn: formatNumber, // 格式化数字如12345，格式化为123，45
           prefix: '', // 添加前缀如12345，变为￥12345
           suffix: '', // 添加后缀如12345 通过添加后缀变为12345$，12345元之类的
-          numerals: [], // 用来做替换操作，一般用不到，默认为空就是不用他
+          numerals: [] // 用来做替换操作，一般用不到，默认为空就是不用他
         }
         // 通过传递的options更改默认的值
         if (options && typeof options === 'object') {
@@ -51,33 +60,34 @@
         // 针对不同的浏览器做requestAnimationFrame的兼容，通过添加前缀的方式，如果添加前缀也不支持就通过定时器来写
         var lastTime = 0
         var vendors = ['webkit', 'moz', 'ms', 'o']
-        for (
-          var x = 0;
-          x < vendors.length && !window.requestAnimationFrame;
-          ++x
-        ) {
-          window.requestAnimationFrame =
-            window[vendors[x] + 'RequestAnimationFrame']
-          window.cancelAnimationFrame =
-            window[vendors[x] + 'CancelAnimationFrame'] ||
-            window[vendors[x] + 'CancelRequestAnimationFrame']
-        }
-        if (!window.requestAnimationFrame) {
-          window.requestAnimationFrame = function (callback, element) {
-            var currTime = new Date().getTime()
-            var timeToCall = Math.max(0, 16 - (currTime - lastTime))
-            var id = window.setTimeout(function () {
-              callback(currTime + timeToCall)
-            }, timeToCall)
-            lastTime = currTime + timeToCall
-            return id
-          }
-        }
-        if (!window.cancelAnimationFrame) {
-          window.cancelAnimationFrame = function (id) {
-            clearTimeout(id)
-          }
-        }
+        // for (
+        //   var x = 0;
+        //   x < vendors.length && !window.requestAnimationFrame;
+        //   ++x
+        // ) {
+        //   window.requestAnimationFrame =
+        //     window[vendors[x] + 'RequestAnimationFrame']
+        //   window.cancelAnimationFrame =
+        //     window[vendors[x] + 'CancelAnimationFrame'] ||
+        //     window[vendors[x] + 'CancelRequestAnimationFrame']
+        // }
+        // if (!window.requestAnimationFrame) {
+        //   window.requestAnimationFrame = function (callback, element) {
+        //     var currTime = new Date().getTime()
+        //     var timeToCall = Math.max(0, 16 - (currTime - lastTime))
+        //     var id = window.setTimeout(function () {
+        //       callback(currTime + timeToCall)
+        //     }, timeToCall)
+        //     lastTime = currTime + timeToCall
+        //     console.log('id', id);
+        //     return id
+        //   }
+        // }
+        // if (!window.cancelAnimationFrame) {
+        //   window.cancelAnimationFrame = function (id) {
+        //     clearTimeout(id)
+        //   }
+        // }
         // 用来格式化数字，如将12345.32格式化为123,45.32,其原理是通过将数字分割为整数部分和小数部分，然后再进行字符串的拼接。
         function formatNumber (num) {
           var neg = num < 0, // 用于判断正负数，如果是负数前面需要加-
@@ -177,6 +187,7 @@
         // 浏览器上面最终呈现的效果
         self.printValue = function (value) {
           var result = self.options.formattingFn(value)
+          callBack(result)
           // var result = value
           if (self.d.tagName === 'INPUT') {
             this.d.value = result
@@ -187,8 +198,10 @@
             this.d.innerHTML = result
           }
         }
+
         // 最核心的部分，通过缓动动画计算出一个差值，当调用requestAnimateFrame
         // 的时候会将这个值设置到目标对象的innerHTML中
+
         self.count = function (timestamp) {
           if (!self.startTime) {
             self.startTime = timestamp
@@ -207,7 +220,7 @@
                   progress,
                   0,
                   self.startVal - self.endVal,
-                  self.duration,
+                  self.duration
                 )
             } else {
               /***
@@ -221,7 +234,7 @@
                 progress,
                 self.startVal,
                 self.endVal - self.startVal,
-                self.duration,
+                self.duration
               )
               // console.log(self.frameVal)
             }
@@ -244,7 +257,7 @@
           } else {
             self.frameVal =
               self.frameVal > self.endVal ? self.endVal : self.frameVal
-            console.log(self.frameVal)
+            // console.log(self.frameVal)
           }
 
           // decimal
@@ -254,7 +267,7 @@
           self.printValue(self.frameVal)
 
           // whether to continue
-          if (progress < self.duration) {
+          if (progress < self.duration && !done) {
             self.rAF = requestAnimationFrame(self.count)
           } else {
             if (self.callback) self.callback()
@@ -266,6 +279,9 @@
           self.callback = callback
           self.rAF = requestAnimationFrame(self.count)
         }
+        self.stop = function () {
+          done = true
+        }
         // var demo = new CountUp('box', 24.02, 94.62, 0, 2)
         // demo.start()
       }
@@ -274,8 +290,13 @@
     <div id="box">12313</div>
 
     <script>
-      var _countup = new CountUp('box', 100, 1000, 0 , 10)
-      _countup.start();
+      var _countup = new CountUp('box', 100, 1000, 0, 10, {}, function (v) {
+        // console.log(v);
+      })
+      _countup.start()
+      setTimeout(() => {
+        // _countup.stop()
+      }, 1000 * 5)
     </script>
   </body>
 </html>
