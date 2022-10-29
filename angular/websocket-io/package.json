@@ -24,7 +24,7 @@
     "@types/socket.io-client": "^1.4.32",
     "core-js": "^2.4.1",
     "rxjs": "^5.5.6",
-    "socket.io-client": "^2.1.1",
+    "socket.io-client": "^2.5.0",
     "zone.js": "^0.8.19"
   },
   "devDependencies": {
@@ -37,7 +37,7 @@
     "codelyzer": "^4.0.1",
     "jasmine-core": "~2.8.0",
     "jasmine-spec-reporter": "~4.2.1",
-    "karma": "~2.0.0",
+    "karma": "~6.4.1",
     "karma-chrome-launcher": "~2.2.0",
     "karma-coverage-istanbul-reporter": "^1.2.1",
     "karma-jasmine": "~1.1.0",
